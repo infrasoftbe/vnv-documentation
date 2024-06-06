@@ -35,14 +35,18 @@ tags: [auto-generated]
 }
 
 async function main() {
-  // Fetch the latest commit
-  const log = await git.log();
-  const lastCommit = log.latest;
 
-  const { author_name, message, body } = lastCommit;
+  let author_name = process.argv[2];
+  let message = process.argv[3];
+  let body = process.argv[4];
 
-  if (true) {
-    await generateBlogPost( process.argv[2] || author_name, process.argv[3] || subject, process.argv[4] || body);
+  const match = message.match(/^(?<type>feat|fix|docs|style|refactor|test|chore)\((?<scope>.+)\):\s(?<subject>.+)$/);
+
+  console.log({ message , match })
+
+  if (match) {
+    const { author, subject } = match.groups;
+    await generateBlogPost( author_name, subject, body);
   } else {
     console.log('No valid commit found to generate the blog post.');
   }
