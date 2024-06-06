@@ -22,8 +22,6 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-      - name: Test build website
-        run: yarn build
 
       - name: Extract Commit Message
         id: extract-commit-message
@@ -59,3 +57,6 @@ jobs:
           message: "docs(blog): add new blog post from commit ${GITHUB_SHA}"
           add: 'blog/'
           force: true
+
+      - name: Test build website
+        run: yarn build
