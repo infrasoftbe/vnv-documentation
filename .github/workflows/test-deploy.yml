@@ -24,3 +24,38 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Test build website
         run: yarn build
+
+      - name: Extract Commit Message
+        id: extract-commit-message
+        run: |
+          COMMIT_MSG=$(git log --format=%B -n 1 ${{ github.event.before }}..${{ github.event.after }})
+          echo "$COMMIT_MSG" | grep -oP "^(?P<type>\w+)(\((?P<scope>[\w\-]+)\))?: (?P<subject>.+)$" > extracted_commit_msg.txt
+          BODY=$(echo "$COMMIT_MSG" | tail -n +2)
+          echo "type=$(awk -F': ' '{print $1}' extracted_commit_msg.txt)" >> $GITHUB_ENV
+          echo "scope=$(awk -F': ' '{print $2}' extracted_commit_msg.txt)" >> $GITHUB_ENV
+          echo "subject=$(awk -F': ' '{print $3}' extracted_commit_msg.txt)" >> $GITHUB_ENV
+          echo "body=$BODY" >> $GITHUB_ENV
+
+      - name: Generate Blog Post
+        run: |
+          POST_DATE=$(date +%Y-%m-%d)
+          POST_FILE="blog/${POST_DATE}-${GITHUB_SHA}.md"
+          echo "---" > $POST_FILE
+          echo "slug: ${GITHUB_SHA}" >> $POST_FILE
+          echo "title: ${subject}" >> $POST_FILE
+          echo "authors:" >> $POST_FILE
+          echo "  - name: Your Name" >> $POST_FILE
+          echo "    title: Your Position" >> $POST_FILE
+          echo "    url: Your GitHub Profile URL" >> $POST_FILE
+          echo "    image_url: Your Profile Image URL" >> $POST_FILE
+          echo "tags: [${type}, ${scope}]" >> $POST_FILE
+          echo "---" >> $POST_FILE
+          echo "" >> $POST_FILE
+          echo "${body}" >> $POST_FILE
+
+      - name: Commit Blog Post
+        uses: EndBug/add-and-commit@v7
+        with:
+          message: "docs(blog): add new blog post from commit ${GITHUB_SHA}"
+          add: 'blog/'
+          force: true
