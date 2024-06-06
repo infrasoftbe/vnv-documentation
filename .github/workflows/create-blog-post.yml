@@ -25,7 +25,7 @@ jobs:
       - name: Generate Blog Post
         run: |
           # Assumes a script exists that generates a blog post from commit messages
-          npm run generate-blog-post
+          node scripts/generate-blog-post.js
 
       - name: Commit and Push Blog Post
         run: |
