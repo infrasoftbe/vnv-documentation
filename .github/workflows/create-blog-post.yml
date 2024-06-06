@@ -21,11 +21,22 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-      
+
+      - name: Extract commit information
+        id: commit_info
+        run: |
+          COMMIT_HASH=$(git log -1 --pretty=format:'%H')
+          AUTHOR=$(git log -1 --pretty=format:'%an')
+          SUBJECT=$(git log -1 --pretty=format:'%s')
+          BODY=$(git log -1 --pretty=format:'%b')
+          echo "::set-output name=commit_hash::$COMMIT_HASH"
+          echo "::set-output name=author::$AUTHOR"
+          echo "::set-output name=subject::$SUBJECT"
+          echo "::set-output name=body::$BODY"
+
       - name: Generate Blog Post
         run: |
-          # Assumes a script exists that generates a blog post from commit messages
-          node scripts/generate-blog-post.js
+          node scripts/generate-blog-post.js "${{ steps.commit_info.outputs.author }}" "${{ steps.commit_info.outputs.subject }}" "${{ steps.commit_info.outputs.body }}"
 
       - name: Commit and Push Blog Post
         run: |
