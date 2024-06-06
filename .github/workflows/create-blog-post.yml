@@ -1,0 +1,53 @@
+name: Create Blog Post on Shared Branch
+
+on:
+  push:
+    branches:
+      - shared
+
+jobs:
+  create-blog-post:
+    name: Create Blog Post
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Generate Blog Post
+        run: |
+          # Assumes a script exists that generates a blog post from commit messages
+          npm run generate-blog-post
+
+      - name: Commit and Push Blog Post
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add blog/
+          git commit -m "docs(blog): generate blog post from commits"
+          git push origin shared
+
+  merge-shared-into-main:
+    name: Merge Shared into Main
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Pull from shared
+        run: |
+          git remote add shared https://github.com/infrasoftbe/vnv-documentation.git
+          git fetch shared
+          git checkout main
+          git merge shared --no-ff -m "chore: merge shared into main"
+          git push origin main
