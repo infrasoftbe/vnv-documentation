@@ -43,7 +43,7 @@
 
 #### Defined in
 
-src/neo4j/layers/nodes.ts:50
+src/neo4j/layers/nodes.ts:54
 
 ___
 
@@ -57,13 +57,13 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/nodes.ts:52
+src/neo4j/layers/nodes.ts:56
 
 ___
 
 ### get
 
-▸ **get**\<`Type`\>(): `Promise`\<`Type` extends `NodeType` ? `INode`\<`Type`, `AllNodeMetadata`\> : `INode`\<`NodeType`, `AllNodeMetadata`\>[]\>
+▸ **get**\<`Type`\>(`query?`): `Promise`\<`Type` extends `NodeType` ? `INode`\<`Type`, `AllNodeMetadata`\> : `INode`\<`NodeType`, `AllNodeMetadata`\>[]\>
 
 #### Type parameters
 
@@ -71,13 +71,19 @@ ___
 | :------ | :------ |
 | `Type` | extends `any`[] \| `NodeType` = `T` |
 
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `query?` | `Partial`\<`INode`\<`NodeType`, `AllNodeMetadata`\> & \{ `meta`: `IMeta`  }\> |
+
 #### Returns
 
 `Promise`\<`Type` extends `NodeType` ? `INode`\<`Type`, `AllNodeMetadata`\> : `INode`\<`NodeType`, `AllNodeMetadata`\>[]\>
 
 #### Defined in
 
-src/neo4j/layers/nodes.ts:49
+src/neo4j/layers/nodes.ts:53
 
 ___
 
@@ -103,4 +109,4 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/nodes.ts:51
+src/neo4j/layers/nodes.ts:55

@@ -20,8 +20,10 @@
 
 | Name | Type |
 | :------ | :------ |
+| `Flows` | `LayerFactory`\<[`FlowLayer`](Neo4j.FlowLayer.md)\> |
+| `Nodes` | `LayerFactory`\<[`NodeLayer`](Neo4j.NodeLayer.md)\<`NodeType`\>\> |
 | `Projects` | `LayerFactory`\<[`ProjectLayer`](Neo4j.ProjectLayer.md)\> |
 
 #### Defined in
 
-src/neo4j/layers/database.ts:6
+src/neo4j/layers/database.ts:9

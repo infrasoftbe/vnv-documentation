@@ -4,6 +4,30 @@ sidebar_position: 3
 
 # DatabaseAPI
 
+## Nodes
+
+Cette section traite des opérations sur les nodes dans la base de donnée. Ces méthodes facilitent les opérations CRUD.
+
+```tsx
+// Get all nodes
+Neo4jAPI().Nodes().get<[]>();
+
+// Query all nodes
+Neo4jAPI().Nodes().get<[]>({ ...nodeQuery... });
+
+// Get one node
+Neo4jAPI().Nodes("nodeId").get();
+
+// Create one node
+Neo4jAPI().Nodes().create({ ...node... });
+
+// Update one node
+Neo4jAPI().Nodes("nodeId").update({ ...node... });
+
+// Delete one node
+Neo4jAPI().Nodes("nodeId").delete();
+```
+
 ## Projects
 
 La section suivante présente les méthodes disponibles pour gérer les projets dans l’application. Ces méthodes permettent d’effectuer des opérations CRUD (Créer, Lire, Mettre à jour, Supprimer) sur les projets.
@@ -33,6 +57,10 @@ Cette section traite des opérations sur les nodes génériques, permettant de g
 // Get all nodes
 Neo4jAPI().Projects("projectId")
 .Nodes().get<[]>();
+
+// Query all nodes
+Neo4jAPI().Projects("projectId")
+.Nodes().get<[]>({ ...nodeQuery... });
 
 // Get one node
 Neo4jAPI().Projects("projectId")
@@ -220,6 +248,10 @@ Voici quelques exemples de layers générés dynamiquement
 Neo4jAPI().Projects("projectId")
 .Orders().get<[]>();
 
+// Query all orders
+Neo4jAPI().Projects("projectId")
+.Orders().get<[]>({ ...query... });
+
 // Get one order
 Neo4jAPI().Projects("projectId")
 .Orders("orderId").get();
@@ -244,6 +276,10 @@ Neo4jAPI().Projects("projectId")
 Neo4jAPI().Projects("projectId")
 .Deliverables().get<[]>();
 
+// Query all deliverables
+Neo4jAPI().Projects("projectId")
+.Deliverables().get<[]>({ ...query... });
+
 // Get one deliverable
 Neo4jAPI().Projects("projectId")
 .Deliverables("deliverableId").get();
@@ -267,6 +303,10 @@ Neo4jAPI().Projects("projectId")
 // Get all works
 Neo4jAPI().Projects("projectId")
 .Works().get<[]>();
+
+// Query all works
+Neo4jAPI().Projects("projectId")
+.Works().get<[]>({ ...query... });
 
 // Get one work
 Neo4jAPI().Projects("projectId")
