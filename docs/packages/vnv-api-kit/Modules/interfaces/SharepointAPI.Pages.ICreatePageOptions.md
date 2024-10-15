@@ -25,4 +25,4 @@ as the welcome page.
 
 #### Defined in
 
-[src/sharepoint/pages/index.ts:39](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/pages/index.ts#L39)
+[src/sharepoint/pages/index.ts:39](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/pages/index.ts#L39)

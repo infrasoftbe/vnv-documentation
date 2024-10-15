@@ -36,7 +36,7 @@
 
 #### Defined in
 
-[src/session/layers/sessions/project/index.ts:18](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/session/layers/sessions/project/index.ts#L18)
+[src/session/layers/sessions/project/index.ts:18](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/session/layers/sessions/project/index.ts#L18)
 
 ## Methods
 
@@ -56,7 +56,7 @@
 
 #### Defined in
 
-[src/session/layers/sessions/project/index.ts:15](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/session/layers/sessions/project/index.ts#L15)
+[src/session/layers/sessions/project/index.ts:15](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/session/layers/sessions/project/index.ts#L15)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-[src/session/layers/sessions/project/index.ts:17](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/session/layers/sessions/project/index.ts#L17)
+[src/session/layers/sessions/project/index.ts:17](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/session/layers/sessions/project/index.ts#L17)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-[src/session/layers/sessions/project/index.ts:14](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/session/layers/sessions/project/index.ts#L14)
+[src/session/layers/sessions/project/index.ts:14](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/session/layers/sessions/project/index.ts#L14)
 
 ___
 
@@ -104,4 +104,4 @@ ___
 
 #### Defined in
 
-[src/session/layers/sessions/project/index.ts:16](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/session/layers/sessions/project/index.ts#L16)
+[src/session/layers/sessions/project/index.ts:16](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/session/layers/sessions/project/index.ts#L16)

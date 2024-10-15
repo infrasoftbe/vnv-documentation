@@ -29,7 +29,7 @@ the column in the SharePoint page layout.
 
 #### Defined in
 
-[src/sharepoint/columns/index.ts:65](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/columns/index.ts#L65)
+[src/sharepoint/columns/index.ts:65](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/columns/index.ts#L65)
 
 ___
 
@@ -42,4 +42,4 @@ that can be passed when creating a new `CanvasColumn` object.
 
 #### Defined in
 
-[src/sharepoint/columns/index.ts:57](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/columns/index.ts#L57)
+[src/sharepoint/columns/index.ts:57](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/columns/index.ts#L57)

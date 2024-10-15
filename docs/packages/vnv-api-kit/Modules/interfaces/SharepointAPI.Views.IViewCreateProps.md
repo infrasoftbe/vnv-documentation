@@ -26,7 +26,7 @@ property named `PersonalView` of type `boolean`.
 
 #### Defined in
 
-[src/sharepoint/views/index.ts:55](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/views/index.ts#L55)
+[src/sharepoint/views/index.ts:55](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/views/index.ts#L55)
 
 ___
 
@@ -40,7 +40,7 @@ title of the view that will be created in SharePoint.
 
 #### Defined in
 
-[src/sharepoint/views/index.ts:51](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/views/index.ts#L51)
+[src/sharepoint/views/index.ts:51](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/views/index.ts#L51)
 
 ___
 
@@ -53,4 +53,4 @@ defining an optional property named `additionalSettings`.
 
 #### Defined in
 
-[src/sharepoint/views/index.ts:59](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/views/index.ts#L59)
+[src/sharepoint/views/index.ts:59](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/views/index.ts#L59)

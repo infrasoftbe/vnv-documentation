@@ -47,7 +47,7 @@ an object of type `IQueryParts`.
 
 #### Defined in
 
-[src/sharepoint/parts/index.ts:71](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/parts/index.ts#L71)
+[src/sharepoint/parts/index.ts:71](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/parts/index.ts#L71)
 
 ___
 

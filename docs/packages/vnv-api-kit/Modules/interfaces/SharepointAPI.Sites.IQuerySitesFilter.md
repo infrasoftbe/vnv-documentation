@@ -37,7 +37,7 @@ will return sites from all site collections.
 
 #### Defined in
 
-[src/sharepoint/sites/index.ts:106](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/sites/index.ts#L106)
+[src/sharepoint/sites/index.ts:106](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/sites/index.ts#L106)
 
 ___
 
@@ -52,7 +52,7 @@ when using the `get` method in the `IQuerySites` interface.
 
 #### Defined in
 
-[src/sharepoint/sites/index.ts:112](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/sites/index.ts#L112)
+[src/sharepoint/sites/index.ts:112](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/sites/index.ts#L112)
 
 ___
 
@@ -66,4 +66,4 @@ specific ID.
 
 #### Defined in
 
-[src/sharepoint/sites/index.ts:98](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/sites/index.ts#L98)
+[src/sharepoint/sites/index.ts:98](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/sites/index.ts#L98)

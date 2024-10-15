@@ -31,7 +31,7 @@ the title.
 
 #### Defined in
 
-[src/sharepoint/navigations/index.ts:36](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/navigations/index.ts#L36)
+[src/sharepoint/navigations/index.ts:36](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/navigations/index.ts#L36)
 
 ___
 
@@ -47,7 +47,7 @@ apply any filter based on the quick launch.
 
 #### Defined in
 
-[src/sharepoint/navigations/index.ts:22](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/navigations/index.ts#L22)
+[src/sharepoint/navigations/index.ts:22](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/navigations/index.ts#L22)
 
 ___
 
@@ -63,4 +63,4 @@ not provided, it will not apply any filter based on the top navigation bar.
 
 #### Defined in
 
-[src/sharepoint/navigations/index.ts:29](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/navigations/index.ts#L29)
+[src/sharepoint/navigations/index.ts:29](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/navigations/index.ts#L29)

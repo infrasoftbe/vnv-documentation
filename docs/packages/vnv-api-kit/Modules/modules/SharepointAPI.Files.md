@@ -54,4 +54,4 @@ The function `Files` returns an object with the following properties and methods
 
 #### Defined in
 
-[src/sharepoint/files/index.ts:81](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/files/index.ts#L81)
+[src/sharepoint/files/index.ts:81](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/files/index.ts#L81)

@@ -30,7 +30,7 @@ omitted when creating an object that implements this interface.
 
 #### Defined in
 
-[src/sharepoint/files/index.ts:21](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/files/index.ts#L21)
+[src/sharepoint/files/index.ts:21](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/files/index.ts#L21)
 
 ___
 
@@ -46,7 +46,7 @@ path.
 
 #### Defined in
 
-[src/sharepoint/files/index.ts:34](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/files/index.ts#L34)
+[src/sharepoint/files/index.ts:34](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/files/index.ts#L34)
 
 ___
 
@@ -61,7 +61,7 @@ the query for files based on their URL.
 
 #### Defined in
 
-[src/sharepoint/files/index.ts:27](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/files/index.ts#L27)
+[src/sharepoint/files/index.ts:27](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/files/index.ts#L27)
 
 ___
 
@@ -79,4 +79,4 @@ shared status.
 
 #### Defined in
 
-[src/sharepoint/files/index.ts:43](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/files/index.ts#L43)
+[src/sharepoint/files/index.ts:43](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/files/index.ts#L43)

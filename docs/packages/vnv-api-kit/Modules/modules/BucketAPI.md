@@ -29,7 +29,7 @@
 
 #### Defined in
 
-[src/bucket/file-post.ts:4](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/bucket/file-post.ts#L4)
+[src/bucket/file-post.ts:4](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/bucket/file-post.ts#L4)
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 #### Defined in
 
-[src/bucket/file-get-all.ts:4](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/bucket/file-get-all.ts#L4)
+[src/bucket/file-get-all.ts:4](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/bucket/file-get-all.ts#L4)
 
 ___
 
@@ -69,4 +69,4 @@ ___
 
 #### Defined in
 
-[src/bucket/file-get-presigned.ts:4](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/bucket/file-get-presigned.ts#L4)
+[src/bucket/file-get-presigned.ts:4](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/bucket/file-get-presigned.ts#L4)

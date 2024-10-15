@@ -38,7 +38,7 @@ Return server url config with relative path
 
 #### Defined in
 
-[dist/fetch-factory/config.d.ts:11](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/config.d.ts#L11)
+[dist/fetch-factory/config.d.ts:11](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/config.d.ts#L11)
 
 ___
 
@@ -50,7 +50,7 @@ Server host
 
 #### Defined in
 
-[dist/fetch-factory/config.d.ts:5](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/config.d.ts#L5)
+[dist/fetch-factory/config.d.ts:5](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/config.d.ts#L5)
 
 ___
 
@@ -62,7 +62,7 @@ Server port
 
 #### Defined in
 
-[dist/fetch-factory/config.d.ts:7](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/config.d.ts#L7)
+[dist/fetch-factory/config.d.ts:7](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/config.d.ts#L7)
 
 ___
 
@@ -74,7 +74,7 @@ Server portocol
 
 #### Defined in
 
-[dist/fetch-factory/config.d.ts:3](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/config.d.ts#L3)
+[dist/fetch-factory/config.d.ts:3](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/config.d.ts#L3)
 
 ___
 
@@ -86,4 +86,4 @@ Server url
 
 #### Defined in
 
-[dist/fetch-factory/config.d.ts:9](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/config.d.ts#L9)
+[dist/fetch-factory/config.d.ts:9](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/config.d.ts#L9)

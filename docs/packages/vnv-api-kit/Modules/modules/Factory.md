@@ -60,7 +60,7 @@
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:156](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L156)
+[dist/fetch-factory/batcher.d.ts:156](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L156)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:157](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L157)
+[dist/fetch-factory/batcher.d.ts:157](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L157)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:3](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L3)
+[dist/fetch-factory/batcher.d.ts:3](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L3)
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:14](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L14)
+[dist/fetch-factory/batcher.d.ts:14](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L14)
 
 ___
 
@@ -131,7 +131,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:17](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L17)
+[dist/fetch-factory/batcher.d.ts:17](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L17)
 
 ___
 
@@ -141,7 +141,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:25](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L25)
+[dist/fetch-factory/batcher.d.ts:25](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L25)
 
 ___
 
@@ -175,7 +175,7 @@ Fonction de requête HTTP réutilisable créée par FetchFactory.
 
 #### Defined in
 
-[dist/fetch-factory/index.d.ts:10](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/index.d.ts#L10)
+[dist/fetch-factory/index.d.ts:10](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/index.d.ts#L10)
 
 ___
 
@@ -200,7 +200,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:16](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L16)
+[dist/fetch-factory/batcher.d.ts:16](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L16)
 
 ___
 
@@ -224,7 +224,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:15](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L15)
+[dist/fetch-factory/batcher.d.ts:15](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L15)
 
 ## Variables
 
@@ -234,7 +234,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/config.d.ts:13](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/config.d.ts#L13)
+[dist/fetch-factory/config.d.ts:13](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/config.d.ts#L13)
 
 ## Functions
 
@@ -262,7 +262,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/request.d.ts:6](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/request.d.ts#L6)
+[dist/fetch-factory/request.d.ts:6](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/request.d.ts#L6)
 
 ___
 
@@ -293,7 +293,7 @@ Une fonction qui renvoie une promesse contenant les données de la réponse.
 
 #### Defined in
 
-[dist/fetch-factory/index.d.ts:28](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/index.d.ts#L28)
+[dist/fetch-factory/index.d.ts:28](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/index.d.ts#L28)
 
 ___
 
@@ -321,7 +321,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/request.d.ts:2](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/request.d.ts#L2)
+[dist/fetch-factory/request.d.ts:2](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/request.d.ts#L2)
 
 ___
 
@@ -349,7 +349,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/request.d.ts:5](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/request.d.ts#L5)
+[dist/fetch-factory/request.d.ts:5](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/request.d.ts#L5)
 
 ___
 
@@ -377,7 +377,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/request.d.ts:3](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/request.d.ts#L3)
+[dist/fetch-factory/request.d.ts:3](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/request.d.ts#L3)
 
 ___
 
@@ -405,7 +405,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/request.d.ts:4](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/request.d.ts#L4)
+[dist/fetch-factory/request.d.ts:4](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/request.d.ts#L4)
 
 ___
 
@@ -425,7 +425,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/config.d.ts:18](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/config.d.ts#L18)
+[dist/fetch-factory/config.d.ts:18](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/config.d.ts#L18)
 
 ___
 
@@ -445,7 +445,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:162](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L162)
+[dist/fetch-factory/batcher.d.ts:162](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L162)
 
 ___
 
@@ -459,7 +459,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/config.d.ts:15](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/config.d.ts#L15)
+[dist/fetch-factory/config.d.ts:15](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/config.d.ts#L15)
 
 ___
 
@@ -473,7 +473,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/config.d.ts:16](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/config.d.ts#L16)
+[dist/fetch-factory/config.d.ts:16](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/config.d.ts#L16)
 
 ___
 
@@ -487,7 +487,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/config.d.ts:14](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/config.d.ts#L14)
+[dist/fetch-factory/config.d.ts:14](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/config.d.ts#L14)
 
 ___
 
@@ -501,4 +501,4 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/config.d.ts:17](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/config.d.ts#L17)
+[dist/fetch-factory/config.d.ts:17](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/config.d.ts#L17)

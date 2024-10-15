@@ -33,7 +33,7 @@ grid list.
 
 #### Defined in
 
-[src/sharepoint/lists/index.ts:49](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/lists/index.ts#L49)
+[src/sharepoint/lists/index.ts:49](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/lists/index.ts#L49)
 
 ___
 
@@ -47,7 +47,7 @@ grid list.
 
 #### Defined in
 
-[src/sharepoint/lists/index.ts:40](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/lists/index.ts#L40)
+[src/sharepoint/lists/index.ts:40](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/lists/index.ts#L40)
 
 ___
 
@@ -61,4 +61,4 @@ wants to see when viewing the grid list.
 
 #### Defined in
 
-[src/sharepoint/lists/index.ts:45](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/lists/index.ts#L45)
+[src/sharepoint/lists/index.ts:45](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/lists/index.ts#L45)

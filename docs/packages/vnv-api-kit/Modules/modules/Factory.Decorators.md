@@ -41,7 +41,7 @@
 
 #### Defined in
 
-[dist/fetch-factory/batcher.decorator.d.ts:1](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.decorator.d.ts#L1)
+[dist/fetch-factory/batcher.decorator.d.ts:1](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.decorator.d.ts#L1)
 
 ___
 
@@ -67,4 +67,4 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.decorator.d.ts:4](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.decorator.d.ts#L4)
+[dist/fetch-factory/batcher.decorator.d.ts:4](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.decorator.d.ts#L4)

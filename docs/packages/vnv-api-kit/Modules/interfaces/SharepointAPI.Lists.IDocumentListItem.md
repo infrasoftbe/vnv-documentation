@@ -30,7 +30,7 @@ value.
 
 #### Defined in
 
-[src/sharepoint/lists/index.ts:86](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/lists/index.ts#L86)
+[src/sharepoint/lists/index.ts:86](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/lists/index.ts#L86)
 
 ___
 
@@ -44,7 +44,7 @@ and the value is an object that describes the field.
 
 #### Defined in
 
-[src/sharepoint/lists/index.ts:91](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/lists/index.ts#L91)
+[src/sharepoint/lists/index.ts:91](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/lists/index.ts#L91)
 
 ___
 
@@ -58,7 +58,7 @@ grid list.
 
 #### Defined in
 
-[src/sharepoint/lists/index.ts:80](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/lists/index.ts#L80)
+[src/sharepoint/lists/index.ts:80](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/lists/index.ts#L80)
 
 ___
 
@@ -72,7 +72,7 @@ folder of the document library.
 
 #### Defined in
 
-[src/sharepoint/lists/index.ts:75](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/lists/index.ts#L75)
+[src/sharepoint/lists/index.ts:75](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/lists/index.ts#L75)
 
 ___
 
@@ -86,4 +86,4 @@ indicate whether the item in the document list is a file or a folder.
 
 #### Defined in
 
-[src/sharepoint/lists/index.ts:70](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/lists/index.ts#L70)
+[src/sharepoint/lists/index.ts:70](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/lists/index.ts#L70)

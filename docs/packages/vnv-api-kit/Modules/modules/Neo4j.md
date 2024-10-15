@@ -20,6 +20,7 @@
 ### Type Aliases
 
 - [NodeKindLayers](Neo4j.md#nodekindlayers)
+- [NodeQuery](Neo4j.md#nodequery)
 
 ### Variables
 
@@ -34,6 +35,7 @@
 - [MetadataClient](Neo4j.md#metadataclient)
 - [NodeClient](Neo4j.md#nodeclient)
 - [ProjectClient](Neo4j.md#projectclient)
+- [Query](Neo4j.md#query)
 - [RelationClient](Neo4j.md#relationclient)
 - [StructureChildClient](Neo4j.md#structurechildclient)
 - [StructureClient](Neo4j.md#structureclient)
@@ -46,7 +48,17 @@
 
 #### Defined in
 
-src/neo4j/layers/nodes.ts:14
+[src/neo4j/layers/nodes.ts:14](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/nodes.ts#L14)
+
+___
+
+### NodeQuery
+
+Ƭ **NodeQuery**: `Partial`\<`INode` & \{ `meta`: `IMeta`  }\>
+
+#### Defined in
+
+[src/neo4j/functions/Query.ts:3](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/functions/Query.ts#L3)
 
 ## Variables
 
@@ -56,7 +68,7 @@ src/neo4j/layers/nodes.ts:14
 
 #### Defined in
 
-src/neo4j/layers/nodes.ts:50
+[src/neo4j/layers/nodes.ts:50](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/nodes.ts#L50)
 
 ## Functions
 
@@ -76,7 +88,7 @@ src/neo4j/layers/nodes.ts:50
 
 #### Defined in
 
-src/neo4j/layers/database.ts:18
+[src/neo4j/layers/database.ts:18](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/database.ts#L18)
 
 ___
 
@@ -96,7 +108,7 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/flows.ts:52
+[src/neo4j/layers/flows.ts:52](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/flows.ts#L52)
 
 ___
 
@@ -116,7 +128,7 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/lists.ts:12
+[src/neo4j/layers/lists.ts:12](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/lists.ts#L12)
 
 ___
 
@@ -136,7 +148,7 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/lists.ts:37
+[src/neo4j/layers/lists.ts:37](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/lists.ts#L37)
 
 ___
 
@@ -156,7 +168,7 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/metadatas.ts:12
+[src/neo4j/layers/metadatas.ts:12](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/metadatas.ts#L12)
 
 ___
 
@@ -176,7 +188,7 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/nodes.ts:59
+[src/neo4j/layers/nodes.ts:59](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/nodes.ts#L59)
 
 ___
 
@@ -196,7 +208,21 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/projects.ts:26
+[src/neo4j/layers/projects.ts:26](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/projects.ts#L26)
+
+___
+
+### Query
+
+▸ **Query**(): `void`
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[src/neo4j/functions/Query.ts:5](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/functions/Query.ts#L5)
 
 ___
 
@@ -216,7 +242,7 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/relations.ts:12
+[src/neo4j/layers/relations.ts:12](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/relations.ts#L12)
 
 ___
 
@@ -236,7 +262,7 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/structures.ts:12
+[src/neo4j/layers/structures.ts:12](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/structures.ts#L12)
 
 ___
 
@@ -256,4 +282,4 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/structures.ts:37
+[src/neo4j/layers/structures.ts:37](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/structures.ts#L37)

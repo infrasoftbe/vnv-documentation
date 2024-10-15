@@ -36,7 +36,7 @@ left undefined.
 
 #### Defined in
 
-[src/sharepoint/webs/index.ts:96](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/webs/index.ts#L96)
+[src/sharepoint/webs/index.ts:96](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/webs/index.ts#L96)
 
 ___
 
@@ -52,7 +52,7 @@ language.
 
 #### Defined in
 
-[src/sharepoint/webs/index.ts:110](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/webs/index.ts#L110)
+[src/sharepoint/webs/index.ts:110](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/webs/index.ts#L110)
 
 ___
 
@@ -66,7 +66,7 @@ SharePoint and represents the title or name of the web.
 
 #### Defined in
 
-[src/sharepoint/webs/index.ts:84](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/webs/index.ts#L84)
+[src/sharepoint/webs/index.ts:84](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/webs/index.ts#L84)
 
 ___
 
@@ -80,7 +80,7 @@ will be accessible.
 
 #### Defined in
 
-[src/sharepoint/webs/index.ts:89](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/webs/index.ts#L89)
+[src/sharepoint/webs/index.ts:89](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/webs/index.ts#L89)
 
 ___
 
@@ -93,7 +93,7 @@ optional property that can be used when creating a new web in SharePoint.
 
 #### Defined in
 
-[src/sharepoint/webs/index.ts:114](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/webs/index.ts#L114)
+[src/sharepoint/webs/index.ts:114](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/webs/index.ts#L114)
 
 ___
 
@@ -109,4 +109,4 @@ structure and functionality of the new web based on a predefined template.
 
 #### Defined in
 
-[src/sharepoint/webs/index.ts:103](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/webs/index.ts#L103)
+[src/sharepoint/webs/index.ts:103](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/webs/index.ts#L103)

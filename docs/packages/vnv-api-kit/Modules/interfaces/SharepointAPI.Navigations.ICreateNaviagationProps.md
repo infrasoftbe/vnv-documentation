@@ -31,7 +31,7 @@ creation of a hierarchical navigation structure with parent and child nodes.
 
 #### Defined in
 
-[src/sharepoint/navigations/index.ts:101](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/navigations/index.ts#L101)
+[src/sharepoint/navigations/index.ts:101](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/navigations/index.ts#L101)
 
 ___
 
@@ -47,7 +47,7 @@ the title.
 
 #### Defined in
 
-[src/sharepoint/navigations/index.ts:82](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/navigations/index.ts#L82)
+[src/sharepoint/navigations/index.ts:82](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/navigations/index.ts#L82)
 
 ___
 
@@ -61,7 +61,7 @@ provided when creating a new navigation node.
 
 #### Defined in
 
-[src/sharepoint/navigations/index.ts:87](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/navigations/index.ts#L87)
+[src/sharepoint/navigations/index.ts:87](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/navigations/index.ts#L87)
 
 ___
 
@@ -76,4 +76,4 @@ will be visible. If it is set to `false` or not provided, the navigation node wi
 
 #### Defined in
 
-[src/sharepoint/navigations/index.ts:93](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/navigations/index.ts#L93)
+[src/sharepoint/navigations/index.ts:93](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/navigations/index.ts#L93)

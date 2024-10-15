@@ -23,7 +23,7 @@ passed when creating a new clientside page. It has three properties:
 
 #### Defined in
 
-[src/sharepoint/pages/index.ts:29](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/pages/index.ts#L29)
+[src/sharepoint/pages/index.ts:29](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/pages/index.ts#L29)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[src/sharepoint/pages/index.ts:27](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/pages/index.ts#L27)
+[src/sharepoint/pages/index.ts:27](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/pages/index.ts#L27)
 
 ___
 
@@ -43,4 +43,4 @@ ___
 
 #### Defined in
 
-[src/sharepoint/pages/index.ts:28](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/pages/index.ts#L28)
+[src/sharepoint/pages/index.ts:28](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/pages/index.ts#L28)

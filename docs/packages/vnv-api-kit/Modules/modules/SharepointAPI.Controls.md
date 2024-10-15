@@ -45,4 +45,4 @@ The function `Controls` returns an object of type `IQueryControls`.
 
 #### Defined in
 
-[src/sharepoint/controls/index.ts:59](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/controls/index.ts#L59)
+[src/sharepoint/controls/index.ts:59](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/controls/index.ts#L59)

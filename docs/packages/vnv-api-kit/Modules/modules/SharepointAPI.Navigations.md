@@ -46,7 +46,7 @@ an object of type `IQueryNavigationChildren`.
 
 #### Defined in
 
-[src/sharepoint/navigations/index.ts:197](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/navigations/index.ts#L197)
+[src/sharepoint/navigations/index.ts:197](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/navigations/index.ts#L197)
 
 ___
 
@@ -75,4 +75,4 @@ The function `Navigations` returns an object of type `IQueryNavigations`.
 
 #### Defined in
 
-[src/sharepoint/navigations/index.ts:119](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/navigations/index.ts#L119)
+[src/sharepoint/navigations/index.ts:119](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/navigations/index.ts#L119)

@@ -26,7 +26,7 @@
 
 #### Defined in
 
-src/neo4j/layers/projects.ts:17
+[src/neo4j/layers/projects.ts:17](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/projects.ts#L17)
 
 ## Methods
 
@@ -46,7 +46,7 @@ src/neo4j/layers/projects.ts:17
 
 #### Defined in
 
-src/neo4j/layers/projects.ts:14
+[src/neo4j/layers/projects.ts:14](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/projects.ts#L14)
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/projects.ts:16
+[src/neo4j/layers/projects.ts:16](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/projects.ts#L16)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/projects.ts:12
+[src/neo4j/layers/projects.ts:12](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/projects.ts#L12)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/projects.ts:13
+[src/neo4j/layers/projects.ts:13](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/projects.ts#L13)
 
 ___
 
@@ -114,4 +114,4 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/projects.ts:15
+[src/neo4j/layers/projects.ts:15](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/projects.ts#L15)

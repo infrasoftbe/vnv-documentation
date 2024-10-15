@@ -36,7 +36,7 @@ The `export interface IQuerySP` is defining an interface in TypeScript.
 
 #### Defined in
 
-[src/sharepoint/index.ts:28](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/index.ts#L28)
+[src/sharepoint/index.ts:28](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/index.ts#L28)
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 #### Defined in
 
-[src/sharepoint/index.ts:26](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/index.ts#L26)
+[src/sharepoint/index.ts:26](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/index.ts#L26)
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 #### Defined in
 
-[src/sharepoint/index.ts:27](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/index.ts#L27)
+[src/sharepoint/index.ts:27](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/index.ts#L27)

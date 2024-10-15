@@ -65,4 +65,4 @@ The function `Sharepoint` returns an object with the following properties and me
 
 #### Defined in
 
-[src/sharepoint/index.ts:38](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/index.ts#L38)
+[src/sharepoint/index.ts:38](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/index.ts#L38)

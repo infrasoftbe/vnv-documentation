@@ -24,4 +24,4 @@
 
 #### Defined in
 
-[src/sharepoint/fields/index.ts:16](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/fields/index.ts#L16)
+[src/sharepoint/fields/index.ts:16](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/fields/index.ts#L16)

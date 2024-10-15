@@ -54,7 +54,7 @@ Re-exports [Sharepoint](modules/SharepointAPI.md#sharepoint)
 
 #### Defined in
 
-[src/index.ts:34](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/index.ts#L34)
+[src/index.ts:34](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/index.ts#L34)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:37](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/index.ts#L37)
+[src/index.ts:37](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/index.ts#L37)
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:30](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/index.ts#L30)
+[src/index.ts:30](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/index.ts#L30)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:29](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/index.ts#L29)
+[src/index.ts:29](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/index.ts#L29)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:31](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/index.ts#L31)
+[src/index.ts:31](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/index.ts#L31)
 
 ## Variables
 
@@ -110,7 +110,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:61](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/index.ts#L61)
+[src/index.ts:61](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/index.ts#L61)
 
 ## Functions
 
@@ -124,7 +124,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:44](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/index.ts#L44)
+[src/index.ts:44](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/index.ts#L44)
 
 ___
 
@@ -144,7 +144,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:5](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/index.ts#L5)
+[src/index.ts:5](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/index.ts#L5)
 
 ___
 
@@ -164,7 +164,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:8](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/index.ts#L8)
+[src/index.ts:8](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/index.ts#L8)
 
 ___
 
@@ -178,7 +178,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:45](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/index.ts#L45)
+[src/index.ts:45](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/index.ts#L45)
 
 ___
 
@@ -198,7 +198,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:2](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/index.ts#L2)
+[src/index.ts:2](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/index.ts#L2)
 
 ___
 
@@ -212,4 +212,4 @@ ___
 
 #### Defined in
 
-[src/index.ts:46](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/index.ts#L46)
+[src/index.ts:46](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/index.ts#L46)

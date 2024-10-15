@@ -39,7 +39,7 @@
 
 #### Defined in
 
-[src/sharepoint/index.ts:22](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/index.ts#L22)
+[src/sharepoint/index.ts:22](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/index.ts#L22)
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 #### Defined in
 
-[src/sharepoint/sites/index.ts:35](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/sites/index.ts#L35)
+[src/sharepoint/sites/index.ts:35](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/sites/index.ts#L35)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-[src/sharepoint/sites/index.ts:33](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/sites/index.ts#L33)
+[src/sharepoint/sites/index.ts:33](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/sites/index.ts#L33)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 #### Defined in
 
-[src/sharepoint/sites/index.ts:88](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/sites/index.ts#L88)
+[src/sharepoint/sites/index.ts:88](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/sites/index.ts#L88)
 
 ## Functions
 
@@ -96,4 +96,4 @@ The function `Sites` returns an object of type `IQuerySites`.
 
 #### Defined in
 
-[src/sharepoint/sites/index.ts:196](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/sites/index.ts#L196)
+[src/sharepoint/sites/index.ts:196](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/sites/index.ts#L196)

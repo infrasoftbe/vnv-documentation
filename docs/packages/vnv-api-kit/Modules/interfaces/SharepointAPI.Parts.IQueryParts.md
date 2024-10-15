@@ -57,7 +57,7 @@ RequestBaseQuery.baseUrl
 
 #### Defined in
 
-[src/sharepoint/type.requestQuery.ts:55](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/type.requestQuery.ts#L55)
+[src/sharepoint/type.requestQuery.ts:55](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/type.requestQuery.ts#L55)
 
 ___
 
@@ -76,7 +76,7 @@ RequestBaseQuery.childrenId
 
 #### Defined in
 
-[src/sharepoint/type.requestQuery.ts:84](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/type.requestQuery.ts#L84)
+[src/sharepoint/type.requestQuery.ts:84](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/type.requestQuery.ts#L84)
 
 ___
 
@@ -95,7 +95,7 @@ RequestBaseQuery.clientId
 
 #### Defined in
 
-[src/sharepoint/type.requestQuery.ts:67](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/type.requestQuery.ts#L67)
+[src/sharepoint/type.requestQuery.ts:67](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/type.requestQuery.ts#L67)
 
 ___
 
@@ -115,7 +115,7 @@ RequestBaseQuery.columnOrder
 
 #### Defined in
 
-[src/sharepoint/type.requestQuery.ts:125](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/type.requestQuery.ts#L125)
+[src/sharepoint/type.requestQuery.ts:125](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/type.requestQuery.ts#L125)
 
 ___
 
@@ -135,7 +135,7 @@ RequestBaseQuery.controlOrder
 
 #### Defined in
 
-[src/sharepoint/type.requestQuery.ts:132](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/type.requestQuery.ts#L132)
+[src/sharepoint/type.requestQuery.ts:132](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/type.requestQuery.ts#L132)
 
 ___
 
@@ -154,7 +154,7 @@ RequestBaseQuery.endpoint
 
 #### Defined in
 
-[src/sharepoint/type.requestQuery.ts:61](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/type.requestQuery.ts#L61)
+[src/sharepoint/type.requestQuery.ts:61](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/type.requestQuery.ts#L61)
 
 ___
 
@@ -173,7 +173,7 @@ RequestBaseQuery.itemId
 
 #### Defined in
 
-[src/sharepoint/type.requestQuery.ts:103](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/type.requestQuery.ts#L103)
+[src/sharepoint/type.requestQuery.ts:103](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/type.requestQuery.ts#L103)
 
 ___
 
@@ -191,7 +191,7 @@ RequestBaseQuery.listId
 
 #### Defined in
 
-[src/sharepoint/type.requestQuery.ts:89](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/type.requestQuery.ts#L89)
+[src/sharepoint/type.requestQuery.ts:89](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/type.requestQuery.ts#L89)
 
 ___
 
@@ -210,7 +210,7 @@ RequestBaseQuery.navItemId
 
 #### Defined in
 
-[src/sharepoint/type.requestQuery.ts:78](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/type.requestQuery.ts#L78)
+[src/sharepoint/type.requestQuery.ts:78](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/type.requestQuery.ts#L78)
 
 ___
 
@@ -230,7 +230,7 @@ RequestBaseQuery.pageId
 
 #### Defined in
 
-[src/sharepoint/type.requestQuery.ts:110](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/type.requestQuery.ts#L110)
+[src/sharepoint/type.requestQuery.ts:110](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/type.requestQuery.ts#L110)
 
 ___
 
@@ -250,7 +250,7 @@ RequestBaseQuery.partId
 
 #### Defined in
 
-[src/sharepoint/type.requestQuery.ts:139](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/type.requestQuery.ts#L139)
+[src/sharepoint/type.requestQuery.ts:139](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/type.requestQuery.ts#L139)
 
 ___
 
@@ -271,7 +271,7 @@ RequestBaseQuery.sectionOrder
 
 #### Defined in
 
-[src/sharepoint/type.requestQuery.ts:118](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/type.requestQuery.ts#L118)
+[src/sharepoint/type.requestQuery.ts:118](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/type.requestQuery.ts#L118)
 
 ___
 
@@ -289,7 +289,7 @@ RequestBaseQuery.siteId
 
 #### Defined in
 
-[src/sharepoint/type.requestQuery.ts:72](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/type.requestQuery.ts#L72)
+[src/sharepoint/type.requestQuery.ts:72](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/type.requestQuery.ts#L72)
 
 ___
 
@@ -310,7 +310,7 @@ RequestBaseQuery.viewId
 
 #### Defined in
 
-[src/sharepoint/type.requestQuery.ts:97](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/type.requestQuery.ts#L97)
+[src/sharepoint/type.requestQuery.ts:97](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/type.requestQuery.ts#L97)
 
 ___
 
@@ -330,7 +330,7 @@ RequestBaseQuery.websId
 
 #### Defined in
 
-[src/sharepoint/type.requestQuery.ts:146](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/type.requestQuery.ts#L146)
+[src/sharepoint/type.requestQuery.ts:146](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/type.requestQuery.ts#L146)
 
 ## Methods
 
@@ -351,7 +351,7 @@ RequestBaseQuery.create
 
 #### Defined in
 
-[src/sharepoint/parts/index.ts:44](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/parts/index.ts#L44)
+[src/sharepoint/parts/index.ts:44](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/parts/index.ts#L44)
 
 ___
 
@@ -373,7 +373,7 @@ RequestBaseQuery.delete
 
 #### Defined in
 
-[src/sharepoint/parts/index.ts:54](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/parts/index.ts#L54)
+[src/sharepoint/parts/index.ts:54](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/parts/index.ts#L54)
 
 ___
 
@@ -401,7 +401,7 @@ RequestBaseQuery.get
 
 #### Defined in
 
-[src/sharepoint/parts/index.ts:40](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/parts/index.ts#L40)
+[src/sharepoint/parts/index.ts:40](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/parts/index.ts#L40)
 
 ___
 
@@ -429,4 +429,4 @@ RequestBaseQuery.update
 
 #### Defined in
 
-[src/sharepoint/parts/index.ts:49](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/parts/index.ts#L49)
+[src/sharepoint/parts/index.ts:49](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/parts/index.ts#L49)

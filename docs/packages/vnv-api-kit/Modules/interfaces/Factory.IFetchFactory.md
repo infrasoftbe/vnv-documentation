@@ -25,7 +25,7 @@ La fonction utilisée pour effectuer la requête HTTP.
 
 #### Defined in
 
-[dist/fetch-factory/index.d.ts:16](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/index.d.ts#L16)
+[dist/fetch-factory/index.d.ts:16](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/index.d.ts#L16)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/index.d.ts:21](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/index.d.ts#L21)
+[dist/fetch-factory/index.d.ts:21](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/index.d.ts#L21)
 
 ___
 
@@ -47,7 +47,7 @@ Les en-têtes de la requête HTTP.
 
 #### Defined in
 
-[dist/fetch-factory/index.d.ts:20](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/index.d.ts#L20)
+[dist/fetch-factory/index.d.ts:20](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/index.d.ts#L20)
 
 ___
 
@@ -59,4 +59,4 @@ La méthode de la requête HTTP (GET, POST, PATCH ou DELETE).
 
 #### Defined in
 
-[dist/fetch-factory/index.d.ts:18](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/index.d.ts#L18)
+[dist/fetch-factory/index.d.ts:18](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/index.d.ts#L18)

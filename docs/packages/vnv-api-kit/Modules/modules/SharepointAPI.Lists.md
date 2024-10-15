@@ -36,7 +36,7 @@
 
 #### Defined in
 
-[src/sharepoint/lists/index.ts:119](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/lists/index.ts#L119)
+[src/sharepoint/lists/index.ts:119](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/lists/index.ts#L119)
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 #### Defined in
 
-[src/sharepoint/lists/index.ts:32](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/lists/index.ts#L32)
+[src/sharepoint/lists/index.ts:32](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/lists/index.ts#L32)
 
 ## Functions
 
@@ -75,4 +75,4 @@ The function `Lists` returns an object with four properties: `get`, `create`, `u
 
 #### Defined in
 
-[src/sharepoint/lists/index.ts:183](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/lists/index.ts#L183)
+[src/sharepoint/lists/index.ts:183](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/lists/index.ts#L183)

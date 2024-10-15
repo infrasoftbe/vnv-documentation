@@ -34,4 +34,4 @@ object with a `Title` property, and the value of that property should be a strin
 
 #### Defined in
 
-[src/sharepoint/items/index.ts:23](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/items/index.ts#L23)
+[src/sharepoint/items/index.ts:23](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/items/index.ts#L23)

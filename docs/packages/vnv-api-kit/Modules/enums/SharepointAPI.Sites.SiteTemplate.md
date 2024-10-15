@@ -24,7 +24,7 @@ with the `SiteTemplate` type.
 
 #### Defined in
 
-[src/sharepoint/sites/index.ts:29](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/sites/index.ts#L29)
+[src/sharepoint/sites/index.ts:29](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/sites/index.ts#L29)
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 #### Defined in
 
-[src/sharepoint/sites/index.ts:30](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/sites/index.ts#L30)
+[src/sharepoint/sites/index.ts:30](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/sites/index.ts#L30)

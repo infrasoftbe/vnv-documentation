@@ -28,4 +28,4 @@
 
 #### Defined in
 
-[src/session/layers/sessions/project/commit/index.ts:6](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/session/layers/sessions/project/commit/index.ts#L6)
+[src/session/layers/sessions/project/commit/index.ts:6](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/session/layers/sessions/project/commit/index.ts#L6)

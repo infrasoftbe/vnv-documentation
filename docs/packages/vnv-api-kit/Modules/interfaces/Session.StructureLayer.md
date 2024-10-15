@@ -31,7 +31,7 @@
 
 #### Defined in
 
-[src/session/layers/sessions/project/structures/index.ts:32](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/session/layers/sessions/project/structures/index.ts#L32)
+[src/session/layers/sessions/project/structures/index.ts:32](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/session/layers/sessions/project/structures/index.ts#L32)
 
 ## Methods
 
@@ -51,7 +51,7 @@
 
 #### Defined in
 
-[src/session/layers/sessions/project/structures/index.ts:29](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/session/layers/sessions/project/structures/index.ts#L29)
+[src/session/layers/sessions/project/structures/index.ts:29](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/session/layers/sessions/project/structures/index.ts#L29)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[src/session/layers/sessions/project/structures/index.ts:31](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/session/layers/sessions/project/structures/index.ts#L31)
+[src/session/layers/sessions/project/structures/index.ts:31](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/session/layers/sessions/project/structures/index.ts#L31)
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 #### Defined in
 
-[src/session/layers/sessions/project/structures/index.ts:28](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/session/layers/sessions/project/structures/index.ts#L28)
+[src/session/layers/sessions/project/structures/index.ts:28](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/session/layers/sessions/project/structures/index.ts#L28)
 
 ___
 
@@ -105,4 +105,4 @@ ___
 
 #### Defined in
 
-[src/session/layers/sessions/project/structures/index.ts:30](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/session/layers/sessions/project/structures/index.ts#L30)
+[src/session/layers/sessions/project/structures/index.ts:30](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/session/layers/sessions/project/structures/index.ts#L30)

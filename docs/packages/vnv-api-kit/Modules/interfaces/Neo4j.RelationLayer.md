@@ -31,7 +31,7 @@
 
 #### Defined in
 
-src/neo4j/layers/relations.ts:7
+[src/neo4j/layers/relations.ts:7](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/relations.ts#L7)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/relations.ts:9
+[src/neo4j/layers/relations.ts:9](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/relations.ts#L9)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/relations.ts:6
+[src/neo4j/layers/relations.ts:6](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/relations.ts#L6)
 
 ___
 
@@ -85,4 +85,4 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/relations.ts:8
+[src/neo4j/layers/relations.ts:8](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/relations.ts#L8)

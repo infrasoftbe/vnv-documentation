@@ -31,7 +31,7 @@
 
 #### Defined in
 
-[src/sharepoint/pages/index.ts:13](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/pages/index.ts#L13)
+[src/sharepoint/pages/index.ts:13](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/pages/index.ts#L13)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 #### Defined in
 
-[src/sharepoint/pages/index.ts:42](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/pages/index.ts#L42)
+[src/sharepoint/pages/index.ts:42](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/pages/index.ts#L42)
 
 ## Functions
 
@@ -70,4 +70,4 @@ to managing pages.
 
 #### Defined in
 
-[src/sharepoint/pages/index.ts:96](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/pages/index.ts#L96)
+[src/sharepoint/pages/index.ts:96](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/pages/index.ts#L96)

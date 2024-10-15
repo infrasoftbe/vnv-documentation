@@ -28,7 +28,7 @@ should be a string.
 
 #### Defined in
 
-[src/sharepoint/parts/index.ts:29](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/parts/index.ts#L29)
+[src/sharepoint/parts/index.ts:29](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/parts/index.ts#L29)
 
 ___
 
@@ -43,4 +43,4 @@ meaning it can be omitted when using the interface. The `boolean` type indicates
 
 #### Defined in
 
-[src/sharepoint/parts/index.ts:23](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/parts/index.ts#L23)
+[src/sharepoint/parts/index.ts:23](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/parts/index.ts#L23)

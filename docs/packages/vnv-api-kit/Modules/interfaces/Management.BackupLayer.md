@@ -26,7 +26,7 @@
 
 #### Defined in
 
-[src/management/layers/backup/index.ts:8](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/management/layers/backup/index.ts#L8)
+[src/management/layers/backup/index.ts:8](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/management/layers/backup/index.ts#L8)
 
 ## Methods
 
@@ -40,7 +40,7 @@
 
 #### Defined in
 
-[src/management/layers/backup/index.ts:6](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/management/layers/backup/index.ts#L6)
+[src/management/layers/backup/index.ts:6](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/management/layers/backup/index.ts#L6)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-[src/management/layers/backup/index.ts:7](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/management/layers/backup/index.ts#L7)
+[src/management/layers/backup/index.ts:7](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/management/layers/backup/index.ts#L7)
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 #### Defined in
 
-[src/management/layers/backup/index.ts:9](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/management/layers/backup/index.ts#L9)
+[src/management/layers/backup/index.ts:9](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/management/layers/backup/index.ts#L9)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 #### Defined in
 
-[src/management/layers/backup/index.ts:5](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/management/layers/backup/index.ts#L5)
+[src/management/layers/backup/index.ts:5](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/management/layers/backup/index.ts#L5)
 
 ___
 
@@ -96,4 +96,4 @@ ___
 
 #### Defined in
 
-[src/management/layers/backup/index.ts:10](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/management/layers/backup/index.ts#L10)
+[src/management/layers/backup/index.ts:10](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/management/layers/backup/index.ts#L10)

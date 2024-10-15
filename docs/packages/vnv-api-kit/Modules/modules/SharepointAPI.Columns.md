@@ -64,4 +64,4 @@ The function `Columns` returns an object of type `IQueryColumns`.
 
 #### Defined in
 
-[src/sharepoint/columns/index.ts:85](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/columns/index.ts#L85)
+[src/sharepoint/columns/index.ts:85](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/columns/index.ts#L85)

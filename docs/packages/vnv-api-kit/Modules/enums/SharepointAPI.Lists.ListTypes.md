@@ -24,7 +24,7 @@ these values as options when working with lists in the code.
 
 #### Defined in
 
-[src/sharepoint/lists/index.ts:29](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/lists/index.ts#L29)
+[src/sharepoint/lists/index.ts:29](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/lists/index.ts#L29)
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 #### Defined in
 
-[src/sharepoint/lists/index.ts:28](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/lists/index.ts#L28)
+[src/sharepoint/lists/index.ts:28](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/lists/index.ts#L28)

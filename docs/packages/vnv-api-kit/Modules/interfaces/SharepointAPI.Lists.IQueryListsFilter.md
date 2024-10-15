@@ -26,4 +26,4 @@ represents the title of a list and is used as a filter when querying lists in a 
 
 #### Defined in
 
-[src/sharepoint/lists/index.ts:128](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/lists/index.ts#L128)
+[src/sharepoint/lists/index.ts:128](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/lists/index.ts#L128)

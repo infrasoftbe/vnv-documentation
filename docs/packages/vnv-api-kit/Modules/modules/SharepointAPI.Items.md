@@ -45,4 +45,4 @@ an object of type `IQueryItems`.
 
 #### Defined in
 
-[src/sharepoint/items/index.ts:69](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/items/index.ts#L69)
+[src/sharepoint/items/index.ts:69](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/items/index.ts#L69)

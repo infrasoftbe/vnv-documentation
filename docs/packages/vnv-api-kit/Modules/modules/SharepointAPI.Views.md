@@ -47,4 +47,4 @@ to querying, creating, updating, and deleting views.
 
 #### Defined in
 
-[src/sharepoint/views/index.ts:82](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/views/index.ts#L82)
+[src/sharepoint/views/index.ts:82](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/views/index.ts#L82)

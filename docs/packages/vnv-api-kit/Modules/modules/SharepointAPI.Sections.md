@@ -44,4 +44,4 @@ related to sections.
 
 #### Defined in
 
-[src/sharepoint/sections/index.ts:61](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/sections/index.ts#L61)
+[src/sharepoint/sections/index.ts:61](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/sections/index.ts#L61)

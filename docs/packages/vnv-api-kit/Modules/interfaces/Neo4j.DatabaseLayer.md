@@ -26,4 +26,4 @@
 
 #### Defined in
 
-src/neo4j/layers/database.ts:9
+[src/neo4j/layers/database.ts:9](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/database.ts#L9)

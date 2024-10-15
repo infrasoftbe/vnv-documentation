@@ -51,7 +51,7 @@
 
 #### Defined in
 
-[dist/fetch-factory/batcher.fallback.query.d.ts:23](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.fallback.query.d.ts#L23)
+[dist/fetch-factory/batcher.fallback.query.d.ts:23](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.fallback.query.d.ts#L23)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.fallback.query.d.ts:22](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.fallback.query.d.ts#L22)
+[dist/fetch-factory/batcher.fallback.query.d.ts:22](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.fallback.query.d.ts#L22)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.fallback.query.d.ts:24](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.fallback.query.d.ts#L24)
+[dist/fetch-factory/batcher.fallback.query.d.ts:24](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.fallback.query.d.ts#L24)
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.fallback.query.d.ts:14](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.fallback.query.d.ts#L14)
+[dist/fetch-factory/batcher.fallback.query.d.ts:14](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.fallback.query.d.ts#L14)
 
 ___
 
@@ -121,7 +121,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.fallback.query.d.ts:29](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.fallback.query.d.ts#L29)
+[dist/fetch-factory/batcher.fallback.query.d.ts:29](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.fallback.query.d.ts#L29)
 
 ___
 
@@ -161,7 +161,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.fallback.query.d.ts:27](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.fallback.query.d.ts#L27)
+[dist/fetch-factory/batcher.fallback.query.d.ts:27](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.fallback.query.d.ts#L27)
 
 ___
 
@@ -201,7 +201,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.fallback.query.d.ts:28](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.fallback.query.d.ts#L28)
+[dist/fetch-factory/batcher.fallback.query.d.ts:28](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.fallback.query.d.ts#L28)
 
 ___
 
@@ -235,7 +235,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.fallback.query.d.ts:25](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.fallback.query.d.ts#L25)
+[dist/fetch-factory/batcher.fallback.query.d.ts:25](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.fallback.query.d.ts#L25)
 
 ___
 
@@ -269,7 +269,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.fallback.query.d.ts:26](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.fallback.query.d.ts#L26)
+[dist/fetch-factory/batcher.fallback.query.d.ts:26](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.fallback.query.d.ts#L26)
 
 ___
 
@@ -283,7 +283,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.fallback.query.d.ts:15](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.fallback.query.d.ts#L15)
+[dist/fetch-factory/batcher.fallback.query.d.ts:15](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.fallback.query.d.ts#L15)
 
 ## Accessors
 
@@ -301,7 +301,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.fallback.query.d.ts:30](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.fallback.query.d.ts#L30)
+[dist/fetch-factory/batcher.fallback.query.d.ts:30](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.fallback.query.d.ts#L30)
 
 ___
 
@@ -319,7 +319,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.fallback.query.d.ts:16](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.fallback.query.d.ts#L16)
+[dist/fetch-factory/batcher.fallback.query.d.ts:16](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.fallback.query.d.ts#L16)
 
 ___
 
@@ -337,7 +337,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.fallback.query.d.ts:17](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.fallback.query.d.ts#L17)
+[dist/fetch-factory/batcher.fallback.query.d.ts:17](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.fallback.query.d.ts#L17)
 
 ___
 
@@ -355,7 +355,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.fallback.query.d.ts:18](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.fallback.query.d.ts#L18)
+[dist/fetch-factory/batcher.fallback.query.d.ts:18](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.fallback.query.d.ts#L18)
 
 ___
 
@@ -373,4 +373,4 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.fallback.query.d.ts:19](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.fallback.query.d.ts#L19)
+[dist/fetch-factory/batcher.fallback.query.d.ts:19](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.fallback.query.d.ts#L19)

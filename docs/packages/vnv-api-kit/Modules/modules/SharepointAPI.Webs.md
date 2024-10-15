@@ -44,4 +44,4 @@ The function `Webs` returns an object of type `IQueryWebs`.
 
 #### Defined in
 
-[src/sharepoint/webs/index.ts:132](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/webs/index.ts#L132)
+[src/sharepoint/webs/index.ts:132](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/webs/index.ts#L132)

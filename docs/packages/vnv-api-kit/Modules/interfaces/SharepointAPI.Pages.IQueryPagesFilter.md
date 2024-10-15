@@ -24,4 +24,4 @@ is provided, only the pages with matching titles will be returned in the query r
 
 #### Defined in
 
-[src/sharepoint/pages/index.ts:21](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/src/sharepoint/pages/index.ts#L21)
+[src/sharepoint/pages/index.ts:21](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/sharepoint/pages/index.ts#L21)

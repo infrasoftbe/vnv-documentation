@@ -43,7 +43,7 @@
 
 #### Defined in
 
-src/neo4j/layers/nodes.ts:54
+[src/neo4j/layers/nodes.ts:54](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/nodes.ts#L54)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/nodes.ts:56
+[src/neo4j/layers/nodes.ts:56](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/nodes.ts#L56)
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/nodes.ts:53
+[src/neo4j/layers/nodes.ts:53](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/nodes.ts#L53)
 
 ___
 
@@ -109,4 +109,4 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/nodes.ts:55
+[src/neo4j/layers/nodes.ts:55](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/src/neo4j/layers/nodes.ts#L55)

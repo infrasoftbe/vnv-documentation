@@ -54,7 +54,7 @@
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:143](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L143)
+[dist/fetch-factory/batcher.d.ts:143](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L143)
 
 ## Properties
 
@@ -64,7 +64,7 @@
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:122](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L122)
+[dist/fetch-factory/batcher.d.ts:122](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L122)
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:150](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L150)
+[dist/fetch-factory/batcher.d.ts:150](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L150)
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:145](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L145)
+[dist/fetch-factory/batcher.d.ts:145](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L145)
 
 ## Accessors
 
@@ -138,7 +138,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:141](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L141)
+[dist/fetch-factory/batcher.d.ts:141](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L141)
 
 ___
 
@@ -156,7 +156,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:142](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L142)
+[dist/fetch-factory/batcher.d.ts:142](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L142)
 
 ___
 
@@ -179,7 +179,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:124](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L124)
+[dist/fetch-factory/batcher.d.ts:124](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L124)
 
 ___
 
@@ -197,7 +197,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:123](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L123)
+[dist/fetch-factory/batcher.d.ts:123](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L123)
 
 ___
 
@@ -215,7 +215,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:140](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L140)
+[dist/fetch-factory/batcher.d.ts:140](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L140)
 
 ___
 
@@ -233,7 +233,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:128](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L128)
+[dist/fetch-factory/batcher.d.ts:128](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L128)
 
 ___
 
@@ -263,7 +263,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:129](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L129)
+[dist/fetch-factory/batcher.d.ts:129](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L129)
 
 ## Methods
 
@@ -290,7 +290,7 @@ En définissant le niveau de simultanéité, vous pouvez contrôler le nombre de
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:144](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L144)
+[dist/fetch-factory/batcher.d.ts:144](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L144)
 
 ___
 
@@ -322,7 +322,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:149](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L149)
+[dist/fetch-factory/batcher.d.ts:149](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L149)
 
 ___
 
@@ -349,7 +349,7 @@ La méthode `end` prend un seul paramètre `callback` de type `onEndCallback`, q
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:146](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L146)
+[dist/fetch-factory/batcher.d.ts:146](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L146)
 
 ___
 
@@ -376,7 +376,7 @@ Utilisée pour enregistrer les écouteurs d'événements pour les événements d
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:151](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L151)
+[dist/fetch-factory/batcher.d.ts:151](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L151)
 
 ___
 
@@ -413,7 +413,7 @@ Ce tableau contient des informations sur la progression de chaque tâche par lot
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:147](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L147)
+[dist/fetch-factory/batcher.d.ts:147](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L147)
 
 ___
 
@@ -446,7 +446,7 @@ Utilisée pour ajouter une nouvelle fonction de contrôleur à la file d'attente
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:148](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L148)
+[dist/fetch-factory/batcher.d.ts:148](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L148)
 
 ___
 
@@ -479,7 +479,7 @@ qui ne s'exécutera que si l'élément observé a été exécuté (passage de l'
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:152](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L152)
+[dist/fetch-factory/batcher.d.ts:152](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L152)
 
 ___
 
@@ -500,7 +500,7 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:154](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L154)
+[dist/fetch-factory/batcher.d.ts:154](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L154)
 
 ___
 
@@ -525,4 +525,4 @@ ___
 
 #### Defined in
 
-[dist/fetch-factory/batcher.d.ts:153](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/783d42b/dist/fetch-factory/batcher.d.ts#L153)
+[dist/fetch-factory/batcher.d.ts:153](https://github.com/infrasoftbe/Infrasoft-vnv-api-kit/blob/63c0e77/dist/fetch-factory/batcher.d.ts#L153)
