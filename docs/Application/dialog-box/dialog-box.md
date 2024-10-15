@@ -79,6 +79,7 @@ import React from 'react';
 import { useDialog } from '<path-to>/dialog-context';
 
 const ItemDetailsButton = ({ item }) => {
+
   const {
     factory,
     setOnConfirm,
@@ -107,7 +108,28 @@ const ItemDetailsButton = ({ item }) => {
       </div>
     );
 
-    showDialog(); // Afficher la modale
+    // OU
+
+    factory( () => {
+
+      setOnConfirm(async () => {
+        hideDialog();
+      });
+
+      setOnCancel(async () => {
+        hideDialog();
+      });
+
+      return (
+        <div>
+          <h3>Détails de l'élément</h3>
+          <p>Nom : {item.name}</p>
+          <p>Description : {item.description}</p>
+          <p>Prix : {item.price} €</p>
+        </div>
+      );
+
+    });
   };
 
   return (
