@@ -46,7 +46,7 @@
 
 #### Defined in
 
-src/neo4j/layers/nodes.ts:12
+src/neo4j/layers/nodes.ts:14
 
 ## Variables
 
@@ -56,7 +56,7 @@ src/neo4j/layers/nodes.ts:12
 
 #### Defined in
 
-src/neo4j/layers/nodes.ts:46
+src/neo4j/layers/nodes.ts:50
 
 ## Functions
 
@@ -76,7 +76,7 @@ src/neo4j/layers/nodes.ts:46
 
 #### Defined in
 
-src/neo4j/layers/database.ts:11
+src/neo4j/layers/database.ts:18
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/flows.ts:53
+src/neo4j/layers/flows.ts:52
 
 ___
 
@@ -176,7 +176,7 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/nodes.ts:55
+src/neo4j/layers/nodes.ts:59
 
 ___
 
@@ -196,7 +196,7 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/projects.ts:28
+src/neo4j/layers/projects.ts:26
 
 ___
 

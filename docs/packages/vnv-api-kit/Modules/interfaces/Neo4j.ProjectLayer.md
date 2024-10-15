@@ -22,11 +22,11 @@
 
 ### layers
 
-• **layers**: `Omit`\<[`NodeKindLayers`](../modules/Neo4j.md#nodekindlayers), ``"Structures"`` \| ``"Lists"`` \| ``"Structure_childs"`` \| ``"List_childs"``\> & \{ `Flows`: `LayerFactory`\<[`FlowLayer`](Neo4j.FlowLayer.md)\> ; `Lists`: `LayerFactory`\<[`ListLayer`](Neo4j.ListLayer.md)\> ; `Metadatas`: `LayerFactory`\<[`MetadataLayer`](Neo4j.MetadataLayer.md)\> ; `Nodes`: `LayerFactory`\<[`NodeLayer`](Neo4j.NodeLayer.md)\<`NodeType`\>\> ; `Relations`: `LayerFactory`\<[`RelationLayer`](Neo4j.RelationLayer.md)\> ; `Structures`: `LayerFactory`\<[`StructureLayer`](Neo4j.StructureLayer.md)\>  }
+• **layers**: `Omit`\<[`NodeKindLayers`](../modules/Neo4j.md#nodekindlayers), ``"Structures"`` \| ``"Lists"`` \| ``"Structure_childs"`` \| ``"List_childs"``\> & \{ `Lists`: `LayerFactory`\<[`ListLayer`](Neo4j.ListLayer.md)\> ; `Metadatas`: `LayerFactory`\<[`MetadataLayer`](Neo4j.MetadataLayer.md)\> ; `Nodes`: `LayerFactory`\<[`NodeLayer`](Neo4j.NodeLayer.md)\<`NodeType`\>\> ; `Relations`: `LayerFactory`\<[`RelationLayer`](Neo4j.RelationLayer.md)\> ; `Structures`: `LayerFactory`\<[`StructureLayer`](Neo4j.StructureLayer.md)\>  }
 
 #### Defined in
 
-src/neo4j/layers/projects.ts:18
+src/neo4j/layers/projects.ts:17
 
 ## Methods
 
@@ -46,7 +46,7 @@ src/neo4j/layers/projects.ts:18
 
 #### Defined in
 
-src/neo4j/layers/projects.ts:15
+src/neo4j/layers/projects.ts:14
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/projects.ts:17
+src/neo4j/layers/projects.ts:16
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/projects.ts:13
+src/neo4j/layers/projects.ts:12
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/projects.ts:14
+src/neo4j/layers/projects.ts:13
 
 ___
 
@@ -114,4 +114,4 @@ ___
 
 #### Defined in
 
-src/neo4j/layers/projects.ts:16
+src/neo4j/layers/projects.ts:15

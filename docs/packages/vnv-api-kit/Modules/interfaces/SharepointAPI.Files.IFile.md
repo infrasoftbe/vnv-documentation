@@ -424,7 +424,7 @@ Checks the file in to a document library based on the check-in type.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `comment?` | `string` | A comment for the check-in. Its length must be 1023. |
+| `comment?` | `string` | A comment for the check-in. Its length must be < 1023. |
 | `checkinType?` | `CheckinType` | The check-in type for the file. |
 
 #### Returns
