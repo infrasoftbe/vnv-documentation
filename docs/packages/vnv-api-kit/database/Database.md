@@ -39,6 +39,9 @@ Neo4jAPI().Projects().get<[]>();
 // Get one project
 Neo4jAPI().Projects("projectId").get();
 
+// Get one project + children
+Neo4jAPI().Projects("projectId").getAll();
+
 // Create one project
 Neo4jAPI().Projects().create({ ...project... });
 

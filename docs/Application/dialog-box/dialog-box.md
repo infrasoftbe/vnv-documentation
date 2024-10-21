@@ -1,5 +1,12 @@
 # Dialog-box
 
+- Comment on ouvre
+- Comment on injecte du contenu
+- Comment on redéfinis les handlers
+- Comment on handle les actions
+- Comment on ferme la fenêtre
+- Comment on Hide/Show
+
 Ce composant est un outil centralisé pour gérer les modales dans notre projet. Il permet d'afficher des fenêtres modales (confirmations, alertes, formulaires, etc.) depuis n'importe où dans l'application, de manière simple et uniforme.
 
 ## Contexte
