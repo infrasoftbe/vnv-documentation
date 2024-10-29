@@ -20,6 +20,44 @@ ManagementAPI().Projects( "projectId" ).archive();
 ManagementAPI().Projects( "projectId" ).delete();
 ```
 
+## Default Project
+
+```tsx
+
+ManagementAPI().Projects('default').get();
+
+ManagementAPI().Projects('default')
+.Users().get<[]>();
+
+ManagementAPI().Projects('default')
+.Users( "userId" ).get();
+
+ManagementAPI().Projects('default')
+.Users().create({ ...user... });
+
+ManagementAPI().Projects('default')
+.Users( "userId" ).update({ ...user... });
+
+ManagementAPI().Projects('default')
+.Users( "userId" ).delete();
+
+ManagementAPI().Projects('default')
+.Groups().get<[]>();
+
+ManagementAPI().Projects('default')
+.Groups( "groupId" ).get();
+
+ManagementAPI().Projects('default')
+.Groups().create({ ...group... });
+
+ManagementAPI().Projects('default')
+.Groups( "groupId" ).update({ ...group... });
+
+ManagementAPI().Projects('default')
+.Groups( "groupId" ).delete();
+
+```
+
 ### Documents
 
 ```tsx
