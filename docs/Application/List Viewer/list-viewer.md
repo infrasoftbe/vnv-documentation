@@ -25,6 +25,7 @@ The `ListViewer3` component is a customizable table that uses data passed in the
 
 - **actionInColumn** (`{ columnKey: string, action: (row: RowData) => JSX.Element }`): Adds a specific button in a selected column, using `columnKey` to target the column and `action` to specify the button component.
 
+
 #### **`ListViewer3` Component**
 
 ```typescript
@@ -118,6 +119,8 @@ export const ListViewer3: React.FC<ListViewerDataProps> = ({ tableData }) => {
   );
 };
 
+```
+
 ### Example of `tableData` Object
 
 The example below shows how to configure `tableData` to feed data into the `ListViewer3` component. Columns, rows, actions, and conditional actions within a column are configured in this object.
@@ -192,3 +195,4 @@ const tableData: TableData = {
     ),
   },
 };
+```
