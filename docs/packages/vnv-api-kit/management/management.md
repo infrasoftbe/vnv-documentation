@@ -13,6 +13,9 @@ ManagementAPI().Projects().get<[]>();
 // Get one project
 ManagementAPI().Projects( "projectId" ).get();
 
+// Get one project configuration
+ManagementAPI().Projects( "projectId" ).config();
+
 // Get one project's archive
 ManagementAPI().Projects( "projectId" ).archive();
 
@@ -20,42 +23,32 @@ ManagementAPI().Projects( "projectId" ).archive();
 ManagementAPI().Projects( "projectId" ).delete();
 ```
 
-## Default Project
+### Users
 
-```tsx
-
-ManagementAPI().Projects('default').get();
-
-ManagementAPI().Projects('default')
+```ts
+// Get all users
+ManagementAPI().Projects('projectId')
 .Users().get<[]>();
 
-ManagementAPI().Projects('default')
+// Get one user
+ManagementAPI().Projects('projectId')
 .Users( "userId" ).get();
 
-ManagementAPI().Projects('default')
+// Create one user
+ManagementAPI().Projects('projectId')
 .Users().create({ ...user... });
 
-ManagementAPI().Projects('default')
+// Update one user
+ManagementAPI().Projects('projectId')
 .Users( "userId" ).update({ ...user... });
 
-ManagementAPI().Projects('default')
+// Deploy default user configuration to project
+ManagementAPI().Projects('projectId')
+.Users( "userId" ).deploy({ ...user... });
+
+// Delete one user
+ManagementAPI().Projects('projectId')
 .Users( "userId" ).delete();
-
-ManagementAPI().Projects('default')
-.Groups().get<[]>();
-
-ManagementAPI().Projects('default')
-.Groups( "groupId" ).get();
-
-ManagementAPI().Projects('default')
-.Groups().create({ ...group... });
-
-ManagementAPI().Projects('default')
-.Groups( "groupId" ).update({ ...group... });
-
-ManagementAPI().Projects('default')
-.Groups( "groupId" ).delete();
-
 ```
 
 ### Documents
@@ -111,4 +104,29 @@ ManagementAPI().Projects( "projectId" )
 ```tsx
 // Delete all project from database
 MangementAPI().DB().Projects( "projectId" ).delete()
+```
+
+## Default Project
+
+```tsx
+ManagementAPI().Projects('default').get();
+
+ManagementAPI().Projects('default')
+.Users().get<[]>();
+
+ManagementAPI().Projects('default')
+.Users( "userId" ).get();
+
+ManagementAPI().Projects('default')
+.Users().create({ ...user... });
+
+ManagementAPI().Projects('default')
+.Users( "userId" ).update({ ...user... });
+
+ManagementAPI().Projects('default')
+.Users( "userId" ).deploy({ ...user... });
+
+ManagementAPI().Projects('default')
+.Users( "userId" ).delete();
+
 ```
