@@ -6,6 +6,8 @@
 - `--read`
 - `--write`
 - `--delete`
+- `--import`
+- `--export`
 
 ## Selecteurs
 
