@@ -51,6 +51,34 @@ ManagementAPI().Projects('projectId')
 .Users( "userId" ).delete();
 ```
 
+### Groups
+
+```ts
+// Get all groups
+ManagementAPI().Projects('projectId')
+.Groups().get<[]>();
+
+// Get one group
+ManagementAPI().Projects('projectId')
+.Groups( "groupId" ).get();
+
+// Create one group
+ManagementAPI().Projects('projectId')
+.Groups().create({ ...group... });
+
+// Update one group
+ManagementAPI().Projects('projectId')
+.Groups( "groupId" ).update({ ...group... });
+
+// Deploy default group configuration to project
+ManagementAPI().Projects('projectId')
+.Groups( "groupId" ).deploy({ ...group... });
+
+// Delete one group
+ManagementAPI().Projects('projectId')
+.Groups( "groupId" ).delete();
+```
+
 ### Documents
 
 ```tsx
