@@ -1,109 +1,173 @@
 # Rights
 
-## Operations
+Ce module de gestion des droits permet de définir des règles d’accès précises pour des modules, des items et des champs. Chaque règle est structurée en utilisant une syntaxe standardisée de sélecteurs et d’opérations.
 
-- `--*`
-- `--read`
-- `--write`
-- `--delete`
-- `--import`
-- `--export`
+## Structure de la Syntaxe
 
-## Selecteurs
+Chaque règle est composée de plusieurs éléments de sélecteur, permettant d’indiquer :
 
-### Modules
+- Les Modules ciblés (un ou plusieurs).
+- Les Items associés aux modules.
+- Les Champs d’items.
+- Les Métadonnées et les champs associés aux couches de métadonnées.
 
-`${{modulename}}`
+Des Opérations spécifiques peuvent être appliquées sur chaque type d’élément.
 
-### Items
+## Sélecteurs
 
-`__{{itemname}}`
+Les sélecteurs définissent les composants de la hiérarchie de permissions. Voici la syntaxe pour chaque type de sélecteur :
 
-### Fields
+- Modules : `$[NomModule1]$[NomModule2]$...` **ou** `$*` — Sélectionne un module ou une hiérarchie de modules.
+- Items : `__[NomItem | *]` — Sélectionne un item spécifique ou tous les items.
+- Champs : `:f&[NomChamp | *]` — Sélectionne un champ d’item spécifique ou tous les champs.
+- Couches de métadonnées : `:m.[NomCouche1].[NomCouche2]` **ou** `:m*` — Sélectionne une couche de métadonnées spécifique ou toute les couches.
+- Champs de métadonnées : `:m.[NomCouche | *]:f&[NomChampMeta | *]` — Sélectionne un champ spécifique dans une couche de métadonnées ou tout les champs.
 
-`:f&{{fieldname}}`
+## Opérations
 
-### Matadata layers
+Chaque règle peut appliquer une ou plusieurs opérations sur le module, l’item ou le champ spécifié :
 
-`:m.{{layerX}}.{{layerY}}`
+- `--* :` toutes les opérations
+- `--read` : lecture ( ⚠️par défaut `true` si un **Item** ou **Field** est spécifié⚠️ )
+- `--write` : écriture
+- `--delete` : suppression
+- `--import` : importation
+- `--export` : exportation
 
-### Metadata fields
+### Modificateur de Requête sur les Items (NOT YET IMPLEMENTED)
 
-`:m.{{layerX}}.{{layerY}}:f&{{metafieldname}}`
+Un item peut être sélectionné via une requête, utilisant la syntaxe suivante pour spécifier un item répondant à certains critères :
 
-## Query Selecteur
-
-`__{{itemname}}(WHERE:f:token = "token"&&:f:id = "id")`
-
-## Exmples de Concepts
-
-### Comprendre les concaténations
-
-```ts
-[
-  // All operations permited on all modules
-  "&*--*"
-
-  // Module `structureren`, allow all operations on node
-  "...$Structureren__node--*"
-  // Module `structureren`, allow read operation on metadata field `description`
-  "...$Structureren__structure:m:f:description--read",
-  // Module `structureren`, allow read operation for list `listId` on metadata field `description`
-  "...$Structureren__list(WHERE:f:id=`listId`):m:f:description--read",
-]
+```tsx
+__{{itemname}}(WHERE:f:token = "token"&&:f:id = "id")
 ```
 
-### Comprendre le cascading
+## Exemples de Syntaxe
 
-```ts
-[
-  // Module `structureren`, allow read operation on metadata field `description`
-  "...$Structureren__structure:m:f:description--read",
-  // Module `structureren`, allow read operation for list `listId` on metadata field `description`
-  "...$Structureren__list(WHERE:f:id=`listId`):m:f:description--*",
-]
+Voici des exemples concrets pour illustrer les possibilités de la syntaxe et des sélecteurs.
+
+### Exemple de Configuration d’Administrateur
+
+```tsx
+const rights = [
+  // Autorise toutes les opérations sur tous les items de tous les modules
+  "$*__*--*",
+  // Autorise toutes les opérations sur tous les champs de tous les items pour tous les modules
+  "$*__*:f&*--*",
+  // Autorise toutes les opérations sur tous les champs de toutes les couches de métadonnées pour chaque item de tous les modules
+  "$*__*:m*:f&*--*",
+];
 ```
 
-## Exemples avec 
+### Exemples Génériques
 
-```typescript
+Ces exemples montrent des configurations plus spécifiques, ciblant des modules, des items, ou des champs particuliers.
 
-Rights.push( "$ManagementSupport$ExecutionInformationSystem$ConfigurationManager$Structureren__structure:m:f:description--read" );
-Rights.push( "$ManagementSupport$ExecutionInformationSystem$ConfigurationManager$Structureren__list(WHERE:f:id=`listId`):m:f:description--*" );
+```tsx
+const rights = [
+  // Autorise toutes les opérations sur le champ `description` de tous les items du module `SupportKnowledge`
+  "$SupportKnowledge$*__*:f&description--*",
 
-let rights = Rights.json();
-// 
+  // Autorise toutes les opérations sur le champ `token` de tous les items du module `OperationalSupport`
+  "$OperationalSupport$*__*:f&token--*",
+
+  // Autorise l'opération `create` sur le champ `description` de l'item `work` du module `SupportKnowledge`
+  "$SupportKnowledge$*__work:f&description--create",
+];
+```
+
+### Exemples Avancés de Cascade et Filtrage
+
+Ces exemples montrent comment restreindre les permissions en utilisant des couches de métadonnées et des requêtes de sélection d’items.
+
+```tsx
+const rights = [
+  // Autorise l'opération `read` sur le champ `description` d'un item de métadonnée dans le module `Structureren`
+  "$ManagementSupport$ExecutionInformationSystem$ConfigurationManager$Structureren__structure:m:f:description--read",
+  // Autorise toutes les opérations pour le champ `description` de l'item ayant l'ID `listId` dans une couche de métadonnées
+  "$ManagementSupport$ExecutionInformationSystem$ConfigurationManager$Structureren__list(WHERE:f:id=`listId`):m:f:description--*",
+];
+```
+
+### Fonctionnalités et Cascade des Permissions
+
+Les permissions s’appliquent avec une hiérarchie en cascade :
+
+- Modules : Les droits peuvent être attribués à des modules entiers ou à des sous-modules en utilisant un * pour capturer tous les sous-modules.
+- Items : Chaque item d’un module peut avoir des permissions spécifiques.
+- Champs : Des champs spécifiques d’un item peuvent être sélectionnés pour définir des droits précis.
+- Métadonnées : Les permissions sur les métadonnées sont structurées avec des couches, permettant d’accéder à des niveaux spécifiques de métadonnées.
+
+#### Exemple de Cascade
+
+Les règles de cascade permettent de définir des droits globaux ou spécifiques selon la hiérarchie. Par exemple :
+
+```tsx
+const rights = [
+  // Permet l'opération `read` pour le champ `description` dans les métadonnées d'un item du module `Structureren`
+  "$ManagementSupport$ExecutionInformationSystem$ConfigurationManager$Structureren__structure:m:f:description--read",
+  // Autorise toutes les opérations sur le champ `description` pour une liste spécifique d'items dans `Structureren`
+  "$ManagementSupport$ExecutionInformationSystem$ConfigurationManager$Structureren__list(WHERE:f:id=`listId`):m:f:description--*",
+];
+```
+
+Dans cet exemple :
+
+- La première règle limite les droits au champ description en mode read dans les métadonnées.
+- La seconde règle applique toutes les opérations sur le champ description pour un item spécifique dans une liste, illustrant ainsi la flexibilité des permissions de métadonnées.
+
+## Implémentation
+
+### Import dans un projet
+
+```tsx
+import { Management } from '@infrasoftbe/infrasoft-vnv-api-kit'
+```
+
+Chaque règle de droits est traduite dans un objet JSON facilitant l’accès aux données par les modules de l’application.
+
+#### Exemple de Résultat JSON
+
+```tsx
+import { Management } from '@infrasoftbe/infrasoft-vnv-api-kit'
+
+let rights = Management.Rights([
+  "$ManagementSupport$ExecutionInformationSystem$ConfigurationManager$Structureren__structure:m:f:description--read",
+  "$ManagementSupport$ExecutionInformationSystem$ConfigurationManager$Structureren__list(WHERE:f:id=`listId`):m:f:description--*",
+]);
+
+conosle.log({ rights : rights.json() })
+/** Print
 {
-  ManagementSupport : {
-    ExecutionInformationSystem : {
-      ConfigurationManager : {
-        Structureren : {
-          structure : {
-            operations : {
-              read : true,
-              write : false,
-              delete : false
+  "ManagementSupport": {
+    "ExecutionInformationSystem": {
+      "ConfigurationManager": {
+        "Structureren": {
+          "structure": {
+            "operations": {
+              "read": true,
+              "write": false,
+              "delete": false
             },
-            fields : {
-              ...<fields>,
+            "fields": {
+              // Autres champs
             },
-            metadata : {
-              ...<other metadata>,
-              description : {
-                read : true,
-                write : false,
-                delete : false
+            "metadata": {
+              "description": {
+                "read": true,
+                "write": false,
+                "delete": false
               }
-              ...<other metadata>,
+              // Autres métadonnées
             }
           },
-          exept : {
-            "listId" : {
-              metadata : {
-                description : {
-                  read : true,
-                  write : true,
-                  delete : true
+          "except": {
+            "listId": {
+              "metadata": {
+                "description": {
+                  "read": true,
+                  "write": true,
+                  "delete": true
                 }
               }
             }
@@ -113,7 +177,5 @@ let rights = Rights.json();
     }
   }
 }
-// 
-
-```
-
+*/
+`
