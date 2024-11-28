@@ -1,0 +1,57 @@
+import React, { useMemo } from "react";
+import { Button } from "@patternfly/react-core";
+import Playground from "@theme/Playground";
+
+# Button
+
+<React.Fragment>
+  <Button variant="primary" ouiaId="Primary">
+    Primary
+  </Button>{" "}
+  <Button variant="secondary" ouiaId="Secondary">
+    Secondary
+  </Button>{" "}
+  <Button variant="secondary" ouiaId="DangerSecondary" isDanger>
+    Danger Secondary
+  </Button>{" "}
+  <Button variant="tertiary" ouiaId="Tertiary">
+    Tertiary
+  </Button>{" "}
+  <Button variant="danger" ouiaId="Danger">
+    Danger
+  </Button>{" "}
+  <Button variant="warning" ouiaId="Warning">
+    Warning
+  </Button>
+  <br />
+  <br />
+  <Button variant="link" isInline>
+    Inline link
+  </Button> <Button variant="link" isDanger>
+    Danger link
+  </Button>
+  <br />
+  <br />
+  <br />
+  <br />
+  <Button variant="control">Control</Button>{" "}
+</React.Fragment>
+
+## Examples
+
+<Playground
+  scope={{
+    Button,
+    useMemo,
+  }}
+>
+  {`
+  function MyButton(){
+    return <Button variant="primary">Primary</Button>;
+  }
+`}
+</Playground>
+
+### Variant examples
+
+## Disabled buttons

@@ -1,10 +1,17 @@
-import Details from '@theme/Details';
+import React, { useMemo } from 'react';
+
+import Playground from '@theme/Playground';
+import Details from "@theme/Details";
+
+import { Management } from '@infrasoftbe/infrasoft-vnv-api-kit';
+import { CodeBlock, CodeBlockCode } from '@patternfly/react-core';
 
 # Rights
 
 Ce module de gestion des droits permet de définir des règles d’accès précises pour des modules, des items et des champs. Chaque règle est structurée en utilisant une syntaxe standardisée de sélecteurs et d’opérations.
 
 [Documentation API](../../../../API/infrasoft-vnv-api-kit/functions/Management.Rights.html)
+
 ## Structure de la Syntaxe
 
 Chaque règle est composée de plusieurs éléments de sélecteur, permettant d’indiquer :
@@ -59,7 +66,7 @@ const rights = [
   "$*__*--*",
   // All_Modules -> All_Items -> All_Fields -> All_Rights
   "$*__*:f&*--*",
-   // All_Modules -> All_Items -> All_Metadata_layers -> All_Fields -> All_Rights
+  // All_Modules -> All_Items -> All_Metadata_layers -> All_Fields -> All_Rights
   "$*__*:m.*:f&*--*",
 ];
 ```
@@ -70,129 +77,297 @@ Ces exemples montrent des configurations plus spécifiques, ciblant des [modules
 
 #### Integration
 
-Importez le module [infrasoft-vnv-api-kit](../../../packages/vnv-api-kit/), Utilisez <a href="../../../../API/infrasoft-vnv-api-kit/modules/Management.html" target="_blank">Management</a> qui propose l’utilitaire <a href="../../../../API/infrasoft-vnv-api-kit/functions/Management.Rights.html" target="_blank">Rights</a>. Cet utilitaire permet d’interpréter un tableau de droits ( <a href="../../../../API/infrasoft-vnv-api-kit/classes/Management.ArrayRights.html" target="_blank">ArrayRights</a> ) en un format <a href="../../../../API/infrasoft-vnv-api-kit/classes/Management.ArrayRights.html#json" target="_blank">JSON</a>. 
+Importez le module [infrasoft-vnv-api-kit](../../../packages/vnv-api-kit/), Utilisez <a href="../../../../API/infrasoft-vnv-api-kit/modules/Management.html" target="_blank">Management</a> qui propose l’utilitaire <a href="../../../../API/infrasoft-vnv-api-kit/functions/Management.Rights.html" target="_blank">Rights</a>. Cet utilitaire permet d’interpréter un tableau de droits ( <a href="../../../../API/infrasoft-vnv-api-kit/classes/Management.ArrayRights.html" target="_blank">ArrayRights</a> ) en un format <a href="../../../../API/infrasoft-vnv-api-kit/classes/Management.ArrayRights.html#json" target="_blank">JSON</a>.
 
 ```tsx
-import { Management } from '@infrasoftbe/infrasoft-vnv-api-kit';
+import { Management } from "@infrasoftbe/infrasoft-vnv-api-kit";
 ```
 
 <Details summary="Module & Operation">
 
-  #### Code
-  ```tsx
-  import { Management } from '@infrasoftbe/infrasoft-vnv-api-kit';
+#### Code
 
-  let right = [ "$Navigator.Simple--*" ];
-  console.log( { rights : Management.Right().json() } )
-  ```
+```tsx
+import { Management } from "@infrasoftbe/infrasoft-vnv-api-kit";
 
-  #### Output
-  ```json
-  {
-    "Navigator": {
+let right = ["$Navigator.Simple--*"];
+console.log({ rights: Management.Right().json() });
+```
+
+#### Output
+
+```json
+{
+  "Navigator": {
+    "operations": {
+      "read": true
+    },
+    "Simple": {
       "operations": {
-        "read": true
+        "read": true,
+        "write": true,
+        "delete": true,
+        "import": true,
+        "export": true
       },
-      "Simple": {
-        "operations": {
-          "read": true,
-          "write": true,
-          "delete": true,
-          "import": true,
-          "export": true
-        },
-        "items": {}
-      }
+      "items": {}
     }
   }
-  ```
+}
+```
+
 </Details>
 
 <Details summary="Module & Item">
   Voici le contenu de l'accordéon. Vous pouvez y mettre tout ce que vous voulez, comme du texte, des listes ou même d'autres composants.
 
-  ```tsx
-  import { Management } from '@infrasoftbe/infrasoft-vnv-api-kit';
+#### Code
 
-  let right = [ "$Navigator.Simple__project" ];
-  console.log( { rights : Management.Right().json() } )
+```tsx
+import { Management } from "@infrasoftbe/infrasoft-vnv-api-kit";
 
-  /** Will print
-  {
-    "Navigator": {
+let right = ["$Navigator.Simple__project"];
+console.log({ rights: Management.Right().json() });
+```
+
+#### Output
+
+```json
+{
+  "Navigator": {
+    "operations": {
+      "read": true
+    },
+    "Simple": {
       "operations": {
         "read": true
       },
-      "Simple": {
-        "operations": {
-          "read": true
-        },
-        "items": {
-          "project": {
-            "operations": {
-              "read": true
-            },
-            "fields": {},
-            "metadata": {}
-          }
+      "items": {
+        "project": {
+          "operations": {
+            "read": true
+          },
+          "fields": {},
+          "metadata": {}
         }
       }
     }
   }
-  */
-  ```
+}
+```
+
 </Details>
 
 <Details summary="Cascading rights">
   Voici le contenu de l'accordéon. Vous pouvez y mettre tout ce que vous voulez, comme du texte, des listes ou même d'autres composants.
 
-  ```tsx
-  import { Management } from '@infrasoftbe/infrasoft-vnv-api-kit';
- 
-  let right = [ 
-    "$Navigator.Simple--*",
-    "$Navigator.Simple__project--import",
-    "$Navigator.Simple__project--export",
-  ];
-  console.log( { rights : Management.Right().json() } )
+#### Code
 
-  /** Will print
-  {
-    "Navigator": {
-      "operations": {
-        "read": true
-      },
-      "Simple": {
+```tsx
+import { Management } from "@infrasoftbe/infrasoft-vnv-api-kit";
+
+let right = [
+  "$Navigator.Simple--import",
+  "$Navigator.Simple--export",
+  "$Navigator.Simple--delete",
+  "$Navigator.Simple__project",
+  "$Navigator.Simple__project--delete",
+  "$Navigator.Simple__project--import",
+  "$Navigator.Simple__project--export",
+  "$Navigator.Simple__project:f&name",
+  "$Navigator.Simple__project:f&token",
+  "$Navigator.Simple__project:f&create_dt",
+  "$Navigator.Simple__project:f&update_dt",
+  "$Navigator.Simple__project:m.:f&description--write",
+];
+console.log({ rights: Management.Right().json() });
+```
+
+#### Output
+
+```json
+{
+  "operations": { "read": true },
+  "Simple": {
+    "operations": {
+      "read": true,
+      "write": false,
+      "delete": true,
+      "import": true,
+      "export": true
+    },
+    "items": {
+      "project": {
         "operations": {
           "read": true,
-          "write": true,
+          "write": false,
           "delete": true,
           "import": true,
           "export": true
         },
-        "items": {
-          "project": {
+        "fields": {
+          "name": {
             "operations": {
               "read": true,
               "write": false,
               "delete": false,
-              "import": true,
-              "export": true
-            },
-            "fields": {},
-            "metadata": {}
+              "import": false,
+              "export": false
+            }
+          },
+          "token": {
+            "operations": {
+              "read": true,
+              "write": false,
+              "delete": false,
+              "import": false,
+              "export": false
+            }
+          },
+          "create_dt": {
+            "operations": {
+              "read": true,
+              "write": false,
+              "delete": false,
+              "import": false,
+              "export": false
+            }
+          },
+          "update_dt": {
+            "operations": {
+              "read": true,
+              "write": false,
+              "delete": false,
+              "import": false,
+              "export": false
+            }
+          }
+        },
+        "metadata": {
+          "description": {
+            "operations": {
+              "read": true,
+              "write": true,
+              "delete": false,
+              "import": false,
+              "export": false
+            }
           }
         }
       }
     }
   }
-  */
-  ```
+}
+```
+
 </Details>
+
+<!-- <Playground
+  scope={{
+    React,
+    Management,
+    CodeBlock,
+    CodeBlockCode
+  }}
+  transformCode={(code) => `
+    (() => {
+      ${code}
+    })()
+  `}
+>
+  {`
+  function TestZone(){
+
+    let [ rights , setRights ] = React.useState([
+      "$Navigator.Simple"
+    ]);
+    let [ jsonRights , setJsonRights ] = React.useState(null);
+
+    React.useEffect(() => {
+      setJsonRights( Management.Rights( rights ).json() );
+    });
+
+    return <CodeBlock>
+      <CodeBlockCode>{JSON.stringify( jsonRights || {} , null , '\t' )}</CodeBlockCode>
+    </CodeBlock>;
+  }
+`}
+</Playground> -->
+
+<!-- <div>
+  {React.createElement(() => {
+    const TestZone = () => {
+
+      let [rights, setRights] = React.useState(["$Navigator.Simple"]);
+      let [jsonRights, setJsonRights] = React.useState(null);
+
+      React.useEffect(() => {
+        setJsonRights(Management.Rights(rights).json());
+      });
+
+      return <React.Fragment>
+        <input></input>
+        <CodeBlock>
+          <CodeBlockCode>{JSON.stringify(jsonRights || {}, null, "\t")}</CodeBlockCode>
+        </CodeBlock>
+      </React.Fragment>;
+
+    };
+
+    return <TestZone />;
+  })}
+</div> -->
+
+## Test zone
+
+<div>
+  {React.createElement(() => {
+    const TestZone = () => {
+      const [rights, setRights] = React.useState(["$Navigator.Simple"]);
+      const [jsonRights, setJsonRights] = React.useState(null);
+
+      React.useEffect(() => {
+        console.log({ rights })
+        setJsonRights(Management.Rights(rights).json());
+      }, [rights]);
+
+      // Gestion des valeurs d'input dans une liste dynamique
+      const handleInputChange = React.useCallback((index, value) => {
+        setRights((prevRights) => {
+          const updatedValues = [...prevRights];
+          updatedValues[index] = value;
+
+          // Retire les inputs vides sauf le dernier
+          return updatedValues.filter((v, i) => v.trim() !== "" || i === updatedValues.length - 1);
+        });
+      }, []);
+
+      return (
+        <React.Fragment>
+          <div style={{ display: "flex" , flexDirection: "column" }}>
+            {[...rights , ''].map((value, index) => (
+              <input
+                key={index}
+                value={value}
+                onChange={(e) => handleInputChange(index, e.target.value)}
+                placeholder="Enter value"
+                style={{ display: "block", marginBottom: "8px" , fontWeight : "bold" }}
+              />
+            ))}
+          </div>
+          <CodeBlock>
+            <CodeBlockCode>{JSON.stringify(jsonRights || {}, null, "\t")}</CodeBlockCode>
+          </CodeBlock>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+  })}
+</div>
 
 ```tsx
 const rights = [
-
   "$Navigator.Simple__project",
 
   // Autorise toutes les opérations sur le champ `token` de tous les items du module `OperationalSupport`
@@ -220,7 +395,7 @@ const rights = [
 
 Les permissions s’appliquent avec une hiérarchie en cascade :
 
-- Modules : Les droits peuvent être attribués à des modules entiers ou à des sous-modules en utilisant un * pour capturer tous les sous-modules.
+- Modules : Les droits peuvent être attribués à des modules entiers ou à des sous-modules en utilisant un \* pour capturer tous les sous-modules.
 - Items : Chaque item d’un module peut avoir des permissions spécifiques.
 - Champs : Des champs spécifiques d’un item peuvent être sélectionnés pour définir des droits précis.
 - Métadonnées : Les permissions sur les métadonnées sont structurées avec des couches, permettant d’accéder à des niveaux spécifiques de métadonnées.
@@ -248,7 +423,7 @@ Dans cet exemple :
 ### Import dans un projet
 
 ```tsx
-import { Management } from '@infrasoftbe/infrasoft-vnv-api-kit'
+import { Management } from "@infrasoftbe/infrasoft-vnv-api-kit";
 ```
 
 Chaque règle de droits est traduite dans un objet JSON facilitant l’accès aux données par les modules de l’application.
@@ -306,3 +481,4 @@ conosle.log({ rights : rights.json() })
 }
 */
 `
+```

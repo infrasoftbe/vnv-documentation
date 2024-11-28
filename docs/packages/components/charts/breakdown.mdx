@@ -1,0 +1,1418 @@
+import React from "react";
+import Playground from "@theme/Playground";
+import { Breakdown } from "@infrasoftbe/infrasoft-ui-components";
+import * as go from "gojs";
+
+# Breakdown
+
+## Introduction
+
+Le composant Breakdown est une implémentation React permettant de visualiser des graphes avec des nœuds et des liens. Il est construit avec GoJS, une bibliothèque JavaScript pour la création de diagrammes et de graphes interactifs. Ce composant permet de personnaliser facilement l'apparence des nœuds, des liens, ainsi que les flèches, avec des options pour modifier les styles de ligne, de remplissage et d'interactions (comme le clic et le survol). Il prend en charge des mises en page horizontales, verticales, ou dynamiques, offrant ainsi une flexibilité pour différents types de représentations graphiques. Les fonctionnalités incluent également la gestion des événements pour les liens et les nœuds.
+
+## Integration
+
+<Playground
+  scope={{
+    React,
+    Breakdown,
+  }}
+>
+  {`
+  function MyPlayground(){
+
+    let [ nodes , setNodes ] = React.useState([
+      {
+        token : 0,
+        name : 'Node0',
+      },
+      {
+        token : 1,
+        name : 'Node1',
+      },
+      {
+        token : 2,
+        name : 'Node2',
+      }
+    ])
+
+    let [ relations , setRelations ] = React.useState([
+      {
+        from : 0,
+        to : 1
+      },
+      {
+        from : 0,
+        to : 2
+      }
+    ])
+
+    return (
+      <React.Fragment>
+        <div style = {{ minHeight : '400px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+          <Breakdown
+            nodeDataArray = { nodes }
+            linkDataArray = { relations }
+          />
+        </div>
+      </React.Fragment>
+    );
+
+}
+`}
+
+</Playground>
+
+## Simple
+
+Cet exemple illustre un cas basique d'utilisation du composant Breakdown, où un seul nœud est affiché dans le diagramme. Ce type de configuration est idéal pour les tests initiaux ou pour représenter une simple entité dans un organigramme ou un diagramme de processus.
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node Name',
+                }
+              ]}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+## With Relation
+
+Cet exemple montre comment connecter des nœuds dans un diagramme en définissant des relations via des liens. Cela permet de visualiser des hiérarchies, des flux de données, ou des connexions logiques entre entités.
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[
+      {
+        from : 0,
+        to : 1
+      }
+    ]}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node0',
+                },
+                {
+                  token : 1,
+                  name : 'Node1',
+                }
+              ]}
+              linkDataArray = {[
+                {
+                  from : 0,
+                  to : 1
+                }
+              ]}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+## Layouts
+
+### Horizontal
+
+Ce layout organise les nœuds de manière horizontale, créant une disposition linéaire de gauche à droite. C’est utile pour représenter des flux d'information ou des processus se déroulant de manière séquentielle.
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{ layout : 'horizontal' }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node0',
+                },
+                {
+                  token : 1,
+                  name : 'Node1',
+                }
+              ]}
+              linkDataArray = {[
+                {
+                  from : 0,
+                  to : 1
+                }
+              ]}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+### Vertical
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{ layout : 'vertical'}}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '400px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node0',
+                },
+                {
+                  token : 1,
+                  name : 'Node1',
+                }
+              ]}
+              linkDataArray = {[
+                {
+                  from : 0,
+                  to : 1
+                }
+              ]}
+              initOptions = {{
+                layout : 'vertical'
+              }}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+### Dynamic
+
+La disposition dynamique permet de définir un layout personnalisé en utilisant une fonction. Vous pouvez tirer parti de bibliothèques GoJS pour configurer des agencements complexes. Cet exemple montre un layout horizontal basé sur un arbre, configuré dynamiquement.
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{
+      layout : function( go ){
+        // Horizontal layout
+        return go.GraphObject.make(
+          go.TreeLayout,
+          {
+            treeStyle: go.TreeLayout.StyleLastParents,
+            angle: 0,
+            layerSpacing: 80,
+            alignment: go.TreeLayout.AlignmentEnd,
+          }
+        );
+      }
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node0',
+                },
+                {
+                  token : 1,
+                  name : 'Node1',
+                }
+              ]}
+              linkDataArray = {[
+                {
+                  from : 0,
+                  to : 1
+                }
+              ]}
+              initOptions = {{
+                layout : function( go ){
+                  // Horizontal layout
+                  return go.GraphObject.make(
+                    go.TreeLayout,
+                    {
+                      treeStyle: go.TreeLayout.StyleLastParents,
+                      angle: 0,
+                      layerSpacing: 80,
+                      alignment: go.TreeLayout.AlignmentEnd,
+                    }
+                  );
+                }
+              }}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+## Listeners
+
+Voici une explication des principaux événements disponibles :
+
+<table>
+  <thead>
+    <tr>
+      <th>Événement</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>InitialAnimationStarting</td>
+      <td>
+        Déclenché au début d'une animation initiale (lorsque le diagramme est
+        affiché pour la première fois).
+      </td>
+    </tr>
+    <tr>
+      <td>AnimationStarting</td>
+      <td>
+        Déclenché à chaque début d'une animation (par exemple, pendant un
+        changement de mise en page).
+      </td>
+    </tr>
+    <tr>
+      <td>AnimationFinished</td>
+      <td>Déclenché une fois qu'une animation est terminée.</td>
+    </tr>
+    <tr>
+      <td>BackgroundSingleClicked</td>
+      <td>
+        Déclenché lorsqu'un clic simple est effectué sur l'arrière-plan du
+        diagramme (hors des nœuds et des liens).
+      </td>
+    </tr>
+    <tr>
+      <td>BackgroundDoubleClicked</td>
+      <td>Déclenché lorsqu'un double-clic est effectué sur l'arrière-plan.</td>
+    </tr>
+    <tr>
+      <td>BackgroundContextClicked</td>
+      <td>
+        Déclenché lorsqu'un clic droit (ou équivalent) est effectué sur
+        l'arrière-plan.
+      </td>
+    </tr>
+    <tr>
+      <td>ChangingSelection</td>
+      <td>
+        Déclenché juste avant un changement de sélection. Permet d'annuler ou de
+        personnaliser cette action.
+      </td>
+    </tr>
+    <tr>
+      <td>ChangedSelection</td>
+      <td>
+        Déclenché après un changement dans la sélection d'un ou plusieurs
+        éléments.
+      </td>
+    </tr>
+    <tr>
+      <td>ClipboardChanged</td>
+      <td>
+        Déclenché lorsque le contenu du presse-papiers du diagramme est modifié
+        (copie, coupe ou suppression).
+      </td>
+    </tr>
+    <tr>
+      <td>ClipboardPasted</td>
+      <td>
+        Déclenché après que des objets ont été collés depuis le presse-papiers
+        dans le diagramme.
+      </td>
+    </tr>
+    <tr>
+      <td>DocumentBoundsChanged</td>
+      <td>
+        Déclenché lorsque les limites du diagramme sont modifiées (par exemple,
+        ajout ou suppression de nœuds).
+      </td>
+    </tr>
+    <tr>
+      <td>InitialLayoutCompleted</td>
+      <td>
+        Déclenché après la fin de la disposition initiale du diagramme (après
+        son affichage).
+      </td>
+    </tr>
+    <tr>
+      <td>LayoutCompleted</td>
+      <td>
+        Déclenché après qu'une mise en page ou un repositionnement est terminé.
+      </td>
+    </tr>
+    <tr>
+      <td>LinkDrawn</td>
+      <td>Déclenché lorsqu'un nouveau lien est créé.</td>
+    </tr>
+    <tr>
+      <td>LinkRelinked</td>
+      <td>
+        Déclenché lorsqu'un lien existant est reconfiguré pour pointer vers de
+        nouveaux nœuds.
+      </td>
+    </tr>
+    <tr>
+      <td>Modified</td>
+      <td>
+        Déclenché lorsque le diagramme est modifié de quelque manière que ce
+        soit (ajout, suppression, modification).
+      </td>
+    </tr>
+    <tr>
+      <td>ObjectSingleClicked</td>
+      <td>
+        Déclenché lorsqu'un objet du diagramme (nœud ou lien) est cliqué une
+        fois.
+      </td>
+    </tr>
+    <tr>
+      <td>ObjectDoubleClicked</td>
+      <td>Déclenché lorsqu'un objet est double-cliqué.</td>
+    </tr>
+    <tr>
+      <td>SelectionMoved</td>
+      <td>
+        Déclenché lorsqu'un ou plusieurs objets sélectionnés sont déplacés.
+      </td>
+    </tr>
+    <tr>
+      <td>TextEdited</td>
+      <td>
+        Déclenché après qu'un utilisateur a modifié le texte dans un objet (par
+        exemple, le texte d'un nœud ou d'un lien).
+      </td>
+    </tr>
+    <tr>
+      <td>ViewportBoundsChanged</td>
+      <td>
+        Déclenché lorsqu'il y a un changement dans les limites visibles du
+        diagramme (défilement ou zoom).
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### ChangedSelection
+
+Cet exemple utilise `ChangedSelection` pour afficher une alerte à chaque fois qu'un élément est sélectionné ou désélectionné dans le diagramme.
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{
+      isReadOnly : false,
+      isEnabled : true,
+      allowSelect : true,
+      listeners : {
+        ChangedSelection(){
+          alert('Selection changed')
+        }
+      }
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node0',
+                },
+                {
+                  token : 1,
+                  name : 'Node1',
+                }
+              ]}
+              linkDataArray = {[
+                {
+                  from : 0,
+                  to : 1
+                }
+              ]}
+              initOptions = {{
+                isReadOnly : false,
+                isEnabled : true,
+                allowSelect : true,
+                listeners : {
+                  ChangedSelection : () => {
+                    alert('Selection changed');
+                  }
+                }
+              }}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+## Nodes
+
+### Style
+
+Dans cette section, nous abordons la personnalisation du style des nœuds dans un diagramme en utilisant l'option `nodeHooks`. Cette approche permet de définir des styles spécifiques pour les nœuds, y compris les couleurs, les bordures, et autres propriétés de style graphique.
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{
+      nodeHooks : {
+        textColor : "white",
+        style : {
+          fill : "red",
+          strokeWidth : 0,
+          stroke : "black",
+        }
+      }
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node0',
+                },
+                {
+                  token : 1,
+                  name : 'Node1',
+                }
+              ]}
+              linkDataArray = {[
+                {
+                  from : 0,
+                  to : 1
+                }
+              ]}
+              initOptions = {{
+                nodeHooks : {
+                  textColor : "white",
+                  style : {
+                    fill : "red",
+                    strokeWidth : 0,
+                    stroke : "black",
+                  }
+                }
+              }}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+#### Dynamic
+
+Dans cette section, nous explorons comment personnaliser les nœuds d'un diagramme en utilisant un panel dynamique. Le panel est un composant de type "table" où vous pouvez organiser différents éléments comme des formes et des textes à l’intérieur du nœud. Cette approche est très flexible et permet de personnaliser la structure du nœud à l'aide de GoJS via des panneaux (panels), des lignes (rows) et des colonnes (columns).
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{
+      isReadOnly : false,
+      isEnabled : true,
+      allowSelect : true,
+      nodeHooks : {
+        textColor : "white",
+        style : {
+          fill : "#f2f2f2",
+          strokeWidth : 0,
+        },
+        panel( go ){
+
+          let maker = go.GraphObject.make;
+
+          return maker(go.Panel, "Table", {
+              defaultAlignment: go.Spot.Top,
+              stretch: go.GraphObject.Vertical,
+              width: 250,
+              click: () => alert('onNodeClick'),
+            },
+            maker(go.RowColumnDefinition, { row: 0, height: 40 }),
+            maker(go.RowColumnDefinition, { row: 1, height: 40 }),
+            maker(go.Panel, "Auto",
+              {
+                row: 0,
+                column: 1,
+                stretch: go.GraphObject.Vertical,
+                alignment: go.Spot.Top,
+                width: 300,
+              },
+              maker(go.Shape, "RoundedRectangle",
+                {
+                  parameter1: 1,
+                  strokeWidth: 0,
+                  fill: "#f2f2f2"
+                }
+              ),
+              maker(
+                go.TextBlock,
+                {
+                  stroke : "dimgray"
+                },
+                new go.Binding("text", "name")
+              )
+            ),
+            maker(go.Panel, "Auto",
+              {
+                row: 1,
+                column: 1,
+                stretch: go.GraphObject.Vertical,
+                alignment: go.Spot.Bottom,
+                width: 300,
+              },
+              maker(go.Shape, "RoundedRectangle",
+                {
+                  name: 'content',
+                  parameter1: 1,
+                  strokeWidth: 0,
+                  fill: "#f2f2f2"
+                }
+              ),
+              maker(
+                go.TextBlock,
+                {
+                  stroke : "dimgray",
+                  text : "Text"
+                }
+              )
+            )
+          )
+        }
+      }
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node0',
+                },
+                {
+                  token : 1,
+                  name : 'Node1',
+                }
+              ]}
+              linkDataArray = {[
+                {
+                  from : 0,
+                  to : 1
+                }
+              ]}
+              initOptions = {{
+                isReadOnly : false,
+                isEnabled : true,
+                allowSelect : true,
+                nodeHooks : {
+                  textColor : "white",
+                  style : {
+                    fill : "#f2f2f2",
+                    strokeWidth : 0,
+                  },
+                  panel( go ){
+
+                    let maker = go.GraphObject.make;
+
+                    return maker(go.Panel, "Table", {
+                        defaultAlignment: go.Spot.Top,
+                        stretch: go.GraphObject.Vertical,
+                        width: 250,
+                        click: () => alert('onNodeClick'),
+                      },
+                      maker(go.RowColumnDefinition, { row: 0, height: 40 }),
+                      maker(go.RowColumnDefinition, { row: 1, height: 40 }),
+                      maker(go.Panel, "Auto",
+                        {
+                          row: 0,
+                          column: 1,
+                          stretch: go.GraphObject.Vertical,
+                          alignment: go.Spot.Top,
+                          width: 300,
+                        },
+                        maker(go.Shape, "RoundedRectangle",
+                          {
+                            parameter1: 1,
+                            strokeWidth: 0,
+                            fill : "#f2f2f2"
+                          }
+                        ),
+                        maker(
+                          go.TextBlock,
+                          {
+                            stroke : "dimgray"
+                          },
+                          new go.Binding("text", "name")
+                        )
+                      ),
+                      maker(go.Panel, "Auto", {
+                          row: 1,
+                          column: 1,
+                          stretch: go.GraphObject.Vertical,
+                          alignment: go.Spot.Bottom,
+                          width: 300,
+                        },
+                        maker(go.Shape, "RoundedRectangle",
+                          {
+                            name: 'content',
+                            parameter1: 1,
+                            strokeWidth: 0,
+                            fill : "#f2f2f2"
+                          }
+                        ),
+                        maker(
+                          go.TextBlock,
+                          {
+                            stroke : "dimgray",
+                            text : "Text"
+                          }
+                        )
+                      )
+                    )
+                  }
+                }
+              }}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+### Hover stroke
+
+Le `hoverStroke` est une fonctionnalité permettant d'ajouter un effet visuel de surbrillance (par exemple, une bordure colorée) autour des nœuds lorsqu'ils sont survolés avec la souris. Cela permet de rendre les nœuds plus interactifs et de guider l'utilisateur, en mettant en évidence un nœud spécifique lorsqu'il passe la souris dessus. Par défaut, cette fonctionnalité est désactivée.
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{
+      isEnabled : true,
+      nodeHooks : { hoverStroke : true }
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node0',
+                },
+                {
+                  token : 1,
+                  name : 'Node1',
+                }
+              ]}
+              linkDataArray = {[
+                {
+                  from : 0,
+                  to : 1
+                }
+              ]}
+              initOptions = {{
+                isEnabled : true,
+                nodeHooks : {
+                  hoverStroke : true
+                }
+              }}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+### Hover stroke style
+
+Le `hoverStroke` permet de personnaliser l'apparence de l'effet de surbrillance appliqué au nœud lorsque la souris le survole. Cette fonctionnalité offre une plus grande flexibilité en permettant de modifier non seulement la couleur du contour mais aussi des propriétés comme la largeur, le style de la ligne, et d'autres aspects visuels de la bordure. Cela permet d'adapter l'interface aux besoins esthétiques et ergonomiques de votre projet.
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{
+      isEnabled : true,
+      nodeHooks : { 
+        hoverStroke : {
+          stroke : 'royalblue',
+          strokeDashArray : [],
+          strokeWidth : 2
+        } 
+      }
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node0',
+                },
+                {
+                  token : 1,
+                  name : 'Node1',
+                }
+              ]}
+              linkDataArray = {[
+                {
+                  from : 0,
+                  to : 1
+                }
+              ]}
+              initOptions = {{
+                isEnabled : true,
+                nodeHooks : {
+                  hoverStroke : {
+                    stroke : 'royalblue',
+                    strokeDashArray : [],
+                    strokeWidth : 2
+                  }
+                }
+              }}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+### Listeners
+
+Le paramètre nodeHooks se s'occupe en partie des interactions liées aux nœuds du diagramme, comme le clic, le survol ou la modification.
+
+<table>
+  <thead>
+    <tr>
+      <th>Événement</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>addNode</td>
+      <td>
+        Déclenché lorsqu'un nouveau nœud est ajouté au diagramme. Utilisez cet
+        événement pour effectuer des actions personnalisées après l'ajout d'un
+        nœud, comme définir des propriétés par défaut ou lier des données
+        supplémentaires.
+      </td>
+    </tr>
+    <tr>
+      <td>editNode</td>
+      <td>
+        Déclenché lorsqu'un nœud est modifié. Cet événement peut être utilisé
+        pour valider ou synchroniser les modifications avec une source de
+        données externe.
+      </td>
+    </tr>
+    <tr>
+      <td>enterNode</td>
+      <td>
+        Déclenché lorsque le curseur de la souris entre dans la zone d'un nœud.
+        Idéal pour afficher des surbrillances, des infobulles ou des animations
+        visuelles.
+      </td>
+    </tr>
+    <tr>
+      <td>leaveNode</td>
+      <td>
+        Déclenché lorsque le curseur de la souris quitte la zone d'un nœud.
+        Utilisez-le pour réinitialiser l'état visuel des nœuds ou cacher des
+        éléments contextuels.
+      </td>
+    </tr>
+    <tr>
+      <td>clickNode</td>
+      <td>
+        Déclenché lorsqu'un nœud est cliqué. Utile pour gérer la sélection d'un
+        nœud, ouvrir des formulaires de détails ou déclencher des actions
+        spécifiques.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+#### ClickNode
+
+Cet exemple montre comment implémenter un gestionnaire d'événement pour capturer les clics sur les nœuds.
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{
+      isReadOnly : false,
+      isEnabled : true,
+      allowSelect : true,
+      nodeHooks : {
+        clickNode(){
+          alert('onNodeClick');
+        }
+      }
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node0',
+                },
+                {
+                  token : 1,
+                  name : 'Node1',
+                }
+              ]}
+              linkDataArray = {[
+                {
+                  from : 0,
+                  to : 1
+                }
+              ]}
+              initOptions = {{
+                isReadOnly : false,
+                isEnabled : true,
+                allowSelect : true,
+                nodeHooks : {
+                  clickNode(){
+                    alert('onNodeClick');
+                  }
+                }
+              }}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+## Links
+
+### Style
+
+La personnalisation des liens permet de modifier l'apparence des connexions entre les nœuds dans un diagramme. En ajustant le style des liens, vous pouvez influencer l'esthétique des lignes ou courbes qui relient les éléments. Cela peut être utile pour rendre vos diagrammes plus lisibles, intuitifs, ou visuellement plus attractifs, en fonction de l'objectif de l'application.
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{
+      linkHooks : {
+        line : { 
+          strokeWidth : 3,
+          stroke : 'red',
+          fill : 'red'
+        }
+      }
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node0',
+                },
+                {
+                  token : 1,
+                  name : 'Node1',
+                }
+              ]}
+              linkDataArray = {[
+                {
+                  from : 0,
+                  to : 1
+                }
+              ]}
+              initOptions = {{
+                isEnabled : true,
+                linkHooks : {
+                  line : { 
+                    strokeWidth : 3,
+                    stroke : 'red',
+                    fill : 'red'
+                  }
+                }
+              }}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+#### Dynamic
+
+La personnalisation dynamique des liens permet de définir des comportements plus flexibles et dynamiques pour les connexions entre les nœuds. Cette approche permet de créer des liens ayant des propriétés qui peuvent être calculées à la volée, plutôt que d'être statiquement définies à l'avance. Dans cet exemple, le style des liens est défini à l'aide de fonctions, offrant une grande souplesse.
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{
+      linkHooks : {
+        line : function( go ){
+          return go.GraphObject.make(
+            go.Shape,
+            {
+              strokeWidth: 3, 
+              stroke: "royalblue",
+            }
+          );
+        }
+      }
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node0',
+                },
+                {
+                  token : 1,
+                  name : 'Node1',
+                }
+              ]}
+              linkDataArray = {[
+                {
+                  from : 0,
+                  to : 1
+                }
+              ]}
+              initOptions = {{
+                isEnabled : true,
+                linkHooks : {
+                  line : function( go ){
+                    return go.GraphObject.make(
+                      go.Shape,
+                      {
+                        strokeWidth: 3, 
+                        stroke: "royalblue",
+                      }
+                    );
+                  }
+                }
+              }}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+### Arrow
+
+Dans cette configuration statique, nous utilisons l'option linkHooks.arrow pour personnaliser l'apparence de la flèche sur les liens. Ici, la flèche a un style spécifique avec une forme (triangle), une couleur et une largeur de bordure.
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{
+      linkHooks : {
+        arrow : { 
+          toArrow: "Triangle",
+          strokeWidth : 3,
+          stroke : 'red',
+          fill : 'red'
+        }
+      }
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node0',
+                },
+                {
+                  token : 1,
+                  name : 'Node1',
+                }
+              ]}
+              linkDataArray = {[
+                {
+                  from : 0,
+                  to : 1
+                }
+              ]}
+              initOptions = {{
+                isEnabled : true,
+                linkHooks : {
+                  arrow : { 
+                    toArrow: "Triangle",
+                    strokeWidth : 3,
+                    stroke : 'red',
+                    fill : 'red'
+                  }
+                }
+              }}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+
+#### Dynamic
+
+La configuration dynamique permet de personnaliser les flèches en fonction des besoins, en utilisant une fonction pour créer la flèche de manière plus flexible. Dans cet exemple, la flèche a une forme de Chevron, avec une couleur bleue et une épaisseur de ligne plus grande.
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{
+      linkHooks : {
+        arrow : function( go ){
+          return go.GraphObject.make(
+            go.Shape,
+            {
+              toArrow: "Chevron",
+              strokeWidth: 5, 
+              stroke: "royalblue",
+              fill: "royalblue",
+            }
+          );
+        }
+      }
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node0',
+                },
+                {
+                  token : 1,
+                  name : 'Node1',
+                }
+              ]}
+              linkDataArray = {[
+                {
+                  from : 0,
+                  to : 1
+                }
+              ]}
+              initOptions = {{
+                linkHooks : {
+                  arrow : function( go ){
+                    return go.GraphObject.make(
+                      go.Shape,
+                      {
+                        toArrow: "Chevron",
+                        strokeWidth: 5, 
+                        stroke: "royalblue",
+                        fill: "royalblue",
+                      }
+                    );
+                  }
+                }
+              }}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+### Listeners
+
+Les listeners ou écouteurs d'événements permettent de définir des actions ou des comportements en réponse aux interactions avec les éléments d'un graphique, tels que les nœuds ou les liens. Dans ce cas, l'exemple montre comment ajouter un écouteur d'événements pour détecter un clic sur un lien et exécuter une action spécifique, comme afficher une alerte.
+
+#### Click
+
+L'exemple suivant montre comment ajouter un écouteur d'événements pour capturer un clic sur un lien entre deux nœuds. Lorsque l'utilisateur clique sur un lien, une alerte s'affiche, indiquant que le lien a été cliqué.
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{
+      linkHooks : {
+        click(){
+          alert('Link clicked');
+        }
+      }
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node0',
+                },
+                {
+                  token : 1,
+                  name : 'Node1',
+                }
+              ]}
+              linkDataArray = {[
+                {
+                  from : 0,
+                  to : 1
+                }
+              ]}
+              initOptions = {{
+                isEnabled : true,
+                linkHooks : {
+                  click(){
+                    alert('Link clicked');
+                  }
+                }
+              }}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+## Advance
+
+### Init
+
+## Build-in
+
+### NodeTemplate
+
+### LinkTemplate

@@ -2,6 +2,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+import webpack from 'webpack';
+
 import { createProxyMiddleware } from 'http-proxy-middleware';
 
 const config: Config = {
@@ -74,9 +76,11 @@ const config: Config = {
           position: 'left',
           label: 'Tutorial',
         },
+        {to: '/docs/API/', label: 'Components', position: 'left'},
+        {to: '/docs/API/', label: 'API', position: 'left'},
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/infrasoftbe',
           label: 'GitHub',
           position: 'right',
         },
@@ -91,6 +95,14 @@ const config: Config = {
             {
               label: 'Tutorial',
               to: '/docs/intro',
+            },
+            {
+              label: 'Components',
+              to: '/docs/api',
+            },
+            {
+              label: 'API',
+              to: '/docs/api',
             },
           ],
         },
@@ -131,16 +143,24 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-    themeConfig: {
-      liveCodeBlock: {
-        /**
-         * The position of the live playground, above or under the editor
-         * Possible values: "top" | "bottom"
-         */
-        playgroundPosition: 'bottom',
-      },
-    },
+    
+    liveCodeBlock: {
+      /**
+       * The position of the live playground, above or under the editor
+       * Possible values: "top" | "bottom"
+       */
+      playgroundPosition: 'bottom',
+    }
+
   } satisfies Preset.ThemeConfig,
+
+  stylesheets : [
+    {
+      href: 'vnv-documentation/css/base.css',
+      type: 'text/css'
+    }
+  ],
+  
 };
 
 export default config;

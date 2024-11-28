@@ -5,6 +5,8 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 
+import '@patternfly/react-core/dist/styles/base.css'
+
 import styles from './index.module.css';
 
 function HomepageHeader() {
