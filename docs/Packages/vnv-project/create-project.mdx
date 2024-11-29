@@ -1,0 +1,37 @@
+---
+sidebar_position: 2
+---
+
+# Create Project
+
+Ce guide montre comment créer un projet minimaliste en utilisant le package @infrasoftbe/infrasoft-project. 
+
+:::tip
+Notez que les exemples présentés ici sont simplifiés et destinés à des fins de démonstration. Dans un contexte réel, les projets interagiraient avec des bases de données via le package [@infrasoftbe/api-kit](https://github.com/infrasoftbe/fluentui-react-wrapper/pkgs/npm/infrasoft-vnv-api-kit) pour manipuler des données réelles.
+:::
+
+## Exemples
+Les exemples suivants partent du principe que vous manipulez le projet directement, sans interaction avec une base de données externe.
+
+### Initialisation d'un projet
+Voici comment vous pouvez initialiser un projet Infrasoft avec un token de projet :
+
+```typescript
+import { ProjectInstance } from '@infrasoftbe/infrasoft-project';
+
+// Initialisation d'un projet minimaliste
+let project = ProjectInstance.init({
+  self : { token : 'my-project-token' }
+});
+```
+
+## Explication du Code
+
+### Pourquoi init ?
+
+La méthode `ProjectInstance.init()` est utilisée pour initialiser un projet Infrasoft en retournant un `ProxyProjectInstance`. Ce proxy permet un accès direct à toutes les couches et sous-couches du projet, ce qui facilite les manipulations et interactions avec le projet.
+
+Si vous utilisez simplement `new ProjectInstance(...)`, cela retournera une instance de `ProjectInstance`, qui n'expose pas les couches et sous-couches de manière aussi pratique. Le [proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) généré par `init` encapsule l'instance du projet et étend ses fonctionnalités, rendant chaque aspect du projet plus accessible et manipulable.
+
+- `ProjectInstance.init()` : Cette méthode initialise un projet Infrasoft avec les paramètres fournis.
+- `self` : Le champ self contient les informations d'identité du projet, ici représenté par un simple token ('my-project-token').

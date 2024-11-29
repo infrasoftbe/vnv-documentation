@@ -1,0 +1,632 @@
+import React, { useMemo } from "react";
+
+import Playground from "@theme/Playground";
+import Details from "@theme/Details";
+
+import { Management } from "@infrasoftbe/infrasoft-vnv-api-kit";
+import { CodeBlock, CodeBlockCode } from "@patternfly/react-core";
+
+# Rights
+
+Ce module de gestion des droits permet de définir des règles d’accès précises pour des modules, des items et des champs. Chaque règle est structurée en utilisant une syntaxe standardisée de sélecteurs et d’opérations.
+
+## Structure de la Syntaxe
+
+Chaque règle est composée de plusieurs éléments de sélecteur, permettant d’indiquer :
+
+- Les **[Modules](../../../Tutorial/Application/modules/Modules.md)** ciblés (un ou plusieurs).
+- Les **Items** associés aux modules.
+- Les **Champs d’items**.
+- Les **Métadonnées et les champs associés aux couches** de métadonnées.
+
+Des Opérations spécifiques peuvent être appliquées sur chaque type d’élément.
+
+## Sélecteurs
+
+Les sélecteurs définissent les composants de la hiérarchie de permissions. Voici la syntaxe pour chaque type de sélecteur :
+
+- **Modules** : `$[NomModule1]$[NomModule2]$...` **ou** `$*` — Sélectionne un module ou une hiérarchie de modules.
+- **Items** : `__[NomItem | *]` — Sélectionne un item spécifique ou tous les items.
+- **Champs** : `:f&[NomChamp | *]` — Sélectionne un champ d’item spécifique ou tous les champs.
+- **Couches de métadonnées** : `:m.[NomCouche1].[NomCouche2]` **ou** `:m*` — Sélectionne une couche de métadonnées spécifique ou toute les couches.
+- **Champs de métadonnées** : `:m.[NomCouche | *]:f&[NomChampMeta | *]` — Sélectionne un champ spécifique dans une couche de métadonnées ou tout les champs.
+
+## Opérations
+
+Chaque règle peut appliquer une ou plusieurs opérations sur le module, l’item ou le champ spécifié :
+
+- `--* :` toutes les opérations
+- `--read` : lecture ( ⚠️par défaut `true` si un **Item** ou **Field** est spécifié⚠️ )
+- `--write` : écriture
+- `--delete` : suppression
+- `--import` : importation
+- `--export` : exportation
+
+### Modificateur de Requête sur les Items ![Generic badge](https://img.shields.io/badge/Feature-Not_Yet_Implemented-red.svg)
+
+Un item peut être sélectionné via une requête, utilisant la syntaxe suivante pour spécifier un item répondant à certains critères :
+
+```tsx
+__{{itemname}}(WHERE:f:token = "token"&&:f:id = "id")
+```
+
+## Implémentation
+
+Importez le module [infrasoft-vnv-api-kit](../../../packages/vnv-api-kit/), Utilisez <a href="../../../../API/infrasoft-vnv-api-kit/modules/Management.html" target="_blank">Management</a> qui propose l’utilitaire <a href="../../../../API/infrasoft-vnv-api-kit/functions/Management.Rights.html" target="_blank">Rights</a>. Cet utilitaire permet d’interpréter un tableau de droits ( <a href="../../../../API/infrasoft-vnv-api-kit/classes/Management.ArrayRights.html" target="_blank">ArrayRights</a> ) en un format <a href="../../../../API/infrasoft-vnv-api-kit/classes/Management.ArrayRights.html#json" target="_blank">JSON</a>.
+
+### Import dans un projet
+
+```tsx
+import { Management } from "@infrasoftbe/infrasoft-vnv-api-kit";
+```
+
+Chaque règle de droits est traduite dans un objet JSON facilitant l’accès aux données par les modules de l’application.
+
+```tsx
+import { Management } from "@infrasoftbe/infrasoft-vnv-api-kit";
+
+Management.Rights([...]).json();
+```
+
+## Exemples de Syntaxe
+
+Voici des exemples concrets pour illustrer les possibilités de la syntaxe et des sélecteurs.
+
+### Exemple de Configuration d’Administrateur
+
+```tsx
+const rights = [
+  // All_Modules -> All_Rights
+  "$*--*",
+  // All_Modules -> All_Items -> All_Rights
+  "$*__*--*",
+  // All_Modules -> All_Items -> All_Fields -> All_Rights
+  "$*__*:f&*--*",
+  // All_Modules -> All_Items -> All_Metadata_layers -> All_Fields -> All_Rights
+  "$*__*:m.*:f&*--*",
+];
+```
+
+### Exemples Génériques
+
+Ces exemples montrent comment **restreindre les permissions** en utilisant des **couches de [modules](../../../Application/modules/Modules.md)** et des **requêtes de sélection de modules**.
+
+<Details summary="Module & Default operation">
+
+#### Code
+
+```tsx
+import { Management } from "@infrasoftbe/infrasoft-vnv-api-kit";
+
+let right = ["$Navigator.Simple"];
+console.log({ rights: Management.Right().json() });
+```
+
+#### Output
+
+```json
+{
+  "Navigator": {
+    "operations": {
+      "read": true
+    },
+    "Simple": {
+      "operations": {
+        "read": true,
+        "write": false,
+        "delete": false,
+        "import": false,
+        "export": false
+      },
+      "items": {}
+    }
+  }
+}
+```
+
+</Details>
+
+<Details summary="Module & Operations">
+
+#### Code
+
+```tsx
+import { Management } from "@infrasoftbe/infrasoft-vnv-api-kit";
+
+let right = ["$Navigator.Simple--import"];
+console.log({ rights: Management.Right().json() });
+```
+
+#### Output
+
+```json
+{
+  "Navigator": {
+    "operations": {
+      "read": true
+    },
+    "Simple": {
+      "operations": {
+        "read": true,
+        "write": false,
+        "delete": false,
+        "import": true,
+        "export": false
+      },
+      "items": {}
+    }
+  }
+}
+```
+
+</Details>
+
+Ces exemples montrent comment **restreindre les permissions** en utilisant des **couches de métadonnées** et des **requêtes de sélection d’items, de champs, de couche métadonée**.
+
+<Details summary="Module & Item">
+  Voici le contenu de l'accordéon. Vous pouvez y mettre tout ce que vous voulez, comme du texte, des listes ou même d'autres composants.
+
+#### Code
+
+```tsx
+import { Management } from "@infrasoftbe/infrasoft-vnv-api-kit";
+
+let right = ["$Navigator.Simple__work"];
+console.log({ rights: Management.Right().json() });
+```
+
+#### Output
+
+```json
+{
+  "Navigator": {
+    "operations": {
+      "read": true
+    },
+    "Simple": {
+      "operations": {
+        "read": true
+      },
+      "items": {
+        "work": {
+          "operations": {
+            "read": true,
+            "write": false,
+            "delete": false,
+            "import": false,
+            "export": false
+          },
+          "fields": {},
+          "metadata": {}
+        }
+      }
+    }
+  }
+}
+```
+
+</Details>
+
+<Details summary="Module & Item opertations">
+  Voici le contenu de l'accordéon. Vous pouvez y mettre tout ce que vous voulez, comme du texte, des listes ou même d'autres composants.
+
+#### Code
+
+```tsx
+import { Management } from "@infrasoftbe/infrasoft-vnv-api-kit";
+
+let right = ["$Navigator.Simple__work--write"];
+console.log({ rights: Management.Right().json() });
+```
+
+#### Output
+
+```json
+{
+  "Navigator": {
+    "operations": {
+      "read": true
+    },
+    "Simple": {
+      "operations": {
+        "read": true
+      },
+      "items": {
+        "work": {
+          "operations": {
+            "read": true,
+            "write": true,
+            "delete": false,
+            "import": false,
+            "export": false
+          },
+          "fields": {},
+          "metadata": {}
+        }
+      }
+    }
+  }
+}
+```
+
+</Details>
+
+<Details summary="Module & Item fields">
+  Voici le contenu de l'accordéon. Vous pouvez y mettre tout ce que vous voulez, comme du texte, des listes ou même d'autres composants.
+
+#### Code
+
+```tsx
+import { Management } from "@infrasoftbe/infrasoft-vnv-api-kit";
+
+let right = ["$Navigator.Simple__work:f&token"];
+console.log({ rights: Management.Right().json() });
+```
+
+#### Output
+
+```json
+{
+  "Navigator": {
+    "operations": {
+      "read": true
+    },
+    "Simple": {
+      "operations": {
+        "read": true
+      },
+      "items": {
+        "work": {
+          "operations": {
+            "read": true,
+            "write": false,
+            "delete": false,
+            "import": false,
+            "export": false
+          },
+          "fields": {
+            "token": {
+              "operations": {
+                "read": true,
+                "write": false,
+                "delete": false,
+                "import": false,
+                "export": false
+              }
+            }
+          },
+          "metadata": {}
+        }
+      }
+    }
+  }
+}
+```
+
+</Details>
+
+<Details summary="Module & Item fields operations">
+  Voici le contenu de l'accordéon. Vous pouvez y mettre tout ce que vous voulez, comme du texte, des listes ou même d'autres composants.
+
+#### Code
+
+```tsx
+import { Management } from "@infrasoftbe/infrasoft-vnv-api-kit";
+
+let right = ["$Navigator.Simple__work:f&token--write"];
+console.log({ rights: Management.Right().json() });
+```
+
+#### Output
+
+```json
+{
+  "Navigator": {
+    "operations": {
+      "read": true
+    },
+    "Simple": {
+      "operations": {
+        "read": true
+      },
+      "items": {
+        "work": {
+          "operations": {
+            "read": true,
+            "write": false,
+            "delete": false,
+            "import": false,
+            "export": false
+          },
+          "fields": {
+            "token": {
+              "operations": {
+                "read": true,
+                "write": true,
+                "delete": false,
+                "import": false,
+                "export": false
+              }
+            }
+          },
+          "metadata": {}
+        }
+      }
+    }
+  }
+}
+```
+
+</Details>
+
+<Details summary="Module & Item metadata fields">
+  Voici le contenu de l'accordéon. Vous pouvez y mettre tout ce que vous voulez, comme du texte, des listes ou même d'autres composants.
+
+#### Code
+
+```tsx
+import { Management } from "@infrasoftbe/infrasoft-vnv-api-kit";
+
+let right = ["$Navigator.Simple__work:m.:f&description"];
+console.log({ rights: Management.Right().json() });
+```
+
+#### Output
+
+```json
+{
+  "Navigator": {
+    "operations": {
+      "read": true
+    },
+    "Simple": {
+      "operations": {
+        "read": true
+      },
+      "items": {
+        "work": {
+          "operations": {
+            "read": true,
+            "write": false,
+            "delete": false,
+            "import": false,
+            "export": false
+          },
+          "fields": {},
+          "metadata": {
+            "description": {
+              "operations": {
+                "read": true,
+                "write": false,
+                "delete": false,
+                "import": false,
+                "export": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+</Details>
+
+<Details summary="Module & Item metadata fields operations">
+  Voici le contenu de l'accordéon. Vous pouvez y mettre tout ce que vous voulez, comme du texte, des listes ou même d'autres composants.
+
+#### Code
+
+```tsx
+import { Management } from "@infrasoftbe/infrasoft-vnv-api-kit";
+
+let right = ["$Navigator.Simple__work:m.:f&description--write"];
+console.log({ rights: Management.Right().json() });
+```
+
+#### Output
+
+```json
+{
+  "Navigator": {
+    "operations": {
+      "read": true
+    },
+    "Simple": {
+      "operations": {
+        "read": true
+      },
+      "items": {
+        "work": {
+          "operations": {
+            "read": true,
+            "write": false,
+            "delete": false,
+            "import": false,
+            "export": false
+          },
+          "fields": {},
+          "metadata": {
+            "description": {
+              "operations": {
+                "read": true,
+                "write": true,
+                "delete": false,
+                "import": false,
+                "export": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+</Details>
+
+Les règles de cascade permettent de définir des droits globaux ou spécifiques selon la **hiérarchie**.
+Par exemple :
+
+<Details summary="Cascading rights">
+  Les permissions s’appliquent avec une hiérarchie en cascade :
+
+- **Modules** : Les droits peuvent être attribués à des modules entiers ou à des sous-modules en utilisant un \* pour capturer tous les sous-modules.
+- **Items** : Chaque item d’un module peut avoir des permissions spécifiques.
+- **Champs** : Des champs spécifiques d’un item peuvent être sélectionnés pour définir des droits précis.
+- **Métadonnées** : Les permissions sur les métadonnées sont structurées avec des couches, permettant d’accéder à des niveaux spécifiques de métadonnées.
+
+#### Code
+
+```tsx
+import { Management } from "@infrasoftbe/infrasoft-vnv-api-kit";
+
+let right = [
+  "$Navigator.Simple--import",
+  "$Navigator.Simple--export",
+  "$Navigator.Simple--delete",
+  "$Navigator.Simple__project",
+  "$Navigator.Simple__project--delete",
+  "$Navigator.Simple__project--import",
+  "$Navigator.Simple__project--export",
+  "$Navigator.Simple__project:f&name",
+  "$Navigator.Simple__project:f&token",
+  "$Navigator.Simple__project:f&create_dt",
+  "$Navigator.Simple__project:f&update_dt",
+  "$Navigator.Simple__project:m.:f&description--write",
+];
+console.log({ rights: Management.Right().json() });
+```
+
+#### Output
+
+```json
+{
+  "Navigator": {
+    "operations": { "read": true },
+    "Simple": {
+      "operations": {
+        "read": true,
+        "write": false,
+        "delete": true,
+        "import": true,
+        "export": true
+      },
+      "items": {
+        "project": {
+          "operations": {
+            "read": true,
+            "write": false,
+            "delete": true,
+            "import": true,
+            "export": true
+          },
+          "fields": {
+            "name": {
+              "operations": {
+                "read": true,
+                "write": false,
+                "delete": false,
+                "import": false,
+                "export": false
+              }
+            },
+            "token": {
+              "operations": {
+                "read": true,
+                "write": false,
+                "delete": false,
+                "import": false,
+                "export": false
+              }
+            },
+            "create_dt": {
+              "operations": {
+                "read": true,
+                "write": false,
+                "delete": false,
+                "import": false,
+                "export": false
+              }
+            },
+            "update_dt": {
+              "operations": {
+                "read": true,
+                "write": false,
+                "delete": false,
+                "import": false,
+                "export": false
+              }
+            }
+          },
+          "metadata": {
+            "description": {
+              "operations": {
+                "read": true,
+                "write": true,
+                "delete": false,
+                "import": false,
+                "export": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+</Details>
+
+## Test zone
+
+<div>
+  {React.createElement(() => {
+    const TestZone = () => {
+      const [rights, setRights] = React.useState(["$Navigator.Simple"]);
+      const [jsonRights, setJsonRights] = React.useState(null);
+
+      React.useEffect(() => {
+        console.log({ rights })
+        setJsonRights(Management.Rights(rights).json());
+      }, [rights]);
+
+      // Gestion des valeurs d'input dans une liste dynamique
+      const handleInputChange = React.useCallback((index, value) => {
+        setRights((prevRights) => {
+          const updatedValues = [...prevRights];
+          updatedValues[index] = value;
+
+          // Retire les inputs vides sauf le dernier
+          return updatedValues.filter((v, i) => v.trim() !== "" || i === updatedValues.length - 1);
+        });
+      }, []);
+
+      return (
+        <React.Fragment>
+          <div style={{ display: "flex" , flexDirection: "column" }}>
+            {[...rights , ''].map((value, index) => (
+              <input
+                key={index}
+                value={value}
+                onChange={(e) => handleInputChange(index, e.target.value)}
+                placeholder="Enter value"
+                style={{ display: "block", marginBottom: "8px" , fontWeight : "bold" }}
+              />
+            ))}
+          </div>
+          <CodeBlock>
+            <CodeBlockCode>{JSON.stringify(jsonRights || {}, null, "\t")}</CodeBlockCode>
+          </CodeBlock>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+</div>
