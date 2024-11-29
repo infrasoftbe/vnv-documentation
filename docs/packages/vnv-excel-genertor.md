@@ -1,1 +1,0 @@
-# @infrasoftbe/infrasoft-vnv-excel-generator
