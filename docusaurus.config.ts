@@ -76,8 +76,24 @@ const config: Config = {
           position: 'left',
           label: 'Tutorial',
         },
-        {to: '/docs/API/', label: 'Components', position: 'left'},
-        {to: '/docs/API/', label: 'API', position: 'left'},
+        {
+          type: 'docSidebar',
+          sidebarId: 'componentsSidebar',
+          position: 'left',
+          label: 'Components',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'packagesSidebar',
+          position: 'left',
+          label: 'Packages',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'apiSidebar',
+          position: 'left',
+          label: 'API',
+        },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/infrasoftbe',

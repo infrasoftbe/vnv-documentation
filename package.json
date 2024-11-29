@@ -22,7 +22,7 @@
     "@docusaurus/theme-live-codeblock": "^3.4.0",
     "@infrasoftbe/infrasoft-project": "^1.2.2-3",
     "@infrasoftbe/infrasoft-ui-components": "^1.1.1-1",
-    "@infrasoftbe/infrasoft-vnv-api-kit": "^1.0.9-5",
+    "@infrasoftbe/infrasoft-vnv-api-kit": "^1.0.9-6",
     "@mdx-js/react": "^3.0.0",
     "@patternfly/react-core": "^6.0.0",
     "@patternfly/react-icons": "^6.0.0",

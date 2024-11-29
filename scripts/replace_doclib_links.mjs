@@ -40,14 +40,14 @@ export function ReplaceDoclibLinks(directoryPath) {
               // Liste des répertoires à remplacer
               const categories = ['assets', 'classes', 'enums', 'functions', 'interfaces', 'modules', 'types', 'variables'];
 
-              console.log({ filePath })
+              // console.log({ filePath })
 
               // Remplacer chaque catégorie par le préfixe approprié
               categories.forEach(category => {
                 const regex = new RegExp(`(?:href|src)="(?:/${category}/|${category}/)`, 'g'); 
-                console.log({ regex })
+                // console.log({ regex })
                 data = data.replace(regex, (match) => {
-                  console.log({ match })
+                  // console.log({ match })
                   return match.replace(`/${category}/`, `${prefix}${category}/`);
                 });
               });
