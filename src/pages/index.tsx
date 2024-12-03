@@ -1,3 +1,5 @@
+import React , { useState } from 'react';
+
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -5,14 +7,19 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 
-import '@patternfly/react-core/dist/styles/base.css'
+import '@infrasoftbe/infrasoft-ui-components/dist/styles/base.css';
 
 import styles from './index.module.css';
+import { Accordion , AccordionItem , AccordionContent } from '@infrasoftbe/infrasoft-ui-components';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <Accordion>
+        <AccordionItem>Coucou</AccordionItem>
+        <AccordionContent></AccordionContent>
+      </Accordion>
       <div className="container">
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
