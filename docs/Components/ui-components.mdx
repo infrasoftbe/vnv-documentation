@@ -1,43 +1,51 @@
-import { ActionButton, ButtonContext } from '@infrasoftbe/infrasoft-ui-components';
 import { HomeIcon , UserIcon , CogIcon } from "@patternfly/react-icons";
 import Playground from '@theme/Playground';
+import BrowserOnly from "@docusaurus/BrowserOnly";
 
 # @infrasoftbe/infrasoft-ui-components
 
-<Playground
-  scope={{
-    ActionButton,
-    ButtonContext,
-    HomeIcon,
-    UserIcon,
-    CogIcon
-  }}
->
-{`
-  function Sample() {
-    const buttonData = [
-      {
-        label: "Home",
-        logo: HomeIcon,
-        onClick: () => alert("Home clicked!"),
-      },
-      {
-        label: "Profile",
-        logo: UserIcon,
-        onClick: () => alert("Profile clicked!"),
-      },
-      {
-        label: "Settings",
-        logo: CogIcon,
-        onClick: () => alert("Settings clicked!"),
-      },
-    ];
+<BrowserOnly>
+{() => {
 
-    return (
-      <div>
-        <ActionButton buttonContext={buttonData} />
-      </div>
-    );
-  }
-`}
-</Playground>
+  const { ActionButton, ButtonContext } = require('@infrasoftbe/infrasoft-ui-components');
+
+  return <Playground
+    scope={{
+      ActionButton,
+      ButtonContext,
+      HomeIcon,
+      UserIcon,
+      CogIcon
+    }}
+  >
+  {`
+    function Sample() {
+      const buttonData = [
+        {
+          label: "Home",
+          logo: HomeIcon,
+          onClick: () => alert("Home clicked!"),
+        },
+        {
+          label: "Profile",
+          logo: UserIcon,
+          onClick: () => alert("Profile clicked!"),
+        },
+        {
+          label: "Settings",
+          logo: CogIcon,
+          onClick: () => alert("Settings clicked!"),
+        },
+      ];
+
+      return (
+        <div>
+          <ActionButton buttonContext={buttonData} />
+        </div>
+      );
+    }
+  `}
+  </Playground>
+
+}}
+</BrowserOnly>

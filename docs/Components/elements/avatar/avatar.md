@@ -3,7 +3,7 @@ id: Avatar
 section: components
 ---
 
-import { Checkbox, List, ListItem } from '@infrasoftbe/infrasoft-ui-components';
+import { Checkbox, List, ListItem } from '@patternfly/react-core';
 
 ## Accessibility
 

@@ -1,12 +1,9 @@
 import React from "react";
 import Playground from "@theme/Playground";
-import BrowserOnly from '@docusaurus/BrowserOnly';
-import { Breakdown , EmptyState , Button , EmptyStateBody, EmptyStateActions, EmptyStateFooter } from "@infrasoftbe/infrasoft-ui-components";
-import { _infrasoftProjectRepport } from '@infrasoftbe/infrasoft-vnv-excel-generator';
+import BrowserOnly from "@docusaurus/BrowserOnly";
+import { _infrasoftProjectRepport } from "@infrasoftbe/infrasoft-vnv-excel-generator";
 
-import { CubesIcon , PencilAltIcon } from '@patternfly/react-icons';
-
-import * as go from "gojs";
+import { CubesIcon, PencilAltIcon } from "@patternfly/react-icons";
 
 # Breakdown
 
@@ -16,83 +13,95 @@ Le composant Breakdown est une implémentation React permettant de visualiser de
 
 ## Integration
 
-<Playground
-  scope={{
-    React,
-    Breakdown,
-  }}
+<BrowserOnly>
+{() => {
+
+const { Breakdown } = require("@infrasoftbe/infrasoft-ui-components");
+
+return <Playground
+scope={{
+      React,
+      Breakdown,
+    }}
+
 >
-  {`
-  function MyPlayground(){
 
-    let [ nodes , setNodes ] = React.useState([
-      {
-        token : 0,
-        name : 'Node0',
-      },
-      {
-        token : 1,
-        name : 'Node1',
-      },
-      {
-        token : 2,
-        name : 'Node2',
-      }
-    ])
+    {`
+    function MyPlayground(){
 
-    let [ relations , setRelations ] = React.useState([
-      {
-        from : 0,
-        to : 1
-      },
-      {
-        from : 0,
-        to : 2
-      }
-    ])
+      let [ nodes , setNodes ] = React.useState([
+        {
+          token : 0,
+          name : 'Node0',
+        },
+        {
+          token : 1,
+          name : 'Node1',
+        },
+        {
+          token : 2,
+          name : 'Node2',
+        }
+      ])
 
-    return (
-      <React.Fragment>
-        <div style = {{ minHeight : '400px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-          <Breakdown
-            nodeDataArray = { nodes }
-            linkDataArray = { relations }
-          />
-        </div>
-      </React.Fragment>
-    );
+      let [ relations , setRelations ] = React.useState([
+        {
+          from : 0,
+          to : 1
+        },
+        {
+          from : 0,
+          to : 2
+        }
+      ])
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '400px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = { nodes }
+              linkDataArray = { relations }
+            />
+          </div>
+        </React.Fragment>
+      );
 
 }
 `}
 
-</Playground>
+  </Playground>
+
+}}
+
+</BrowserOnly>
 
 ## Simple
 
 Cet exemple illustre un cas basique d'utilisation du composant Breakdown, où un seul nœud est affiché dans le diagramme. Ce type de configuration est idéal pour les tests initiaux ou pour représenter une simple entité dans un organigramme ou un diagramme de processus.
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
-                {
-                  token : 0,
-                  name : 'Node Name',
-                }
-              ]}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
 
-    return <TestZone />;
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node Name',
+            }
+          ]}
+        />
+      </div>
+    </React.Fragment>
 
-})}
+}
+}
+
+</BrowserOnly>
 
 ## With Relation
 
@@ -114,38 +123,39 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
-                {
-                  token : 0,
-                  name : 'Node0',
-                },
-                {
-                  token : 1,
-                  name : 'Node1',
-                }
-              ]}
-              linkDataArray = {[
-                {
-                  from : 0,
-                  to : 1
-                }
-              ]}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
 
-    return <TestZone />;
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node0',
+            },
+            {
+              token : 1,
+              name : 'Node1',
+            }
+          ]}
+          linkDataArray = {[
+            {
+              from : 0,
+              to : 1
+            }
+          ]}
+        />
+      </div>
+    </React.Fragment>
 
-})}
+  }
+}
+
+</BrowserOnly>
 
 ## Layouts
 
@@ -165,38 +175,38 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
-                {
-                  token : 0,
-                  name : 'Node0',
-                },
-                {
-                  token : 1,
-                  name : 'Node1',
-                }
-              ]}
-              linkDataArray = {[
-                {
-                  from : 0,
-                  to : 1
-                }
-              ]}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
 
-    return <TestZone />;
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node0',
+            },
+            {
+              token : 1,
+              name : 'Node1',
+            }
+          ]}
+          linkDataArray = {[
+            {
+              from : 0,
+              to : 1
+            }
+          ]}
+        />
+      </div>
+    </React.Fragment>
 
-})}
+  }
+}
+</BrowserOnly>
 
 ### Vertical
 
@@ -212,41 +222,41 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '400px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
-                {
-                  token : 0,
-                  name : 'Node0',
-                },
-                {
-                  token : 1,
-                  name : 'Node1',
-                }
-              ]}
-              linkDataArray = {[
-                {
-                  from : 0,
-                  to : 1
-                }
-              ]}
-              initOptions = {{
-                layout : 'vertical'
-              }}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
 
-    return <TestZone />;
+    return <React.Fragment>
+      <div style = {{ minHeight : '400px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node0',
+            },
+            {
+              token : 1,
+              name : 'Node1',
+            }
+          ]}
+          linkDataArray = {[
+            {
+              from : 0,
+              to : 1
+            }
+          ]}
+          initOptions = {{
+            layout : 'vertical'
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-})}
+  }
+}
+</BrowserOnly>
 
 ### Dynamic
 
@@ -277,52 +287,52 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
-                {
-                  token : 0,
-                  name : 'Node0',
-                },
-                {
-                  token : 1,
-                  name : 'Node1',
-                }
-              ]}
-              linkDataArray = {[
-                {
-                  from : 0,
-                  to : 1
-                }
-              ]}
-              initOptions = {{
-                layout : function( go ){
-                  // Horizontal layout
-                  return go.GraphObject.make(
-                    go.TreeLayout,
-                    {
-                      treeStyle: go.TreeLayout.StyleLastParents,
-                      angle: 0,
-                      layerSpacing: 80,
-                      alignment: go.TreeLayout.AlignmentEnd,
-                    }
-                  );
-                }
-              }}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
 
-    return <TestZone />;
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node0',
+            },
+            {
+              token : 1,
+              name : 'Node1',
+            }
+          ]}
+          linkDataArray = {[
+            {
+              from : 0,
+              to : 1
+            }
+          ]}
+          initOptions = {{
+            layout : function( go ){
+              // Horizontal layout
+              return go.GraphObject.make(
+                go.TreeLayout,
+                {
+                  treeStyle: go.TreeLayout.StyleLastParents,
+                  angle: 0,
+                  layerSpacing: 80,
+                  alignment: go.TreeLayout.AlignmentEnd,
+                }
+              );
+            }
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-})}
+  }
+}
+</BrowserOnly>
 
 ## Overview Map
 
@@ -340,31 +350,31 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
-                {
-                  token : 0,
-                  name : 'Node0',
-                }
-              ]}
-              initOptions = {{
-                overview : true
-              }}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
 
-    return <TestZone />;
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node0',
+            }
+          ]}
+          initOptions = {{
+            overview : true
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-})}
+  }
+}
+</BrowserOnly>
 
 ## Grid
 
@@ -382,31 +392,31 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
-                {
-                  token : 0,
-                  name : 'Node0',
-                }
-              ]}
-              initOptions = {{
-                grid : { visible : true }
-              }}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
 
-    return <TestZone />;
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node0',
+            }
+          ]}
+          initOptions = {{
+            grid : { visible : true }
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-})}
+  }
+}
+</BrowserOnly>
 
 ### Dynamic
 
@@ -418,7 +428,7 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
     nodeDataArray = {[...]}
     linkDataArray = {[...]}
     initOptions = {{
-      grid : { 
+      grid : {
         visible : true,
         template : function( go ){
 
@@ -428,8 +438,8 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
             go.Panel,
             "Grid",
             // Taille de chaque cellule
-            { 
-              gridCellSize: new go.Size(25, 25) 
+            {
+              gridCellSize: new go.Size(25, 25)
             },
             // Lignes horizontales
             maker(go.Shape, "LineH", {
@@ -451,58 +461,58 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
-                {
-                  token : 0,
-                  name : 'Node0',
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
+
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node0',
+            }
+          ]}
+          initOptions = {{
+            grid : {
+              visible : true,
+              template : function( go ){
+
+                let maker = go.GraphObject.make;
+
+                return maker(
+                  go.Panel,
+                  "Grid",
+                  // Taille de chaque cellule
+                  {
+                    gridCellSize: new go.Size(25, 25)
+                  },
+                  // Lignes horizontales
+                  maker(go.Shape, "LineH", {
+                    strokeWidth: 1,
+                    stroke: "orange",
+                    strokeDashArray: [0, 2, 3, 0]
+                  }),
+                  // Lignes verticales
+                  maker(go.Shape, "LineV", {
+                    strokeWidth: 1,
+                    stroke: "darkred" // Couleur des lignes
+                  })
+                )
+
                 }
-              ]}
-              initOptions = {{
-                grid : { 
-                  visible : true,
-                  template : function( go ){
+            }
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-                    let maker = go.GraphObject.make;
-
-                    return maker(
-                      go.Panel,
-                      "Grid",
-                      // Taille de chaque cellule
-                      { 
-                        gridCellSize: new go.Size(25, 25) 
-                      },
-                      // Lignes horizontales
-                      maker(go.Shape, "LineH", {
-                        strokeWidth: 1,
-                        stroke: "orange",
-                        strokeDashArray: [0, 2, 3, 0]
-                      }),
-                      // Lignes verticales
-                      maker(go.Shape, "LineV", {
-                        strokeWidth: 1,
-                        stroke: "darkred" // Couleur des lignes
-                      })
-                    )
-
-                  }
-                }
-              }}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
-
-    return <TestZone />;
-
-})}
+  }
+}
+</BrowserOnly>
 
 ## Themes ![](https://img.shields.io/badge/Feature-Broken-red.svg)
 
@@ -722,48 +732,48 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
-                {
-                  token : 0,
-                  name : 'Node0',
-                },
-                {
-                  token : 1,
-                  name : 'Node1',
-                }
-              ]}
-              linkDataArray = {[
-                {
-                  from : 0,
-                  to : 1
-                }
-              ]}
-              initOptions = {{
-                isReadOnly : false,
-                isEnabled : true,
-                allowSelect : true,
-                listeners : {
-                  ChangedSelection : () => {
-                    alert('Selection changed');
-                  }
-                }
-              }}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
 
-    return <TestZone />;
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node0',
+            },
+            {
+              token : 1,
+              name : 'Node1',
+            }
+          ]}
+          linkDataArray = {[
+            {
+              from : 0,
+              to : 1
+            }
+          ]}
+          initOptions = {{
+            isReadOnly : false,
+            isEnabled : true,
+            allowSelect : true,
+            listeners : {
+              ChangedSelection : () => {
+                alert('Selection changed');
+              }
+            }
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-})}
+  }
+}
+</BrowserOnly>
 
 ## Nodes
 
@@ -792,48 +802,48 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
-                {
-                  token : 0,
-                  name : 'Node0',
-                },
-                {
-                  token : 1,
-                  name : 'Node1',
-                }
-              ]}
-              linkDataArray = {[
-                {
-                  from : 0,
-                  to : 1
-                }
-              ]}
-              initOptions = {{
-                nodeHooks : {
-                  textColor : "white",
-                  style : {
-                    fill : "red",
-                    strokeWidth : 0,
-                    stroke : "black",
-                  }
-                }
-              }}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
 
-    return <TestZone />;
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node0',
+            },
+            {
+              token : 1,
+              name : 'Node1',
+            }
+          ]}
+          linkDataArray = {[
+            {
+              from : 0,
+              to : 1
+            }
+          ]}
+          initOptions = {{
+            nodeHooks : {
+              textColor : "white",
+              style : {
+                fill : "red",
+                strokeWidth : 0,
+                stroke : "black",
+              }
+            }
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-})}
+  }
+}
+</BrowserOnly>
 
 #### Dynamic
 
@@ -923,110 +933,110 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
-                {
-                  token : 0,
-                  name : 'Node0',
-                },
-                {
-                  token : 1,
-                  name : 'Node1',
-                }
-              ]}
-              linkDataArray = {[
-                {
-                  from : 0,
-                  to : 1
-                }
-              ]}
-              initOptions = {{
-                isReadOnly : false,
-                isEnabled : true,
-                allowSelect : true,
-                nodeHooks : {
-                  textColor : "white",
-                  style : {
-                    fill : "#f2f2f2",
-                    strokeWidth : 0,
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
+
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node0',
+            },
+            {
+              token : 1,
+              name : 'Node1',
+            }
+          ]}
+          linkDataArray = {[
+            {
+              from : 0,
+              to : 1
+            }
+          ]}
+          initOptions = {{
+            isReadOnly : false,
+            isEnabled : true,
+            allowSelect : true,
+            nodeHooks : {
+              textColor : "white",
+              style : {
+                fill : "#f2f2f2",
+                strokeWidth : 0,
+              },
+              panel( go ){
+
+                let maker = go.GraphObject.make;
+
+                return maker(go.Panel, "Table", {
+                    defaultAlignment: go.Spot.Top,
+                    stretch: go.GraphObject.Vertical,
+                    width: 250,
+                    click: () => alert('onNodeClick'),
                   },
-                  panel( go ){
-
-                    let maker = go.GraphObject.make;
-
-                    return maker(go.Panel, "Table", {
-                        defaultAlignment: go.Spot.Top,
-                        stretch: go.GraphObject.Vertical,
-                        width: 250,
-                        click: () => alert('onNodeClick'),
+                  maker(go.RowColumnDefinition, { row: 0, height: 40 }),
+                  maker(go.RowColumnDefinition, { row: 1, height: 40 }),
+                  maker(go.Panel, "Auto",
+                    {
+                      row: 0,
+                      column: 1,
+                      stretch: go.GraphObject.Vertical,
+                      alignment: go.Spot.Top,
+                      width: 300,
+                    },
+                    maker(go.Shape, "RoundedRectangle",
+                      {
+                        parameter1: 1,
+                        strokeWidth: 0,
+                        fill : "#f2f2f2"
+                      }
+                    ),
+                    maker(
+                      go.TextBlock,
+                      {
+                        stroke : "dimgray"
                       },
-                      maker(go.RowColumnDefinition, { row: 0, height: 40 }),
-                      maker(go.RowColumnDefinition, { row: 1, height: 40 }),
-                      maker(go.Panel, "Auto",
-                        {
-                          row: 0,
-                          column: 1,
-                          stretch: go.GraphObject.Vertical,
-                          alignment: go.Spot.Top,
-                          width: 300,
-                        },
-                        maker(go.Shape, "RoundedRectangle",
-                          {
-                            parameter1: 1,
-                            strokeWidth: 0,
-                            fill : "#f2f2f2"
-                          }
-                        ),
-                        maker(
-                          go.TextBlock,
-                          {
-                            stroke : "dimgray"
-                          },
-                          new go.Binding("text", "name")
-                        )
-                      ),
-                      maker(go.Panel, "Auto", {
-                          row: 1,
-                          column: 1,
-                          stretch: go.GraphObject.Vertical,
-                          alignment: go.Spot.Bottom,
-                          width: 300,
-                        },
-                        maker(go.Shape, "RoundedRectangle",
-                          {
-                            name: 'content',
-                            parameter1: 1,
-                            strokeWidth: 0,
-                            fill : "#f2f2f2"
-                          }
-                        ),
-                        maker(
-                          go.TextBlock,
-                          {
-                            stroke : "dimgray",
-                            text : "Text"
-                          }
-                        )
-                      )
+                      new go.Binding("text", "name")
                     )
-                  }
-                }
-              }}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+                  ),
+                  maker(go.Panel, "Auto", {
+                      row: 1,
+                      column: 1,
+                      stretch: go.GraphObject.Vertical,
+                      alignment: go.Spot.Bottom,
+                      width: 300,
+                    },
+                    maker(go.Shape, "RoundedRectangle",
+                      {
+                        name: 'content',
+                        parameter1: 1,
+                        strokeWidth: 0,
+                        fill : "#f2f2f2"
+                      }
+                    ),
+                    maker(
+                      go.TextBlock,
+                      {
+                        stroke : "dimgray",
+                        text : "Text"
+                      }
+                    )
+                  )
+                )
+              }
+            }
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-    return <TestZone />;
-
-})}
+  }
+}
+</BrowserOnly>
 
 ### Hover stroke
 
@@ -1047,44 +1057,44 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
-                {
-                  token : 0,
-                  name : 'Node0',
-                },
-                {
-                  token : 1,
-                  name : 'Node1',
-                }
-              ]}
-              linkDataArray = {[
-                {
-                  from : 0,
-                  to : 1
-                }
-              ]}
-              initOptions = {{
-                isEnabled : true,
-                nodeHooks : {
-                  hoverStroke : true
-                }
-              }}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
 
-    return <TestZone />;
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node0',
+            },
+            {
+              token : 1,
+              name : 'Node1',
+            }
+          ]}
+          linkDataArray = {[
+            {
+              from : 0,
+              to : 1
+            }
+          ]}
+          initOptions = {{
+            isEnabled : true,
+            nodeHooks : {
+              hoverStroke : true
+            }
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-})}
+  }
+}
+</BrowserOnly>
 
 ### Hover stroke style
 
@@ -1099,60 +1109,60 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
     linkDataArray = {[...]}
     initOptions = {{
       isEnabled : true,
-      nodeHooks : { 
+      nodeHooks : {
         hoverStroke : {
           stroke : 'royalblue',
           strokeDashArray : [],
           strokeWidth : 2
-        } 
+        }
       }
     }}
   />
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
-                {
-                  token : 0,
-                  name : 'Node0',
-                },
-                {
-                  token : 1,
-                  name : 'Node1',
-                }
-              ]}
-              linkDataArray = {[
-                {
-                  from : 0,
-                  to : 1
-                }
-              ]}
-              initOptions = {{
-                isEnabled : true,
-                nodeHooks : {
-                  hoverStroke : {
-                    stroke : 'royalblue',
-                    strokeDashArray : [],
-                    strokeWidth : 2
-                  }
-                }
-              }}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
 
-    return <TestZone />;
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node0',
+            },
+            {
+              token : 1,
+              name : 'Node1',
+            }
+          ]}
+          linkDataArray = {[
+            {
+              from : 0,
+              to : 1
+            }
+          ]}
+          initOptions = {{
+            isEnabled : true,
+            nodeHooks : {
+              hoverStroke : {
+                stroke : 'royalblue',
+                strokeDashArray : [],
+                strokeWidth : 2
+              }
+            }
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-})}
+  }
+}
+</BrowserOnly>
 
 ### Listeners
 
@@ -1235,48 +1245,48 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
-                {
-                  token : 0,
-                  name : 'Node0',
-                },
-                {
-                  token : 1,
-                  name : 'Node1',
-                }
-              ]}
-              linkDataArray = {[
-                {
-                  from : 0,
-                  to : 1
-                }
-              ]}
-              initOptions = {{
-                isReadOnly : false,
-                isEnabled : true,
-                allowSelect : true,
-                nodeHooks : {
-                  clickNode(){
-                    alert('onNodeClick');
-                  }
-                }
-              }}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
 
-    return <TestZone />;
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node0',
+            },
+            {
+              token : 1,
+              name : 'Node1',
+            }
+          ]}
+          linkDataArray = {[
+            {
+              from : 0,
+              to : 1
+            }
+          ]}
+          initOptions = {{
+            isReadOnly : false,
+            isEnabled : true,
+            allowSelect : true,
+            nodeHooks : {
+              clickNode(){
+                alert('onNodeClick');
+              }
+            }
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-})}
+  }
+}
+</BrowserOnly>
 
 ## Contextual Menu
 
@@ -1291,7 +1301,7 @@ import { PencilAltIcon } from '@patternfly/react-icons';
     initOptions = {{
       nodeHooks : {
         contextMenu : [
-          { 
+          {
             title : 'editNode',
             icon : PencilAltIcon,
             action( this:go.Diagram , e: go.InputEvent, thisObj: go.GraphObject ){
@@ -1308,46 +1318,44 @@ import { PencilAltIcon } from '@patternfly/react-icons';
 ```
 
 <BrowserOnly>
-{() => React.createElement(() => {
-const TestZone = () => {
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
+
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node0',
+            }
+          ]}
+          initOptions = {{
+            isReadOnly : false,
+            isEnabled : true,
+            allowSelect : true,
+            nodeHooks : {
+              contextMenu : [
                 {
-                  token : 0,
-                  name : 'Node0',
-                }
-              ]}
-              initOptions = {{
-                isReadOnly : false,
-                isEnabled : true,
-                allowSelect : true,
-                nodeHooks : {
-                  contextMenu : [
-                    { 
-                      title : 'editNode',
-                      icon : PencilAltIcon,
-                      action : () => {
-                        alert('editNode');
-                      }
-                    },
-                    { title : 'clearNode' },
-                    { title : 'removeNode' },
-                  ]
-                }
-              }}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+                  title : 'editNode',
+                  icon : PencilAltIcon,
+                  action : () => {
+                    alert('editNode');
+                  }
+                },
+                { title : 'clearNode' },
+                { title : 'removeNode' },
+              ]
+            }
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-    return <TestZone />;
-
-})}
+  }
+}
 </BrowserOnly>
 
 ## Links
@@ -1365,7 +1373,7 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
     linkDataArray = {[...]}
     initOptions = {{
       linkHooks : {
-        line : { 
+        line : {
           strokeWidth : 3,
           stroke : 'red',
           fill : 'red'
@@ -1376,48 +1384,48 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
-                {
-                  token : 0,
-                  name : 'Node0',
-                },
-                {
-                  token : 1,
-                  name : 'Node1',
-                }
-              ]}
-              linkDataArray = {[
-                {
-                  from : 0,
-                  to : 1
-                }
-              ]}
-              initOptions = {{
-                isEnabled : true,
-                linkHooks : {
-                  line : { 
-                    strokeWidth : 3,
-                    stroke : 'red',
-                    fill : 'red'
-                  }
-                }
-              }}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
 
-    return <TestZone />;
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node0',
+            },
+            {
+              token : 1,
+              name : 'Node1',
+            }
+          ]}
+          linkDataArray = {[
+            {
+              from : 0,
+              to : 1
+            }
+          ]}
+          initOptions = {{
+            isEnabled : true,
+            linkHooks : {
+              line : {
+                strokeWidth : 3,
+                stroke : 'red',
+                fill : 'red'
+              }
+            }
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-})}
+  }
+}
+</BrowserOnly>
 
 #### Dynamic
 
@@ -1436,7 +1444,7 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
           return go.GraphObject.make(
             go.Shape,
             {
-              strokeWidth: 3, 
+              strokeWidth: 3,
               stroke: "royalblue",
             }
           );
@@ -1447,52 +1455,52 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
-                {
-                  token : 0,
-                  name : 'Node0',
-                },
-                {
-                  token : 1,
-                  name : 'Node1',
-                }
-              ]}
-              linkDataArray = {[
-                {
-                  from : 0,
-                  to : 1
-                }
-              ]}
-              initOptions = {{
-                isEnabled : true,
-                linkHooks : {
-                  line : function( go ){
-                    return go.GraphObject.make(
-                      go.Shape,
-                      {
-                        strokeWidth: 3, 
-                        stroke: "royalblue",
-                      }
-                    );
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
+
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node0',
+            },
+            {
+              token : 1,
+              name : 'Node1',
+            }
+          ]}
+          linkDataArray = {[
+            {
+              from : 0,
+              to : 1
+            }
+          ]}
+          initOptions = {{
+            isEnabled : true,
+            linkHooks : {
+              line : function( go ){
+                return go.GraphObject.make(
+                  go.Shape,
+                  {
+                    strokeWidth: 3,
+                    stroke: "royalblue",
                   }
-                }
-              }}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+                );
+              }
+            }
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-    return <TestZone />;
-
-})}
+  }
+}
+</BrowserOnly>
 
 ### Arrow
 
@@ -1507,7 +1515,7 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
     linkDataArray = {[...]}
     initOptions = {{
       linkHooks : {
-        arrow : { 
+        arrow : {
           toArrow: "Triangle",
           strokeWidth : 3,
           stroke : 'red',
@@ -1519,50 +1527,49 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
-                {
-                  token : 0,
-                  name : 'Node0',
-                },
-                {
-                  token : 1,
-                  name : 'Node1',
-                }
-              ]}
-              linkDataArray = {[
-                {
-                  from : 0,
-                  to : 1
-                }
-              ]}
-              initOptions = {{
-                isEnabled : true,
-                linkHooks : {
-                  arrow : { 
-                    toArrow: "Triangle",
-                    strokeWidth : 3,
-                    stroke : 'red',
-                    fill : 'red'
-                  }
-                }
-              }}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
 
-    return <TestZone />;
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node0',
+            },
+            {
+              token : 1,
+              name : 'Node1',
+            }
+          ]}
+          linkDataArray = {[
+            {
+              from : 0,
+              to : 1
+            }
+          ]}
+          initOptions = {{
+            isEnabled : true,
+            linkHooks : {
+              arrow : {
+                toArrow: "Triangle",
+                strokeWidth : 3,
+                stroke : 'red',
+                fill : 'red'
+              }
+            }
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-})}
-
+  }
+}
+</BrowserOnly>
 
 #### Dynamic
 
@@ -1582,7 +1589,7 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
             go.Shape,
             {
               toArrow: "Chevron",
-              strokeWidth: 5, 
+              strokeWidth: 5,
               stroke: "royalblue",
               fill: "royalblue",
             }
@@ -1594,53 +1601,53 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
-                {
-                  token : 0,
-                  name : 'Node0',
-                },
-                {
-                  token : 1,
-                  name : 'Node1',
-                }
-              ]}
-              linkDataArray = {[
-                {
-                  from : 0,
-                  to : 1
-                }
-              ]}
-              initOptions = {{
-                linkHooks : {
-                  arrow : function( go ){
-                    return go.GraphObject.make(
-                      go.Shape,
-                      {
-                        toArrow: "Chevron",
-                        strokeWidth: 5, 
-                        stroke: "royalblue",
-                        fill: "royalblue",
-                      }
-                    );
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
+
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node0',
+            },
+            {
+              token : 1,
+              name : 'Node1',
+            }
+          ]}
+          linkDataArray = {[
+            {
+              from : 0,
+              to : 1
+            }
+          ]}
+          initOptions = {{
+            linkHooks : {
+              arrow : function( go ){
+                return go.GraphObject.make(
+                  go.Shape,
+                  {
+                    toArrow: "Chevron",
+                    strokeWidth: 5,
+                    stroke: "royalblue",
+                    fill: "royalblue",
                   }
-                }
-              }}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+                );
+              }
+            }
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-    return <TestZone />;
-
-})}
+  }
+}
+</BrowserOnly>
 
 ### Listeners
 
@@ -1668,46 +1675,46 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
-                {
-                  token : 0,
-                  name : 'Node0',
-                },
-                {
-                  token : 1,
-                  name : 'Node1',
-                }
-              ]}
-              linkDataArray = {[
-                {
-                  from : 0,
-                  to : 1
-                }
-              ]}
-              initOptions = {{
-                isEnabled : true,
-                linkHooks : {
-                  click(){
-                    alert('Link clicked');
-                  }
-                }
-              }}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
 
-    return <TestZone />;
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node0',
+            },
+            {
+              token : 1,
+              name : 'Node1',
+            }
+          ]}
+          linkDataArray = {[
+            {
+              from : 0,
+              to : 1
+            }
+          ]}
+          initOptions = {{
+            isEnabled : true,
+            linkHooks : {
+              click(){
+                alert('Link clicked');
+              }
+            }
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-})}
+  }
+}
+</BrowserOnly>
 
 ## Advance
 
@@ -1760,7 +1767,7 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
       diagram.linkTemplate = maker(go.Link)
       .add(maker(go.Shape)) // Ligne de base
       .add(maker(go.Shape, { toArrow: "Standard" })); // Flèche
-        
+
       // Setup de nodeKeyProperty et des links
       diagram.model.linkDataArray = this.props.modelData.linkDataArray;
       diagram.model.nodeKeyProperty = this.props.modelData.nodeKeyProperty;
@@ -1772,73 +1779,73 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              initOptions = {{
-                isEnabled : true,
-              }}
-              nodeDataArray = {[
-                { myKey : 0, name : 'Alpha' },
-                { myKey : 1, name : 'Beta' },
-                { myKey : 2, name : 'Gamma' }
-              ]}
-              modelData = {{
-                nodeKeyProperty : "myKey",
-                linkDataArray : [
-                  { from : 0, to : 1 },
-                  { from : 0, to : 2 }
-                ]
-              }}
-              initDiagram = {function( initOptions ){
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
 
-                const maker = go.GraphObject.make;
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          initOptions = {{
+            isEnabled : true,
+          }}
+          nodeDataArray = {[
+            { myKey : 0, name : 'Alpha' },
+            { myKey : 1, name : 'Beta' },
+            { myKey : 2, name : 'Gamma' }
+          ]}
+          modelData = {{
+            nodeKeyProperty : "myKey",
+            linkDataArray : [
+              { from : 0, to : 1 },
+              { from : 0, to : 2 }
+            ]
+          }}
+          initDiagram = {function( initOptions ){
 
-                const diagram = maker(go.Diagram);
+            const maker = go.GraphObject.make;
 
-                // Configuration basique du diagramme
-                diagram.initialContentAlignment = go.Spot.Center; // Centrer les nœuds
-                diagram.layout = maker(go.TreeLayout);
+            const diagram = maker(go.Diagram);
 
-                // Définition des modèles de nœuds
-                diagram.nodeTemplate = maker(go.Node, "Auto")
-                .add(
-                  maker(go.Shape, "RoundedRectangle", {
-                    fill: "lightgreen",
-                    stroke: null,
-                  })
-                )
-                .add(
-                  maker(go.TextBlock, {
-                    margin: 8,
-                    editable: false,
-                  }).bind("text", "name")
-                );
+            // Configuration basique du diagramme
+            diagram.initialContentAlignment = go.Spot.Center; // Centrer les nœuds
+            diagram.layout = maker(go.TreeLayout);
 
-                // Modèle de liens
-                diagram.linkTemplate = maker(go.Link)
-                .add(maker(go.Shape)) // Ligne de base
-                .add(maker(go.Shape, { toArrow: "Standard" })); // Flèche
-        
-                diagram.model.linkDataArray = this.props.modelData.linkDataArray;
-                diagram.model.nodeKeyProperty = this.props.modelData.nodeKeyProperty;
+            // Définition des modèles de nœuds
+            diagram.nodeTemplate = maker(go.Node, "Auto")
+            .add(
+              maker(go.Shape, "RoundedRectangle", {
+                fill: "lightgreen",
+                stroke: null,
+              })
+            )
+            .add(
+              maker(go.TextBlock, {
+                margin: 8,
+                editable: false,
+              }).bind("text", "name")
+            );
 
-                return () => diagram;
+            // Modèle de liens
+            diagram.linkTemplate = maker(go.Link)
+            .add(maker(go.Shape)) // Ligne de base
+            .add(maker(go.Shape, { toArrow: "Standard" })); // Flèche
 
-              }}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+            diagram.model.linkDataArray = this.props.modelData.linkDataArray;
+            diagram.model.nodeKeyProperty = this.props.modelData.nodeKeyProperty;
 
-    return <TestZone />;
+            return () => diagram;
 
-})}
+          }}
+        />
+      </div>
+    </React.Fragment>
+
+  }
+}
+</BrowserOnly>
 
 ## Utilities
 
@@ -1856,23 +1863,23 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-  const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-    return (
-      <React.Fragment>
-        <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-          <Breakdown
-            nodeDataArray = {[ { token : 0, name : 'Node Name' } ]}
-          />
-        </div>
-      </React.Fragment>
-    );
-  };
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
 
-  return <TestZone />;
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[ { token : 0, name : 'Node Name' } ]}
+        />
+      </div>
+    </React.Fragment>
 
-})}
+  }
+}
+</BrowserOnly>
 
 #### Default initialisation function
 
@@ -1887,24 +1894,24 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-  const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-    return (
-      <React.Fragment>
-        <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-          <Breakdown
-            nodeDataArray = {[ { token : 0, name : 'Node Name' } ]}
-            initDiagram = { Breakdown.default_initDiagram_function }
-          />
-        </div>
-      </React.Fragment>
-    );
-  };
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
 
-  return <TestZone />;
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[ { token : 0, name : 'Node Name' } ]}
+          initDiagram = { Breakdown.default_initDiagram_function }
+        />
+      </div>
+    </React.Fragment>
 
-})}
+  }
+}
+</BrowserOnly>
 
 ### BuildIn - NodeTemplate ![](https://img.shields.io/badge/BuildIn-PanelTemplate-orange.svg)
 
@@ -1916,46 +1923,45 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
   <Breakdown
     nodeDataArray = {[
-      { 
-        token : "PR0000", 
+      {
+        token : "PR0000",
         name : 'MyProject',
         type : 'project'
       }
     ]}
-    initOptions = {{ 
+    initOptions = {{
       nodeHooks : { panel : Breakdown.default_node_template() }
     }}
   />
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-  const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-    return (
-      <React.Fragment>
-        <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-          <Breakdown
-            nodeDataArray = {[ 
-              { 
-                token : "PR0000", 
-                name : 'MyProject',
-                type : 'project'
-              }
-            ]}
-            initOptions = {{ 
-              nodeHooks : { panel : Breakdown.default_node_template() },
-            }}
-          />
-        </div>
-      </React.Fragment>
-    );
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
 
-  };
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : "PR0000",
+              name : 'MyProject',
+              type : 'project'
+            }
+          ]}
+          initOptions = {{
+            nodeHooks : { panel : Breakdown.default_node_template() },
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-  return <TestZone />;
-
-})}
+  }
+}
+</BrowserOnly>
 
 ### BuildIn - NodeTemplate Utilities ![](https://img.shields.io/badge/BuildIn-PanelTemplate-orange.svg)
 
@@ -1967,8 +1973,8 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
   <Breakdown
     nodeDataArray = {[
-      { 
-        token : "PR0000", 
+      {
+        token : "PR0000",
         name : 'MyProject',
         type : 'project',
         meta : {
@@ -1978,8 +1984,8 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
         }
       }
     ]}
-    initOptions = {{ 
-      nodeHooks : { 
+    initOptions = {{
+      nodeHooks : {
         panel : Breakdown.default_node_template(),
         spots : [
           Breakdown.default_externalExcelTokenInfo_template()
@@ -1990,44 +1996,43 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-  const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-    return (
-      <React.Fragment>
-        <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-          <Breakdown
-            nodeDataArray = {[ 
-              { 
-                token : "PR0000", 
-                name : 'MyProject',
-                type : 'project',
-                meta : {
-                  external : {
-                    excel : { token : 'external-excel-token' }
-                  }
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
+
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : "PR0000",
+              name : 'MyProject',
+              type : 'project',
+              meta : {
+                external : {
+                  excel : { token : 'external-excel-token' }
                 }
               }
-            ]}
-            linkDataArray = {[]}
-            initOptions = {{ 
-              nodeHooks : { 
-                panel : Breakdown.default_node_template(),
-                spots : [
-                  Breakdown.default_externalExcelTokenInfo_template()
-                ]
-              },
-            }}
-          />
-        </div>
-      </React.Fragment>
-    );
+            }
+          ]}
+          linkDataArray = {[]}
+          initOptions = {{
+            nodeHooks : {
+              panel : Breakdown.default_node_template(),
+              spots : [
+                Breakdown.default_externalExcelTokenInfo_template()
+              ]
+            },
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-  };
-
-  return <TestZone />;
-
-})}
+  }
+}
+</BrowserOnly>
 
 #### External Excel Token Info - Customize
 
@@ -2037,8 +2042,8 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
   <Breakdown
     nodeDataArray = {[
-      { 
-        token : "PR0000", 
+      {
+        token : "PR0000",
         name : 'MyProject',
         type : 'project',
         meta : {
@@ -2048,8 +2053,8 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
         }
       }
     ]}
-    initOptions = {{ 
-      nodeHooks : { 
+    initOptions = {{
+      nodeHooks : {
         panel : Breakdown.default_node_template(),
         spots : [
           Breakdown.default_externalExcelTokenInfo_template({ background : "red" })
@@ -2060,44 +2065,43 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-  const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-    return (
-      <React.Fragment>
-        <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-          <Breakdown
-            nodeDataArray = {[ 
-              { 
-                token : "PR0000", 
-                name : 'MyProject',
-                type : 'project',
-                meta : {
-                  external : {
-                    excel : { token : 'external-excel-token' }
-                  }
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
+
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : "PR0000",
+              name : 'MyProject',
+              type : 'project',
+              meta : {
+                external : {
+                  excel : { token : 'external-excel-token' }
                 }
               }
-            ]}
-            linkDataArray = {[]}
-            initOptions = {{ 
-              nodeHooks : { 
-                panel : Breakdown.default_node_template(),
-                spots : [
-                  Breakdown.default_externalExcelTokenInfo_template({ background : "red" })
-                ]
-              },
-            }}
-          />
-        </div>
-      </React.Fragment>
-    );
+            }
+          ]}
+          linkDataArray = {[]}
+          initOptions = {{
+            nodeHooks : {
+              panel : Breakdown.default_node_template(),
+              spots : [
+                Breakdown.default_externalExcelTokenInfo_template({ background : "red" })
+              ]
+            },
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-  };
-
-  return <TestZone />;
-
-})}
+  }
+}
+</BrowserOnly>
 
 #### Node Edit button
 
@@ -2107,8 +2111,8 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
   <Breakdown
     nodeDataArray = {[
-      { 
-        token : "PR0000", 
+      {
+        token : "PR0000",
         name : 'MyProject',
         type : 'project',
         meta : {
@@ -2118,8 +2122,8 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
         }
       }
     ]}
-    initOptions = {{ 
-      nodeHooks : { 
+    initOptions = {{
+      nodeHooks : {
         panel : Breakdown.default_node_template(),
         spots : [
           Breakdown.default_externalExcelTokenInfo_template(),
@@ -2131,47 +2135,46 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-  const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-    return (
-      <React.Fragment>
-        <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-          <Breakdown
-            nodeDataArray = {[ 
-              { 
-                token : "PR0000", 
-                name : 'MyProject',
-                type : 'project',
-                meta : {
-                  external : {
-                    excel : { token : 'external-excel-token' }
-                  }
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
+
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : "PR0000",
+              name : 'MyProject',
+              type : 'project',
+              meta : {
+                external : {
+                  excel : { token : 'external-excel-token' }
                 }
               }
-            ]}
-            linkDataArray = {[]}
-            initOptions = {{ 
-              isEnabled : true,
-              nodeHooks : { 
-                hoverStroke : true,
-                panel : Breakdown.default_node_template(),
-                spots : [
-                  Breakdown.default_externalExcelTokenInfo_template(),
-                  Breakdown.default_node_editButton_spot(),
-                ]
-              },
-            }}
-          />
-        </div>
-      </React.Fragment>
-    );
+            }
+          ]}
+          linkDataArray = {[]}
+          initOptions = {{
+            isEnabled : true,
+            nodeHooks : {
+              hoverStroke : true,
+              panel : Breakdown.default_node_template(),
+              spots : [
+                Breakdown.default_externalExcelTokenInfo_template(),
+                Breakdown.default_node_editButton_spot(),
+              ]
+            },
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-  };
-
-  return <TestZone />;
-
-})}
+  }
+}
+</BrowserOnly>
 
 #### Node Add button
 
@@ -2181,8 +2184,8 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
   <Breakdown
     nodeDataArray = {[
-      { 
-        token : "PR0000", 
+      {
+        token : "PR0000",
         name : 'MyProject',
         type : 'project',
         meta : {
@@ -2192,8 +2195,8 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
         }
       }
     ]}
-    initOptions = {{ 
-      nodeHooks : { 
+    initOptions = {{
+      nodeHooks : {
         panel : Breakdown.default_node_template(),
         spots : [
           Breakdown.default_externalExcelTokenInfo_template(),
@@ -2205,47 +2208,46 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-  const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-    return (
-      <React.Fragment>
-        <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-          <Breakdown
-            nodeDataArray = {[ 
-              { 
-                token : "PR0000", 
-                name : 'MyProject',
-                type : 'project',
-                meta : {
-                  external : {
-                    excel : { token : 'external-excel-token' }
-                  }
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
+
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : "PR0000",
+              name : 'MyProject',
+              type : 'project',
+              meta : {
+                external : {
+                  excel : { token : 'external-excel-token' }
                 }
               }
-            ]}
-            linkDataArray = {[]}
-            initOptions = {{ 
-              isEnabled : true,
-              nodeHooks : { 
-                hoverStroke : true,
-                panel : Breakdown.default_node_template(),
-                spots : [
-                  Breakdown.default_externalExcelTokenInfo_template(),
-                  Breakdown.default_node_addButton_spot(),
-                ]
-              },
-            }}
-          />
-        </div>
-      </React.Fragment>
-    );
+            }
+          ]}
+          linkDataArray = {[]}
+          initOptions = {{
+            isEnabled : true,
+            nodeHooks : {
+              hoverStroke : true,
+              panel : Breakdown.default_node_template(),
+              spots : [
+                Breakdown.default_externalExcelTokenInfo_template(),
+                Breakdown.default_node_addButton_spot(),
+              ]
+            },
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-  };
-
-  return <TestZone />;
-
-})}
+  }
+}
+</BrowserOnly>
 
 ```tsx
 import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
@@ -2253,28 +2255,28 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
   <Breakdown
     nodeDataArray = {[
-      { 
-        token : "PR0000", 
+      {
+        token : "PR0000",
         name : 'MyProject',
         type : 'project'
       },
-      { 
-        token : "DEL0000", 
+      {
+        token : "DEL0000",
         name : 'MyDeliverable',
         type : 'deliverable'
       },
-      { 
-        token : "ORD0000", 
+      {
+        token : "ORD0000",
         name : 'MyOrder',
         type : 'order'
-      } 
+      }
     ]}
     linkDataArray = {[
       { from : "PR0000" , to : "DEL0000" },
       { from : "DEL0000" , to : "ORD0000" },
     ]}
-    initOptions = {{ 
-      nodeHooks : { 
+    initOptions = {{
+      nodeHooks : {
         panel : Breakdown.default_node_template(),
         spots : [
           Breakdown.default_externalExcelTokenInfo_template()
@@ -2285,67 +2287,66 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-  const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-    return (
-      <React.Fragment>
-        <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-          <Breakdown
-            nodeDataArray = {[ 
-              { 
-                token : "PR0000", 
-                name : 'MyProject',
-                type : 'project',
-                meta : {
-                  external : {
-                    excel : { token : 'external-excel-token' }
-                  }
-                }
-              },
-              { 
-                token : "DEL0000", 
-                name : 'MyDeliverable',
-                type : 'deliverable',
-                meta : {
-                  external : {
-                    excel : { token : 'external-excel-token' }
-                  }
-                }
-              },
-              { 
-                token : "ORD0000", 
-                name : 'MyOrder',
-                type : 'order',
-                meta : {
-                  external : {
-                    excel : { token : 'external-excel-token' }
-                  }
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
+
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : "PR0000",
+              name : 'MyProject',
+              type : 'project',
+              meta : {
+                external : {
+                  excel : { token : 'external-excel-token' }
                 }
               }
-            ]}
-            linkDataArray = {[
-              { from : "PR0000" , to : "DEL0000" },
-              { from : "DEL0000" , to : "ORD0000" },
-            ]}
-            initOptions = {{ 
-              nodeHooks : { 
-                panel : Breakdown.default_node_template(),
-                spots : [
-                  Breakdown.default_externalExcelTokenInfo_template()
-                ]
-              },
-            }}
-          />
-        </div>
-      </React.Fragment>
-    );
+            },
+            {
+              token : "DEL0000",
+              name : 'MyDeliverable',
+              type : 'deliverable',
+              meta : {
+                external : {
+                  excel : { token : 'external-excel-token' }
+                }
+              }
+            },
+            {
+              token : "ORD0000",
+              name : 'MyOrder',
+              type : 'order',
+              meta : {
+                external : {
+                  excel : { token : 'external-excel-token' }
+                }
+              }
+            }
+          ]}
+          linkDataArray = {[
+            { from : "PR0000" , to : "DEL0000" },
+            { from : "DEL0000" , to : "ORD0000" },
+          ]}
+          initOptions = {{
+            nodeHooks : {
+              panel : Breakdown.default_node_template(),
+              spots : [
+                Breakdown.default_externalExcelTokenInfo_template()
+              ]
+            },
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-  };
-
-  return <TestZone />;
-
-})}
+  }
+}
+</BrowserOnly>
 
 #### Default Structure Breakdown Template
 
@@ -2354,9 +2355,9 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 
 <React.Fragment>
   <Breakdown
-    nodeDataArray = {[ 
-      { 
-        token : "STR0000", 
+    nodeDataArray = {[
+      {
+        token : "STR0000",
         name : 'Structure',
         type : 'structure',
         meta : {
@@ -2365,8 +2366,8 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
           }
         }
       },
-      { 
-        token : "STR0000-001", 
+      {
+        token : "STR0000-001",
         name : 'Child-1',
         child : "1",
         type : 'structure_child',
@@ -2376,8 +2377,8 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
           }
         }
       },
-      { 
-        token : "STR0000-001-001", 
+      {
+        token : "STR0000-001-001",
         name : 'Child-1.1',
         child : "1.1",
         type : 'structure_child',
@@ -2392,8 +2393,8 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
       { from : "STR0000" , to : "STR0000-001" },
       { from : "STR0000-001" , to : "STR0000-001-001" },
     ]}
-    initOptions = {{ 
-      nodeHooks : { 
+    initOptions = {{
+      nodeHooks : {
         panel : Breakdown.default_node_template(),
         spots : [
           Breakdown.default_externalExcelTokenInfo_template()
@@ -2404,68 +2405,67 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-  const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-    return (
-      <React.Fragment>
-        <div style = {{ minHeight : '550px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-          <Breakdown
-            nodeDataArray = {[ 
-              { 
-                token : "STR0000", 
-                name : "Structure",
-                type : 'structure',
-                meta : {
-                  external : {
-                    excel : { token : 'external-excel-token' }
-                  }
-                }
-              },
-              { 
-                token : "STR0000-001", 
-                name : "Child-1",
-                type : 'structure_child',
-                meta : {
-                  external : {
-                    excel : { token : 'external-excel-token' }
-                  }
-                }
-              },
-              { 
-                token : "STR0000-001-001", 
-                name : "Child-1.1",
-                type : 'structure_child',
-                meta : {
-                  external : {
-                    excel : { token : 'external-excel-token' }
-                  }
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
+
+    return <React.Fragment>
+      <div style = {{ minHeight : '550px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : "STR0000",
+              name : "Structure",
+              type : 'structure',
+              meta : {
+                external : {
+                  excel : { token : 'external-excel-token' }
                 }
               }
-            ]}
-            linkDataArray = {[
-              { from : "STR0000" , to : "STR0000-001" },
-              { from : "STR0000-001" , to : "STR0000-001-001" },
-            ]}
-            initOptions = {{ 
-              layout : 'vertical',
-              nodeHooks : { 
-                panel : Breakdown.default_node_template(),
-                spots : [
-                  Breakdown.default_externalExcelTokenInfo_template()
-                ]
+            },
+            {
+              token : "STR0000-001",
+              name : "Child-1",
+              type : 'structure_child',
+              meta : {
+                external : {
+                  excel : { token : 'external-excel-token' }
+                }
               }
-            }}
-          />
-        </div>
-      </React.Fragment>
-    );
+            },
+            {
+              token : "STR0000-001-001",
+              name : "Child-1.1",
+              type : 'structure_child',
+              meta : {
+                external : {
+                  excel : { token : 'external-excel-token' }
+                }
+              }
+            }
+          ]}
+          linkDataArray = {[
+            { from : "STR0000" , to : "STR0000-001" },
+            { from : "STR0000-001" , to : "STR0000-001-001" },
+          ]}
+          initOptions = {{
+            layout : 'vertical',
+            nodeHooks : {
+              panel : Breakdown.default_node_template(),
+              spots : [
+                Breakdown.default_externalExcelTokenInfo_template()
+              ]
+            }
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-  };
-
-  return <TestZone />;
-
-})}
+  }
+}
+</BrowserOnly>
 
 ### BuildIn - LinkTemplate ![](https://img.shields.io/badge/BuildIn-ShapeTemplate-orange.svg)
 
@@ -2477,7 +2477,7 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
     nodeDataArray = {[...]}
     linkDataArray = {[...]}
     initOptions = {{
-      linkHooks : { 
+      linkHooks : {
         line : Breakdown.default_link_template(),
         arrow : Breakdown.default_arrow_template()
       },
@@ -2486,44 +2486,44 @@ import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 <React.Fragment>
 ```
 
-{React.createElement(() => {
-const TestZone = () => {
+<BrowserOnly>
+{
+  () => {
 
-      return (
-        <React.Fragment>
-          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-            <Breakdown
-              nodeDataArray = {[
-                {
-                  token : 0,
-                  name : 'Node0',
-                },
-                {
-                  token : 1,
-                  name : 'Node1',
-                }
-              ]}
-              linkDataArray = {[
-                {
-                  from : 0,
-                  to : 1
-                }
-              ]}
-              initOptions = {{
-                linkHooks : { 
-                  line : Breakdown.default_link_template(),
-                  arrow : Breakdown.default_arrow_template()
-                },
-              }}
-            />
-          </div>
-        </React.Fragment>
-      );
-    };
+    const { Breakdown } = require('@infrasoftbe/infrasoft-ui-components');
 
-    return <TestZone />;
+    return <React.Fragment>
+      <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+        <Breakdown
+          nodeDataArray = {[
+            {
+              token : 0,
+              name : 'Node0',
+            },
+            {
+              token : 1,
+              name : 'Node1',
+            }
+          ]}
+          linkDataArray = {[
+            {
+              from : 0,
+              to : 1
+            }
+          ]}
+          initOptions = {{
+            linkHooks : {
+              line : Breakdown.default_link_template(),
+              arrow : Breakdown.default_arrow_template()
+            },
+          }}
+        />
+      </div>
+    </React.Fragment>
 
-})}
+  }
+}
+</BrowserOnly>
 
 ## TestZone
 
@@ -2564,165 +2564,170 @@ const TestZone = () => {
 </Details>
 
 <BrowserOnly>
-{() => React.createElement(() => {
-  const TestZone = () => {
+{
+  () => {
 
-    let [ projectInstance , setProjectInstance ] = React.useState( null );
-    let [ nodes , setNodes ] = React.useState([]);
-    let [ links , setLinks ] = React.useState([]);
+    const { Breakdown , EmptyState, Button, EmptyStateBody, EmptyStateActions, EmptyStateFooter } = require('@infrasoftbe/infrasoft-ui-components');
 
-    const EmptyStateExcelUpload = () => {
-      const [dragOver, setDragOver] = React.useState(false);
-      const fileInputRef = React.useRef();
+    const TestZone = () => {
 
-      const handleDragOver = (e) => {
-        e.preventDefault();
-        setDragOver(true);
-      };
+      let [ projectInstance , setProjectInstance ] = React.useState( null );
+      let [ nodes , setNodes ] = React.useState([]);
+      let [ links , setLinks ] = React.useState([]);
 
-      const handleDragLeave = () => {
-        setDragOver(false);
-      };
+      const EmptyStateExcelUpload = () => {
+        const [dragOver, setDragOver] = React.useState(false);
+        const fileInputRef = React.useRef();
 
-      const handleDrop = (e) => {
-        e.preventDefault();
-        setDragOver(false);
-        const file = e.dataTransfer.files[0];
-        processExcelFile(file);
-      };
+        const handleDragOver = (e) => {
+          e.preventDefault();
+          setDragOver(true);
+        };
 
-      const handleFileUpload = (e) => {
-        const file = e.target.files[0];
-        processExcelFile(file);
-      };
+        const handleDragLeave = () => {
+          setDragOver(false);
+        };
 
-      const handleButtonClick = () => {
-        fileInputRef.current.click(); // Ouvre le sélecteur de fichiers
-      };
+        const handleDrop = (e) => {
+          e.preventDefault();
+          setDragOver(false);
+          const file = e.dataTransfer.files[0];
+          processExcelFile(file);
+        };
 
-      const processExcelFile = (file) => {
-        if (file && file.type === "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
-          file.arrayBuffer()
-            .then((buffer) => {
-              try {
-                _infrasoftProjectRepport.toProjectInstance(buffer)
-                .then((pr) => {
-                  setProjectInstance(pr);
-                })
-                .catch((error) => {
+        const handleFileUpload = (e) => {
+          const file = e.target.files[0];
+          processExcelFile(file);
+        };
+
+        const handleButtonClick = () => {
+          fileInputRef.current.click(); // Ouvre le sélecteur de fichiers
+        };
+
+        const processExcelFile = (file) => {
+          if (file && file.type === "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
+            file.arrayBuffer()
+              .then((buffer) => {
+                try {
+                  _infrasoftProjectRepport.toProjectInstance(buffer)
+                  .then((pr) => {
+                    setProjectInstance(pr);
+                  })
+                  .catch((error) => {
+                    alert(error);
+                  })
+                } catch (error) {
                   alert(error);
-                })
-              } catch (error) {
-                alert(error);
-              }
-            });
-        } else {
-          alert("Please upload a valid Excel file.");
-        }
-      };
+                }
+              });
+          } else {
+            alert("Please upload a valid Excel file.");
+          }
+        };
 
-      return (
-        <div
-          onDragOver={handleDragOver}
-          onDragLeave={handleDragLeave}
-          onDrop={handleDrop}
-          style={{
-            border: dragOver ? '2px dashed #0066cc' : '2px dashed #ccc',
-            padding: '20px',
-            borderRadius: '4px',
-            textAlign: 'center',
-            backgroundColor: dragOver ? '#f0f8ff' : '#fff',
-          }}
-        >
-          <input
-            type="file"
-            accept=".xlsx"
-            ref={fileInputRef}
-            style={{ display: 'none' }}
-            onChange={handleFileUpload}
-          />
-          <EmptyState titleText="Drop or Upload an Excel File" headingLevel="h4" icon={CubesIcon}>
-            <EmptyStateBody>
-              Drag and drop your Excel file here or click the button below to upload it manually. Make sure your file meets the required criteria.
-            </EmptyStateBody>
-            <EmptyStateFooter>
-              <EmptyStateActions>
-                <Button variant="primary" onClick={handleButtonClick}>
-                  Upload Excel File
-                </Button>
-              </EmptyStateActions>
-            </EmptyStateFooter>
-          </EmptyState>
-        </div>
-      );
-    }
-
-    React.useEffect(() => {
-
-      if(projectInstance){
-        setNodes( 
-          [ projectInstance.self , ...projectInstance.nodes.values()].map(( node ) => {
-            return {
-              ...node,
-              meta : projectInstance.getMetadataByToken(node.token) || {}
-            }
-          })
-        )
-
-        setLinks( 
-          [...projectInstance.relations.values()].map(( node ) => {
-            return {
-              from : node.f_token,
-              to : node.t_token
-            }
-          })
-        )
+        return (
+          <div
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onDrop={handleDrop}
+            style={{
+              border: dragOver ? '2px dashed #0066cc' : '2px dashed #ccc',
+              padding: '20px',
+              borderRadius: '4px',
+              textAlign: 'center',
+              backgroundColor: dragOver ? '#f0f8ff' : '#fff',
+            }}
+          >
+            <input
+              type="file"
+              accept=".xlsx"
+              ref={fileInputRef}
+              style={{ display: 'none' }}
+              onChange={handleFileUpload}
+            />
+            <EmptyState titleText="Drop or Upload an Excel File" headingLevel="h4" icon={CubesIcon}>
+              <EmptyStateBody>
+                Drag and drop your Excel file here or click the button below to upload it manually. Make sure your file meets the required criteria.
+              </EmptyStateBody>
+              <EmptyStateFooter>
+                <EmptyStateActions>
+                  <Button variant="primary" onClick={handleButtonClick}>
+                    Upload Excel File
+                  </Button>
+                </EmptyStateActions>
+              </EmptyStateFooter>
+            </EmptyState>
+          </div>
+        );
       }
 
-    } , [ projectInstance ])
+      React.useEffect(() => {
 
-    return (
-      <React.Fragment>
-        <div style = {{ minHeight : '550px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
-          {
-            !projectInstance ?
-            <EmptyStateExcelUpload/> :
-            <Breakdown
-              nodeDataArray = {nodes}
-              linkDataArray = {links}
-              initOptions = {{ 
-                isReadOnly : false,
-                isEnabled : true,
-                allowSelect : true,
-                allowMove : true,
-                allowZoom : true,
-                allowHorizontalScroll : true,
-                allowVerticalScroll : true,
-                layout : 'vertical',
-                overview : true,
-                nodeHooks : { 
-                  panel : Breakdown.default_node_template(),
-                  spots : [
-                    Breakdown.default_externalExcelTokenInfo_template(),
-                    Breakdown.default_node_addButton_spot(),
-                    Breakdown.default_node_editButton_spot(),
-                  ]
-                },
-                linkHooks : { 
-                  line : Breakdown.default_link_template(),
-                  arrow : Breakdown.default_arrow_template()
-                }
-              }}
-            />
-          }
-        </div>
-      </React.Fragment>
-    );
+        if(projectInstance){
+          setNodes(
+            [ projectInstance.self , ...projectInstance.nodes.values()].map(( node ) => {
+              return {
+                ...node,
+                meta : projectInstance.getMetadataByToken(node.token) || {}
+              }
+            })
+          )
 
-  };
+          setLinks(
+            [...projectInstance.relations.values()].map(( node ) => {
+              return {
+                from : node.f_token,
+                to : node.t_token
+              }
+            })
+          )
+        }
 
-  return <TestZone />;
+      } , [ projectInstance ])
 
-})}
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '550px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            {
+              !projectInstance ?
+              <EmptyStateExcelUpload/> :
+              <Breakdown
+                nodeDataArray = {nodes}
+                linkDataArray = {links}
+                initOptions = {{
+                  isReadOnly : false,
+                  isEnabled : true,
+                  allowSelect : true,
+                  allowMove : true,
+                  allowZoom : true,
+                  allowHorizontalScroll : true,
+                  allowVerticalScroll : true,
+                  layout : 'vertical',
+                  overview : true,
+                  nodeHooks : {
+                    panel : Breakdown.default_node_template(),
+                    spots : [
+                      Breakdown.default_externalExcelTokenInfo_template(),
+                      Breakdown.default_node_addButton_spot(),
+                      Breakdown.default_node_editButton_spot(),
+                    ]
+                  },
+                  linkHooks : {
+                    line : Breakdown.default_link_template(),
+                    arrow : Breakdown.default_arrow_template()
+                  }
+                }}
+              />
+            }
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <React.Fragment>
+      <TestZone />
+    </React.Fragment>
+
+  }
+}
 </BrowserOnly>
-

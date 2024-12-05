@@ -3,7 +3,7 @@ id: Button
 section: components
 ---
 
-import { Checkbox, List, ListItem , Button } from '@infrasoftbe/infrasoft-ui-components';
+import { Checkbox, List, ListItem , Button } from '@patternfly/react-core';
 
 ## Accessibility
 
