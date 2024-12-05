@@ -10,16 +10,13 @@ import Heading from '@theme/Heading';
 import '@infrasoftbe/infrasoft-ui-components/dist/styles/base.css';
 
 import styles from './index.module.css';
-import { Accordion , AccordionItem , AccordionContent } from '@infrasoftbe/infrasoft-ui-components';
 
 function HomepageHeader() {
+
   const {siteConfig} = useDocusaurusContext();
+
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <Accordion>
-        <AccordionItem>Coucou</AccordionItem>
-        <AccordionContent></AccordionContent>
-      </Accordion>
       <div className="container">
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
@@ -35,10 +32,13 @@ function HomepageHeader() {
       </div>
     </header>
   );
-}
+
+};
 
 export default function Home(): JSX.Element {
+
   const {siteConfig} = useDocusaurusContext();
+
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
@@ -49,4 +49,5 @@ export default function Home(): JSX.Element {
       </main>
     </Layout>
   );
-}
+
+};

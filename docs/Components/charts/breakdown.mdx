@@ -1,6 +1,12 @@
 import React from "react";
 import Playground from "@theme/Playground";
-import { Breakdown } from "@infrasoftbe/infrasoft-ui-components";
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import { Breakdown , EmptyState , Button , EmptyStateBody, EmptyStateActions, EmptyStateFooter } from "@infrasoftbe/infrasoft-ui-components";
+import { _infrasoftProjectRepport } from '@infrasoftbe/infrasoft-vnv-excel-generator';
+
+import { CubesIcon , PencilAltIcon } from '@patternfly/react-icons';
+
+import * as go from "gojs";
 
 # Breakdown
 
@@ -317,6 +323,231 @@ const TestZone = () => {
     return <TestZone />;
 
 })}
+
+## Overview Map
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{
+      overview : true
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node0',
+                }
+              ]}
+              initOptions = {{
+                overview : true
+              }}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+## Grid
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{
+      grid : { visible : true }
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node0',
+                }
+              ]}
+              initOptions = {{
+                grid : { visible : true }
+              }}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+### Dynamic
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{
+      grid : { 
+        visible : true,
+        template : function( go ){
+
+          let maker = go.GraphObject.make;
+
+          return maker(
+            go.Panel,
+            "Grid",
+            // Taille de chaque cellule
+            { 
+              gridCellSize: new go.Size(25, 25) 
+            },
+            // Lignes horizontales
+            maker(go.Shape, "LineH", {
+              strokeWidth: 1,
+              stroke: "orange",
+              strokeDashArray: [0, 2, 3, 0]
+            }),
+            // Lignes verticales
+            maker(go.Shape, "LineV", {
+              strokeWidth: 1,
+              stroke: "darkred" // Couleur des lignes
+            })
+          )
+
+        }
+      }
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node0',
+                }
+              ]}
+              initOptions = {{
+                grid : { 
+                  visible : true,
+                  template : function( go ){
+
+                    let maker = go.GraphObject.make;
+
+                    return maker(
+                      go.Panel,
+                      "Grid",
+                      // Taille de chaque cellule
+                      { 
+                        gridCellSize: new go.Size(25, 25) 
+                      },
+                      // Lignes horizontales
+                      maker(go.Shape, "LineH", {
+                        strokeWidth: 1,
+                        stroke: "orange",
+                        strokeDashArray: [0, 2, 3, 0]
+                      }),
+                      // Lignes verticales
+                      maker(go.Shape, "LineV", {
+                        strokeWidth: 1,
+                        stroke: "darkred" // Couleur des lignes
+                      })
+                    )
+
+                  }
+                }
+              }}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+## Themes ![](https://img.shields.io/badge/Feature-Broken-red.svg)
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+// createTheme
+
+Breakdown.themes.set( 'light' , {
+  name : 'light',
+  colors : {
+
+  },
+  font : {
+
+  }
+} )
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{
+      themes : [
+        Breakdown.themes.get('light')
+      ],
+      defaultTheme : 'light'
+    }}
+  />
+<React.Fragment/>
+```
+
+## Legend ![](https://img.shields.io/badge/Feature-Broken-red.svg)
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{ legend : true }}
+  />
+<React.Fragment/>
+```
 
 ## Listeners
 
@@ -1047,6 +1278,78 @@ const TestZone = () => {
 
 })}
 
+## Contextual Menu
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+import { PencilAltIcon } from '@patternfly/react-icons';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{
+      nodeHooks : {
+        contextMenu : [
+          { 
+            title : 'editNode',
+            icon : PencilAltIcon,
+            action( this:go.Diagram , e: go.InputEvent, thisObj: go.GraphObject ){
+              alert('editNode');
+            }
+          },
+          { title : 'clearNode' },
+          { title : 'removeNode' },
+        ]
+      }
+    }}
+  />
+<React.Fragment>
+```
+
+<BrowserOnly>
+{() => React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node0',
+                }
+              ]}
+              initOptions = {{
+                isReadOnly : false,
+                isEnabled : true,
+                allowSelect : true,
+                nodeHooks : {
+                  contextMenu : [
+                    { 
+                      title : 'editNode',
+                      icon : PencilAltIcon,
+                      action : () => {
+                        alert('editNode');
+                      }
+                    },
+                    { title : 'clearNode' },
+                    { title : 'removeNode' },
+                  ]
+                }
+              }}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+</BrowserOnly>
+
 ## Links
 
 ### Style
@@ -1410,8 +1713,1016 @@ const TestZone = () => {
 
 ### Init
 
-## Build-in
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
 
-### NodeTemplate
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[
+      { myKey : 0, name : 'Alpha' },
+      { myKey : 1, name : 'Beta' },
+      { myKey : 2, name : 'Gamma' }
+    ]}
+    modelData = {{
+      nodeKeyProperty : "myKey",
+      linkDataArray : [
+        { from : 0, to : 1 },
+        { from : 0, to : 2 }
+      ]
+    }}
+    initOptions = {{ isEnabled : true }}
+    initDiagram = {function( initOptions ){
 
-### LinkTemplate
+      const maker = go.GraphObject.make;
+
+      const diagram = maker(go.Diagram);
+
+      // Configuration basique du diagramme
+      diagram.initialContentAlignment = go.Spot.Center; // Centrer les nœuds
+      diagram.layout = maker(go.TreeLayout);
+
+      // Définition des modèles de nœuds
+      diagram.nodeTemplate = maker(go.Node, "Auto")
+      .add(
+        maker(go.Shape, "RoundedRectangle", {
+          fill: "lightgreen",
+          stroke: null,
+        })
+      )
+      .add(
+        maker(go.TextBlock, {
+          margin: 8,
+          editable: false,
+        }).bind("text", "name")
+      );
+
+      // Modèle de liens
+      diagram.linkTemplate = maker(go.Link)
+      .add(maker(go.Shape)) // Ligne de base
+      .add(maker(go.Shape, { toArrow: "Standard" })); // Flèche
+        
+      // Setup de nodeKeyProperty et des links
+      diagram.model.linkDataArray = this.props.modelData.linkDataArray;
+      diagram.model.nodeKeyProperty = this.props.modelData.nodeKeyProperty;
+
+      return () => diagram;
+
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              initOptions = {{
+                isEnabled : true,
+              }}
+              nodeDataArray = {[
+                { myKey : 0, name : 'Alpha' },
+                { myKey : 1, name : 'Beta' },
+                { myKey : 2, name : 'Gamma' }
+              ]}
+              modelData = {{
+                nodeKeyProperty : "myKey",
+                linkDataArray : [
+                  { from : 0, to : 1 },
+                  { from : 0, to : 2 }
+                ]
+              }}
+              initDiagram = {function( initOptions ){
+
+                const maker = go.GraphObject.make;
+
+                const diagram = maker(go.Diagram);
+
+                // Configuration basique du diagramme
+                diagram.initialContentAlignment = go.Spot.Center; // Centrer les nœuds
+                diagram.layout = maker(go.TreeLayout);
+
+                // Définition des modèles de nœuds
+                diagram.nodeTemplate = maker(go.Node, "Auto")
+                .add(
+                  maker(go.Shape, "RoundedRectangle", {
+                    fill: "lightgreen",
+                    stroke: null,
+                  })
+                )
+                .add(
+                  maker(go.TextBlock, {
+                    margin: 8,
+                    editable: false,
+                  }).bind("text", "name")
+                );
+
+                // Modèle de liens
+                diagram.linkTemplate = maker(go.Link)
+                .add(maker(go.Shape)) // Ligne de base
+                .add(maker(go.Shape, { toArrow: "Standard" })); // Flèche
+        
+                diagram.model.linkDataArray = this.props.modelData.linkDataArray;
+                diagram.model.nodeKeyProperty = this.props.modelData.nodeKeyProperty;
+
+                return () => diagram;
+
+              }}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+## Utilities
+
+### BuildIn - Init ![](https://img.shields.io/badge/BuildIn-Function-blue.svg)
+
+#### Default
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+  const TestZone = () => {
+
+    return (
+      <React.Fragment>
+        <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+          <Breakdown
+            nodeDataArray = {[ { token : 0, name : 'Node Name' } ]}
+          />
+        </div>
+      </React.Fragment>
+    );
+  };
+
+  return <TestZone />;
+
+})}
+
+#### Default initialisation function
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    initDiagram = { Breakdown.default_initDiagram_function }
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+  const TestZone = () => {
+
+    return (
+      <React.Fragment>
+        <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+          <Breakdown
+            nodeDataArray = {[ { token : 0, name : 'Node Name' } ]}
+            initDiagram = { Breakdown.default_initDiagram_function }
+          />
+        </div>
+      </React.Fragment>
+    );
+  };
+
+  return <TestZone />;
+
+})}
+
+### BuildIn - NodeTemplate ![](https://img.shields.io/badge/BuildIn-PanelTemplate-orange.svg)
+
+#### Default Node Breakdown Template
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[
+      { 
+        token : "PR0000", 
+        name : 'MyProject',
+        type : 'project'
+      }
+    ]}
+    initOptions = {{ 
+      nodeHooks : { panel : Breakdown.default_node_template() }
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+  const TestZone = () => {
+
+    return (
+      <React.Fragment>
+        <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+          <Breakdown
+            nodeDataArray = {[ 
+              { 
+                token : "PR0000", 
+                name : 'MyProject',
+                type : 'project'
+              }
+            ]}
+            initOptions = {{ 
+              nodeHooks : { panel : Breakdown.default_node_template() },
+            }}
+          />
+        </div>
+      </React.Fragment>
+    );
+
+  };
+
+  return <TestZone />;
+
+})}
+
+### BuildIn - NodeTemplate Utilities ![](https://img.shields.io/badge/BuildIn-PanelTemplate-orange.svg)
+
+#### External Excel Token Info
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[
+      { 
+        token : "PR0000", 
+        name : 'MyProject',
+        type : 'project',
+        meta : {
+          external : {
+            excel : { token : 'external-excel-token' }
+          }
+        }
+      }
+    ]}
+    initOptions = {{ 
+      nodeHooks : { 
+        panel : Breakdown.default_node_template(),
+        spots : [
+          Breakdown.default_externalExcelTokenInfo_template()
+        ]
+      },
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+  const TestZone = () => {
+
+    return (
+      <React.Fragment>
+        <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+          <Breakdown
+            nodeDataArray = {[ 
+              { 
+                token : "PR0000", 
+                name : 'MyProject',
+                type : 'project',
+                meta : {
+                  external : {
+                    excel : { token : 'external-excel-token' }
+                  }
+                }
+              }
+            ]}
+            linkDataArray = {[]}
+            initOptions = {{ 
+              nodeHooks : { 
+                panel : Breakdown.default_node_template(),
+                spots : [
+                  Breakdown.default_externalExcelTokenInfo_template()
+                ]
+              },
+            }}
+          />
+        </div>
+      </React.Fragment>
+    );
+
+  };
+
+  return <TestZone />;
+
+})}
+
+#### External Excel Token Info - Customize
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[
+      { 
+        token : "PR0000", 
+        name : 'MyProject',
+        type : 'project',
+        meta : {
+          external : {
+            excel : { token : 'external-excel-token' }
+          }
+        }
+      }
+    ]}
+    initOptions = {{ 
+      nodeHooks : { 
+        panel : Breakdown.default_node_template(),
+        spots : [
+          Breakdown.default_externalExcelTokenInfo_template({ background : "red" })
+        ]
+      },
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+  const TestZone = () => {
+
+    return (
+      <React.Fragment>
+        <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+          <Breakdown
+            nodeDataArray = {[ 
+              { 
+                token : "PR0000", 
+                name : 'MyProject',
+                type : 'project',
+                meta : {
+                  external : {
+                    excel : { token : 'external-excel-token' }
+                  }
+                }
+              }
+            ]}
+            linkDataArray = {[]}
+            initOptions = {{ 
+              nodeHooks : { 
+                panel : Breakdown.default_node_template(),
+                spots : [
+                  Breakdown.default_externalExcelTokenInfo_template({ background : "red" })
+                ]
+              },
+            }}
+          />
+        </div>
+      </React.Fragment>
+    );
+
+  };
+
+  return <TestZone />;
+
+})}
+
+#### Node Edit button
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[
+      { 
+        token : "PR0000", 
+        name : 'MyProject',
+        type : 'project',
+        meta : {
+          external : {
+            excel : { token : 'external-excel-token' }
+          }
+        }
+      }
+    ]}
+    initOptions = {{ 
+      nodeHooks : { 
+        panel : Breakdown.default_node_template(),
+        spots : [
+          Breakdown.default_externalExcelTokenInfo_template(),
+          Breakdown.default_node_editButton_spot(),
+        ]
+      },
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+  const TestZone = () => {
+
+    return (
+      <React.Fragment>
+        <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+          <Breakdown
+            nodeDataArray = {[ 
+              { 
+                token : "PR0000", 
+                name : 'MyProject',
+                type : 'project',
+                meta : {
+                  external : {
+                    excel : { token : 'external-excel-token' }
+                  }
+                }
+              }
+            ]}
+            linkDataArray = {[]}
+            initOptions = {{ 
+              isEnabled : true,
+              nodeHooks : { 
+                hoverStroke : true,
+                panel : Breakdown.default_node_template(),
+                spots : [
+                  Breakdown.default_externalExcelTokenInfo_template(),
+                  Breakdown.default_node_editButton_spot(),
+                ]
+              },
+            }}
+          />
+        </div>
+      </React.Fragment>
+    );
+
+  };
+
+  return <TestZone />;
+
+})}
+
+#### Node Add button
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[
+      { 
+        token : "PR0000", 
+        name : 'MyProject',
+        type : 'project',
+        meta : {
+          external : {
+            excel : { token : 'external-excel-token' }
+          }
+        }
+      }
+    ]}
+    initOptions = {{ 
+      nodeHooks : { 
+        panel : Breakdown.default_node_template(),
+        spots : [
+          Breakdown.default_externalExcelTokenInfo_template(),
+          Breakdown.default_node_addButton_spot(),
+        ]
+      },
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+  const TestZone = () => {
+
+    return (
+      <React.Fragment>
+        <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+          <Breakdown
+            nodeDataArray = {[ 
+              { 
+                token : "PR0000", 
+                name : 'MyProject',
+                type : 'project',
+                meta : {
+                  external : {
+                    excel : { token : 'external-excel-token' }
+                  }
+                }
+              }
+            ]}
+            linkDataArray = {[]}
+            initOptions = {{ 
+              isEnabled : true,
+              nodeHooks : { 
+                hoverStroke : true,
+                panel : Breakdown.default_node_template(),
+                spots : [
+                  Breakdown.default_externalExcelTokenInfo_template(),
+                  Breakdown.default_node_addButton_spot(),
+                ]
+              },
+            }}
+          />
+        </div>
+      </React.Fragment>
+    );
+
+  };
+
+  return <TestZone />;
+
+})}
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[
+      { 
+        token : "PR0000", 
+        name : 'MyProject',
+        type : 'project'
+      },
+      { 
+        token : "DEL0000", 
+        name : 'MyDeliverable',
+        type : 'deliverable'
+      },
+      { 
+        token : "ORD0000", 
+        name : 'MyOrder',
+        type : 'order'
+      } 
+    ]}
+    linkDataArray = {[
+      { from : "PR0000" , to : "DEL0000" },
+      { from : "DEL0000" , to : "ORD0000" },
+    ]}
+    initOptions = {{ 
+      nodeHooks : { 
+        panel : Breakdown.default_node_template(),
+        spots : [
+          Breakdown.default_externalExcelTokenInfo_template()
+        ]
+      },
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+  const TestZone = () => {
+
+    return (
+      <React.Fragment>
+        <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+          <Breakdown
+            nodeDataArray = {[ 
+              { 
+                token : "PR0000", 
+                name : 'MyProject',
+                type : 'project',
+                meta : {
+                  external : {
+                    excel : { token : 'external-excel-token' }
+                  }
+                }
+              },
+              { 
+                token : "DEL0000", 
+                name : 'MyDeliverable',
+                type : 'deliverable',
+                meta : {
+                  external : {
+                    excel : { token : 'external-excel-token' }
+                  }
+                }
+              },
+              { 
+                token : "ORD0000", 
+                name : 'MyOrder',
+                type : 'order',
+                meta : {
+                  external : {
+                    excel : { token : 'external-excel-token' }
+                  }
+                }
+              }
+            ]}
+            linkDataArray = {[
+              { from : "PR0000" , to : "DEL0000" },
+              { from : "DEL0000" , to : "ORD0000" },
+            ]}
+            initOptions = {{ 
+              nodeHooks : { 
+                panel : Breakdown.default_node_template(),
+                spots : [
+                  Breakdown.default_externalExcelTokenInfo_template()
+                ]
+              },
+            }}
+          />
+        </div>
+      </React.Fragment>
+    );
+
+  };
+
+  return <TestZone />;
+
+})}
+
+#### Default Structure Breakdown Template
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[ 
+      { 
+        token : "STR0000", 
+        name : 'Structure',
+        type : 'structure',
+        meta : {
+          external : {
+            excel : { token : 'external-excel-token' }
+          }
+        }
+      },
+      { 
+        token : "STR0000-001", 
+        name : 'Child-1',
+        child : "1",
+        type : 'structure_child',
+        meta : {
+          external : {
+            excel : { token : 'external-excel-token' }
+          }
+        }
+      },
+      { 
+        token : "STR0000-001-001", 
+        name : 'Child-1.1',
+        child : "1.1",
+        type : 'structure_child',
+        meta : {
+          external : {
+            excel : { token : 'external-excel-token' }
+          }
+        }
+      }
+    ]}
+    linkDataArray = {[
+      { from : "STR0000" , to : "STR0000-001" },
+      { from : "STR0000-001" , to : "STR0000-001-001" },
+    ]}
+    initOptions = {{ 
+      nodeHooks : { 
+        panel : Breakdown.default_node_template(),
+        spots : [
+          Breakdown.default_externalExcelTokenInfo_template()
+        ]
+      },
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+  const TestZone = () => {
+
+    return (
+      <React.Fragment>
+        <div style = {{ minHeight : '550px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+          <Breakdown
+            nodeDataArray = {[ 
+              { 
+                token : "STR0000", 
+                name : "Structure",
+                type : 'structure',
+                meta : {
+                  external : {
+                    excel : { token : 'external-excel-token' }
+                  }
+                }
+              },
+              { 
+                token : "STR0000-001", 
+                name : "Child-1",
+                type : 'structure_child',
+                meta : {
+                  external : {
+                    excel : { token : 'external-excel-token' }
+                  }
+                }
+              },
+              { 
+                token : "STR0000-001-001", 
+                name : "Child-1.1",
+                type : 'structure_child',
+                meta : {
+                  external : {
+                    excel : { token : 'external-excel-token' }
+                  }
+                }
+              }
+            ]}
+            linkDataArray = {[
+              { from : "STR0000" , to : "STR0000-001" },
+              { from : "STR0000-001" , to : "STR0000-001-001" },
+            ]}
+            initOptions = {{ 
+              layout : 'vertical',
+              nodeHooks : { 
+                panel : Breakdown.default_node_template(),
+                spots : [
+                  Breakdown.default_externalExcelTokenInfo_template()
+                ]
+              }
+            }}
+          />
+        </div>
+      </React.Fragment>
+    );
+
+  };
+
+  return <TestZone />;
+
+})}
+
+### BuildIn - LinkTemplate ![](https://img.shields.io/badge/BuildIn-ShapeTemplate-orange.svg)
+
+```tsx
+import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+<React.Fragment>
+  <Breakdown
+    nodeDataArray = {[...]}
+    linkDataArray = {[...]}
+    initOptions = {{
+      linkHooks : { 
+        line : Breakdown.default_link_template(),
+        arrow : Breakdown.default_arrow_template()
+      },
+    }}
+  />
+<React.Fragment>
+```
+
+{React.createElement(() => {
+const TestZone = () => {
+
+      return (
+        <React.Fragment>
+          <div style = {{ minHeight : '200px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+            <Breakdown
+              nodeDataArray = {[
+                {
+                  token : 0,
+                  name : 'Node0',
+                },
+                {
+                  token : 1,
+                  name : 'Node1',
+                }
+              ]}
+              linkDataArray = {[
+                {
+                  from : 0,
+                  to : 1
+                }
+              ]}
+              initOptions = {{
+                linkHooks : { 
+                  line : Breakdown.default_link_template(),
+                  arrow : Breakdown.default_arrow_template()
+                },
+              }}
+            />
+          </div>
+        </React.Fragment>
+      );
+    };
+
+    return <TestZone />;
+
+})}
+
+## TestZone
+
+<Details>
+  ```tsx
+  import { Breakdown } from '@infrasoftbe/infrasoft-ui-components';
+
+  <React.Fragment>
+    <Breakdown
+      nodeDataArray = {nodes}
+      linkDataArray = {links}
+      initOptions = {{ 
+        isReadOnly : false,
+        isEnabled : true,
+        allowSelect : true,
+        allowMove : true,
+        allowZoom : true,
+        allowHorizontalScroll : true,
+        allowVerticalScroll : true,
+        layout : 'vertical',
+        overview : true,
+        nodeHooks : { 
+          panel : Breakdown.default_node_template(),
+          spots : [
+            Breakdown.default_externalExcelTokenInfo_template(),
+            Breakdown.default_node_addButton_spot(),
+            Breakdown.default_node_editButton_spot(),
+          ]
+        },
+        linkHooks : { 
+          line : Breakdown.default_link_template(),
+          arrow : Breakdown.default_arrow_template()
+        }
+      }}
+    />
+  <React.Fragment>
+  ```
+</Details>
+
+<BrowserOnly>
+{() => React.createElement(() => {
+  const TestZone = () => {
+
+    let [ projectInstance , setProjectInstance ] = React.useState( null );
+    let [ nodes , setNodes ] = React.useState([]);
+    let [ links , setLinks ] = React.useState([]);
+
+    const EmptyStateExcelUpload = () => {
+      const [dragOver, setDragOver] = React.useState(false);
+      const fileInputRef = React.useRef();
+
+      const handleDragOver = (e) => {
+        e.preventDefault();
+        setDragOver(true);
+      };
+
+      const handleDragLeave = () => {
+        setDragOver(false);
+      };
+
+      const handleDrop = (e) => {
+        e.preventDefault();
+        setDragOver(false);
+        const file = e.dataTransfer.files[0];
+        processExcelFile(file);
+      };
+
+      const handleFileUpload = (e) => {
+        const file = e.target.files[0];
+        processExcelFile(file);
+      };
+
+      const handleButtonClick = () => {
+        fileInputRef.current.click(); // Ouvre le sélecteur de fichiers
+      };
+
+      const processExcelFile = (file) => {
+        if (file && file.type === "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
+          file.arrayBuffer()
+            .then((buffer) => {
+              try {
+                _infrasoftProjectRepport.toProjectInstance(buffer)
+                .then((pr) => {
+                  setProjectInstance(pr);
+                })
+                .catch((error) => {
+                  alert(error);
+                })
+              } catch (error) {
+                alert(error);
+              }
+            });
+        } else {
+          alert("Please upload a valid Excel file.");
+        }
+      };
+
+      return (
+        <div
+          onDragOver={handleDragOver}
+          onDragLeave={handleDragLeave}
+          onDrop={handleDrop}
+          style={{
+            border: dragOver ? '2px dashed #0066cc' : '2px dashed #ccc',
+            padding: '20px',
+            borderRadius: '4px',
+            textAlign: 'center',
+            backgroundColor: dragOver ? '#f0f8ff' : '#fff',
+          }}
+        >
+          <input
+            type="file"
+            accept=".xlsx"
+            ref={fileInputRef}
+            style={{ display: 'none' }}
+            onChange={handleFileUpload}
+          />
+          <EmptyState titleText="Drop or Upload an Excel File" headingLevel="h4" icon={CubesIcon}>
+            <EmptyStateBody>
+              Drag and drop your Excel file here or click the button below to upload it manually. Make sure your file meets the required criteria.
+            </EmptyStateBody>
+            <EmptyStateFooter>
+              <EmptyStateActions>
+                <Button variant="primary" onClick={handleButtonClick}>
+                  Upload Excel File
+                </Button>
+              </EmptyStateActions>
+            </EmptyStateFooter>
+          </EmptyState>
+        </div>
+      );
+    }
+
+    React.useEffect(() => {
+
+      if(projectInstance){
+        setNodes( 
+          [ projectInstance.self , ...projectInstance.nodes.values()].map(( node ) => {
+            return {
+              ...node,
+              meta : projectInstance.getMetadataByToken(node.token) || {}
+            }
+          })
+        )
+
+        setLinks( 
+          [...projectInstance.relations.values()].map(( node ) => {
+            return {
+              from : node.f_token,
+              to : node.t_token
+            }
+          })
+        )
+      }
+
+    } , [ projectInstance ])
+
+    return (
+      <React.Fragment>
+        <div style = {{ minHeight : '550px' , border : '1px solid var(--pf-t--color--gray--20)' , display : 'grid' }} >
+          {
+            !projectInstance ?
+            <EmptyStateExcelUpload/> :
+            <Breakdown
+              nodeDataArray = {nodes}
+              linkDataArray = {links}
+              initOptions = {{ 
+                isReadOnly : false,
+                isEnabled : true,
+                allowSelect : true,
+                allowMove : true,
+                allowZoom : true,
+                allowHorizontalScroll : true,
+                allowVerticalScroll : true,
+                layout : 'vertical',
+                overview : true,
+                nodeHooks : { 
+                  panel : Breakdown.default_node_template(),
+                  spots : [
+                    Breakdown.default_externalExcelTokenInfo_template(),
+                    Breakdown.default_node_addButton_spot(),
+                    Breakdown.default_node_editButton_spot(),
+                  ]
+                },
+                linkHooks : { 
+                  line : Breakdown.default_link_template(),
+                  arrow : Breakdown.default_arrow_template()
+                }
+              }}
+            />
+          }
+        </div>
+      </React.Fragment>
+    );
+
+  };
+
+  return <TestZone />;
+
+})}
+</BrowserOnly>
+
