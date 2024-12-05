@@ -22,7 +22,6 @@
     "@docusaurus/preset-classic": "^3.6.3",
     "@docusaurus/theme-live-codeblock": "^3.6.3",
     "@infrasoftbe/infrasoft-project": "^1.2.2-3",
-    "@infrasoftbe/infrasoft-ui-components": "file:../packages/infrasoft-ui-components",
     "@infrasoftbe/infrasoft-vnv-api-kit": "^1.0.9-6",
     "@infrasoftbe/infrasoft-vnv-excel-generator": "^1.2.4-1",
     "@mdx-js/react": "^3.0.0",
