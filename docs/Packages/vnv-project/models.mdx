@@ -1,0 +1,119 @@
+import React from "react";
+import Playground from "@theme/Playground";
+import BrowserOnly from "@docusaurus/BrowserOnly";
+
+import { 
+  NodeContructor , 
+  MetadataContructor , 
+  _relation , 
+  _structure , 
+  _structureMetadata,
+  _structureChild,
+  _list , 
+  _listMetadata,
+  _listChild
+  } from '@infrasoftbe/infrasoft-project';
+
+# Models
+
+## Nodes
+
+<BrowserOnly>
+{() => {
+
+  const { default : ReactJson } = require('react-json-view');
+
+  return <React.Fragment>
+  {
+    Object.keys(NodeContructor).map(( nodeType ) => {
+      if(!NodeContructor[nodeType])return (<></>);
+      return <div>
+        <details>
+          <summary><b>{nodeType}</b> Model</summary>
+          <ReactJson src={new NodeContructor[nodeType]({
+            meta : MetadataContructor[nodeType] ? new MetadataContructor[nodeType]({}) : {}
+          })}></ReactJson>
+        </details>
+      </div>
+    })
+  }
+  </React.Fragment>
+
+}}
+</BrowserOnly>
+
+## Relation
+
+<BrowserOnly>
+{() => {
+
+  const { default : ReactJson } = require('react-json-view');
+
+  return <React.Fragment>
+    <ReactJson src={new _relation({f_token : '' , t_token : '' , f_id : '' , t_id : '' , r_type : ''})}/>
+  </React.Fragment>
+
+}}
+</BrowserOnly>
+
+## Structure
+
+<BrowserOnly>
+{() => {
+
+  const { default : ReactJson } = require('react-json-view');
+
+  return <React.Fragment>
+    <ReactJson src={Object.assign(
+      new _structure({}),
+      { meta : new _structureMetadata({}) }
+    )}/>
+  </React.Fragment>
+
+}}
+</BrowserOnly>
+
+### Structure child
+
+<BrowserOnly>
+{() => {
+
+  const { default : ReactJson } = require('react-json-view');
+
+  return <React.Fragment>
+    <ReactJson src={new _structureChild({})}/>
+  </React.Fragment>
+
+}}
+</BrowserOnly>
+
+## List
+
+<BrowserOnly>
+{() => {
+
+  const { default : ReactJson } = require('react-json-view');
+
+  return <React.Fragment>
+    <ReactJson src={Object.assign(
+      new _list({}),
+      { meta : new _listMetadata({}) }
+    )}/>
+  </React.Fragment>
+
+}}
+</BrowserOnly>
+
+### List child
+
+<BrowserOnly>
+{() => {
+
+  const { default : ReactJson } = require('react-json-view');
+
+  return <React.Fragment>
+    <ReactJson src={new _listChild({})}/>
+  </React.Fragment>
+
+}}
+</BrowserOnly>
