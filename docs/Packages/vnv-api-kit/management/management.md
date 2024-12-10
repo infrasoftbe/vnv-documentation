@@ -107,6 +107,22 @@ ManagementAPI().Projects( "projectId" )
 .Documents( "documentKey" ).delete();
 ```
 
+### Commits
+
+```tsx
+// Get all commits
+ManagementAPI().Projects( "projectId" )
+.Commits().get();
+
+// Get one commit
+ManagementAPI().Projects( "projectId" )
+.Commits( "commitId" ).get<[]>();
+
+// Delete one commit
+ManagementAPI().Projects( "projectId" )
+.Commits( "commitId" ).delete();
+```
+
 ### Backups
 
 ```tsx
