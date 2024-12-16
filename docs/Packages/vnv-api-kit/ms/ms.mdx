@@ -1,0 +1,464 @@
+# MsAPI
+
+## Clients
+
+- venvog : `0`
+- venvon : `1`
+
+```tsx
+MsAPI( 'clientId' ).info(); // Microsoft client informations
+```
+
+## SharepointClient
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/modules/Sp.html" target = "_blank">`Sp`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp();
+```
+
+### Sites
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QuerySitesFilter.html" target = "_blank">`Sp.QuerySitesFilter`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.SiteTemplate.html" target = "_blank">`Sp.SiteTemplate`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.CreateCommSiteProps.html" target = "_blank">`Sp.CreateCommSiteProps`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.CreateTeamSiteProps.html" target = "_blank">`Sp.CreateTeamSiteProps`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.SiteUpdateProps.html" target = "_blank">`Sp.SiteUpdateProps`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp()
+.Sites().get<[]>( { ...Sp.QuerySitesFilter... } );
+
+MsAPI( 'clientId' ).Sp()
+.Sites( 'siteId' ).get();
+
+MsAPI( 'clientId' ).Sp()
+.Sites().create( Sp.SiteTemplate , Sp.CreateCommSiteProps | Sp.CreateTeamSiteProps );
+
+MsAPI( 'clientId' ).Sp()
+.Sites( 'siteId' ).update({ ...Sp.SiteUpdateProps... });
+
+MsAPI( 'clientId' ).Sp()
+.Sites( 'siteId' ).delete();
+```
+
+### Lists
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryListsFilter.html" target = "_blank">`Sp.QueryListsFilter`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.CreateListOption.html" target = "_blank" >`Sp.CreateListOption`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists().get<[]>( { ...Sp.QueryListsFilter... } );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists().create({ ...Sp.CreateListOption... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).update({ ...<any>... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).delete();
+```
+
+#### List-items
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryItemsFilter.html" target = "_blank" >`Sp.QueryItemsFilter`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.Item.html" target = "_blank" >`Sp.Item`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Items().get<[]>( { ...Sp.QueryItemsFilter... } );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Items( 'itemId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Items().create({ ...Sp.Item... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Items( 'itemId' ).update({ ...Sp.Item... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Items( 'itemId' ).delete();
+```
+
+#### List-fields
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryItemsFilter.html" target = "_blank" >`Sp.QueryItemsFilter`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.FieldCreationProperties.html" target = "_blank" >`Sp.FieldCreationProperties`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.FieldInfo.html" target = "_blank" >`Sp.FieldInfo`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Fields().get<[]>( { ...Sp.QueryItemsFilter... } );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Fields( 'fieldId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Fields().create({ ...Sp.FieldCreationProperties... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Fields( 'fieldId' ).update({ ...Sp.FieldInfo... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Fields( 'fieldId' ).delete();
+```
+
+#### List-views
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.ViewCreateProps.html" target = "_blank" >`Sp.ViewCreateProps`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.ViewInfo.html" target = "_blank" >`Sp.ViewInfo`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Views().get<[]>();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Views( 'viewId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Views().create({ ...Sp.ViewCreateProps... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Views( 'viewId' ).update({ ...Sp.ViewInfo... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Views( 'viewId' ).delete();
+```
+
+#### List-view-fields
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryItemsFilter.html" target = "_blank" >`Sp.QueryItemsFilter`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.FieldCreationProperties.html" target = "_blank" >`Sp.FieldCreationProperties`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.FieldInfo.html" target = "_blank" >`Sp.FieldInfo`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Views( 'viewId' ).Fields().get<[]>( { ...Sp.QueryItemsFilter... } );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Views( 'viewId' ).Fields( 'fieldId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Views( 'viewId' ).Fields().create({ ...Sp.FieldCreationProperties... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Views( 'viewId' ).Fields( 'fieldId' ).update({ ...Sp.FieldInfo... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Views( 'viewId' ).Fields( 'fieldId' ).delete();
+```
+
+### Parts
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryPartsFilter.html" target = "_blank" >`Sp.QueryPartsFilter`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.Field.html" target = "_blank" >`Sp.Field`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.WebPartDefinition.html" target = "_blank" >`Sp.WebPartDefinition`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Parts().get<[]>( { ...Sp.QueryPartsFilter... } );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Parts( 'partId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Parts().create({ ...Sp.Field... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Parts( 'partId' ).update({ ...Sp.WebPartDefinition... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Parts( 'partId' ).delete();
+```
+
+### Files 
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryFilesFilter.html" target = "_blank" >`Sp.QueryFilesFilter`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Files().get<[]>( { ...Sp.QueryFilesFilter... } );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Files( 'fileId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Files().create({ ...<any>... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Parts( 'fileId' ).update({ ...<any>... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Files( 'fileId' ).delete();
+```
+
+### Navigations
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryNavigationsFilter.html" target = "_blank" >`Sp.QueryNavigationsFilter`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.CreateNaviagationProps.html" target = "_blank" >`Sp.CreateNaviagationProps`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.CreateNaviagationOptions.html" target = "_blank" >`Sp.CreateNaviagationOptions`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.WebPartDefinition.html" target = "_blank" >`Sp.WebPartDefinition`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Navigations().get<[]>( { ...Sp.QueryNavigationsFilter... } );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Navigations( 'navNodeId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Navigations().create( Sp.CreateNaviagationProps , Sp.CreateNaviagationOptions );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Navigations( 'navNodeId' ).update({ ...Sp.WebPartDefinition... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Navigations( 'navNodeId' ).delete();
+```
+
+#### Navigation-childrens
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryNavigationsFilter.html" target = "_blank" >`Sp.QueryNavigationsFilter`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.CreateNaviagationProps.html" target = "_blank" >`Sp.CreateNaviagationProps`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.CreateNaviagationOptions.html" target = "_blank" >`Sp.CreateNaviagationOptions`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.WebPartDefinition.html" target = "_blank" >`Sp.WebPartDefinition`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Navigations( 'navNodeId' )
+.Childrens().get<[]>( { ...Sp.QueryNavigationsFilter... } );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Navigations( 'navNodeId' )
+.Childrens( 'navNodeChildrenId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Navigations( 'navNodeId' )
+.Childrens().create( Sp.CreateNaviagationProps , Sp.CreateNaviagationOptions );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Navigations( 'navNodeId' )
+.Childrens( 'navNodeChildrenId' ).update({ ...Sp.WebPartDefinition... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Navigations( 'navNodeId' )
+.Childrens( 'navNodeChildrenId' ).delete();
+```
+
+### Pages
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryPagesFilter.html" target = "_blank" >`Sp.QueryPagesFilter`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.CreatePageProps.html" target = "_blank" >`Sp.CreatePageProps`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Pages().get<[]>( { ...Sp.QueryPagesFilter... } );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Pages( 'pageId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Pages().create( {...Sp.CreatePageProps...} );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Pages( 'pageId' ).update({ ...<any>... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Pages( 'pageId' ).delete();
+```
+
+#### Sections
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QuerySectionsFilter.html" target = "_blank" >`Sp.QuerySectionsFilter`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.ClientsideWebPartData.html" target = "_blank" >`Sp.ClientsideWebPartData`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Pages( 'pageId' ).Sections().get<[]>( { ...Sp.QuerySectionsFilter... } );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Pages( 'pageId' ).Sections( 'sectionId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Pages( 'pageId' ).Sections().create( {...Sp.ClientsideWebPartData...} );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Pages( 'pageId' ).Sections( 'sectionId' ).update({ ...<any>... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Pages( 'pageId' ).Sections( 'sectionId' ).delete();
+```
+
+#### Columns
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryColumnsFilter.html" target = "_blank" >`Sp.QueryColumnsFilter`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.CreateColumnProps.html" target = "_blank" >`Sp.CreateColumnProps`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Pages( 'pageId' ).Sections( 'sectionId' )
+.Columns().get<[]>( { ...Sp.QuerySectionsFilter... } );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Pages( 'pageId' ).Sections( 'sectionId' )
+.Columns( 'columnId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Pages( 'pageId' ).Sections( 'sectionId' )
+.Columns().create( {...Sp.CreateColumnProps...} );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Pages( 'pageId' ).Sections( 'sectionId' )
+.Columns( 'columnId' ).update({ ...<any>... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Pages( 'pageId' ).Sections( 'sectionId' )
+.Columns( 'columnId' ).delete();
+```
+
+#### Controls
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryControlsFilter.html" target = "_blank" >`Sp.QueryControlsFilter`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.CreateControlProps.html" target = "_blank" >`Sp.CreateControlProps`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Pages( 'pageId' ).Sections( 'sectionId' )
+.Columns( 'columnId' ).Controls().get<[]>( { ...Sp.QueryControlsFilter... } );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Pages( 'pageId' ).Sections( 'sectionId' )
+.Columns( 'columnId' ).Controls( 'controlId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Pages( 'pageId' ).Sections( 'sectionId' )
+.Columns( 'columnId' ).Controls().create( {...Sp.CreateControlProps...} );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Pages( 'pageId' ).Sections( 'sectionId' )
+.Columns( 'columnId' ).Controls( 'controlId' ).update({ ...<any>... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Pages( 'pageId' ).Sections( 'sectionId' )
+.Columns( 'columnId' ).Controls( 'controlId' ).delete();
+```
+
+### Webs
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryItemsFilter.html" target = "_blank" >`Sp.QueryItemsFilter`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.CreateWebsProps.html" target = "_blank" >`Sp.CreateWebsProps`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.WebInfo.html" target = "_blank" >`Sp.WebInfo`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Webs().get<[]>( { ...Sp.QueryItemsFilter... } );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Webs( 'webId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Webs().create({ ...Sp.CreateWebsProps... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Webs( 'webId' ).update({ ...Sp.WebInfo... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Webs( 'webId' ).delete();
+```
+
+#### Web-lists
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryListsFilter.html" target = "_blank" >`Sp.QueryListsFilter`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.CreateListOption.html" target = "_blank" >`Sp.CreateListOption`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Webs( 'webId' ).Lists().get<[]>( { ...Sp.QueryListsFilter... } );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Webs( 'webId' ).Lists( 'listId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Webs( 'webId' ).Lists().create({ ...Sp.CreateListOption... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Webs( 'webId' ).Lists( 'listId' ).update({ ...<any>... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Webs( 'webId' ).Lists( 'listId' ).delete();
+```
+
+#### Web-files
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryFilesFilter.html" target = "_blank" >`Sp.QueryFilesFilter`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+Webs( 'webId' ).Files().get<[]>( { ...Sp.QueryFilesFilter... } );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+Webs( 'webId' ).Files( 'fileId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+Webs( 'webId' ).Files().create({ ...<any>... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+Webs( 'webId' ).Parts( 'fileId' ).update({ ...<any>... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+Webs( 'webId' ).Files( 'fileId' ).delete();
+```
+
+#### Web-pages
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryPagesFilter.html" target = "_blank" >`Sp.QueryPagesFilter`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.CreatePageProps.html" target = "_blank" >`Sp.CreatePageProps`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+Webs( 'webId' ).Pages().get<[]>( { ...Sp.QueryPagesFilter... } );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+Webs( 'webId' ).Pages( 'pageId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+Webs( 'webId' ).Pages().create( {...Sp.CreatePageProps...} );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+Webs( 'webId' ).Pages( 'pageId' ).update({ ...<any>... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+Webs( 'webId' ).Pages( 'pageId' ).delete();
+```
+
+#### Web-navigations
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryNavigationsFilter.html" target = "_blank" >`Sp.QueryNavigationsFilter`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.CreateNaviagationProps.html" target = "_blank" >`Sp.CreateNaviagationProps`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.CreateNaviagationOptions.html" target = "_blank" >`Sp.CreateNaviagationOptions`</a>
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.WebPartDefinition.html" target = "_blank" >`Sp.WebPartDefinition`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+Webs( 'webId' ).Navigations().get<[]>( { ...Sp.QueryNavigationsFilter... } );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+Webs( 'webId' ).Navigations( 'navNodeId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+Webs( 'webId' ).Navigations().create( Sp.CreateNaviagationProps , Sp.CreateNaviagationOptions );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+Webs( 'webId' ).Navigations( 'navNodeId' ).update({ ...Sp.WebPartDefinition... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+Webs( 'webId' ).Navigations( 'navNodeId' ).delete();
+```
+
+## Graph365Client
