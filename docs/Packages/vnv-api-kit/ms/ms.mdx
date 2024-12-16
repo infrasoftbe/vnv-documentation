@@ -462,3 +462,23 @@ Webs( 'webId' ).Navigations( 'navNodeId' ).delete();
 ```
 
 ## Graph365Client
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/modules/Graph.html" target = "_blank">`Graph`</a>
+
+```tsx
+MsAPI( 'clientId' ).Graph();
+```
+
+### Users
+
+```tsx
+MsAPI( 'clientId' ).Graph().Users().get<[]>( { ...<any>... } );
+
+MsAPI( 'clientId' ).Graph().Users( 'userId' ).get();
+
+MsAPI( 'clientId' ).Graph().Users().create( { ...<any>... } );
+
+MsAPI( 'clientId' ).Graph().Users( 'userId' ).update( { ...<any>... } );
+
+MsAPI( 'clientId' ).Graph().Users( 'userId' ).delete();
+```
