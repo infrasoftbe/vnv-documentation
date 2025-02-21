@@ -1,0 +1,71 @@
+---
+id: get-one-session
+title: "getOneSession"
+description: "getOneSession"
+sidebar_label: "getOneSession"
+hide_title: true
+hide_table_of_contents: true
+api: eJxtU01v2zAM/SsBTxvgLcGOue0wDDsVaLdT0QNjM7FaW1IpOphh6L+P9EfipEMOkim+x8dHZoAQiVFc8L8q2MOJ5MHTE6WkESiAKcXgEyXYD/Btt7OjolSyi4ZRxMObppXBC3mxV4yxceXIuH1NljJAKmtq0W5OqB25IlthcROzx5bslD7qCUnY+RPkAly1CvuuPRBruWPgFrUaVKE7NAQ5m9L3zjFp/vNEN4JfigUcDq9UinHOAWTGXqHZ0IKnZMilc8UlKjt20mtYvyKykgqxpWkf1npEqbXMJF7zR6jauBYj3FGxMuCuw6zUt37eT0CL1mEeDRRTzT1s52rb4VI2g2nm8yKx48YSIa96eTIdo+XmrT+GUZKTxjSd/flLFcqu1UmO81NCY5t07b7qD+7VKgdjCkfZ3CNtJbC0lTB/Y0jSor/O2trZaKOba6c3zBenhP7KNjaojivP2NQwu/C8eK7g/dV+7bfWcvY+DAdM9IebnC383hHP8zwjO7TdMasql+yuLh+xSfRBymW94dPjPNnPGyj+L3FZL9+bf9h09qXXN+pvtiS/aHJNWOlKm4jp/XtZUpQV8sP/yeZ5WYqfP37rEv0DbFxKOQ==
+sidebar_class_name: "get api-method"
+info_path: docs/rest/session/vnv-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"getOneSession"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/session/{sessionId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+getOneSession
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"sessionId","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Ok","content":{"application/json":{"schema":{"items":{"properties":{"name":{"type":"string"},"id":{"type":"number","format":"double"}},"required":["name","id"],"type":"object"},"type":"array"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

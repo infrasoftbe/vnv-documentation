@@ -1,0 +1,63 @@
+{
+	"openapi": "3.0.0",
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "vnv-documentation",
+		"version": "0.0.0",
+		"description": "infrasoft documentation",
+		"contact": {}
+	},
+	"paths": {
+		"/management": {
+			"get": {
+				"operationId": "GetManagement",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"properties": {
+											"name": {
+												"type": "string"
+											},
+											"id": {
+												"type": "number",
+												"format": "double"
+											}
+										},
+										"required": [
+											"name",
+											"id"
+										],
+										"type": "object"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Management"
+				],
+				"security": [],
+				"parameters": []
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}

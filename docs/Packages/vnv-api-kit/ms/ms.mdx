@@ -154,6 +154,25 @@ MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
 .Lists( 'listId' ).Views( 'viewId' ).Fields( 'fieldId' ).delete();
 ```
 
+### Subscriptions
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Subscriptions().get<[]>();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Subscriptions( 'SubscriptionId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Subscriptions().create();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Subscriptions( 'SubscriptionId' ).update();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Subscriptions( 'SubscriptionId' ).delete();
+```
+
 ### Parts
 
 - <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryPartsFilter.html" target = "_blank" >`Sp.QueryPartsFilter`</a>

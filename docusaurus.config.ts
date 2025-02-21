@@ -43,6 +43,7 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          docItemComponent: "@theme/ApiItem",
         },
         blog: {
           showReadingTime: true,
@@ -58,7 +59,49 @@ const config: Config = {
     ],
   ],
 
-  plugins: ['@docusaurus/theme-live-codeblock'],
+  plugins: [
+    '@docusaurus/theme-live-codeblock',
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi',
+        docsPluginId: "classic",
+        config : {
+          restDatabase : {
+            specPath: 'openapi/database/swagger.json',
+            outputDir: "docs/rest/database",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+          restManagement : {
+            specPath: 'openapi/management/swagger.json',
+            outputDir: "docs/rest/management",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+          restMicrosoft : {
+            specPath: 'openapi/infrasoft-pnp-rest/swagger.json',
+            outputDir: "docs/rest/microsoft",
+            sidebarOptions: {
+              groupPathsBy: "tagGroup",
+            },
+          },
+          restSession : {
+            version : "3",
+            proxy : "https://google.com",
+            baseUrl : "https://google.com",
+            specPath: 'openapi/session/swagger.json',
+            outputDir: "docs/rest/session",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          }
+        }
+      }
+    ],
+  ],
 
   themeConfig: {
     // Replace with your project's social card
@@ -94,6 +137,42 @@ const config: Config = {
           position: 'left',
           label: 'API',
         },
+        {
+          type: 'docSidebar',
+          sidebarId: 'restapiSidebar',
+          position: 'left',
+          label: 'REST',
+        },
+        {
+          label: 'REST 2',
+          position: 'left',
+          items: [
+            {
+              to: '/docs/rest/overview',
+              label: 'Vnv-Session',
+            },
+            {
+              to: '/docs/rest/endpoints',
+              label: 'Vnv-Database',
+            },
+            {
+              to: '/docs/rest/examples',
+              label: 'Vnv-Management',
+            },
+            {
+              label: 'Vnv-User',
+              to: '/docs/rest/users'
+            },
+            {
+              label: 'Ms-Sharepoint',
+              to: '/docs/rest/ms-sp'
+            },
+            {
+              label: 'Ms-Graph365',
+              to: '/docs/rest/ms-g365'
+            },
+          ],
+        },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/infrasoftbe',
@@ -119,6 +198,10 @@ const config: Config = {
             {
               label: 'API',
               to: '/docs/api',
+            },
+            {
+              label: 'REST',
+              to: '/docs/openapi',
             },
           ],
         },
@@ -176,6 +259,12 @@ const config: Config = {
       type: 'text/css'
     }
   ],
+
+  markdown: {
+    mermaid: true,
+  },
+  
+  themes: ['@docusaurus/theme-mermaid' , 'docusaurus-theme-openapi-docs'],
   
 };
 

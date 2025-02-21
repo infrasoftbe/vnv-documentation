@@ -1,0 +1,73 @@
+{
+	"openapi": "3.0.0",
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {},
+		"securitySchemes": {
+			"api_key": {
+				"type": "apiKey",
+				"name": "access_token",
+				"in": "query"
+			}
+		}
+	},
+	"info": {
+		"title": "vnv-documentation",
+		"version": "0.0.0",
+		"description": "infrasoft documentation",
+		"contact": {}
+	},
+	"paths": {
+		"/database": {
+			"get": {
+				"operationId": "GetDatabase",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"properties": {
+											"name": {
+												"type": "string"
+											},
+											"id": {
+												"type": "number",
+												"format": "double"
+											}
+										},
+										"required": [
+											"name",
+											"id"
+										],
+										"type": "object"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Database"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": []
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}

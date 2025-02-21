@@ -1,0 +1,21 @@
+{
+  "entryFile": "src/api/session.ts",
+  "controllerPathGlobs": [
+    "src/api/controllers/session/**/*.ts"
+  ],
+  "spec": {
+    "baseUrl": "https://api.example.com",
+    "outputDirectory": "./openapi/session",
+    "specVersion": 3,
+    "outputFileName": "session.spec.json",
+    "servers": [
+      {
+        "url": "https://api.example.com"
+      }
+    ],
+    "routes": {
+      "basePath": "api.example.com",
+      "middlewareTemplate": "custom-template.ts"
+    }
+  }
+}

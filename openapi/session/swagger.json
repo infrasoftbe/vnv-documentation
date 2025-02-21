@@ -1,0 +1,118 @@
+{
+	"openapi": "3.0.0",
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "vnv-documentation",
+		"version": "0.0.0",
+		"description": "infrasoft documentation",
+		"contact": {}
+	},
+	"paths": {
+		"/sessions": {
+			"get": {
+				"operationId": "getAllSession",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"properties": {
+											"name": {
+												"type": "string"
+											},
+											"id": {
+												"type": "number",
+												"format": "double"
+											}
+										},
+										"required": [
+											"name",
+											"id"
+										],
+										"type": "object"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Session"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": []
+			}
+		},
+		"/sessions/{sessionId}": {
+			"get": {
+				"operationId": "getOneSession",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"properties": {
+											"name": {
+												"type": "string"
+											},
+											"id": {
+												"type": "number",
+												"format": "double"
+											}
+										},
+										"required": [
+											"name",
+											"id"
+										],
+										"type": "object"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Session"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "sessionId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "https://[object Object]/"
+		}
+	]
+}

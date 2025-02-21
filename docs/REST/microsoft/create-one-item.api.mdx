@@ -1,0 +1,71 @@
+---
+id: create-one-item
+title: "CreateOneItem"
+description: "This function creates a new item in a SharePoint list using the provided properties."
+sidebar_label: "CreateOneItem"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVUtv2zAM/iuCzomb7dhbV/RQYECDJjs1Rc3ITKzOkTRJThsY/u8jJTd1Xxt62G0+xBbF58ePTCetQw9RW3NZyVN57hEiXhm8jLiTE+kxOGsCBnnaya+zGb8qDMprxzZksaxRlGpsVopNaxRfCx2Ex9h6o81WgJh7u9MBRawh0kWwzR6DiFbAypQLV3zXIbKHs6q6xtA2sRR2fY8qFmJZk698IEtHxmgi2VJ0n1SF3QioqhzI4IPQ5GjwvajB49xqE0VDIUQbWI1tSyrfLNx5o8ldKcBUSey83esKK1HSFwEUNYayIDyUNZE0GQZwrtEqQXdyHxiLTgZV4w7469kuQQaRpX3PiP5qtUcC+yaLbycyHhwSlLk8ihJ1bFjwHiSy52fypgsEzxH23I4wBkIbOn2Mw7Hg57y53AjbwIkmQ8eGJOSU6DUwJDOGqwioWq/jgQzo5MDDDiP6kM9cN4b4zVaHtySaikSjEdjiaM+px7+QDMQ1KuupeYTkygz8OrIEhLJNg1mdePITD9M9NC3VDdqHIkUnIWl6FCF6giVMjmxIqkEoMGKNZL8yYA4p1MDLUa6BQCUYiXcDpMkDN1psrM+decXR91pTrMwFqJqTkmPORN/iJ1j4H+VPoPxiZGnCeJtwLdDMX918NK8ZnrtcWkHp38k8rJR2bXm/Optmx0Gs6XTCmQXJo+P3eVI62fqGr2Q/GqkFd/QpOrf5+nmaLh5h5zg832mzsdz4p4zwkdsTps44CsMxMhW+FLNiRhLiDtJ6ZxND4NLN5eJc9plioOKwtDjtHZiRWh57QTwRwyJ4wbXumaP/bDflJkR8jCeuAW047QReN+B7IzO+BGTNuJOg69YQ8Idv+p7FBKIf9tUevIY1g3ZzS45qhAp9agizgwrO9UyXHJbVia0kfjN//eTJ4kwpdPGPurcjasyvFktSXg8LcmcrtvHwwAuAfk8lfdiEb/pPSbJONmC2LWxZN/vk5zf2OMT4
+sidebar_class_name: "post api-method"
+info_path: docs/rest/microsoft/express-pnp
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"CreateOneItem"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/items"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This function creates a new item in a SharePoint list using the provided properties.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"description":"- The `properties` parameter in the `createOneItem` function is a Record type\nthat represents a collection of key-value pairs. The keys are strings, and the values can be of\nany type. This parameter is used to provide the data for creating a new item in a SharePoint list.\nEach key","required":true,"content":{"application/json":{"schema":{"description":"- The `properties` parameter in the `createOneItem` function is a Record type\nthat represents a collection of key-value pairs. The keys are strings, and the values can be of\nany type. This parameter is used to provide the data for creating a new item in a SharePoint list.\nEach key","properties":{},"additionalProperties":{},"type":"object","title":"Record_string.any_"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"The `createOneItem` function is returning a Promise that resolves to a\n`Sp.ListItemAddResult` object. This object represents the result of adding a new item to a\nSharePoint list using the `openSpClient` and the provided `properties`.","content":{"application/json":{"schema":{"properties":{"data":{}},"required":["data"],"type":"object","title":"Sp.ListItemAddResult"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

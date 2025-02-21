@@ -1,0 +1,11 @@
+{
+  "entryFile": "src/api/index.ts",
+  "controllerPathGlobs": [
+    "src/api/controllers/microsoft/**/*.ts"
+  ],
+  "spec": {
+    "outputDirectory": "./openapi/microsoft",
+    "specVersion": 3,
+    "outputFileName": "microsoft.spec.json"
+  }
+}

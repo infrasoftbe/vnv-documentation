@@ -1,0 +1,43 @@
+# FlowsAPI
+
+## Database flows
+
+### 
+```typescript
+FlowsAPI().Database().createNodes([
+  {
+    "node" : {
+      "id": "<id>",
+      "name": "<name>",
+      "token": "<token>",
+      "create_dt": "<create_dt>",
+      "update_dt": "<update_dt>",
+      "type": "<type>",
+      "meta": {
+        "description": "<meta.description>",
+        "status": "<meta.status>",
+        "ref_extern": "<meta.ref_extern>",
+        "external": "<meta.external>",
+        "path": "<meta.path>",
+        "author": "<meta.author>",
+        "type": "<meta.type>",
+        "content": "<meta.content>",
+        "dataQuality": "<meta.dataQuality>",
+        "consistency": "<meta.consistency>",
+        "completeness": "<meta.completeness>",
+        "correctness": "<meta.correctness>",
+        "rat": "<meta.rat>"
+      }
+    },
+    "in": ["<token_in>"],
+    "for": ["<token_for>"]
+  }
+])
+```
+
+## Sharepoint flows
+
+### 
+```typescript
+FlowsAPI().Ms( 'clientId' ).Sp().createSite( 'database_projectId' )
+```

@@ -1,0 +1,148 @@
+import React from "react";
+import Playground from "@theme/Playground";
+import BrowserOnly from "@docusaurus/BrowserOnly";
+
+import RJSForm , { FormProps , getDefaultRegistry } from '@rjsf/core';
+import { RJSFSchema , ValidatorType , UiSchema , ArrayFieldTemplateProps , RegistryWidgetsType , RegistryFieldsType , FieldProps , ObjectFieldTemplateProps , TemplatesType } from '@rjsf/utils';
+import { getSubmitButtonOptions, SubmitButtonProps } from '@rjsf/utils';
+import validator from '@rjsf/validator-ajv8';
+
+# Form
+
+The application’s forms are managed using **[rjsf](https://github.com/rjsf-team/react-jsonschema-form) (React JSONSchema Form)**, a library that enables automatic form generation based on **JSON Schema**.
+
+This approach ensures that each form is declaratively defined according to the data expected by the backend, providing consistent validation and improved code maintainability.
+
+## Retrieving Schemas
+
+Form schemas are exposed through a service accessible at the following endpoint:
+```shell
+{host}/schemas/{packageId}/{schemaId}
+```
+
+  - **host**: The backend API URL.
+  - **packageId**: The name of the package the schema belongs to.
+  - **schemaId**: The identifier of the specific schema.
+
+Once retrieved, the schema is used to dynamically generate the corresponding form, allowing for seamless adaptation to changes in the backend data models.
+
+## Sample
+
+<BrowserOnly>{
+  () => {
+    const { 
+      TextInputGroup, TextInputGroupMain , 
+      Flex , 
+      FlexItem ,
+      Dropdown,
+      DropdownList,
+      DropdownItem,
+      MenuToggle
+    } = require("@infrasoftbe/infrasoft-ui-components");
+
+    const [ _package , setPackage ] = React.useState();
+    const [ schemaList , setSchemaList ] = React.useState();
+    const [ schema , setSchema ] = React.useState();
+    const [ targetSchema , setTargetSchema ] = React.useState( null );
+    const [ packageDropDownIsOpen , setPackageDropDownIsOpen ] = React.useState( false );
+    const [ schemaDropDownIsOpen , setSchemaDropDownIsOpen ] = React.useState( false );
+
+    const onTogglePackageClick = () => {
+      setPackageDropDownIsOpen(!packageDropDownIsOpen);
+    };
+
+    const onPackageSelect = ( _event , value ) => {
+      setPackageDropDownIsOpen(false);
+      setPackage( value );
+    };
+
+    const onToggleSchemaClick = () => {
+      setSchemaDropDownIsOpen(!schemaDropDownIsOpen);
+    };
+
+    const onSchemaSelect = ( _event , value ) => {
+      setSchemaDropDownIsOpen(false);
+      setSchema( value );
+    };
+    
+    React.useEffect(() => {
+
+      setSchema( null );
+
+      if(_package)fetch( `http://localhost:8080/schemas/${_package}` )
+      .then(( response ) => response.json())
+      .then(( result ) => setSchemaList( result ))
+
+    } , [ _package ]);
+
+    React.useEffect(() => {
+
+      if(_package)fetch( `http://localhost:8080/schemas/${_package}/${schema}` )
+      .then(( response ) => response.json())
+      .then(( result ) => setTargetSchema( result ))
+
+    } , [ schema ]);
+
+    return <React.Fragment>
+      <div>
+        <Flex style = {{alignItems : 'center'}} >
+          <FlexItem>
+            <Dropdown
+              maxMenuHeight={'400px'}
+              isOpen={packageDropDownIsOpen}
+              onSelect={onPackageSelect}
+              onOpenChange={(isOpen) => setPackageDropDownIsOpen(isOpen)}
+              toggle={(toggleRef) => (
+                <MenuToggle style = {{width : '20ch' }} ref={toggleRef} onClick={onTogglePackageClick} isExpanded={packageDropDownIsOpen}>
+                  { _package }
+                </MenuToggle>
+              )}
+              shouldFocusToggleOnSelect
+            >
+              <DropdownList>
+                <DropdownItem value={"Management"} key="management"> Management </DropdownItem>
+                <DropdownItem value={"Neo4j"} key="neo4j"> Neo4j </DropdownItem>
+                <DropdownItem value={"Sp"} key="Sp"> Sp </DropdownItem>
+                <DropdownItem value={"Graph"} key="Graph"> Graph </DropdownItem>
+                <DropdownItem value={"Session"} key="session"> Session </DropdownItem>
+              </DropdownList>
+            </Dropdown>
+          </FlexItem>
+          <FlexItem>
+            <Dropdown
+              maxMenuHeight={'400px'}
+              isDisabled={true}
+              value={_package}
+              isOpen={schemaDropDownIsOpen}
+              onSelect={onSchemaSelect}
+              onOpenChange={(isOpen) => setSchemaDropDownIsOpen(isOpen)}
+              toggle={(toggleRef) => (
+                <MenuToggle ref={toggleRef} onClick={onToggleSchemaClick} isExpanded={schemaDropDownIsOpen}>
+                  { schema }
+                </MenuToggle>
+              )}
+              shouldFocusToggleOnSelect
+            >
+              <DropdownList>
+                {
+                  schemaList ? schemaList.map(( schemaId ) => {
+                    return <DropdownItem value={schemaId.replace( `#/definitions/${_package}.` , '' )} key={schemaId} >{schemaId.replace( `#/definitions/${_package}.` , '' )}</DropdownItem>
+                  }) : <></>
+                }
+              </DropdownList>
+            </Dropdown>
+          </FlexItem>
+        </Flex>
+      </div>
+      <div style = {{ padding : '10px' , border : '1px solid black' , marginTop : '10px' }} >
+        {
+          targetSchema ? <RJSForm 
+            schema={ targetSchema || {} } 
+            validator={ validator } 
+          /> : <>Form will apear here</>
+        }
+      </div>
+    </React.Fragment>
+  }
+}</BrowserOnly>
+

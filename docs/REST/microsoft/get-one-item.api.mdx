@@ -1,0 +1,72 @@
+---
+id: get-one-item
+title: "GetOneItem"
+description: "This function retrieves a single item from a SharePoint list using the provided list ID and item"
+sidebar_label: "GetOneItem"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVU1vGzcQ/SsETy2gSG6Puhm2awhokSBSTnEAUbsjL9NdkiFn3QjC/ve+IWV7pSiGfSl62iU5n28eH/faB4qGrXeLWs/1LfF7RwumTk90pBS8S5T0fK9/v7iQT02pijaIA8xXDan1/ZPPWm17V8mZsklF4j466+6VUR+i72wixY1hHCTfPlBS7HG0bEykD946Vn/axBLnzvnNV6p4qiTBU0wEjJbE0agUqLJbWykLe7VF+ONQLUKpPkl2RowQ/YOtqb5zazTsluGqteR4PVFrsVzU+DOuVmsJh5UKJpqOmGKaAonKO4a5AGBCaG2VEZt9TYLCXqeqoc7IH/IAT7YFs9tPi2v58i4Q0Eoo393rYaIvmU3VdAiZRucb71syTgxuass+ykieTl3fbSiimK2PnUEtuvb9pqUcr+fmDeZXkQxTfba0v3wNXH9yeNTOixl8B5iMq+gyJeLFmXATBGhbIw5zjj3Ba2VZVmcSX5UBrLB/LhYslhQfKH6k2kYwh+obFFd/iu1bjO2rqnw1zH/Ylpa7BEa9z3ReZZdXuA5y9771KA6pPhcaHZNmxJDR9J8nO5pjntq5iTzifYruC1i+gFzG5Sc9f5k89lzuNey4jFovw/Tx1qPvQVo/lRhIyXkJwHxaeqMAlP3Fdb7tNmvN4lquOJv7JGDnEEFCYFNKk86KHkIcpZVEVR8t72CN1bNQYH2qj++ygP0oKiKPfqsEFLUuPFjnipAa6igjzlX3zn7r6c6hcscyzpjdmkPXO9+rfwyahZA+IlOgEJMTMKRJK0UFw43wGqVgVWrTY8YJzycjUTvl5+SEwcMAHNBX4+UJwXOgJyXJXM8kfJrtS5ZBC3pCoAJWL9dTz/QwQnUpabN8DlLv1ucbc2ALfRd40rvgAkJJnILzb9OL6QV2oMyEB0tcDu0tlldyFUXATSUCLgwLPnFn3MgMo1V4xNRh0kdT3D/L/3/HxgIw03eehdbY/Cj0Rc0KtJ/z5EQJ5ocRAsQGjcnRfr8xiXBjh0G2waF4oOuDibaomZDVJvnH1LamTfRC3798PLDjV/V/4/RZqA6bxu2EJ6btZYXfv2n3zPnhCywbMjU4LHCUw8uqosAjtx9e/CO6396scAH+BZyMN38=
+sidebar_class_name: "get api-method"
+info_path: docs/rest/microsoft/express-pnp
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetOneItem"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/items/{itemId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This function retrieves a single item from a SharePoint list using the provided list ID and item
+ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"- The `itemId` parameter is of type `number` and represents the unique\nidentifier of the item you want to retrieve from the SharePoint list.","in":"path","name":"itemId","required":true,"schema":{"format":"double","type":"number"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"The `getOneItem` function is returning a Promise that resolves to a SharePoint ListItem\nobject. The function retrieves a specific item from a SharePoint list using the provided\n`openSpClient`, `listId`, and `itemId` parameters.","content":{"application/json":{"schema":{"properties":{"GUID":{"type":"string"},"Attachments":{"type":"boolean"},"EditorId":{"type":"number","format":"double"},"AuthorId":{"type":"number","format":"double"},"Created":{"type":"string"},"Modified":{"type":"string"},"ID":{"type":"number","format":"double"},"ComplianceAssetId":{"type":"string","nullable":true},"Title":{"type":"string"},"ContentTypeId":{"type":"string"},"ServerRedirectedEmbedUrl":{"type":"string"},"ServerRedirectedEmbedUri":{"type":"string","nullable":true},"Id":{"type":"number","format":"double"},"FileSystemObjectType":{"type":"number","format":"double"}},"required":["GUID","Attachments","EditorId","AuthorId","Created","Modified","ID","ComplianceAssetId","Title","ContentTypeId","ServerRedirectedEmbedUrl","ServerRedirectedEmbedUri","Id","FileSystemObjectType"],"type":"object","title":"Sp.ListItem"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
