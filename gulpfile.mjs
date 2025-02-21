@@ -141,6 +141,7 @@ gulp.task( 'scripts:copy-infrasoft-libs-documentation' , () => {
 /// [SCRIPT:Swagger API]
 
 gulp.task( 'scripts:gen-api-docs' , shell.task('npx docusaurus gen-api-docs all') );
+gulp.task( 'scripts:clean-api-docs' , shell.task('npx docusaurus clean-api-docs all') );
 
 // gulp.task( 'scripts:tsoa-spec:database' , shell.task('npx tsoa spec --configuration tsoa/tsoa.database.config.json') );
 // gulp.task( 'scripts:tsoa-spec:management' , shell.task('npx tsoa spec --configuration tsoa/tsoa.management.config.json') );
@@ -149,7 +150,7 @@ gulp.task( 'scripts:gen-api-docs' , shell.task('npx docusaurus gen-api-docs all'
 
 // gulp.task( 'scripts:tsoa-spec' , gulp.series('scripts:tsoa-spec:database' , 'scripts:tsoa-spec:management' , 'scripts:tsoa-spec:microsoft' , 'scripts:tsoa-spec:session') );
 
-gulp.task( 'scripts:swagger-api-doc' , gulp.series( 'scripts:copy-infrasoft-servers-spec' , 'scripts:gen-api-docs' ) );
+gulp.task( 'scripts:swagger-api-doc' , gulp.series( 'scripts:clean-api-docs' , 'scripts:copy-infrasoft-servers-spec' , 'scripts:gen-api-docs' ) );
 
 /// [SCRIPT:All scripts]
 

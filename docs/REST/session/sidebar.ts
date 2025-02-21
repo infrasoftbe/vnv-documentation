@@ -12,8 +12,14 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "rest/session/get-session",
-          label: "GetSession",
+          id: "rest/session/get-all-session",
+          label: "getAllSession",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "rest/session/get-one-session",
+          label: "getOneSession",
           className: "api-method get",
         },
       ],
