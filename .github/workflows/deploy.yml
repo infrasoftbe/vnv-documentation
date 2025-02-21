@@ -27,10 +27,13 @@ jobs:
         run: echo "@infrasoftbe:registry=https://npm.pkg.github.com/" > .npmrc && echo "//npm.pkg.github.com/:_authToken=${{secrets.PUBLISH_TOKEN}}" >> .npmrc
 
       - name: Install dependencies
-        run: npm ci --force && rm -f .npmrc
+        run: npm ci --force
         
       - name: Build website
         run: npm run build
+
+      - name: Remove .npmrc
+        run: rm -f .npmrc 
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
