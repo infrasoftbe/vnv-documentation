@@ -165,7 +165,7 @@ const config: Config = {
             },
             {
               label: 'Ms-Sharepoint',
-              to: '/docs/rest/ms-sp'
+              to: '/docs/rest/microsoft/express-pnp'
             },
             {
               label: 'Ms-Graph365',

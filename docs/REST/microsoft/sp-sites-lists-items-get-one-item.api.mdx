@@ -1,0 +1,72 @@
+---
+id: sp-sites-lists-items-get-one-item
+title: "Sp.Sites.Lists.Items.getOneItem"
+description: "This function retrieves a single item from a SharePoint list using the provided list ID and item"
+sidebar_label: "Sp.Sites.Lists.Items.getOneItem"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVk1v2zgQ/SsET7uAa2X36FuQZAMBu2hRu6emgGlpHLErkSxnlK1h6L/vDCnXsusEyWWxJ/FjOJx58+ZRe+0DREPWu7LWC70M86UlwPmfFgnnJUGH80eg9w5krGc6AgbvEFAv9vr3qyv51IBVtEG8sI9VA2p9PLNW295VsqcsqgjUR2fdozLqQ/SdRVDUGOIN9O0ToCLPW8vGRPjgrSMlkYifB+c3X6GiuZILfvhkh9GCHDQKA1R2ayvFKXRqy+5PXbXsSvUotxP7CNE/2RrqB7dmFNwy3LQWHK1nai2WZc0j42q1Fnc8U8FE0wFBxDkjUXlHbC4AmBBaWyUYi68oKOw1Vg10RkZ8D4NMNmN2/6m8lS/tAjBayOG7Rz3M9DWRqZqOXeJkf+N9C8aJwV1tyUep049d13cbiBzM1sfOcCy69v2mheSvp+YN5jcRDEF9MbS/fM24PrN5ks6LN/iOYTKugmtEoPKCuxk7aFsjBxYUe+BTK0syu3DxTS7Aitcv+WKLJcQniB+htpGZA/UdB1d/iu1bjO2ronw1zH/YFpY7ZEa9T3RepSOvODpI733rOTi+6nOm0SlpJgyZVP9Y2UkdU9UuVeSA9zm6L2D5AnIJl2dy/jI75Jz7mu0ol1pU6ND1nPcgqZ9LDEvJZQng+rTwRgHI6+Vt6nabtKa8lRYn84gCdnIRxAUvSmiSWdbDeyBJBaHqo6UdW/PsKBQ8P9fHd0nAfhYVkUe/VQKKWmcerFNEfDWro5Q4Rd07+62HB8eRO5JyxnSsGbPe+V79YzhZFtIDMhkKMTkDQ5K0ElQw1AivORSe5dj0lHHC89lE1M75OTtj8DAwDpxX4+Vd4edAz/IlC11USWex2OdBWQ8FhgLl4Sn28pEVCY+nWYmHQkLiaY5s0IK4kC4D3EtL60IPk0osJdQkuYPkuPWpy0aGwXeBFN8FF9iV+Mm1+W1+Nb/iFVZz4EdOjoyQlMsbaV8RfVOJ6Asrg0fqjJuYPfeAKn4N1UiZEzrsj+/If0frXCmC71SE1tj0uvRZFnONPuuxRmy9OFRJQBe4UqFkI5cqwYXZNFdLSCWJy8pIJS5Mw2CJ5/1+YxBYOYZBlpnLcWybJxNtVlVpGosyZvZsTYvwAmy/fBxZ+qv6v/XWRaTHReN2wj3T9jLj4d+wO/be8IUtGzA195LAkTevqwoCTY799Odx0nb3dytuxH8BpJBvHA==
+sidebar_class_name: "get api-method"
+info_path: docs/rest/microsoft/express-pnp
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Sp.Sites.Lists.Items.getOneItem"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/clients/{clientId}/sp/sites/{siteId}/lists/{listId}/items/{itemId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This function retrieves a single item from a SharePoint list using the provided list ID and item
+ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"- The `itemId` parameter is of type `number` and represents the unique\nidentifier of the item you want to retrieve from the SharePoint list.","in":"path","name":"itemId","required":true,"schema":{"format":"double","type":"number"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"The `getOneItem` function is returning a Promise that resolves to a SharePoint ListItem\nobject. The function retrieves a specific item from a SharePoint list using the provided\n`openSpClient`, `listId`, and `itemId` parameters.","content":{"application/json":{"schema":{"properties":{"GUID":{"type":"string"},"Attachments":{"type":"boolean"},"EditorId":{"type":"number","format":"double"},"AuthorId":{"type":"number","format":"double"},"Created":{"type":"string"},"Modified":{"type":"string"},"ID":{"type":"number","format":"double"},"ComplianceAssetId":{"type":"string","nullable":true},"Title":{"type":"string"},"ContentTypeId":{"type":"string"},"ServerRedirectedEmbedUrl":{"type":"string"},"ServerRedirectedEmbedUri":{"type":"string","nullable":true},"Id":{"type":"number","format":"double"},"FileSystemObjectType":{"type":"number","format":"double"}},"required":["GUID","Attachments","EditorId","AuthorId","Created","Modified","ID","ComplianceAssetId","Title","ContentTypeId","ServerRedirectedEmbedUrl","ServerRedirectedEmbedUri","Id","FileSystemObjectType"],"type":"object","title":"Sp.ListItem"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

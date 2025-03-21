@@ -1,0 +1,71 @@
+---
+id: sp-sites-create-one-file
+title: "Sp.Sites.createOneFile"
+description: "Sp.Sites.createOneFile"
+sidebar_label: "Sp.Sites.createOneFile"
+hide_title: true
+hide_table_of_contents: true
+api: eJx1U01v2zAM/SsBTxvgxNmOuW0FBuSUYulOQQ6KzDRqbUmT6KKG4f8+UrLz0XS+WKLIp8fHpx6cx6DIOLuuYAVbv9gawrjQARXhxuIvUyMUEDB6ZyNGWPXwfbmUX4VRB+OlmEs3r5ymnSW0JKfK+9roBF2+REnpIeoTNopXg3wFRNRtMNTBarcvwKugGiQMfMmuByOoXtGJcS0f8O7IZB5zJODf1gRk0hRaLC7QQJ2X3EjB2GcYhn1Oxkg/XdVJxsfaK9ZNW5NhIlQeXWjmlSJ1Q3xCd4cX1MQ8fBAFyWRlhOA9hwIETPEFcDBWhQ6k+QuLXa7bZ1FuZf3vRFipk5OZeRcTEdFlBaWuDfcSyz4v1tVQRl9GwSh7+UlE7uPtpOcAMovwNknfhlqgQLSbZrQVCVKXzNHYo0t9GpKGAd89OyTOvfUMJTiZ/bfFcrHkCDsB2T1SMo5yvX2AIUuvNCVLFKmVRtmrtA/tz7j/2SjAjU5nyQnfqfS1YvcwYGqkH7XZwagNF68mdaRz4ZwEkoMskcxMNJLI2XWsxknEZqS+P6iIf0I9DBJme4XRxW8qGHUQVVjIykRZ85iOqo54R/rsPPjye7TD1xnf+WkzY1DZTjRWdSs7Xr5id/02hj3nnlBVGBKHfPyQb5o/Ccil/DO/D8VU9ENr9HSVfveoxSFnJz5utk+cfBifWeOq9GgZOOEWlyUrxV7/BzwRiTM=
+sidebar_class_name: "post api-method"
+info_path: docs/rest/microsoft/express-pnp
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Sp.Sites.createOneFile"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/clients/{clientId}/sp/sites/{siteId}/files/{filePath}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Sp.Sites.createOneFile
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"filePath","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"multipart/form-data":{"schema":{"type":"object","properties":{"file":{"type":"string","format":"binary"}},"required":["file"]}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Ok","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

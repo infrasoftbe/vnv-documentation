@@ -1,0 +1,72 @@
+---
+id: sp-sites-lists-fields-get-all-fields
+title: "Sp.Sites.Lists.Fields.getAllFields"
+description: "This static function retrieves all fields of a SharePoint list using the provided SharePoint"
+sidebar_label: "Sp.Sites.Lists.Fields.getAllFields"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFV8GS2zYM/RUNz669zXFvG3s3VZu0nsjpdGaTGdMSvGJCkQxJuevR+N8LkJZXlqXEyaW+yBQBEHwAHqCGaQOWe6FVWrBblplpJjy46VvhvJs+CJCFmz6Bv5MyLtiEWXBGKweO3Tbs1c0NPQpwuRWGDKGZVQnJuqu1Tra1ymk3ES6x4GurhHpKeLK0uhIOEl9yjxtOyx24xOuEq4Rby/eJ3n5Ua3QsWFonevMZcvQtoUNOVtGkFRBU6XU4FDXxgKzkFpZaKJ9IvFRSOzoYpdAqXl5lZi4FKN9axoOLYGRN4ime6NA0qhird6KAIuEuMdzyCjxYN0VAcq08WiAcuDFS5AHQ2WdHYDTM5SVUnP4htFVADW0h7l5EDP/mUhRB5x04x5+AXvq9wSeLh+MhqpaSbyS+87aGw6Sj9aBtVUt+ldYKBbJSW7/oRqyveBRcCGck3/+Jdx2VuXNZXA8JhJiR1B9CFR0JVVcbsOjfFl3niBwrdE1uklHh5fBxmcfr5qPeZHireNfT5kZrCVyF3VL/m6oHISlqS67gSncy4BKKEZu5NiO+hJj/U8nB3ffwtRZ2zOp74MVfSu4DeMMiS6EUFCs9fJ2O4O/ZW6G+XJUZqXunC7Bq2FCKKW4Vl6Pop6qAZ4pQ7a5ENmiMgZAWg6f8JooCRlx8Y3VthtMQSeY1d7DamxGcIpDj2XOvvPD7ZSzb8YK4V3jPHD4o8bUGLNAa3LC9BYY/H669CQNEjd0+MqUxrBMmPQFovWSfSPM7dbuALa+lD4dfFfejwo+QyLx2XlcPIaQI23U6gWV/jur6uj/ka9DNkLnnusK+hYvlGfv+jIWR7Jxz9RoWILEzjKT1Xe31N/OeBLZCyhQz6QrvDtSOWzJ5HOgkQ31ipAtccn6P4ft83nL1GTN3eHiIdE+E2rJnlys7zNinwWHOOxFch756XHXOTC+sEyjmRCgte/S44owYBllguOa7BX5esr0CvSi/y+IaL53xwvhe2o8ldS+Fz/O1l5yfJm1yxsEJ931s3ayd1iihjzJhlmMH+k0upkWcCV3IoKGBjkt53UD3MqG9iHxUebhomOqCeLqgkc3zJ0cFEyQNSeJLGnrbJKeMAE+XdJDXFsOO4rh6mfziGv+XmkZnHHcZbfsSF7N4qps18U9aHGbOzBzN1rOGHvSG/MFlnDMPs207YDuwu3hAw2oryR47dDwJBRPIC7EULVEcsYdng2O0+8UoymayE1H+dXozvaFuInLA4Z1UVGhjLM3mFCiaYnlOUyyFyGjnK646YqPfBgmO+cnp66A470+n2fj/CXNMPg/PfoasJgLFBkibY6ge2TFUKH3bBotiQOiFeNFGjFhAz0XRGDQabOLFMTwlQkYGm2aD/PHBysOBXiMr2GPy7LgVkbwfqZWXyHDUPTHMXwBF2F2eg6E02sXuffk5ceim3Jv7FVbUf0k8zjM=
+sidebar_class_name: "get api-method"
+info_path: docs/rest/microsoft/express-pnp
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Sp.Sites.Lists.Fields.getAllFields"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/clients/{clientId}/sp/sites/{siteId}/lists/{listId}/fields"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This static function retrieves all fields of a SharePoint list using the provided SharePoint
+client and list ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"The `getAllFields` function is returning a Promise that resolves to an array of\n`Sp.Field` objects. The function retrieves the fields of a SharePoint list using the\n`openSpClient` object and the `listId` string provided as parameters.","content":{"application/json":{"schema":{"items":{"properties":{"ValidationMessage":{"type":"string","nullable":true},"ValidationFormula":{"type":"string","nullable":true},"TypeShortDescription":{"type":"string"},"TypeDisplayName":{"type":"string"},"TypeAsString":{"type":"string"},"FieldTypeKind":{"type":"number","format":"double"},"Title":{"type":"string"},"StaticName":{"type":"string"},"Sortable":{"type":"boolean"},"ShowInFiltersPane":{"type":"number","format":"double"},"Sealed":{"type":"boolean"},"Scope":{"type":"string"},"SchemaXml":{"type":"string"},"Required":{"type":"boolean"},"ReadOnlyField":{"type":"boolean"},"PinnedToFiltersPane":{"type":"boolean"},"JSLink":{"type":"string","nullable":true},"IsModern":{"type":"boolean"},"InternalName":{"type":"string"},"IndexStatus":{"type":"number","format":"double"},"Indexed":{"type":"boolean"},"Id":{"type":"string"},"Hidden":{"type":"boolean"},"Group":{"type":"string"},"FromBaseType":{"type":"boolean"},"Filterable":{"type":"boolean"},"EntityPropertyName":{"type":"string"},"EnforceUniqueValues":{"type":"boolean"},"Direction":{"type":"string","enum":["none","ltr","rtl"]},"Description":{"type":"string"},"DefaultValue":{"type":"string","nullable":true},"DefaultFormula":{"type":"string","nullable":true},"CustomFormatter":{"type":"string","nullable":true},"ClientValidationMessage":{"type":"string","nullable":true},"ClientValidationFormula":{"type":"string","nullable":true},"ClientSideComponentProperties":{"type":"string","nullable":true},"ClientSideComponentId":{"type":"string"},"CanBeDeleted":{"type":"boolean"},"AutoIndexed":{"type":"boolean"},"AutofillInfo":{"type":"string","nullable":true}},"required":["ValidationMessage","ValidationFormula","TypeShortDescription","TypeDisplayName","TypeAsString","FieldTypeKind","Title","StaticName","Sortable","ShowInFiltersPane","Sealed","Scope","SchemaXml","Required","ReadOnlyField","PinnedToFiltersPane","JSLink","IsModern","InternalName","IndexStatus","Indexed","Id","Hidden","Group","FromBaseType","Filterable","EntityPropertyName","EnforceUniqueValues","Direction","Description","DefaultValue","DefaultFormula","CustomFormatter","ClientValidationMessage","ClientValidationFormula","ClientSideComponentProperties","ClientSideComponentId","CanBeDeleted","AutoIndexed","AutofillInfo"],"type":"object","title":"Sp.Field"},"type":"array"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

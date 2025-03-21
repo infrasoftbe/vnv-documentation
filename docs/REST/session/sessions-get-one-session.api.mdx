@@ -1,0 +1,72 @@
+---
+id: sessions-get-one-session
+title: "Sessions.getOneSession"
+description: "Sessions.getOneSession"
+sidebar_label: "Sessions.getOneSession"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVltv2zYU/isEnzbAltM9+i3osiHDWge1AwxLgpaWjiLWFMmSlBfN0H/vOZRsKZKCAUP9YInmuXznOzefuLHgRJBG32Z8zbfgPb775BnCRkN35AvuwFv8HTxfn/gvV1f0yMCnTlpSRtXNAcVSowPoQLfCWiXTaHr11ZPIifu0gFLQm3XkOMjWYGbSqkS9eJABSj+V0aIEeoba4pP74KR+5s2CV9qLHDZOPkst1MdZscUI7B3Gg/5YbhzLpQLPlBFZBhn7R4aCfaHTta91+iVhH0TNKC4hNXvkSfLImRUolJoSKSHULBQi4LlS2aNGy5UKDIUF+1fapVfSMhGCSA8J2wKwIgTr16uV1/UhkWZFUIRLi9VZenmslMas7KWSoaYQM+kGMe2NUSB0vBBhNlqMqxSYhiiwDBI5aSg7ZdllZ4ZF+XIHrpRtAcQM6nqT8/XDRVpX5R7cK/Om2iuyPbH4tEBxpQRdr4OrYJyCXQHs/uPtX8z2XpnJkUuIKVkwmTOEkMQ4jR+B+y9IP9S9iVozRUk14LommUkDIDwkkG93m083eP715rc/r3c3HMkJMhA0/n5goWmo0b5V0kFGakPrpNJaN/uvkAa0hgUrCZdQdwNQuVAeevt/bP+WNonfm6i46WIZO4v91ZZaV1d9wUzLY5KSnqQfhpSY7ywJ50TshM+VBzfNQ2FKuE6xA3WgOTZT3ziWxJuXZPTN+WLkvJLMduYAM3kfM/sa3ADKwHHrpjf6f0m87Ub2PdFEfOHkyuXzhLFmbJ9kZwMdBdOP6nMyeietiQn0hj4L7iGtHA209QOKWOEw7gDOxwkjqSdprFLjxkygfIwk8tQjaHu5XyRjtE/jRn9zpaH3wtDSwwu+aJ2v+apz61enC4CGE3p3PIOtnCLJOOTOUW0J0ZlaqXMTwXVZwbMT3uRhedTHJSbipV62BtEymW2hvkuukqvJrro9K7OoyFrFBOVwvwLu5H47Yvrft4Me11VKg56It8aHUuiB2JAThqSwnpVXvi/0BngJK6twBcZ2ofhPHWMP50RRRaz7pCE3BTomgdNpLzzcO9U09PO3ClxXBUfhZDujkdZMenrPLkU9wnL5c8F/+tTVw8+ML+YxngeHrolioSo64esB6le11TyhcAEio7GCINp7bFewYaA5+TdDub9U0O83Oyy977GmOYY=
+sidebar_class_name: "get api-method"
+info_path: docs/rest/session/infrasoft-vnv-proxy-server
+custom_edit_url: null
+proxy: https://google.com
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Sessions.getOneSession"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/sessions/{sessionId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Sessions.getOneSession
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"sessionId","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Ok","content":{"application/json":{"schema":{"properties":{"documents":{"items":{"properties":{"name":{"type":"string"},"unsafeOriginalName":{"type":"string","description":"Present for files loadded with `loadAsync`. May contain \"..\" path components that could\nresult in a zip-slip attack. See https://snyk.io/research/zip-slip-vulnerability"},"dir":{"type":"boolean"},"date":{"type":"string","format":"date-time"},"comment":{"type":"string"},"unixPermissions":{"anyOf":[{"type":"number","format":"double"},{"type":"string"}],"nullable":true,"description":"The UNIX permissions of the file, if any."},"dosPermissions":{"type":"number","format":"double","nullable":true,"description":"The UNIX permissions of the file, if any."},"options":{"properties":{"compression":{"type":"string","enum":["STORE","DEFLATE"],"title":"Compression"}},"required":["compression"],"type":"object","additionalProperties":false,"title":"JSZip.JSZipObjectOptions"}},"required":["name","dir","date","comment","unixPermissions","dosPermissions","options"],"type":"object","additionalProperties":false,"title":"JSZip.JSZipObject"},"type":"array"},"_user":{"properties":{"homeAccountId":{"type":"string"},"tenantId":{"type":"string"},"username":{"type":"string"},"oid":{"type":"string"},"idToken":{"type":"string"}},"required":["homeAccountId","tenantId","username","oid","idToken"],"type":"object","additionalProperties":false,"title":"ISessionUser"},"_config":{"properties":{},"type":"object"},"_id":{"type":"string"}},"required":["documents","_user","_config","_id"],"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

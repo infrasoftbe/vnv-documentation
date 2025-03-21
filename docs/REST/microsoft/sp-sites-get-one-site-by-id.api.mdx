@@ -1,0 +1,71 @@
+---
+id: sp-sites-get-one-site-by-id
+title: "Sp.Sites.getOneSiteById"
+description: "This function retrieves a site by its ID using a Graph API client in TypeScript."
+sidebar_label: "Sp.Sites.getOneSiteById"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VUtv2zAM/iuEThuQxtmOufUxFD5sK5bs1BaYYjOxOkdSJTmrEfi/j5TsNK/2tp0iS3x8/PiR2Qpj0cmgjM5LMRUzO56pgH68wvBdI5+vWnoZCYfeGu3Ri+lWfJ5M+KdEXzhl2Zt8L+HOmbXyCKGSAcjB1Bv0EAxIDWbxhEUAs4TQWoT81klbcXwytGSLOii9Agk+3QWncIMlLNoHrYKH/AaWFJ5iIxBmHf2va0V+Y4JXGB3oyKiktbUqYk3Zk2doW+GLCteST9ZxxUGlQjjZtalrgqaS5eF7ZXzQco18ZtxUpidkeiW6jjl5bpRDIu7+1fJxNFimkgUbGhNOgndnDEvlbS3bb+dTjsQfXPx09dmnN2CORC19+GpKtVRY3siAc/WGoSrPXh90+cx74ZCivhf6iKoj0nt6DovfldoX9kYZEfQhxFNAJx2hbxVqvogqipInlF13XK2YV8rDstER6U6VfpDpooVem41P6o0B4fIuhyJqE5SGOSWfxaCs1CBXnlmYVZKUb5RmPBHBSNxiYLQei8ap0JIZfVnpiIGAjt2Oh+4C5jQQvxhNXv6CnS2oCDI2YJjHfsx8nKFGq+cGQZU8eMSpe9A0m31dBJptVpEdJplTWRmqoR1TkTKK/c4G1+Bob9SOVUC1ELbK8KKh/SJGKeRUZIkrn23TIS+7zNuMU9BdytQJ5sVtBhoaHgORiW6PrxmnHmZL6aWJKPpW4wvX7y+sthSK4yQGP40n4wnrSxVI+41d+hLz2XXUN60WWfD8sj4szfla6j2z/Z0JtDQhbrWrFvJjaZLPbk/9E2klwgO+hIwmibpGgJu0LxLV96KnmqynA9nMLHMS+eaHvrfELG819tpuF9IjzWPX8TUpx/Xq3Ein5IIZZm0qz2dq8FLWHt+p/sOPXjYf4f9I+Cw3/aXULUtC1g1/0fE3tq8S7x7JskJZootFpsfLokAb9txO/nYO9H77ZU4T8BdE15GF
+sidebar_class_name: "get api-method"
+info_path: docs/rest/microsoft/express-pnp
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Sp.Sites.getOneSiteById"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/clients/{clientId}/sp/sites/{siteId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This function retrieves a site by its ID using a Graph API client in TypeScript.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"- The `siteId` parameter is a string that represents the unique identifier\nof a site in the graph.","in":"path","name":"siteId","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"A Promise that resolves to an object of type IGraphSite representing a site retrieved by\nits ID from the openGraphClient.","content":{"application/json":{"schema":{"properties":{"siteCollection":{"properties":{"hostname":{"type":"string"}},"required":["hostname"],"type":"object"},"root":{"properties":{},"type":"object"},"displayName":{"type":"string"},"webUrl":{"type":"string"},"name":{"type":"string"},"lastModifiedDateTime":{"type":"string"},"id":{"type":"string"},"description":{"type":"string"},"createdDateTime":{"type":"string"}},"required":["siteCollection","root","displayName","webUrl","name","lastModifiedDateTime","id","description","createdDateTime"],"type":"object","title":"Graph.Site"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

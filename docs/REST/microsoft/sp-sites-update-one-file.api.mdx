@@ -1,0 +1,71 @@
+---
+id: sp-sites-update-one-file
+title: "Sp.Sites.updateOneFile"
+description: "Sp.Sites.updateOneFile"
+sidebar_label: "Sp.Sites.updateOneFile"
+hide_title: true
+hide_table_of_contents: true
+api: eJx1U01v2zAM/SsBTxvgxNmOvm0FBuTUomlPQQ6KzcxqbUmV6KKGof8+0rLz0XS+WKLIp8fHpwGsQ69IW7OpoICtW201YVh1rlKE9wb/6AYhA4/BWRMwQDHAz/VafhWG0msnxVx6/8pppTWEhuRUOdfocoTOX4KkDBDKGlvFqyhfBgHLzmvqodjtM3DKqxYJPV+yG0ALqlNUM67hA94dmcxDinh867RHJk2+w+wMDdQ7yQ3ktfkLMe5TMgb6bateMj7XXrBuu4Y0E6H8aH27ZBHUFfEZ3R5esCTm4bwoSDopIwRvOWQgYIovgIM2yvcgzZ9Z7FLdPolyLet/J8JK1VZm5rqRh8hSQF42mlsJ+ZAWmyrmweVBIPJBfhKR63g7yxlBRuHfZ+U73wgUiHTziLaiwNgkU9TmaMc2NUm/gB+ODRKWzjiGEpxE/sdqvVpzhI2AbB4pmSa52d5BTMqrkkZHcA82UKvMRdqn7hfc/mLq/0qmk+KEH5S7RrF5GHBsZJi02cGkDRcXszrSuXAeBZKDJJGMTDSSyMl0rEbNDAVpGA4q4LNvYpQwu8tPJn5XXquDqMJCVjrImqd0VE3AG9In48G3x8kN3xd855fNTEFletFYNZ3sePmK/eXTiHvOrVFV6EcO6fgu3bR8EpBz+Vd2j9lc9Kss0dFF+s2bFoecjPjw/MS5h+mRtbYanyzjjrDZeclCsdP/AXVWiKY=
+sidebar_class_name: "put api-method"
+info_path: docs/rest/microsoft/express-pnp
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Sp.Sites.updateOneFile"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/clients/{clientId}/sp/sites/{siteId}/files/{filePath}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Sp.Sites.updateOneFile
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"filePath","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"multipart/form-data":{"schema":{"type":"object","properties":{"file":{"type":"string","format":"binary"}},"required":["file"]}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Ok","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

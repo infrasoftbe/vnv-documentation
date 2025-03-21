@@ -41,3 +41,33 @@ FlowsAPI().Database().createNodes([
 ```typescript
 FlowsAPI().Ms( 'clientId' ).Sp().createSite( 'database_projectId' )
 ```
+
+<details>
+  <summary>Workflow details</summary>
+  <div>
+    ```mermaid
+      graph TD;
+        A[Start CreateSiteFromDatabaseProject_Workflow] -->|Create Main Site| B(NEO4J_PROJECT_GET_ONE);
+        B --> C(SP_SITE_CREATE);
+        C --> D(FORMAT_SITE_RESPONSE);
+        D --> E(NEO4J_NODE_UPDATE);
+        
+        E -->|Create Sub Sites| F(MANAGEMENT_GROUPS_GET);
+        F --> G(CREATE_SUB_SITES);
+        
+        E -->|Create Lists & Items| H(NEO4J_PROJECT_GET_CHILDREN);
+        H --> I(SP_LIST_GET_ALL);
+        I --> J(EXTRACT_CHILDREN_FLATTED_ITEMS);
+        J --> K(TRIM_ITEMS_BY_TYPE);
+        
+        K -->|Bulk Create Fields| L(BULK_SP_FIELDS_CREATE);
+        K -->|Bulk Create Items| M(BULK_SP_ITEMS_CREATE);
+        
+        L --> N(COMPARE_SP_LISTS_WITH_PROJECT_LISTS);
+        M --> N;
+        
+        N --> O(SP_LIST_SUBSCRIPTION_CREATE);
+        O --> P[End Workflow];
+    ```
+  </div>
+</details>

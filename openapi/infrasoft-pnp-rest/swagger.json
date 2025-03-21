@@ -843,6 +843,1283 @@
 				"type": "object",
 				"description": "Make all properties in T optional"
 			},
+			"IBasePermissions": {
+				"properties": {
+					"Low": {
+						"type": "number",
+						"format": "double"
+					},
+					"High": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"Low",
+					"High"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"FieldTypes": {
+				"description": "Specifies the type of the field.",
+				"enum": [
+					0,
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7,
+					8,
+					9,
+					10,
+					11,
+					12,
+					13,
+					14,
+					15,
+					16,
+					17,
+					18,
+					19,
+					20,
+					21,
+					22,
+					23,
+					24,
+					25,
+					26,
+					27,
+					28,
+					29,
+					30,
+					33,
+					34
+				],
+				"type": "number"
+			},
+			"Partial_IFieldInfo_": {
+				"properties": {
+					"Choices": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"DefaultFormula": {
+						"type": "string"
+					},
+					"DefaultValue": {
+						"type": "string"
+					},
+					"Description": {
+						"type": "string"
+					},
+					"Direction": {
+						"type": "string"
+					},
+					"EnforceUniqueValues": {
+						"type": "boolean"
+					},
+					"EntityPropertyName": {
+						"type": "string"
+					},
+					"FieldTypeKind": {
+						"$ref": "#/components/schemas/FieldTypes"
+					},
+					"Filterable": {
+						"type": "boolean"
+					},
+					"FromBaseType": {
+						"type": "boolean"
+					},
+					"Group": {
+						"type": "string"
+					},
+					"Hidden": {
+						"type": "boolean"
+					},
+					"Id": {
+						"type": "string"
+					},
+					"Indexed": {
+						"type": "boolean"
+					},
+					"IndexStatus": {
+						"type": "number",
+						"format": "double"
+					},
+					"InternalName": {
+						"type": "string"
+					},
+					"JSLink": {
+						"type": "string"
+					},
+					"PinnedToFiltersPane": {
+						"type": "boolean"
+					},
+					"ReadOnlyField": {
+						"type": "boolean"
+					},
+					"Required": {
+						"type": "boolean"
+					},
+					"SchemaXml": {
+						"type": "string"
+					},
+					"Scope": {
+						"type": "string"
+					},
+					"Sealed": {
+						"type": "boolean"
+					},
+					"ShowInFiltersPane": {
+						"type": "number",
+						"format": "double"
+					},
+					"Sortable": {
+						"type": "boolean"
+					},
+					"StaticName": {
+						"type": "string"
+					},
+					"Title": {
+						"type": "string"
+					},
+					"TypeAsString": {
+						"type": "string"
+					},
+					"TypeDisplayName": {
+						"type": "string"
+					},
+					"TypeShortDescription": {
+						"type": "string"
+					},
+					"ValidationFormula": {
+						"type": "string"
+					},
+					"ValidationMessage": {
+						"type": "string"
+					}
+				},
+				"type": "object",
+				"description": "Make all properties in T optional"
+			},
+			"PageType": {
+				"enum": [
+					-1,
+					0,
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7,
+					8,
+					9,
+					10,
+					11
+				],
+				"type": "number"
+			},
+			"IFormInfo": {
+				"properties": {
+					"FormType": {
+						"$ref": "#/components/schemas/PageType"
+					},
+					"Id": {
+						"type": "string"
+					},
+					"ResourcePath": {
+						"properties": {
+							"DecodedUrl": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"DecodedUrl"
+						],
+						"type": "object"
+					},
+					"DecodedUrl": {
+						"type": "string"
+					},
+					"ServerRelativeUrl": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"FormType",
+					"Id",
+					"ResourcePath",
+					"DecodedUrl",
+					"ServerRelativeUrl"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IResourcePath": {
+				"properties": {
+					"DecodedUrl": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"DecodedUrl"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IStorageMetrics": {
+				"properties": {
+					"LastModified": {
+						"type": "string"
+					},
+					"TotalFileCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"TotalFileStreamSize": {
+						"type": "number",
+						"format": "double"
+					},
+					"TotalSize": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"LastModified",
+					"TotalFileCount",
+					"TotalFileStreamSize",
+					"TotalSize"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IFolderInfo": {
+				"properties": {
+					"odata.id": {
+						"type": "string"
+					},
+					"Exists": {
+						"type": "boolean"
+					},
+					"IsWOPIEnabled": {
+						"type": "boolean"
+					},
+					"ItemCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"Name": {
+						"type": "string"
+					},
+					"ProgID": {
+						"type": "string",
+						"nullable": true
+					},
+					"ServerRelativeUrl": {
+						"type": "string"
+					},
+					"ServerRelativePath": {
+						"$ref": "#/components/schemas/IResourcePath"
+					},
+					"TimeCreated": {
+						"type": "string"
+					},
+					"TimeLastModified": {
+						"type": "string"
+					},
+					"UniqueId": {
+						"type": "string"
+					},
+					"WelcomePage": {
+						"type": "string"
+					},
+					"ContentTypeOrder": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"UniqueContentTypeOrder": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"StorageMetrics": {
+						"$ref": "#/components/schemas/IStorageMetrics"
+					}
+				},
+				"required": [
+					"odata.id",
+					"Exists",
+					"IsWOPIEnabled",
+					"ItemCount",
+					"Name",
+					"ProgID",
+					"ServerRelativeUrl",
+					"ServerRelativePath",
+					"TimeCreated",
+					"TimeLastModified",
+					"UniqueId",
+					"WelcomePage",
+					"ContentTypeOrder",
+					"UniqueContentTypeOrder"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UserCustomActionRegistrationType": {
+				"enum": [
+					0,
+					1,
+					2,
+					3,
+					4
+				],
+				"type": "number"
+			},
+			"UserCustomActionScope": {
+				"enum": [
+					0,
+					2,
+					3,
+					4
+				],
+				"type": "number"
+			},
+			"IUserCustomActionInfo": {
+				"properties": {
+					"CommandUIExtension": {
+						"type": "string"
+					},
+					"Description": {
+						"type": "string"
+					},
+					"Group": {
+						"type": "string"
+					},
+					"Id": {
+						"type": "string"
+					},
+					"ImageUrl": {
+						"type": "string"
+					},
+					"Location": {
+						"type": "string"
+					},
+					"Name": {
+						"type": "string"
+					},
+					"RegistrationId": {
+						"type": "string"
+					},
+					"RegistrationType": {
+						"$ref": "#/components/schemas/UserCustomActionRegistrationType"
+					},
+					"Rights": {
+						"$ref": "#/components/schemas/IBasePermissions"
+					},
+					"Scope": {
+						"$ref": "#/components/schemas/UserCustomActionScope"
+					},
+					"ScriptBlock": {
+						"type": "string"
+					},
+					"ScriptSrc": {
+						"type": "string"
+					},
+					"Sequence": {
+						"type": "number",
+						"format": "double"
+					},
+					"Title": {
+						"type": "string"
+					},
+					"Url": {
+						"type": "string"
+					},
+					"VersionOfUserCustomAction": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"CommandUIExtension",
+					"Description",
+					"Group",
+					"Id",
+					"ImageUrl",
+					"Location",
+					"Name",
+					"RegistrationId",
+					"RegistrationType",
+					"Rights",
+					"Scope",
+					"ScriptBlock",
+					"ScriptSrc",
+					"Sequence",
+					"Title",
+					"Url",
+					"VersionOfUserCustomAction"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ViewScope": {
+				"enum": [
+					0,
+					1,
+					2,
+					3
+				],
+				"type": "number"
+			},
+			"IViewInfo": {
+				"properties": {
+					"AssociatedContentTypeId": {
+						"type": "string",
+						"nullable": true
+					},
+					"CalendarViewStyles": {
+						"type": "string",
+						"nullable": true
+					},
+					"CustomFormatter": {
+						"type": "string",
+						"nullable": true
+					},
+					"DefaultView": {
+						"type": "boolean"
+					},
+					"DefaultViewForContentType": {
+						"type": "boolean"
+					},
+					"EditorModified": {
+						"type": "boolean"
+					},
+					"Formats": {
+						"type": "string",
+						"nullable": true
+					},
+					"Hidden": {
+						"type": "boolean"
+					},
+					"HtmlSchemaXml": {
+						"type": "string"
+					},
+					"Id": {
+						"type": "string"
+					},
+					"ImageUrl": {
+						"type": "string"
+					},
+					"IncludeRootFolder": {
+						"type": "boolean"
+					},
+					"JSLink": {
+						"type": "string"
+					},
+					"ListViewXml": {
+						"type": "string"
+					},
+					"Method": {
+						"type": "string",
+						"nullable": true
+					},
+					"MobileDefaultView": {
+						"type": "boolean"
+					},
+					"MobileView": {
+						"type": "boolean"
+					},
+					"ModerationType": {
+						"type": "string",
+						"nullable": true
+					},
+					"NewDocumentTemplates": {
+						"type": "string"
+					},
+					"OrderedView": {
+						"type": "boolean"
+					},
+					"Paged": {
+						"type": "boolean"
+					},
+					"PersonalView": {
+						"type": "boolean"
+					},
+					"ReadOnlyView": {
+						"type": "boolean"
+					},
+					"RequiresClientIntegration": {
+						"type": "boolean"
+					},
+					"RowLimit": {
+						"type": "number",
+						"format": "double"
+					},
+					"Scope": {
+						"$ref": "#/components/schemas/ViewScope"
+					},
+					"ServerRelativePath": {
+						"properties": {
+							"DecodedUrl": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"DecodedUrl"
+						],
+						"type": "object"
+					},
+					"ServerRelativeUrl": {
+						"type": "string"
+					},
+					"StyleId": {
+						"type": "string",
+						"nullable": true
+					},
+					"TabularView": {
+						"type": "boolean"
+					},
+					"Threaded": {
+						"type": "boolean"
+					},
+					"Title": {
+						"type": "string"
+					},
+					"Toolbar": {
+						"type": "string"
+					},
+					"ToolbarTemplateName": {
+						"type": "string",
+						"nullable": true
+					},
+					"ViewData": {
+						"type": "string",
+						"nullable": true
+					},
+					"ViewJoins": {
+						"type": "string",
+						"nullable": true
+					},
+					"ViewProjectedFields": {
+						"properties": {
+							"SchemaXml": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"SchemaXml"
+						],
+						"type": "object",
+						"nullable": true
+					},
+					"ViewQuery": {
+						"type": "string"
+					},
+					"ViewType": {
+						"type": "string"
+					},
+					"ViewType2": {
+						"type": "string",
+						"enum": [
+							"KANBAN",
+							"TILES",
+							"COMPACTLIST",
+							"MODERNCALENDAR",
+							null
+						],
+						"nullable": true
+					},
+					"VisualizationInfo": {
+						"nullable": true
+					}
+				},
+				"required": [
+					"AssociatedContentTypeId",
+					"CalendarViewStyles",
+					"CustomFormatter",
+					"DefaultView",
+					"DefaultViewForContentType",
+					"EditorModified",
+					"Formats",
+					"Hidden",
+					"HtmlSchemaXml",
+					"Id",
+					"ImageUrl",
+					"IncludeRootFolder",
+					"JSLink",
+					"ListViewXml",
+					"Method",
+					"MobileDefaultView",
+					"MobileView",
+					"ModerationType",
+					"NewDocumentTemplates",
+					"OrderedView",
+					"Paged",
+					"PersonalView",
+					"ReadOnlyView",
+					"RequiresClientIntegration",
+					"RowLimit",
+					"Scope",
+					"ServerRelativePath",
+					"ServerRelativeUrl",
+					"StyleId",
+					"TabularView",
+					"Threaded",
+					"Title",
+					"Toolbar",
+					"ToolbarTemplateName",
+					"ViewData",
+					"ViewJoins",
+					"ViewProjectedFields",
+					"ViewQuery",
+					"ViewType",
+					"ViewType2",
+					"VisualizationInfo"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IListInfo": {
+				"properties": {
+					"AllowContentTypes": {
+						"type": "boolean"
+					},
+					"AllowDeletion": {
+						"type": "boolean"
+					},
+					"BaseTemplate": {
+						"type": "number",
+						"format": "double"
+					},
+					"BaseType": {},
+					"BrowserFileHandling": {},
+					"ContentTypes": {
+						"items": {},
+						"type": "array"
+					},
+					"ContentTypesEnabled": {
+						"type": "boolean"
+					},
+					"CrawlNonDefaultViews": {
+						"type": "boolean"
+					},
+					"CreatablesInfo": {},
+					"Created": {
+						"type": "string"
+					},
+					"CurrentChangeToken": {},
+					"CustomActionElements": {
+						"items": {},
+						"type": "array"
+					},
+					"DataSource": {},
+					"DefaultContentApprovalWorkflowId": {
+						"type": "string"
+					},
+					"DefaultDisplayFormUrl": {
+						"type": "string"
+					},
+					"DefaultEditFormUrl": {
+						"type": "string"
+					},
+					"DefaultNewFormUrl": {
+						"type": "string"
+					},
+					"DefaultView": {},
+					"DefaultViewPath": {},
+					"DefaultViewUrl": {
+						"type": "string"
+					},
+					"Description": {
+						"type": "string"
+					},
+					"DescriptionResource": {},
+					"Direction": {
+						"type": "string"
+					},
+					"DocumentTemplateUrl": {
+						"type": "string"
+					},
+					"DraftVersionVisibility": {},
+					"EffectiveBasePermissions": {
+						"$ref": "#/components/schemas/IBasePermissions"
+					},
+					"EffectiveBasePermissionsForUI": {
+						"$ref": "#/components/schemas/IBasePermissions"
+					},
+					"EnableAssignToEmail": {
+						"type": "boolean"
+					},
+					"EnableAttachments": {
+						"type": "boolean"
+					},
+					"EnableFolderCreation": {
+						"type": "boolean"
+					},
+					"EnableMinorVersions": {
+						"type": "boolean"
+					},
+					"EnableModeration": {
+						"type": "boolean"
+					},
+					"EnableRequestSignOff": {
+						"type": "boolean"
+					},
+					"EnableVersioning": {
+						"type": "boolean"
+					},
+					"EntityTypeName": {
+						"type": "string"
+					},
+					"EventReceivers": {
+						"items": {},
+						"type": "array"
+					},
+					"ExcludeFromOfflineClient": {
+						"type": "boolean"
+					},
+					"ExemptFromBlockDownloadOfNonViewableFiles": {
+						"type": "boolean"
+					},
+					"Fields": {
+						"items": {
+							"$ref": "#/components/schemas/Partial_IFieldInfo_"
+						},
+						"type": "array"
+					},
+					"FileSavePostProcessingEnabled": {
+						"type": "boolean"
+					},
+					"ForceCheckout": {
+						"type": "boolean"
+					},
+					"Forms": {
+						"items": {
+							"$ref": "#/components/schemas/IFormInfo"
+						},
+						"type": "array"
+					},
+					"HasExternalDataSource": {
+						"type": "boolean"
+					},
+					"Hidden": {
+						"type": "boolean"
+					},
+					"Id": {
+						"type": "string"
+					},
+					"ImagePath": {
+						"properties": {
+							"DecodedUrl": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"DecodedUrl"
+						],
+						"type": "object"
+					},
+					"ImageUrl": {
+						"type": "string"
+					},
+					"InformationRightsManagementSettings": {
+						"items": {},
+						"type": "array"
+					},
+					"IrmEnabled": {
+						"type": "boolean"
+					},
+					"IrmExpire": {
+						"type": "boolean"
+					},
+					"IrmReject": {
+						"type": "boolean"
+					},
+					"IsApplicationList": {
+						"type": "boolean"
+					},
+					"IsCatalog": {
+						"type": "boolean"
+					},
+					"IsPrivate": {
+						"type": "boolean"
+					},
+					"IsSiteAssetsLibrary": {
+						"type": "boolean"
+					},
+					"IsSystemList": {
+						"type": "boolean"
+					},
+					"ItemCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"LastItemDeletedDate": {
+						"type": "string"
+					},
+					"LastItemModifiedDate": {
+						"type": "string"
+					},
+					"LastItemUserModifiedDate": {
+						"type": "string"
+					},
+					"ListExperienceOptions": {
+						"type": "number",
+						"format": "double"
+					},
+					"ListItemEntityTypeFullName": {
+						"type": "string"
+					},
+					"MajorVersionLimit": {
+						"type": "number",
+						"format": "double"
+					},
+					"MajorWithMinorVersionsLimit": {
+						"type": "number",
+						"format": "double"
+					},
+					"MultipleDataList": {
+						"type": "boolean"
+					},
+					"NoCrawl": {
+						"type": "boolean"
+					},
+					"OnQuickLaunch": {
+						"type": "boolean"
+					},
+					"ParentWebPath": {
+						"properties": {
+							"DecodedUrl": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"DecodedUrl"
+						],
+						"type": "object"
+					},
+					"ParentWebUrl": {
+						"type": "string"
+					},
+					"ParserDisabled": {
+						"type": "boolean"
+					},
+					"ReadSecurity": {
+						"type": "number",
+						"format": "double"
+					},
+					"RootFolder": {
+						"$ref": "#/components/schemas/IFolderInfo"
+					},
+					"SchemaXml": {
+						"type": "string"
+					},
+					"ServerTemplateCanCreateFolders": {
+						"type": "boolean"
+					},
+					"TemplateFeatureId": {
+						"type": "string"
+					},
+					"Title": {
+						"type": "string"
+					},
+					"UserCustomActions": {
+						"items": {
+							"$ref": "#/components/schemas/IUserCustomActionInfo"
+						},
+						"type": "array"
+					},
+					"ValidationFormula": {
+						"type": "string"
+					},
+					"ValidationMessage": {
+						"type": "string"
+					},
+					"Views": {
+						"items": {
+							"$ref": "#/components/schemas/IViewInfo"
+						},
+						"type": "array"
+					},
+					"WorkflowAssociations": {
+						"items": {},
+						"type": "array"
+					},
+					"WriteSecurity": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"AllowContentTypes",
+					"AllowDeletion",
+					"BaseTemplate",
+					"BaseType",
+					"BrowserFileHandling",
+					"ContentTypes",
+					"ContentTypesEnabled",
+					"CrawlNonDefaultViews",
+					"CreatablesInfo",
+					"Created",
+					"CurrentChangeToken",
+					"CustomActionElements",
+					"DataSource",
+					"DefaultContentApprovalWorkflowId",
+					"DefaultDisplayFormUrl",
+					"DefaultEditFormUrl",
+					"DefaultNewFormUrl",
+					"DefaultView",
+					"DefaultViewPath",
+					"DefaultViewUrl",
+					"Description",
+					"DescriptionResource",
+					"Direction",
+					"DocumentTemplateUrl",
+					"DraftVersionVisibility",
+					"EffectiveBasePermissions",
+					"EffectiveBasePermissionsForUI",
+					"EnableAssignToEmail",
+					"EnableAttachments",
+					"EnableFolderCreation",
+					"EnableMinorVersions",
+					"EnableModeration",
+					"EnableRequestSignOff",
+					"EnableVersioning",
+					"EntityTypeName",
+					"EventReceivers",
+					"ExcludeFromOfflineClient",
+					"ExemptFromBlockDownloadOfNonViewableFiles",
+					"Fields",
+					"FileSavePostProcessingEnabled",
+					"ForceCheckout",
+					"Forms",
+					"HasExternalDataSource",
+					"Hidden",
+					"Id",
+					"ImagePath",
+					"ImageUrl",
+					"InformationRightsManagementSettings",
+					"IrmEnabled",
+					"IrmExpire",
+					"IrmReject",
+					"IsApplicationList",
+					"IsCatalog",
+					"IsPrivate",
+					"IsSiteAssetsLibrary",
+					"IsSystemList",
+					"ItemCount",
+					"LastItemDeletedDate",
+					"LastItemModifiedDate",
+					"LastItemUserModifiedDate",
+					"ListExperienceOptions",
+					"ListItemEntityTypeFullName",
+					"MajorVersionLimit",
+					"MajorWithMinorVersionsLimit",
+					"MultipleDataList",
+					"NoCrawl",
+					"OnQuickLaunch",
+					"ParentWebPath",
+					"ParentWebUrl",
+					"ParserDisabled",
+					"ReadSecurity",
+					"RootFolder",
+					"SchemaXml",
+					"ServerTemplateCanCreateFolders",
+					"TemplateFeatureId",
+					"Title",
+					"UserCustomActions",
+					"ValidationFormula",
+					"ValidationMessage",
+					"Views",
+					"WorkflowAssociations",
+					"WriteSecurity"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Partial_IListInfo_": {
+				"properties": {
+					"AllowContentTypes": {
+						"type": "boolean"
+					},
+					"AllowDeletion": {
+						"type": "boolean"
+					},
+					"BaseTemplate": {
+						"type": "number",
+						"format": "double"
+					},
+					"BaseType": {},
+					"BrowserFileHandling": {},
+					"ContentTypes": {
+						"items": {},
+						"type": "array"
+					},
+					"ContentTypesEnabled": {
+						"type": "boolean"
+					},
+					"CrawlNonDefaultViews": {
+						"type": "boolean"
+					},
+					"CreatablesInfo": {},
+					"Created": {
+						"type": "string"
+					},
+					"CurrentChangeToken": {},
+					"CustomActionElements": {
+						"items": {},
+						"type": "array"
+					},
+					"DataSource": {},
+					"DefaultContentApprovalWorkflowId": {
+						"type": "string"
+					},
+					"DefaultDisplayFormUrl": {
+						"type": "string"
+					},
+					"DefaultEditFormUrl": {
+						"type": "string"
+					},
+					"DefaultNewFormUrl": {
+						"type": "string"
+					},
+					"DefaultView": {},
+					"DefaultViewPath": {},
+					"DefaultViewUrl": {
+						"type": "string"
+					},
+					"Description": {
+						"type": "string"
+					},
+					"DescriptionResource": {},
+					"Direction": {
+						"type": "string"
+					},
+					"DocumentTemplateUrl": {
+						"type": "string"
+					},
+					"DraftVersionVisibility": {},
+					"EffectiveBasePermissions": {
+						"$ref": "#/components/schemas/IBasePermissions"
+					},
+					"EffectiveBasePermissionsForUI": {
+						"$ref": "#/components/schemas/IBasePermissions"
+					},
+					"EnableAssignToEmail": {
+						"type": "boolean"
+					},
+					"EnableAttachments": {
+						"type": "boolean"
+					},
+					"EnableFolderCreation": {
+						"type": "boolean"
+					},
+					"EnableMinorVersions": {
+						"type": "boolean"
+					},
+					"EnableModeration": {
+						"type": "boolean"
+					},
+					"EnableRequestSignOff": {
+						"type": "boolean"
+					},
+					"EnableVersioning": {
+						"type": "boolean"
+					},
+					"EntityTypeName": {
+						"type": "string"
+					},
+					"EventReceivers": {
+						"items": {},
+						"type": "array"
+					},
+					"ExcludeFromOfflineClient": {
+						"type": "boolean"
+					},
+					"ExemptFromBlockDownloadOfNonViewableFiles": {
+						"type": "boolean"
+					},
+					"Fields": {
+						"items": {
+							"$ref": "#/components/schemas/Partial_IFieldInfo_"
+						},
+						"type": "array"
+					},
+					"FileSavePostProcessingEnabled": {
+						"type": "boolean"
+					},
+					"ForceCheckout": {
+						"type": "boolean"
+					},
+					"Forms": {
+						"items": {
+							"$ref": "#/components/schemas/IFormInfo"
+						},
+						"type": "array"
+					},
+					"HasExternalDataSource": {
+						"type": "boolean"
+					},
+					"Hidden": {
+						"type": "boolean"
+					},
+					"Id": {
+						"type": "string"
+					},
+					"ImagePath": {
+						"properties": {
+							"DecodedUrl": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"DecodedUrl"
+						],
+						"type": "object"
+					},
+					"ImageUrl": {
+						"type": "string"
+					},
+					"InformationRightsManagementSettings": {
+						"items": {},
+						"type": "array"
+					},
+					"IrmEnabled": {
+						"type": "boolean"
+					},
+					"IrmExpire": {
+						"type": "boolean"
+					},
+					"IrmReject": {
+						"type": "boolean"
+					},
+					"IsApplicationList": {
+						"type": "boolean"
+					},
+					"IsCatalog": {
+						"type": "boolean"
+					},
+					"IsPrivate": {
+						"type": "boolean"
+					},
+					"IsSiteAssetsLibrary": {
+						"type": "boolean"
+					},
+					"IsSystemList": {
+						"type": "boolean"
+					},
+					"ItemCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"LastItemDeletedDate": {
+						"type": "string"
+					},
+					"LastItemModifiedDate": {
+						"type": "string"
+					},
+					"LastItemUserModifiedDate": {
+						"type": "string"
+					},
+					"ListExperienceOptions": {
+						"type": "number",
+						"format": "double"
+					},
+					"ListItemEntityTypeFullName": {
+						"type": "string"
+					},
+					"MajorVersionLimit": {
+						"type": "number",
+						"format": "double"
+					},
+					"MajorWithMinorVersionsLimit": {
+						"type": "number",
+						"format": "double"
+					},
+					"MultipleDataList": {
+						"type": "boolean"
+					},
+					"NoCrawl": {
+						"type": "boolean"
+					},
+					"OnQuickLaunch": {
+						"type": "boolean"
+					},
+					"ParentWebPath": {
+						"properties": {
+							"DecodedUrl": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"DecodedUrl"
+						],
+						"type": "object"
+					},
+					"ParentWebUrl": {
+						"type": "string"
+					},
+					"ParserDisabled": {
+						"type": "boolean"
+					},
+					"ReadSecurity": {
+						"type": "number",
+						"format": "double"
+					},
+					"RootFolder": {
+						"$ref": "#/components/schemas/IFolderInfo"
+					},
+					"SchemaXml": {
+						"type": "string"
+					},
+					"ServerTemplateCanCreateFolders": {
+						"type": "boolean"
+					},
+					"TemplateFeatureId": {
+						"type": "string"
+					},
+					"Title": {
+						"type": "string"
+					},
+					"UserCustomActions": {
+						"items": {
+							"$ref": "#/components/schemas/IUserCustomActionInfo"
+						},
+						"type": "array"
+					},
+					"ValidationFormula": {
+						"type": "string"
+					},
+					"ValidationMessage": {
+						"type": "string"
+					},
+					"Views": {
+						"items": {
+							"$ref": "#/components/schemas/IViewInfo"
+						},
+						"type": "array"
+					},
+					"WorkflowAssociations": {
+						"items": {},
+						"type": "array"
+					},
+					"WriteSecurity": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"type": "object",
+				"description": "Make all properties in T optional"
+			},
 			"Sp.ListItem": {
 				"properties": {
 					"GUID": {
@@ -1132,45 +2409,6 @@
 				],
 				"type": "object"
 			},
-			"FieldTypes": {
-				"description": "Specifies the type of the field.",
-				"enum": [
-					0,
-					1,
-					2,
-					3,
-					4,
-					5,
-					6,
-					7,
-					8,
-					9,
-					10,
-					11,
-					12,
-					13,
-					14,
-					15,
-					16,
-					17,
-					18,
-					19,
-					20,
-					21,
-					22,
-					23,
-					24,
-					25,
-					26,
-					27,
-					28,
-					29,
-					30,
-					33,
-					34
-				],
-				"type": "number"
-			},
 			"Partial_Sp.FieldInfo_": {
 				"properties": {
 					"Choices": {
@@ -1410,9 +2648,9 @@
 		"contact": {}
 	},
 	"paths": {
-		"/webs": {
+		"/@Route(\"clients/{clientId}/sp/webs": {
 			"get": {
-				"operationId": "GetAllWebs",
+				"operationId": "Sp.Sites.Webs.getAllWebs",
 				"responses": {
 					"200": {
 						"description": "A list of subsites (webs) under the parent SharePoint site.",
@@ -1433,7 +2671,7 @@
 				"parameters": []
 			},
 			"post": {
-				"operationId": "CreateOneWeb",
+				"operationId": "Sp.Sites.Webs.createOneWeb",
 				"responses": {
 					"200": {
 						"description": "The result of the creation operation.",
@@ -1482,9 +2720,9 @@
 				}
 			}
 		},
-		"/webs/{webId}": {
+		"/@Route(\"clients/{clientId}/sp/webs/{webId}": {
 			"get": {
-				"operationId": "GetOneWeb",
+				"operationId": "Sp.Sites.Webs.getOneWeb",
 				"responses": {
 					"200": {
 						"description": "Details of the identified subsite.",
@@ -1507,7 +2745,7 @@
 				"parameters": []
 			},
 			"put": {
-				"operationId": "UpdateOneWeb",
+				"operationId": "Sp.Sites.Webs.updateOneWeb",
 				"responses": {
 					"204": {
 						"description": "No content"
@@ -1535,7 +2773,7 @@
 				}
 			},
 			"delete": {
-				"operationId": "DeleteOneWeb",
+				"operationId": "Sp.Sites.Webs.deleteOneWeb",
 				"responses": {
 					"204": {
 						"description": "No content"
@@ -1551,15 +2789,20 @@
 				"parameters": []
 			}
 		},
-		"/sites": {
+		"/clients/{clientId}/sp/sites": {
 			"get": {
-				"operationId": "GetAllSites",
+				"operationId": "Sp.Sites.getAllSites",
 				"responses": {
 					"200": {
 						"description": "A Promise that resolves to an array of IGraphSite objects.",
 						"content": {
 							"application/json": {
-								"schema": {}
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/Graph.Site"
+									},
+									"type": "array"
+								}
 							}
 						}
 					}
@@ -1574,9 +2817,9 @@
 				"parameters": []
 			}
 		},
-		"/sites/{siteId}": {
+		"/clients/{clientId}/sp/sites/{siteId}": {
 			"get": {
-				"operationId": "GetOneSiteById",
+				"operationId": "Sp.Sites.getOneSiteById",
 				"responses": {
 					"200": {
 						"description": "A Promise that resolves to an object of type IGraphSite representing a site retrieved by\nits ID from the openGraphClient.",
@@ -1609,7 +2852,7 @@
 				]
 			},
 			"put": {
-				"operationId": "UpdateOneSite",
+				"operationId": "Sp.Sites.updateOneSite",
 				"responses": {
 					"200": {
 						"description": "The `updateSite` function returns a Promise that resolves to type `any`.",
@@ -1644,7 +2887,7 @@
 				}
 			},
 			"delete": {
-				"operationId": "DeleteOneSite",
+				"operationId": "Sp.Sites.deleteOneSite",
 				"responses": {
 					"204": {
 						"description": "No content"
@@ -1660,9 +2903,9 @@
 				"parameters": []
 			}
 		},
-		"/sites/{siteTemplate}": {
+		"/clients/{clientId}/sp/sites/{siteTemplate}": {
 			"post": {
-				"operationId": "CreateOneSite",
+				"operationId": "Sp.Sites.createOneSite",
 				"responses": {
 					"200": {
 						"description": "The `createSite` function returns a Promise that resolves to either an `IGraphSite`\nobject or a `MiddlewareError` object. The function first checks if a site with the specified URL\nalready exists using the `openSpClient.site.exists` method. If the site exists, it retrieves and\nreturns the site using `SpSiteController.getOneSiteByUrl`.",
@@ -1714,9 +2957,195 @@
 				}
 			}
 		},
-		"/items": {
+		"/clients/{clientId}/sp/sites/{siteId}/lists": {
 			"get": {
-				"operationId": "GetAllItems",
+				"operationId": "Sp.Sites.Lists.getAllLists",
+				"responses": {
+					"200": {
+						"description": "The `getAllLists` function is returning a Promise that resolves to an array of\n`IListInfo` objects. The function is using the `openSpClient` object to access the lists from a\nSharePoint web.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/IListInfo"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"description": "This function retrieves all lists from a SharePoint site using the provided SharePoint Framework\nclient.",
+				"tags": [
+					"Sharepoint",
+					"List",
+					"Get"
+				],
+				"security": [],
+				"parameters": []
+			},
+			"post": {
+				"operationId": "Sp.Sites.Lists.createOneList",
+				"responses": {
+					"200": {
+						"description": "The function `createOneList` is returning the result of calling the `ensure` method on\nthe `openSpClient.web.lists` object with the provided options. The `ensure` method is used to\nensure that a list with the specified parameters exists, and it returns a Promise that resolves to\nthe created list information.",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"description": "The function `createOneList` creates a SharePoint list with specified options using the\n`openSpClient` object.",
+				"tags": [
+					"Sharepoint",
+					"List",
+					"Create"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"description": "- The `options` parameter in the `createOneList` function is an object that can\nhave the following properties:",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"properties": {
+									"additionalSettings": {
+										"$ref": "#/components/schemas/Partial_IListInfo_"
+									},
+									"enableContentTypes": {
+										"type": "boolean"
+									},
+									"template": {
+										"type": "number",
+										"format": "double"
+									},
+									"description": {
+										"type": "string"
+									},
+									"title": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"title"
+								],
+								"type": "object",
+								"description": "- The `options` parameter in the `createOneList` function is an object that can\nhave the following properties:"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/clients/{clientId}/sp/sites/{siteId}/lists/{listId}": {
+			"get": {
+				"operationId": "Sp.Sites.Lists.getOneListById",
+				"responses": {
+					"200": {
+						"description": "A Promise that resolves to an object representing a SharePoint list with the specified\nlistId.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IListInfo"
+								}
+							}
+						}
+					}
+				},
+				"description": "This function retrieves a SharePoint list by its ID using the provided SharePoint Framework\nclient.",
+				"tags": [
+					"Sharepoint",
+					"List",
+					"Get"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "- The `listId` parameter is a string that represents the unique identifier\nof a SharePoint list.",
+						"in": "path",
+						"name": "listId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"put": {
+				"operationId": "Sp.Sites.Lists.updateOneList",
+				"responses": {
+					"200": {
+						"description": "The `updateOneList` function is returning a Promise.",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"description": "The function `updateOneList` updates a SharePoint list with the specified options using TypeScript\nand returns a Promise.",
+				"tags": [
+					"Sharepoint",
+					"List",
+					"Update"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "- The `listId` parameter in the `updateOneList` function is a string that\nrepresents the unique identifier of the SharePoint list that you want to update.",
+						"in": "path",
+						"name": "listId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "- The `options` parameter in the `updateOneList` function is of type\n`Partial<IListInfo>`. This means that it is an object that can contain a subset of properties\ndefined in the `IListInfo` interface. When calling the `updateOneList` function, you can pass",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Partial_IListInfo_",
+								"description": "- The `options` parameter in the `updateOneList` function is of type\n`Partial<IListInfo>`. This means that it is an object that can contain a subset of properties\ndefined in the `IListInfo` interface. When calling the `updateOneList` function, you can pass"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "Sp.Sites.Lists.deleteOneList",
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"description": "This function deletes a SharePoint list using the specified list ID.",
+				"tags": [
+					"Sharepoint",
+					"List",
+					"Delete"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "- The `listId` parameter is a string that represents the unique identifier\nof a SharePoint list that you want to delete.",
+						"in": "path",
+						"name": "listId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/clients/{clientId}/sp/sites/{siteId}/lists/{listId}/items": {
+			"get": {
+				"operationId": "Sp.Sites.Lists.Items.getAllItems",
 				"responses": {
 					"200": {
 						"description": "The `getAllItems` function is returning a Promise that resolves to an array of SharePoint\nlist items (`Sp.ListItem[]`). The function retrieves all items from a SharePoint list specified by\nthe `listId` parameter using the `openSpClient` object.",
@@ -1743,7 +3172,7 @@
 				"parameters": []
 			},
 			"post": {
-				"operationId": "CreateOneItem",
+				"operationId": "Sp.Sites.Lists.Items.createOneItem",
 				"responses": {
 					"200": {
 						"description": "The `createOneItem` function is returning a Promise that resolves to a\n`Sp.ListItemAddResult` object. This object represents the result of adding a new item to a\nSharePoint list using the `openSpClient` and the provided `properties`.",
@@ -1779,9 +3208,9 @@
 				}
 			}
 		},
-		"/items/{itemId}": {
+		"/clients/{clientId}/sp/sites/{siteId}/lists/{listId}/items/{itemId}": {
 			"get": {
-				"operationId": "GetOneItem",
+				"operationId": "Sp.Sites.Lists.Items.getOneItem",
 				"responses": {
 					"200": {
 						"description": "The `getOneItem` function is returning a Promise that resolves to a SharePoint ListItem\nobject. The function retrieves a specific item from a SharePoint list using the provided\n`openSpClient`, `listId`, and `itemId` parameters.",
@@ -1816,7 +3245,7 @@
 				]
 			},
 			"put": {
-				"operationId": "UpdateOneItem",
+				"operationId": "Sp.Sites.Lists.Items.updateOneItem",
 				"responses": {
 					"200": {
 						"description": "The `updateOneItem` function returns a Promise that resolves to a\n`Sp.ListItemUpdateResult` object.",
@@ -1863,7 +3292,7 @@
 				}
 			},
 			"delete": {
-				"operationId": "DeleteOneItem",
+				"operationId": "Sp.Sites.Lists.Items.deleteOneItem",
 				"responses": {
 					"204": {
 						"description": "No content"
@@ -1891,9 +3320,438 @@
 				]
 			}
 		},
-		"/fields": {
+		"/clients/{clientId}/sp/sites/{siteId}/lists/{listId}/folders": {
 			"get": {
-				"operationId": "GetAllFields",
+				"operationId": "Sp.Sites.Lists.Folders.getAllFolders",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/clients/{clientId}/sp/sites/{siteId}/lists/{listId}/folders/{folderPath}": {
+			"get": {
+				"operationId": "Sp.Sites.Lists.Folders.getOneFolder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "folderPath",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"post": {
+				"operationId": "Sp.Sites.Lists.Folders.createOneFolder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "folderPath",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"delete": {
+				"operationId": "Sp.Sites.Lists.Folders.deleteOneFolder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "folderPath",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/clients/{clientId}/sp/sites/{siteId}/lists/{listId}/folders/{folderPath}/files": {
+			"get": {
+				"operationId": "Sp.Sites.Lists.Folders.getAllFilesByFolder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "folderPath",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/clients/{clientId}/sp/sites/{siteId}/lists/{listId}/folders/{folderPath}/files/{fileName}": {
+			"get": {
+				"operationId": "Sp.Sites.Lists.Folders.getOneFileByFolder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "folderPath",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "fileName",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"post": {
+				"operationId": "Sp.Sites.Lists.Folders.createOneFileByFolder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "folderPath",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "fileName",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"multipart/form-data": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"file": {
+										"type": "string",
+										"format": "binary"
+									}
+								},
+								"required": [
+									"file"
+								]
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"operationId": "Sp.Sites.Lists.Folders.updateOneFileByFolder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "folderPath",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "fileName",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"multipart/form-data": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"file": {
+										"type": "string",
+										"format": "binary"
+									}
+								},
+								"required": [
+									"file"
+								]
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "Sp.Sites.Lists.Folders.deleteOneFileByFolder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "folderPath",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "fileName",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/clients/{clientId}/sp/sites/{siteId}/lists/{listId}/files": {
+			"get": {
+				"operationId": "Sp.Sites.Lists.Files.getAllFiles",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": []
+			},
+			"post": {
+				"operationId": "Sp.Sites.Lists.Files.createOneFile",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"multipart/form-data": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"file": {
+										"type": "string",
+										"format": "binary"
+									}
+								},
+								"required": [
+									"file"
+								]
+							}
+						}
+					}
+				}
+			}
+		},
+		"/clients/{clientId}/sp/sites/{siteId}/lists/{listId}/files/{fileId}": {
+			"get": {
+				"operationId": "Sp.Sites.Lists.Files.getOneFile",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "fileId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"put": {
+				"operationId": "Sp.Sites.Lists.Files.updateOneFile",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "fileId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"multipart/form-data": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"file": {
+										"type": "string",
+										"format": "binary"
+									}
+								},
+								"required": [
+									"file"
+								]
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "Sp.Sites.Lists.Files.deleteOneFile",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "fileId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/clients/{clientId}/sp/sites/{siteId}/lists/{listId}/fields": {
+			"get": {
+				"operationId": "Sp.Sites.Lists.Fields.getAllFields",
 				"responses": {
 					"200": {
 						"description": "The `getAllFields` function is returning a Promise that resolves to an array of\n`Sp.Field` objects. The function retrieves the fields of a SharePoint list using the\n`openSpClient` object and the `listId` string provided as parameters.",
@@ -1920,7 +3778,7 @@
 				"parameters": []
 			},
 			"post": {
-				"operationId": "CreateOneField",
+				"operationId": "Sp.Sites.Lists.Fields.createOneField",
 				"responses": {
 					"200": {
 						"description": "The function `createOneField` is returning a Promise that resolves to a\n`Sp.FieldAddResult` object.",
@@ -1956,9 +3814,9 @@
 				}
 			}
 		},
-		"/fields/{fieldId}": {
+		"/clients/{clientId}/sp/sites/{siteId}/lists/{listId}/fields/{fieldId}": {
 			"get": {
-				"operationId": "GetOneField",
+				"operationId": "Sp.Sites.Lists.Fields.getOneField",
 				"responses": {
 					"200": {
 						"description": "The `getOneField` function is returning a Promise that resolves to a SharePoint field\nobject (`Sp.Field`). The function retrieves a specific field from a SharePoint list using the\nprovided `openSpClient`, `listId`, and `fieldId` parameters.",
@@ -1982,7 +3840,7 @@
 				"parameters": []
 			},
 			"put": {
-				"operationId": "UpdateOneField",
+				"operationId": "Sp.Sites.Lists.Fields.updateOneField",
 				"responses": {
 					"200": {
 						"description": "The `updateOneField` function returns a Promise that resolves to a `Sp.FieldUpdateResult`\nobject.",
@@ -2018,7 +3876,7 @@
 				}
 			},
 			"delete": {
-				"operationId": "DeleteOneField",
+				"operationId": "Sp.Sites.Lists.Fields.deleteOneField",
 				"responses": {
 					"204": {
 						"description": "No content"
@@ -2033,6 +3891,159 @@
 				],
 				"security": [],
 				"parameters": []
+			}
+		},
+		"/clients/{clientId}/sp/sites/{siteId}/files": {
+			"get": {
+				"operationId": "Sp.Sites.getAllFiles",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/clients/{clientId}/sp/sites/{siteId}/files/{filePath}": {
+			"get": {
+				"operationId": "Sp.Sites.getOneFile",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "filePath",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"post": {
+				"operationId": "Sp.Sites.createOneFile",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "filePath",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"multipart/form-data": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"file": {
+										"type": "string",
+										"format": "binary"
+									}
+								},
+								"required": [
+									"file"
+								]
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"operationId": "Sp.Sites.updateOneFile",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "filePath",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"multipart/form-data": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"file": {
+										"type": "string",
+										"format": "binary"
+									}
+								},
+								"required": [
+									"file"
+								]
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "Sp.Sites.deleteOneFile",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "filePath",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
 			}
 		}
 	},

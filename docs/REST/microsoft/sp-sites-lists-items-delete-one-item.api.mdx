@@ -1,0 +1,72 @@
+---
+id: sp-sites-lists-items-delete-one-item
+title: "Sp.Sites.Lists.Items.deleteOneItem"
+description: "This function deletes a specific item from a SharePoint list using the provided list ID and item"
+sidebar_label: "Sp.Sites.Lists.Items.deleteOneItem"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNU8Fu1DAQ/RXLJ5C22YI47ZXtIVIFiF1ObaW6yaSxSGzXnixdRfl33sQpXSroEXGyZ2yP37z3ZtQ+UDRsvStrvdG7UOwsUyoubeJUlEx9KmrqiOmzIwn1SkdKwbtESW9G/f78gyw1pSraIIVQ5pNXlXdMjvU0rV4c7lubVDO4SmKViydlVApU2cZWCgB61UTfI7lrTaQv3jpWHSCpIVl3r7glFaI/2JrqnC+3yrh6fnrtym0BmGzugfBKzyWClEBS+sKydLKdP9c3K52oGqLlIx4gCiaaHidRCrxs7kzt8f2tfFXWt+rXXYW2fKP4GHDqhv6O4u0MCr+DMpCRZuCDsw8DXTuAd4yG8VKe4WRunFvD6ugH9cOgafYLQ38hRBq1gioYbrF3wIIog5u1ehhsJGjLcSD0WbXUG1Gs8bE3jLu1H+46EsKAHHGGDuFABBprvRgjg9Cr/M9Gr6vOSkfrMW/KelqnsE5invUoi2QEIUJZJBRUCDO4SQvr8fBE8hA7qaunEzV2gnb22SRtNl6As+VOcNKj0JrOggsoJXWyPu+K8+Icmc5WBJfKk4WVcvdRo5BY01QsVREFn7g37uTaK0OgMAVqMc9vrhj1k+H/ocGzXkyPvA6dgQ3QzkzjuMh0pReZcHvzJJTwLozNWslBVmtmLOWrWTCxlvQumcVQ0KYFX1J5HO9Mom+xmyZJw9JxmZ6DidaIpebZsUn28FBjukSv0Pbm6+LVt+q/G7E/Ur0kjTuK/0w3SITtdzo+j+B0M52M0fbi8mJ/gdn6CReW5K0=
+sidebar_class_name: "delete api-method"
+info_path: docs/rest/microsoft/express-pnp
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Sp.Sites.Lists.Items.deleteOneItem"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/clients/{clientId}/sp/sites/{siteId}/lists/{listId}/items/{itemId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This function deletes a specific item from a SharePoint list using the provided list ID and item
+ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"- The `itemId` parameter is of type `number` and represents the unique\nidentifier of the item that you want to delete from a SharePoint list.","in":"path","name":"itemId","required":true,"schema":{"format":"double","type":"number"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"No content"}}}
+>
+  
+</StatusCodes>
+
+
+      

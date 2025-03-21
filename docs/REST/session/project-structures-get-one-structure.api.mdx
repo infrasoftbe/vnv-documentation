@@ -1,0 +1,72 @@
+---
+id: project-structures-get-one-structure
+title: "Project.Structures.getOneStructure"
+description: "Project.Structures.getOneStructure"
+sidebar_label: "Project.Structures.getOneStructure"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV8GO2zYQ/RWCF7eA19726FubFoUv3aDZnuJFlhbHK2ZlUiEpO67hf+8bUpK1trZI0GNykkTODN+8eeRQR+lq8ioaZ5daLuRb7z5SEWfvom+K2HgKsyeKd5b6ATmVGK2dDRTk4ih/vr3lh6ZQeFNzIIS5e4ZZ4WwkG3lW1XVlirTM/GNgk6MMRUlbxW+1ZxDR5IDxUNP5KUP0xj7J01QaPTps1XbcPrpnsqMzW4ojCxelqbTPLibSNlzndV+SeFx2XKjqT6fpURjk6TeqIKFpYywFEWEXOsaE2wglLExhibd+YiaWUZQqm29cVbk9AK7sGdYCNL4EOZ7tdAwnmz6K1v0gTMhrwx4Lqig81agkKpQBsPkZasIGlyaQFtEJo2FoNgehrE4IdxiBbb/uro2wcT6H4yCvlW0Ur9Ffgbax5lNDHSxD/lXoK5ttq8MgiVyOvYllKkmdZS+AXas4LFES0qgip5Jss5WL97K3/pAkhJnKhNh+PIzmyqGG2dqU1OPyUlCDCoSaCsbOhuzOCfdEtynzEKZW9vGeI93zKlOxL01RZkaLJkS3zf5ZrFpQFWhfkqcORpEiJpznMNlnSGv2Tx61C8GsKxI7VTXQfyeCizynIjRAAsVPPH1qjKctCjKZikmkkJ49lZPpyk62CjwYVfHM3vlnfmqqoDWvsBp/Oq/J4wWyFJO2jJOZ+PXQ8ZUFdE3ZVJi4smsq3BaASQXW0IXQBY4senLe/AO2zGYDjmxM3qHjql1y9h8HzncBfCsCyDv+ywSQbMcU8Hp3GWohOp+ZX/7WJZUiJnArm45M2KMHW6DLTsmo8X0OSTQX56qnKrXpUJparCnuido8Ve+Xe8DLJXNruzg8UxWAtCvBGFYug7iqwspatTNPYD+VQRUFhXDhCZV5lvJLcLNhg2/rgHN6Tf58YtumqnAu84NlJBdATKcT32ySKDWf6qnTpvbVdoBug3d1bpd56BqEdGtWAsaV1oZJVNXbQfPeKOwzGJvIS8q+0PQmhesbjVTeqwN/v5DN1T3mAm9/fXnpdwWPdeoJzH7QcYwjbF1sO4xo1zA5sG9q/RX2F7ha7hKPLac9jz2O4Rr/n9ClNfEupR8A58SIAkH5Jh6ACPGhFyDBvkKU97jt8a6sVSw7iIse4jkT1sh0cGu9rMZVo/+iuzRQlI5v3pjiyx6DWMg5LteB4c+P7dtSn+btUTPvNximE86T5AT9rsun8RUHkYypS/wdA093SL6T2Y1LObTU4dur4DbxZmd3N1jn8+EmB0RkDpsz+ml2O7u9Os6WnbNIjiI7ztI1qCD8J5zvrajRmyRA/BqoguXEtUHziFtlB2bj1AlwJ4bkje+PSJ/jvK4UqsraZS6OLbG4q7XEwnvRU5tv2a3WzuyyTdYBeCwBkgMcj2sV6G9fnU48jIulb0W1U2hV6ThBCbQJ/K57lV5g7X+O5A9/tRL7UcjpeA7duWAPXA7usPjC6zMdeqmeHmBYkkI3TADy3C84OOs48Lr6E2ON9CL84/d7KPlfKr32Sg==
+sidebar_class_name: "get api-method"
+info_path: docs/rest/session/infrasoft-vnv-proxy-server
+custom_edit_url: null
+proxy: https://google.com
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Project.Structures.getOneStructure"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/sessions/{sessionId}/project/structures/{token}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Project.Structures.getOneStructure
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"token","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Ok","content":{"application/json":{"schema":{"properties":{"type":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"token":{"type":"string"},"meta":{"properties":{"children":{"items":{"description":"The `IStructuralNode` interface defines the structure of a node in a structure. It has the following\nproperties:","properties":{"name":{"type":"string","description":"The `name` property is a string that represents the name of a node. It is used to identify and\nprovide a descriptive name for the node."},"id":{"type":"string","description":"The `id` property is a string that represents the unique identifier of a node. It is used to\nuniquely identify a node within a project or data structure."},"type":{"type":"string","enum":["structure_child","list_child"],"description":"The `type` property in the `INode` interface is used to specify the type of the node. It is of type\n`TNodeType`, which is a custom type defined elsewhere in the code. The `TNodeType` type is used to\ndefine the possible values for the `type` property, such as 'requirement', 'test', 'structure',\n'material', 'work', 'deliverable', 'order', and 'project'. By specifying the type of the node, it\nbecomes easier to identify and categorize different nodes in the project."},"token":{"type":"string","description":"The `type` property in the `INode` interface is used to specify the type of the node. It is of type\n`TNodeType`, which is a custom type defined elsewhere in the code. The `TNodeType` type is used to\ndefine the possible values for the `type` property, such as 'requirement', 'test', 'structure',\n'material', 'work', 'deliverable', 'order', and 'project'. By specifying the type of the node, it\nbecomes easier to identify and categorize different nodes in the project."},"child":{"type":"string","description":"The `child` property in the `IStructuralNode` interface is used to store the ID of the child node\nthat is connected to the current node. It represents the relationship between the parent node and\nthe child node in a data structure. By storing the ID of the child node, it becomes easier to\nnavigate and access the child nodes from the parent node."},"meta":{"type":"number","enum":[null],"nullable":true}},"required":["name","id","type","token","child","meta"],"type":"object","additionalProperties":false,"title":"IStructureChild"},"type":"array"},"description":{"type":"string"}},"required":["children","description"],"type":"object"},"create_dt":{"type":"number","format":"double"},"update_dt":{"type":"number","format":"double"}},"required":["type","id","name","token","create_dt","update_dt"],"type":"object","additionalProperties":false,"title":"IStructureInitOptions"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,72 @@
+---
+id: sp-sites-get-all-sites
+title: "Sp.Sites.getAllSites"
+description: "This function returns a promise that resolves to an array of IGraphSite objects by calling the"
+sidebar_label: "Sp.Sites.getAllSites"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVD1vGzEM/SuCZtfndswWpEXgoUUBp1OaQdbRPqWypIg8N8bh/ntJyU5sx+nQqZO+SIqP75GDjgmyIRfDvNVXepGmC0eA0zXQtfdlryc6A6YYkPdXg/40m8nSAtrskriy47X6nuPGISjqDCl2iH4LqCgqE5TJ2exUXKn5bTapk7AqLh/BEk45vI2BIJBENSl5Z0tCzSNK6EGj7WBjZMd+m5JDypI3uZoR8v1N9J7juepy+t5FpGA2IHvaJV41UnZhrcdRwD31LgPDv3+1fJgcLGueWgxjpDfBxwuGrcPkze7b5S8n+jcsf2R/8emdNCfaG6SvsXUrB+1nQ3Dn3jF07cXrE7ouvNsMHPVvoc9KdVb0fXlOwb9A3QN7B0ZJ+jTFtwm9YYTPjrxcFFEV4epXOormOOtxPEev7zqHatWHkjlrlfocUBmV/k3CarlT1njPVWJX+BmkNKg2QF1sFf/Al4olE4rnjXesdZE9mTVKJRedyZCiC4KpoJjoWyBBjGD77GjHZnxKJnMVCTLWc/2BAXG3anmmjg+NLT9gM9TNvB0bTA3uexkhb2uEQfeiQt3o8eirhXTbQdourGKRwr7S8Jy4LvghhcShJE6t6MfpbDoTep0FnhPiUpWs54ubIi9ucWOlfYSOxG22MeHI7HjwKJ486jB6znT7Mir+GxKr2gieqWHduyBo+9rdlZB7vSeEra8OlAgRUsLKCpdfJo/YDsPSIHDPjKNcP/WQ9+xvTXZmKTTcP/AfHZgWcqHxF+xkBFsLSXSwNb4vHXA+S8djzdx+uePu+AOSBRZB
+sidebar_class_name: "get api-method"
+info_path: docs/rest/microsoft/express-pnp
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Sp.Sites.getAllSites"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/clients/{clientId}/sp/sites"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This function returns a promise that resolves to an array of IGraphSite objects by calling the
+sites method on the openGraphClient.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"A Promise that resolves to an array of IGraphSite objects.","content":{"application/json":{"schema":{"items":{"properties":{"siteCollection":{"properties":{"hostname":{"type":"string"}},"required":["hostname"],"type":"object"},"root":{"properties":{},"type":"object"},"displayName":{"type":"string"},"webUrl":{"type":"string"},"name":{"type":"string"},"lastModifiedDateTime":{"type":"string"},"id":{"type":"string"},"description":{"type":"string"},"createdDateTime":{"type":"string"}},"required":["siteCollection","root","displayName","webUrl","name","lastModifiedDateTime","id","description","createdDateTime"],"type":"object","title":"Graph.Site"},"type":"array"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

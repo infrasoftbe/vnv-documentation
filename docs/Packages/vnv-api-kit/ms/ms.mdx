@@ -42,6 +42,27 @@ MsAPI( 'clientId' ).Sp()
 .Sites( 'siteId' ).delete();
 ```
 
+### Files
+
+This controller is responsible for handling files across an entire site. It’s the most resource-intensive controller but offers complete control.
+
+```tsx
+MsAPI( 'clientId' ).Sp()
+.Sites( 'siteId' ).Files().get<[]>();
+
+MsAPI( 'clientId' ).Sp()
+.Sites( 'siteId' ).Files( 'path/to/file' ).get();
+
+MsAPI( 'clientId' ).Sp()
+.Sites( 'siteId' ).Files( 'path/to/file' ).create( fileContent );
+
+MsAPI( 'clientId' ).Sp()
+.Sites( 'siteId' ).Files( 'path/to/file' ).update( fileContent );
+
+MsAPI( 'clientId' ).Sp()
+.Sites( 'siteId' ).Files( 'path/to/file' ).delete();
+```
+
 ### Lists
 
 - <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryListsFilter.html" target = "_blank">`Sp.QueryListsFilter`</a>
@@ -154,6 +175,62 @@ MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
 .Lists( 'listId' ).Views( 'viewId' ).Fields( 'fieldId' ).delete();
 ```
 
+### Document List
+
+#### Document List - Files
+
+This controller is responsible for manipulating files within a list. It is less resource-intensive but suitable for flat document lists.
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Files().get<[]>();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Files( 'fileId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Files().create({ ... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Files( 'fileId' ).update({ ... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Files( 'fileId' ).delete();
+```
+
+#### Document List - Folders
+
+This controller is responsible for manipulating files within a list, folder, or subfolder of the list. It offers the best compromise between flexibility and performance.
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Folders().get<[]>();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Folders( 'path/to/folder' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Folders( 'path/to/folder' ).createOneFolder();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Folders( 'path/to/folder' ).deleteOneFolder();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Folders( 'path/to/folder' ).getFileByFolder();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Folders( 'path/to/folder' ).getFileByFolder( 'fileName' );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Folders( 'path/to/folder' ).createOneFileByFolder( 'fileName' , fileContent );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Folders( 'path/to/folder' ).updateOneFileByFolder( 'fileName' , fileContent );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+.Lists( 'listId' ).Folders( 'path/to/folder' ).deleteOneFileByFolder( 'fileName' );
+```
+
 ### Subscriptions
 
 ```tsx
@@ -161,16 +238,16 @@ MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
 .Lists( 'listId' ).Subscriptions().get<[]>();
 
 MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
-.Lists( 'listId' ).Subscriptions( 'SubscriptionId' ).get();
+.Lists( 'listId' ).Subscriptions( 'subscriptionId' ).get();
 
 MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
 .Lists( 'listId' ).Subscriptions().create();
 
 MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
-.Lists( 'listId' ).Subscriptions( 'SubscriptionId' ).update();
+.Lists( 'listId' ).Subscriptions( 'subscriptionId' ).update();
 
 MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
-.Lists( 'listId' ).Subscriptions( 'SubscriptionId' ).delete();
+.Lists( 'listId' ).Subscriptions( 'subscriptionId' ).delete();
 ```
 
 ### Parts
@@ -194,27 +271,6 @@ MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
 
 MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
 .Parts( 'partId' ).delete();
-```
-
-### Files 
-
-- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryFilesFilter.html" target = "_blank" >`Sp.QueryFilesFilter`</a>
-
-```tsx
-MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
-.Files().get<[]>( { ...Sp.QueryFilesFilter... } );
-
-MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
-.Files( 'fileId' ).get();
-
-MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
-.Files().create({ ...<any>... });
-
-MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
-.Parts( 'fileId' ).update({ ...<any>... });
-
-MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
-.Files( 'fileId' ).delete();
 ```
 
 ### Navigations
@@ -390,6 +446,26 @@ MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
 MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
 .Webs( 'webId' ).delete();
 ```
+#### Web-files
+
+- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryFilesFilter.html" target = "_blank" >`Sp.QueryFilesFilter`</a>
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+Webs( 'webId' ).Files().get<[]>();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+Webs( 'webId' ).Files( 'path/to/file' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+Webs( 'webId' ).Files( 'path/to/file' ).create( fileContent );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+Webs( 'webId' ).Files( 'path/to/file' ).update( fileContent );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
+Webs( 'webId' ).Files( 'path/to/file' ).delete();
+```
 
 #### Web-lists
 
@@ -413,25 +489,92 @@ MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
 .Webs( 'webId' ).Lists( 'listId' ).delete();
 ```
 
-#### Web-files
+#### Web-list-items
 
-- <a href = "/vnv-documentation/API/infrasoft-vnv-api-kit/types/Sp.QueryFilesFilter.html" target = "_blank" >`Sp.QueryFilesFilter`</a>
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' ).Webs( 'webId' )
+.Lists( 'listId' ).Items().get<[]>( { ...Sp.QueryItemsFilter... } );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' ).Webs( 'webId' )
+.Lists( 'listId' ).Items( 'itemId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' ).Webs( 'webId' )
+.Lists( 'listId' ).Items().create({ ...Sp.Item... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' ).Webs( 'webId' )
+.Lists( 'listId' ).Items( 'itemId' ).update({ ...Sp.Item... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' ).Webs( 'webId' )
+.Lists( 'listId' ).Items( 'itemId' ).delete();
+```
+
+#### Web-list-fields
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' ).Webs( 'webId' )
+.Lists( 'listId' ).Fields().get<[]>( { ...Sp.QueryItemsFilter... } );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' ).Webs( 'webId' )
+.Lists( 'listId' ).Fields( 'fieldId' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' ).Webs( 'webId' )
+.Lists( 'listId' ).Fields().create({ ...Sp.FieldCreationProperties... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' ).Webs( 'webId' )
+.Lists( 'listId' ).Fields( 'fieldId' ).update({ ...Sp.FieldInfo... });
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' ).Webs( 'webId' )
+.Lists( 'listId' ).Fields( 'fieldId' ).delete();
+```
+
+#### Web-document-list - Files
 
 ```tsx
 MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
-Webs( 'webId' ).Files().get<[]>( { ...Sp.QueryFilesFilter... } );
+.Webs( 'webId' ).Lists( 'listId' ).Files().get<[]>();
 
 MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
-Webs( 'webId' ).Files( 'fileId' ).get();
+.Webs( 'webId' ).Lists( 'listId' ).Files( 'fileId' ).get();
 
 MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
-Webs( 'webId' ).Files().create({ ...<any>... });
+.Webs( 'webId' ).Lists( 'listId' ).Files().create({ ... });
 
 MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
-Webs( 'webId' ).Parts( 'fileId' ).update({ ...<any>... });
+.Webs( 'webId' ).Lists( 'listId' ).Files( 'fileId' ).update({ ... });
 
 MsAPI( 'clientId' ).Sp().Sites( 'siteId' )
-Webs( 'webId' ).Files( 'fileId' ).delete();
+.Webs( 'webId' ).Lists( 'listId' ).Files( 'fileId' ).delete();
+```
+
+#### Web-document-list - Folders
+
+```tsx
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' ).Webs( 'webId' )
+.Lists( 'listId' ).Folders().get<[]>();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' ).Webs( 'webId' )
+.Lists( 'listId' ).Folders( 'path/to/folder' ).get();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' ).Webs( 'webId' )
+.Lists( 'listId' ).Folders( 'path/to/folder' ).createOneFolder();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' ).Webs( 'webId' )
+.Lists( 'listId' ).Folders( 'path/to/folder' ).deleteOneFolder();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' ).Webs( 'webId' )
+.Lists( 'listId' ).Folders( 'path/to/folder' ).getFileByFolder();
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' ).Webs( 'webId' )
+.Lists( 'listId' ).Folders( 'path/to/folder' ).getFileByFolder( 'fileName' );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' ).Webs( 'webId' )
+.Lists( 'listId' ).Folders( 'path/to/folder' ).createOneFileByFolder( 'fileName' , fileContent );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' ).Webs( 'webId' )
+.Lists( 'listId' ).Folders( 'path/to/folder' ).updateOneFileByFolder( 'fileName' , fileContent );
+
+MsAPI( 'clientId' ).Sp().Sites( 'siteId' ).Webs( 'webId' )
+.Lists( 'listId' ).Folders( 'path/to/folder' ).deleteOneFileByFolder( 'fileName' );
 ```
 
 #### Web-pages

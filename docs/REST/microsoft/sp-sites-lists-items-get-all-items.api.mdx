@@ -1,0 +1,71 @@
+---
+id: sp-sites-lists-items-get-all-items
+title: "Sp.Sites.Lists.Items.getAllItems"
+description: "This function retrieves all items from a SharePoint list using the specified list ID."
+sidebar_label: "Sp.Sites.Lists.Items.getAllItems"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VV1v2jAU/SuWnzaJEbZH3hDtKqRNqwZ9opUwyYW4S2zXvkFFUf777rWhpBWt2kl7iu376XOuT1ppHXiF2ppZIcdy7oZzjRCGP3TAMJwh1GG4BZxUVVzLgfQQnDUBghy38ttoxJ8CQu614zSUZFGCWPWCVmLTmJyNQgfhARtvtNkKJa69rXUAgaVCMgRb7SAItEIZobxXe2E3Yl4qD9dWG7w1FbUlNCcVn1bULLfJNZZ3q89DwYWfSlEdr4Hzqao6xGyoHpU9ZRQxYXCQ642GQqz3twa5fT6fFSvhlFc1IHjRBO45GgkzM3fTSoPBlbDre8hxSNDk1iAdMSLKuUrnEdjsPjAsrQx5CbXiVeyGF84z/qgTmlc3swv+4t4B4RjoAmYru4GcIKq8rCl36NnX1lagDDtcFhqtZwqfrKap1+Cpq431taKmZGGbdQUxX4PlB9ynHhRCcba1n7aI0J01PrvOmxVsTXgpk8MkBMDZmXQDSlBVigPG6BugqIVG3p0pPE1MLOj8XC7ymIPfgf8NhfbEHhSX1Fxx46uPOOt3dflumL/rCub7QLPxK47UIoa8I7TjV/nQUHNUapnG6PnQ9Cakx/6J2R6PkbVzjBzxfonuG1i+gVzE5ZU73w2Od05vi/wwUS17b54hO7hFrSAcOobipRiR5vyLKJze+0keomF2wW8d1TYw2DHMcRgdcmt8M+5uIK8A+SoB8sZr3JM37Z4EJaQ9rUvL0kuCKdmMJW2yPIpLyNq0mBVdFlwWWJuzlj98wu3QNmlVl+mDQoeIOedvZcMTLTPZ9RqZsw5FxSG0tNnYOGQHgOHRkRCHL844SsV5Eo5fh6PhiE5I1YDUn0MMXYQss/mUqWDxUzmLH5PgbMBamZ7ba78WQb8Jcfy5POOuPQnq/6MxDRDCI2auUjqqaZNkIHGxlAcuyHt8ZINRZnwiIWxIlER8QnJNrNAq0UL4l4QJ52vbtQpA76Pr+PihAX8Yjp3yOmnH8o76KEEV9OKZxz9ALnKS5+B4THaqauLgv/zNdP2Rurpc0KP4C5YNuq0=
+sidebar_class_name: "get api-method"
+info_path: docs/rest/microsoft/express-pnp
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Sp.Sites.Lists.Items.getAllItems"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/clients/{clientId}/sp/sites/{siteId}/lists/{listId}/items"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This function retrieves all items from a SharePoint list using the specified list ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"The `getAllItems` function is returning a Promise that resolves to an array of SharePoint\nlist items (`Sp.ListItem[]`). The function retrieves all items from a SharePoint list specified by\nthe `listId` parameter using the `openSpClient` object.","content":{"application/json":{"schema":{"items":{"properties":{"GUID":{"type":"string"},"Attachments":{"type":"boolean"},"EditorId":{"type":"number","format":"double"},"AuthorId":{"type":"number","format":"double"},"Created":{"type":"string"},"Modified":{"type":"string"},"ID":{"type":"number","format":"double"},"ComplianceAssetId":{"type":"string","nullable":true},"Title":{"type":"string"},"ContentTypeId":{"type":"string"},"ServerRedirectedEmbedUrl":{"type":"string"},"ServerRedirectedEmbedUri":{"type":"string","nullable":true},"Id":{"type":"number","format":"double"},"FileSystemObjectType":{"type":"number","format":"double"}},"required":["GUID","Attachments","EditorId","AuthorId","Created","Modified","ID","ComplianceAssetId","Title","ContentTypeId","ServerRedirectedEmbedUrl","ServerRedirectedEmbedUri","Id","FileSystemObjectType"],"type":"object","title":"Sp.ListItem"},"type":"array"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

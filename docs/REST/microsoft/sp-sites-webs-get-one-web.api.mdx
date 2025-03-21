@@ -1,0 +1,71 @@
+---
+id: sp-sites-webs-get-one-web
+title: "Sp.Sites.Webs.getOneWeb"
+description: "Retrieves a specific subsite (web) using the open client for the provided web ID."
+sidebar_label: "Sp.Sites.Webs.getOneWeb"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1V0tz2zYQ/iscnNIZV3J79Kmu5MaakWrXkp2Dm8MKXImIQYDBQ46i0X/PLmkllPiw05lebArcB/Dt7vcRO2ELdBCUNZNUXIh5MZirgH7wAZd+sMZwY5AexZlw6AtrPHpxsRO/n5/zvxS9dKpgb/IdYwClfWJXScgwUSmaoFYK08THpaeoAwojrQm0zt5QFFrJMvfwk+cQO+FlhjnwU+F4Z0FVCS91QGcg4Mj7e6d5KWwLpKw+OGXWYn8mLotiYnwAI5HP0mIx0uC9kh9QS5vjLayxaXYmTNQalprWgovIbtas1DpWMNU8TMyX6MhjZV0OdCaR2siO7OOQdtuxjegcYTDKwKxxYZ/QNA88L60fQMeWPe73XI/PUTnO8Hhk/PHsYGyXn1CGKqEPNp+BJxC70BvXa9n+Xq3NLcgngq0D37GVMaeTTdXSgduOQGsbw81qpSR3ERXo1uFG4TM6P1aeQa4HWlqrEQxHujL8cqaMykGP7bPRFjpM/7KWjnWVFxl45d9Ynhcn07OFymQKWzrCG6NeI6Q/vZXK6efyWKe+0iCB/icq+TSFaGTWfoqOSk38NU1AQaWcWcpu1NcuGCZ+FnVQmhwj6C6bO9xQ7x5iTpV5ulZpiqbdfgoc7Gj6+o47pcadBMxpqyWfjGmyWk91MLz36F417h+HGa5hhib2tsjfsLmMqUJinAU4Ykty7newIwfPHSjelPM6AqLA3iA3BPWzIz5dODBel6zkb0xFJ+0utTbpDX2Hcis1/qnMK2beRieJQUPWpK4xSuqptB3ZE+aq2bYR1xzByWwubfHWXpmjI3jukGHZYFd1WeOmdm1b37cowHxr0hep6gVmgQZMuExzZWbIm/QjMPMM3Fu3v1BBt7frwiE+EHX25r+fPFDOt6vUd/sjietP0QEp8fsC80J3jVuv6J62xancn4p7q5SfCvUPEW6V3KYsHotgU/L+o8B1qVlDuk5l6USDGvpyoh1dulCKQAflN/i9l8xrzN3Byj0cXGfcJr/2k+kP5mylydc4sZUA29juhNqOCaiNXI6ppJUoelnhMPHN+a4P82uDWk3l8QweT1yDXM8EpKniIKBva/S9Au2RjCseEhMKOTErSxO65yE9/uK/QxpfahafQOILlFRsefjYT9494/KXJHoqY3kfoBwmkZoKHBKionKNhGND94Q0IdtkMuYLQoC1L79pGZ/CKhOqg9Hf9xj4IB5lpFJvyYp+FeAgR+orX/2m58zyVYY6SPBrligx/OOORgTf/SuqHfjhrnqYpPuhL4aUn5boL/0WnIILzRF3IjLhiaHY11LP+ZpSqh1hohgfprQXzPBLQZcl/2thCgq1ORCy+G1wPjinFbr0IF2k2MXQ1hnl+Ygpku9GIPkjkKEurA85mJpZ43KW0O0sqbBJjz/fv1+z/p8aVa0U8EsYUrepUhhiJQwV4I/iFHByuzhAzggzNow6r5e4c2kzOjM773ZL8Dxg+z0vf47oXsq9AacqaX78SEmzkgDLOj0hmYhLKbHgwm+qq1PzlrmvN8n7qwW19jeePECN
+sidebar_class_name: "get api-method"
+info_path: docs/rest/microsoft/express-pnp
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Sp.Sites.Webs.getOneWeb"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/@Route(\"clients/{clientId}/sp/webs/{webId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves a specific subsite (web) using the open client for the provided web ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Details of the identified subsite.","content":{"application/json":{"schema":{"properties":{"AlternateCssUrl":{"type":"string"},"AppInstanceId":{"type":"string"},"ClassicWelcomePage":{"type":"string","nullable":true},"Configuration":{"type":"number","format":"double"},"Created":{"type":"string"},"CurrentChangeToken":{"properties":{"StringValue":{"type":"string"}},"required":["StringValue"],"type":"object"},"CustomMasterUrl":{"type":"string"},"Description":{"type":"string"},"DesignPackageId":{"type":"string"},"DocumentLibraryCalloutOfficeWebAppPreviewersDisabled":{"type":"boolean"},"EnableMinimalDownload":{"type":"boolean"},"FooterEmphasis":{"type":"number","format":"double"},"FooterEnabled":{"type":"boolean"},"FooterLayout":{"type":"number","format":"double"},"HeaderEmphasis":{"type":"number","format":"double"},"HeaderLayout":{"type":"number","format":"double"},"HorizontalQuickLaunch":{"type":"boolean"},"Id":{"type":"string"},"IsHomepageModernized":{"type":"boolean"},"IsMultilingual":{"type":"boolean"},"IsRevertHomepageLinkHidden":{"type":"boolean"},"Language":{"type":"number","format":"double"},"LastItemModifiedDate":{"type":"string"},"LastItemUserModifiedDate":{"type":"string"},"MasterUrl":{"type":"string"},"MegaMenuEnabled":{"type":"boolean"},"NavAudienceTargetingEnabled":{"type":"boolean"},"NoCrawl":{"type":"boolean"},"ObjectCacheEnabled":{"type":"boolean"},"OverwriteTranslationsOnChange":{"type":"boolean"},"QuickLaunchEnabled":{"type":"boolean"},"RecycleBinEnabled":{"type":"boolean"},"ResourcePath":{"properties":{"DecodedUrl":{"type":"string"}},"required":["DecodedUrl"],"type":"object"},"SearchScope":{"type":"number","format":"double"},"ServerRelativeUrl":{"type":"string"},"SiteLogoUrl":{"type":"string","nullable":true},"SyndicationEnabled":{"type":"boolean"},"TenantAdminMembersCanShare":{"type":"number","format":"double"},"Title":{"type":"string"},"TreeViewEnabled":{"type":"boolean"},"UIVersion":{"type":"number","format":"double"},"UIVersionConfigurationEnabled":{"type":"boolean"},"Url":{"type":"string"},"WebTemplate":{"type":"string"},"WelcomePage":{"type":"string"}},"required":["AlternateCssUrl","AppInstanceId","ClassicWelcomePage","Configuration","Created","CurrentChangeToken","CustomMasterUrl","Description","DesignPackageId","DocumentLibraryCalloutOfficeWebAppPreviewersDisabled","EnableMinimalDownload","FooterEmphasis","FooterEnabled","FooterLayout","HeaderEmphasis","HeaderLayout","HorizontalQuickLaunch","Id","IsHomepageModernized","IsMultilingual","IsRevertHomepageLinkHidden","Language","LastItemModifiedDate","LastItemUserModifiedDate","MasterUrl","MegaMenuEnabled","NavAudienceTargetingEnabled","NoCrawl","ObjectCacheEnabled","OverwriteTranslationsOnChange","QuickLaunchEnabled","RecycleBinEnabled","ResourcePath","SearchScope","ServerRelativeUrl","SiteLogoUrl","SyndicationEnabled","TenantAdminMembersCanShare","Title","TreeViewEnabled","UIVersion","UIVersionConfigurationEnabled","Url","WebTemplate","WelcomePage"],"type":"object","additionalProperties":false,"title":"IWebInfo"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: sp-sites-webs-create-one-web
+title: "Sp.Sites.Webs.createOneWeb"
+description: "Creates a new subsite (web) under the parent site using the specified properties."
+sidebar_label: "Sp.Sites.Webs.createOneWeb"
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVE1v2zAM/SuCTh2QONmOOa1rd+ipQ5Nhh7RAZZuJ1TmSJtFtA8P/faRkJ24aDLvsMh8SUeLHIx/JVloHXqG25qaUC7l02VIjhOwH5CErPCiEWwMkyYn0EJw1AYJctPLTfM5/JYTCa8cOyHxVgSCtpkZhNwJJii7oURziZOSpsAbBIDtQztW6iC+zp8BeWhmKCnaKTh1/k5MgVxFVEEoYeBGhyQMhFhcvkH8QjSnBx8BOeYog4lsTtNnG2+Cg0BsNpXCeEaGmXAkQqi1ltZbLisyc1YRtIlPWKZx8mMgAReM17kmRJAqgdoDgQ5I9/Gog4Bdb7t8XZiouqQT5ExQoOHmlzQCpBJLqIDY2AR8ltbg3U/G40ljD40JwcZHPQ217rSxqXR/jke6lGMU/q0/JrWDnaspt8N2LAi1VDA6ABjOZctQeqFPQN/D3PMpjtVkaxWYR947+ZUBPNZHE9/W4dmfeY0XOvHRjhOs3Yd46HVwQbb2LxI087bX/grc0RNSrleUZdzZwok5hRdLs851tEC7uZVFr4jLM2nS4KbtZcDMaqyC59/1zavVWNr5mQ9mNZmLJVEd2KRTzf3cch6+vihDCO+YH3k4IP173PI+Y12ZjI/H9C7w62jdh6owjfUaYXHzM5tmcbqglgTYWmxiaVnq5WV6xo0hmgXHHTGJJdsqM1M4tQkGbUKSlUL7t0MMc/JvllFoU4RVnVDptOIFIQtuzuJanLJLZYuCR6ePyRCqJs4obgGzaNlcBvvu66/ia+PL9bntWXqucK7x+oFgVKEIeuf8Je84y5TtdMTJWrxtG+G4HdJPB4rIowOEfdR9GPfrtdrki5bxfpjtbso1XL7yE6Hch6WBj/eNGiXetrJXZNmrLusknf78BJYRlZw==
+sidebar_class_name: "post api-method"
+info_path: docs/rest/microsoft/express-pnp
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Sp.Sites.Webs.createOneWeb"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/@Route(\"clients/{clientId}/sp/webs"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Creates a new subsite (web) under the parent site using the specified properties.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"description":"- An object containing the details for the new subsite:\n- `Title`: The title of the subsite.\n- `Description`: A description of the subsite.\n- `WebTemplate`: The template to use for the subsite.","required":true,"content":{"application/json":{"schema":{"properties":{"WebTemplate":{"type":"string"},"Description":{"type":"string"},"Title":{"type":"string"}},"required":["WebTemplate","Description","Title"],"type":"object","description":"- An object containing the details for the new subsite:\n- `Title`: The title of the subsite.\n- `Description`: A description of the subsite.\n- `WebTemplate`: The template to use for the subsite."}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"The result of the creation operation.","content":{"application/json":{"schema":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,294 @@
+import React from "react";
+import Playground from "@theme/Playground";
+import BrowserOnly from "@docusaurus/BrowserOnly";
+
+# Matrix
+
+## Introduction
+
+## Integration
+
+<BrowserOnly>
+{() => {
+
+  const { Matrix } = require('@infrasoftbe/infrasoft-ui-components');
+
+  return <Playground scope = {{ Matrix }} >{`(function main(){
+
+    return <div>
+      <Matrix.D1
+        orientation = "horizontal"
+        xLabels = {[
+          { id : 1 , title : "voorbereiding/organisatie regulier overleg W1" },
+          { id : 2 , title : "voorbereiding/organisatie regulier overleg W2" },
+          { id : 3 , title : "voorbereiding/organisatie regulier overleg W3" },
+          { id : 4 , title : "voorbereiding/organisatie regulier overleg W4" },
+          { id : 5 , title : "administratie dashboard/documenten" },
+          { id : 6 , title : "administratie actiepunten/proces bijsturing" },
+          { id : 7 , title : "administratie project agenda" },
+          { id : 8 , title : "organisatie/toelichting ingezet team" },
+          { id : 9 , title : "administratie nieuwe dienstbevelen" },
+          { id : 10 , title : "administratie vorderingen" },
+        ]}
+        yLabels = { [ 
+          { id : 1 , title : "SPOC" , values : [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ] },
+          { id : 2 , title : "SPOC-01" , values : [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ] },
+          { id : 3 , title : "SPOC-02" , values : [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ] },
+          { id : 4 , title : "SPOC-03" , values : [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ] },
+          { id : 5 , title : "SPOC-04" , values : [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ] },
+          { id : 6 , title : "SPOC-05" , values : [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ] },
+          { id : 7 , title : "SPOC-06" , values : [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ] },
+          { id : 8 , title : "SPOC-07" , values : [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ] },
+          { id : 9 , title : "SPOC-08" , values : [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ] },
+          { id : 10 , title : "SPOC-09" , values : [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ] },
+          { id : 11 , title : "SPOC-10" , values : [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ] },
+        ] }
+      />
+    </div>;
+
+  })()`}</Playground>
+
+}}
+</BrowserOnly>
+
+## Simple
+
+### 1D - Matrix
+
+<BrowserOnly>
+{() => {
+
+  const { Matrix } = require('@infrasoftbe/infrasoft-ui-components');
+
+  return <div>
+    <Matrix.D1
+      xLabels = {[
+        { id : 1 , title : 1 },
+        { id : 2 , title : 3 },
+        { id : 3 , title : 3 },
+        { id : 4 , title : 4 },
+      ]}
+      yLabels = { [ 
+        { id : 1 , title : 1 , values : [ 0 , 1 , 2 , 3 ] },
+        { id : 2 , title : 3 , values : [ 0 , 1 , 2 , 3 ] },
+        { id : 3 , title : 3 , values : [ 0 , 1 , 2 , 3 ] },
+        { id : 4 , title : 4 , values : [ 0 , 1 , 2 , 3 ] },
+      ] }
+    />
+  </div>;
+
+}}
+</BrowserOnly>
+
+### 2D - Matrix
+
+<BrowserOnly>
+{() => {
+
+  const { Matrix } = require('@infrasoftbe/infrasoft-ui-components');
+
+  return <div>
+    <Matrix.D2
+      orientation = "vertical"
+      xLabels = {[
+        [
+          { id : 1 , title : 1 },
+          { id : 2 , title : 2 },
+          { id : 3 , title : 3 },
+          { id : 4 , title : 4 },
+        ] ,
+        [
+          { id : 1 , title : 1 },
+          { id : 2 , title : 2 },
+          { id : 3 , title : 3 },
+          { id : 4 , title : 4 },
+        ]
+      ]}
+      yLabels = {[
+        [ 
+          { id : 1 , title : 1 , values : [ 0 , 1 , 2 , 3 ] },
+          { id : 2 , title : 2 , values : [ 0 , 1 , 2 , 3 ] },
+          { id : 3 , title : 3 , values : [ 0 , 1 , 2 , 3 ] },
+          { id : 4 , title : 4 , values : [ 0 , 1 , 2 , 3 ] },
+        ],
+        [ 
+          { id : 1 , title : 1 , values : [ 0 , 1 , 2 , 3 ] },
+          { id : 2 , title : 2 , values : [ 0 , 1 , 2 , 3 ] },
+        ]
+      ]}
+    />
+  </div>;
+
+}}
+</BrowserOnly>
+
+## Layouts
+
+<BrowserOnly>
+{() => {
+
+  const { Matrix } = require('@infrasoftbe/infrasoft-ui-components');
+  const [ orientation , setOrientation ] = React.useState( 'vertical' );
+  const { 
+      TextInputGroup, 
+      TextInputGroupMain , 
+      Flex , 
+      FlexItem ,
+      Dropdown,
+      DropdownList,
+      DropdownItem,
+      MenuToggle
+    } = require("@infrasoftbe/infrasoft-ui-components");
+
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const [ xLabels , setXLabels ] = React.useState();
+
+  const onToggleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const onSelect = ( event , value ) => {
+    setIsOpen(false);
+    setOrientation( value );
+  };
+
+  return <div>
+    <div>
+      <Dropdown
+      isOpen={isOpen}
+      onSelect={onSelect}
+      onOpenChange={(isOpen) => setIsOpen(isOpen)}
+      toggle={(toggleRef) => (
+        <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
+          {orientation}
+        </MenuToggle>
+      )}
+      ouiaId="BasicDropdown"
+      shouldFocusToggleOnSelect
+      >
+        <DropdownList>
+          <DropdownItem value={"vertical"} key="vertical">Vertical</DropdownItem>
+          <DropdownItem value={"horizontal"} key="horizontal">Horizontal</DropdownItem>
+        </DropdownList>
+      </Dropdown>
+    </div>
+    <Matrix.D2
+      orientation = { orientation }
+      xLabels = {[
+        [
+          { id : 1 , title : "User 1" },
+          { id : 2 , title : "User 2" },
+          { id : 3 , title : "User 3" },
+          { id : 4 , title : "User 4" },
+        ] ,
+        [
+          { id : 1 , title : "User 1" },
+          { id : 2 , title : "User 2" },
+          { id : 3 , title : "User 3" },
+          { id : 4 , title : "User 4" },
+        ]
+      ]}
+      yLabels = {[
+        [ 
+          { id : 1 , title : "Work 1" , values : [ 0 , 1 , 2 , 3 ] },
+          { id : 2 , title : "Work 2" , values : [ 0 , 1 , 2 , 3 ] },
+          { id : 3 , title : "Work 3" , values : [ 0 , 1 , 2 , 3 ] },
+          { id : 4 , title : "Work 4" , values : [ 0 , 1 , 2 , 3 ] },
+        ],
+        [ 
+          { id : 1 , title : "File 1" , values : [ 0 , 1 , 2 , 3 ] },
+          { id : 2 , title : "File 2" , values : [ 0 , 1 , 2 , 3 ] },
+        ]
+      ]}
+    />
+  </div>;
+
+}}
+</BrowserOnly>
+
+### Orientations
+
+#### Horizontal
+
+<BrowserOnly>
+{() => {
+
+  const { Matrix } = require('@infrasoftbe/infrasoft-ui-components');
+
+  return <div>
+    <Matrix.D2
+      orientation = "horizontal"
+      xLabels = {[
+        [
+          { id : 1 , title : "User 1" },
+          { id : 2 , title : "User 2" },
+          { id : 3 , title : "User 3" },
+          { id : 4 , title : "User 4" },
+        ] ,
+        [
+          { id : 1 , title : "User 1" },
+          { id : 2 , title : "User 2" },
+          { id : 3 , title : "User 3" },
+          { id : 4 , title : "User 4" },
+        ]
+      ]}
+      yLabels = {[
+        [ 
+          { id : 1 , title : "Work 1" , values : [ 0 , 1 , 2 , 3 ] },
+          { id : 2 , title : "Work 2" , values : [ 0 , 1 , 2 , 3 ] },
+          { id : 3 , title : "Work 3" , values : [ 0 , 1 , 2 , 3 ] },
+          { id : 4 , title : "Work 4" , values : [ 0 , 1 , 2 , 3 ] },
+        ],
+        [ 
+          { id : 1 , title : "File 1" , values : [ 0 , 1 , 2 , 3 ] },
+          { id : 2 , title : "File 2" , values : [ 0 , 1 , 2 , 3 ] },
+        ]
+      ]}
+    />
+  </div>;
+
+}}
+</BrowserOnly>
+
+#### Vertical
+
+<BrowserOnly>
+{() => {
+
+  const { Matrix } = require('@infrasoftbe/infrasoft-ui-components');
+
+  return <div>
+    <Matrix.D2
+      orientation = "vertical"
+      xLabels = {[
+        [
+          { id : 1 , title : "User 1" },
+          { id : 2 , title : "User 2" },
+          { id : 3 , title : "User 3" },
+          { id : 4 , title : "User 4" },
+        ] ,
+        [
+          { id : 1 , title : "User 1" },
+          { id : 2 , title : "User 2" },
+          { id : 3 , title : "User 3" },
+          { id : 4 , title : "User 4" },
+        ]
+      ]}
+      yLabels = {[
+        [ 
+          { id : 1 , title : "Work 1" , values : [ 0 , 1 , 2 , 3 ] },
+          { id : 2 , title : "Work 2" , values : [ 0 , 1 , 2 , 3 ] },
+          { id : 3 , title : "Work 3" , values : [ 0 , 1 , 2 , 3 ] },
+          { id : 4 , title : "Work 4" , values : [ 0 , 1 , 2 , 3 ] },
+        ],
+        [ 
+          { id : 1 , title : "File 1" , values : [ 0 , 1 , 2 , 3 ] },
+          { id : 2 , title : "File 2" , values : [ 0 , 1 , 2 , 3 ] },
+        ]
+      ]}
+    />
+  </div>;
+
+}}
+</BrowserOnly>
