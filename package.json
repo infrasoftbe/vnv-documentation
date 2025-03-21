@@ -23,7 +23,7 @@
     "@docusaurus/theme-live-codeblock": "^3.6.3",
     "@docusaurus/theme-mermaid": "^3.6.3",
     "@infrasoftbe/infrasoft-project": "latest",
-    "@infrasoftbe/infrasoft-ui-components": "file:../packages/infrasoft-ui-components",
+    "@infrasoftbe/infrasoft-ui-components": "^1.1.1-3",
     "@infrasoftbe/infrasoft-vnv-api-kit": "^1.0.9-14",
     "@infrasoftbe/infrasoft-vnv-excel-generator": "latest",
     "@mdx-js/react": "^3.0.0",
