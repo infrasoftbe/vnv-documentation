@@ -1,0 +1,72 @@
+# 📦 Depedencies
+
+Centralized Dependency Export
+
+<hr/>
+
+## 🧠 What is this file?
+
+The depts.ts file serves as a centralized entry point for all major external and internal dependencies used throughout the project.
+
+Rather than importing dependencies from their original paths in every file, we group and re-export them here, under a single unified module. This improves maintainability, readability, and scalability of the codebase.
+
+<hr/>
+
+### 🚀 Why is it useful?
+  - ✅ Simplified imports: Avoid deep or repetitive import paths across the codebase.
+  - 🧹 Cleaner project structure: Centralizes third-party and internal module references.
+  - 🛠️ Easy updates: If a library path changes or is swapped out, only one file needs to be updated.
+  - 🧭 Better navigation: Developers can quickly see all major dependencies in one place.
+
+<hr/>
+
+🔧 How to use it
+
+Thanks to a Webpack/Vite alias (@depts), any file in the project can import dependencies like this:
+
+```typescript
+import { uuid, vvComponents, vvAPI, vvExcel } from '@depts';
+```
+
+:::warning
+***No need to write:***
+
+```typescript
+import { v4 as uuidv4 } from 'uuid';
+import { Button } from '@infrasoftbe/infrasoft-ui-components';
+import { fetchSomething } from '@infrasoftbe/infrasoft-vnv-api-kit';
+```
+:::
+
+## 📚 Dependencies included
+<table>
+  <thead>
+    <tr>
+      <th>Alias</th>
+      <th>Source Package</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>uuid</code></td>
+      <td><a href="https://www.npmjs.com/package/uuid">uuid</a></td>
+      <td>UUID generation utilities</td>
+    </tr>
+    <tr>
+      <td><code>vvComponents</code></td>
+      <td>@infrasoftbe/infrasoft-ui-components</td>
+      <td>Infrasoft’s internal UI component library</td>
+    </tr>
+    <tr>
+      <td><code>vvAPI</code></td>
+      <td>@infrasoftbe/infrasoft-vnv-api-kit</td>
+      <td>API client for VnV tool</td>
+    </tr>
+    <tr>
+      <td><code>vvExcel</code></td>
+      <td>@infrasoftbe/infrasoft-vnv-excel-generator</td>
+      <td>Excel export/generation tools</td>
+    </tr>
+  </tbody>
+</table>

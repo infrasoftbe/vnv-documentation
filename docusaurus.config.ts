@@ -85,13 +85,11 @@ const config: Config = {
             specPath: 'openapi/infrasoft-pnp-rest/swagger.json',
             outputDir: "docs/rest/microsoft",
             sidebarOptions: {
-              groupPathsBy: "tagGroup",
+              groupPathsBy: "tag",
             },
           },
           restSession : {
             version : "3",
-            proxy : "https://google.com",
-            baseUrl : "https://google.com",
             specPath: 'openapi/session/swagger.json',
             outputDir: "docs/rest/session",
             sidebarOptions: {
