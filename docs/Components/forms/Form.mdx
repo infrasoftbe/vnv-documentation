@@ -30,6 +30,7 @@ Once retrieved, the schema is used to dynamically generate the corresponding for
 
 <BrowserOnly>{
   () => {
+
     const { 
       TextInputGroup, TextInputGroupMain , 
       Flex , 
@@ -39,6 +40,10 @@ Once retrieved, the schema is used to dynamically generate the corresponding for
       DropdownItem,
       MenuToggle
     } = require("@infrasoftbe/infrasoft-ui-components");
+
+    const ApiKit = require('@infrasoftbe/infrasoft-vnv-api-kit');
+
+    console.log({ ApiKit })
 
     const [ _package , setPackage ] = React.useState();
     const [ schemaList , setSchemaList ] = React.useState();
@@ -69,17 +74,13 @@ Once retrieved, the schema is used to dynamically generate the corresponding for
 
       setSchema( null );
 
-      if(_package)fetch( `http://localhost:8080/schemas/${_package}` )
-      .then(( response ) => response.json())
-      .then(( result ) => setSchemaList( result ))
+      if(_package && APIKit[_package])setSchema( APIKit[_package] )
 
     } , [ _package ]);
 
     React.useEffect(() => {
 
-      if(_package)fetch( `http://localhost:8080/schemas/${_package}/${schema}` )
-      .then(( response ) => response.json())
-      .then(( result ) => setTargetSchema( result ))
+      if(_package && schema && APIKit[_package][schema])setTargetSchema( APIKit[_package][schema] )
 
     } , [ schema ]);
 

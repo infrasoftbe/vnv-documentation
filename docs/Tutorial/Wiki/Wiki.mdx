@@ -1,0 +1,68 @@
+# 🧠 Wiki — Architecture & Concepts Internes
+
+Bienvenue dans la documentation technique du projet **VnV Tool**.
+
+Ce wiki définit les **principes fondamentaux**, les **composants de l’architecture**, et les **noms propriétaires** qui permettent de mieux structurer la pensée, les échanges et les implémentations autour du système.
+
+> ✨ Ce projet repose sur une philosophie de **noms signifiants**, qui remplacent les termes génériques (comme `session`, `db`, `api`) par des concepts puissants.
+
+---
+
+## 📐 Architecture Générale
+
+Notre infrastructure repose sur plusieurs couches :
+
+- **Fournisseurs externes (Cloud)** : stockage, authentification, graphes
+- **Services internes** : traitement des événements, sessions, communication entre plateformes
+- **Systèmes de concepts** : comme ESS, Fusion, Knox...
+
+---
+
+## 🔖 Glossaire des Composants
+
+### 🔹 ESS — Elastic Session System
+
+- Représente une **session de projet encapsulée** sous forme de ZIP
+- Contient la structure JSON du projet + documents
+- **Stockée sur** : EFS (AWS)
+- **États** : ouverte, modifiée, committée
+- **Commit = "FUSION"** : envoie vers base graph (KNOX) + fichiers (VORTEX)
+
+### 🔹 ADM — Administration Module
+
+ADM est le module responsable de toute la **gouvernance structurelle du système** :
+
+- Création et gestion des utilisateurs
+- Gestion des groupes et rattachements
+- Attribution des rôles et permissions
+- Association des entités aux projets
+- Sauvegardes/restaurations
+- Configuration de règles globales
+
+### 🔹 ARC — Archive & Retrieval Core
+
+ARC est le module dédié à la **gestion des fichiers** au sein du système. Il permet d'interagir avec les **buckets S3** pour stocker et récupérer les documents associés aux projets.
+
+**Fonctionnalités principales** :
+- Upload et download de documents depuis les **buckets S3**
+- Accès sécurisé via OBSIDIAN pour la manipulation des fichiers
+- Organisation des fichiers par métadonnées et versionnement
+
+### 🔹 KNOX — Knowledge Node Exchange
+
+- Interface avec Neo4j
+- Stocke les entités métier, leurs relations et structures logiques
+- Sert à représenter les projets de manière connectée
+
+### 🔹 SIGMA — Signal Ingestion Gateway for Messaging & Actions
+
+- Serveur d’entrée pour les **événements webhook externes**
+- Déclenche la création/modification d’ESS via OBSIDIAN
+
+### 🔹 OBSIDIAN — Orchestration Bridge for Sessions, Documents & Identity Access Nodes
+
+- Serveur proxy central
+- Gère :
+  - Communication avec les buckets
+  - Les sessions actives (ESS)
+  - L'accès utilisateur (via Azure)
