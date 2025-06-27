@@ -1,0 +1,238 @@
+reports
+=======
+
+
+project activities (history, timeline)
+---------------------------------------
+-> report is needed in meeting 'regulier overleg'
+-> report is needed in meeting with 'leidende ambtenaar'
+
+
+
+project budget/invoicing
+-------------------------
+-> report is needed in meeting 'regulier overleg'
+-> report is needed in internal planning meeting Infrasoft
+
+
+
+
+project files (missing, present + history, timeline)
+----------------------------------------------------
+-> report is needed in meeting 'regulier overleg'
+-> report is needed in meeting with 'leidende ambtenaar'
+
+
+
+
+project planning (timeline)
+---------------------------
+-> report is needed in meeting 'regulier overleg'
+-> report is needed in internal planning meeting Infrasoft
+
+
+
+
+project registers (history, timeline, type)
+--------------------------------------------
+-> report is needed in meeting 'regulier overleg'
+-> report is needed in meeting with 'leidende ambtenaar'
+
+
+
+
+project status
+---------------
+-> report is needed in meeting 'regulier overleg'
+-> report is needed in meeting with 'leidende ambtenaar'
+-> report is needed in internal planning meeting Infrasoft
+
+
+
+
+project validation (iterations, follow-up, iteration, result )
+--------------------------------------------------------------------------
+
+-> report is the actual deliverable to dvw
+-> based on current validation data (up till now typed manually)
+-> output is currently an excel table
+
+-> the table combines the items :
+
+	"PROJECT"          
+	"REQUIREMENT"      
+	"TESTCASE"          
+	"TESTCASE_EXECUTION"
+	"ORDER" 
+	"FILE"             
+
+-> customer resume is a word document that is being produced manually
+it describes the test-execuition result, it highlights the the test-executions that were not successfull  and actions to be taken by the project leader-
+the 'project validation report' is being added as attachment to this word document
+
+{
+
+	"id"    : "",
+	"token" : "RPT-PRJ-VAL",
+	"type"  : "REPORT",
+	"name"  : "project validation report",
+	"meta"  : {
+			"description" : "The Poject validation report gives the test_execution results within iteraration nr the requirements in project",
+
+			"items" : [
+				{ "prj"  : "PROJECT"             },
+				{ "req"  : "REQUIREMENT"         },
+				{ "tcas" : "TESTCASE"            },
+				{ "tcex" : "TESTCASE_EXECUTION"  },
+				{ "ord"  : "ORDER"               },
+				{ "fil"  : "FILE"                }
+			],
+->
+			"query : "MATCH (ord:ORDER)<-[HAS_ORDER]-(prj:PROJECT)
+					-[HAS_REQUIREMENT]->(req:REQUIREMENT)
+					-[HAS_TESTCASE]->(tcas:TESTCASE)
+					-[HAS_TESTCASE_EXECUTION]->(tcex:TESTCASE_EXECUTION)
+					-[HAS_ATTACHMENT]->(fil:FILE) 
+				${where_clause} 
+				${order_clause} 				  
+				return ${fields_clause};"	
+
+			"where_params" : [
+				{ "prj.token" : "PR2025-004"      },
+  				{ "ord.token" : "ORD2025-004-001" },
+				{ "tcex.meta.exec_nr" : 1         }	 
+			},
+
+			"order_params" : [
+				"req.token"
+			]
+
+			"field_params" :[
+				{
+					"prj.token" : "header describing prj.token"
+				},
+				"prj.description",
+				"ord.meta.ref_extern",
+				"fil.name",
+				"req.token",
+				"req.meta.description_text",
+				"tcas.meta.description_text",
+				"tcex.meta.exec_nr";
+				"tcex.meta.exec_data";
+				"tcex.meta.exec_text",
+				"tcex.meta.exec_result
+				"tcex.meta.exec_file_ref"
+			]
+
+
+
+	}
+}
+
+
+definition of report is called on 
+
+	GET /reports/:id			-> using report id
+
+	GET /reports ? n_token=RPT-PRJ-VAL	-> using report token	
+
+
+generation of report is called on 
+
+	GET /reports/:id/generate	? 	conform syntax GET /db/projects/:id/children
+
+
+within endoint in the /reports/:id/generate the following query is being constructed
+
+
+	MATCH (ord:ORDER)<-[HAS_ORDER]-(prj:PROJECT)-[HAS_REQUIREMENT]->(req:REQUIREMENT)->[HAS_TESTCASE]->(tcas:TESTCASE)-[HAS_TESTCASE_EXECUTION]->(tcex:TESTCASE_EXECUTION) ${where_clause} ${order_clause} return ${fields_clause};
+
+	${where_clause}     = " WHERE 'prj.token' = 'PR2025-004' AND 'tcex.meta.exec_nr' = '1' "
+
+	${order_clause}     = " ORDER BY req.token"
+
+	${fields_caluse}    = prj.token, prj.description, ord.meta.ref_extern, req.meta.token, req.meta.description_text, tcas.meta.description_text, tcex.meta.exec_nr, tcex.meta.exec_data, tcex.meta.exec_text,
+        tcex.meta.exec_result
+
+
+execution of the query results in a given resultset the needs to be converted to json object(s)
+
+json response of the endpoint contains a single object, or an array of objects
+
+[] or {}
+
+each json object will contain the selected fields_clause
+
+{
+	"prj.token" 			: "",
+	"prj.description" 		: "",
+	"ord.meta.ref_extern" 		: "",
+	"fil.name"			: "",
+	"req.token" 		        : "",
+	"req.name"                      : "",
+	"req.meta.description_text" 	: "",
+	"tcas.meta.description_text" 	: "",
+	"tcex.meta.exec_nr" 		: "";
+	"tcex.meta.exec_data" 		: "";
+	"tcex.meta.exec_text" 		: "",
+	"tcex.meta.exec_result" 	: ""
+}
+
+
+in a following call the json object/array needs to be transformed into an excel file
+
+	- selected fields int the fields_cause will appear as excel column headers
+
+	- each json object will appear as a new line in excel file
+
+	- the order of the lines in excel wa defined by the order_clause req.token
+
+	- the file name used for the excel file is being passed in to the call
+
+	file
+		name = "",
+		extension = ".xlsx",
+		data.
+			headers = [],	
+			rows    = [],
+		meta.
+			tags = [
+					'RPT',
+					'generated',
+					'validation'
+			]
+
+	- the file extension used for the excel file is being passed in to the call
+	- the file meta tasg are being passed in the call
+
+	- the document library where the file will be saved is selected based on the 'user_group' of the user that executed the call
+          the http calls to the server of guilaume has the user_id and user_group inside headers info
+	  
+	- a middleware will check the user has
+		- report rights for this report
+		- has rights on the items used in the report
+		- removes fields (headers) for which the user has no rights
+
+
+
+
+
+
+
+project verification (iterations, follow-up)
+-------------------------------------------
+
+-> report is the actual deliverable to dvw
+
+-> based on current verification data
+
+-> output is currently an excel table
+
+-> the table combines the items :
+
+	'verification' requirements -> testcases -> testcase-executions for a given iteration number and result : conform | fail
+
+-> customer resume is currently a mail thats is being produced manually
+
+	it describes the overall conformity, it highlights the non conformities and actions to be taken
+	the project verification report is being added as attachment
